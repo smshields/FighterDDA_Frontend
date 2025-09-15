@@ -1,0 +1,647 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"action",
+				"actionQueueLog"
+			],
+			[
+				"timeS",
+				"timeStepLog"
+			],
+			[
+				"previou",
+				"previousDefense"
+			],
+			[
+				"characterAc",
+				"characterActionOutcomeLog"
+			],
+			[
+				"Direc",
+				"DirectorActionOutcomeLog"
+			],
+			[
+				"com",
+				"compareSpeed"
+			],
+			[
+				"Cha",
+				"CharacterActionLog"
+			],
+			[
+				"Chara",
+				"characterActionLog"
+			],
+			[
+				"Director",
+				"DirectorActionLog"
+			],
+			[
+				"multiH",
+				"multiHealActionScore"
+			],
+			[
+				"MULTI_H",
+				"MULTI_HEAL_ACTION_TYPE"
+			],
+			[
+				"healA",
+				"healActionScore"
+			],
+			[
+				"healAc",
+				"healActionScore"
+			],
+			[
+				"HEAL",
+				"HEAL_ACTION_TYPE"
+			],
+			[
+				"multi",
+				"multiMagicAttackActionScore"
+			],
+			[
+				"Att",
+				"AttackActionScore"
+			],
+			[
+				"Atta",
+				"AttackActionScore"
+			],
+			[
+				"evaluateMulti",
+				"evaluateMultiHeal"
+			],
+			[
+				"eva",
+				"evaluateAttack"
+			],
+			[
+				"healer",
+				"healerUnavailablePunish"
+			],
+			[
+				"heal",
+				"healerUnavailablePunish"
+			],
+			[
+				"S",
+				"SINGLE_TARGET_SCALAR"
+			],
+			[
+				"t",
+				"timeStep"
+			],
+			[
+				"lo",
+				"logError"
+			],
+			[
+				"p2L",
+				"p2LineOfBestFitYIntercept"
+			],
+			[
+				"p1L",
+				"p1LineOfBestFitYIntercept"
+			],
+			[
+				"p1T",
+				"p1TargetX2"
+			],
+			[
+				"p2Targ",
+				"p2TargetYIntercept"
+			],
+			[
+				"p1D",
+				"p1DesiredYChange"
+			],
+			[
+				"p2Lin",
+				"p2LineOfBestFitData"
+			],
+			[
+				"p1Tar",
+				"p1TargetNextY"
+			],
+			[
+				"p",
+				"p1LineOfBestFitY"
+			],
+			[
+				"p2LineO",
+				"p2LineOfBestFitData"
+			],
+			[
+				"p2LineOfB",
+				"p2LineOfBestFitYIntercept"
+			],
+			[
+				"execute",
+				"executeAIDirectorAction"
+			],
+			[
+				"directorAc",
+				"directorActionP2"
+			],
+			[
+				"director",
+				"directorActionP1"
+			],
+			[
+				"adjust",
+				"adjustDefense"
+			],
+			[
+				"p1Line",
+				"p1LineOfBestFitNextY"
+			],
+			[
+				"p1TargetY",
+				"p1TargetYIntercept"
+			],
+			[
+				"p1",
+				"p1TargetX1"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"git con",
+				"Git Conflict Resolver: Keep Theirs"
+			],
+			[
+				"confli",
+				"Git Conflict Resolver: Keep Theirs"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/samue/Documents/Github/FighterDDA_Frontend"
+	],
+	"file_history":
+	[
+		"/C/Users/samue/Documents/Obsidian/SHIELDSY/PhD/Projects/FighterDDA/Writing/AIIDE 2025/AIIDE 2025.md",
+		"/C/Users/samue/Desktop/latex.txt",
+		"/C/Users/samue/Downloads/latex_edited.txt",
+		"/C/Users/samue/Documents/Obsidian/SHIELDSY/.obsidian/workspace.json",
+		"/C/Users/samue/Documents/Obsidian/SHIELDSY/PhD/Projects/Academical/Development Notes.md",
+		"/C/Users/samue/Documents/Obsidian/SHIELDSY/PhD/Projects/Academical/Character Bios.md",
+		"/C/Users/samue/Documents/Obsidian/SHIELDSY/PhD/Dissertation/Outline.md",
+		"/C/Users/samue/Documents/Obsidian/SHIELDSY/.obsidian/workspace-mobile.json",
+		"/C/Users/samue/Downloads/DeDRM_tools_10.0.3/ReadMe_Overview.txt",
+		"/C/Users/samue/AppData/Local/calibre-cache/calibre-debug-log.txt",
+		"/C/Users/samue/Downloads/DeDRM_tools_10.0.3/DeDRM_plugin_ReadMe.txt",
+		"/C/Users/samue/Documents/Github/Academical3/Assets/InkScripts/Bronislav/Bron&Ned/BN_Socializing1.ink",
+		"/?wsl.localhost/Ubuntu/home/samue/.gitconfig",
+		"/C/Users/samue/Desktop/paper review sort",
+		"/C/Users/samue/Documents/Github/FighterDDA/core/Game.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/logging/EndLog.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/utils/Constants.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/logging/InitialLog.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/agents/AIDirector.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/main.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/core/TeamFactory.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/core/Character.js",
+		"/C/Users/samue/AppData/Local/Temp/d3cf6b5e-2027-4f2e-a6da-a0e068fce0f4_token.zip.0f4/token.txt",
+		"/C/Users/samue/AppData/Local/Temp/89376c79-1449-49af-880b-51526f87428f_token.zip.28f/token.txt",
+		"/C/Users/samue/AppData/Local/Temp/b169b0a2-acf3-4aed-a8cd-b3dd6dc1cfef_token.zip.fef/token.txt",
+		"/C/Users/samue/AppData/Local/Temp/bcacd65d-a938-4d9c-89ad-a1f2c46dcbfb_token.zip.bfb/token.txt",
+		"/C/Users/samue/AppData/Local/Temp/b38e1115-2d66-42c1-a13f-bdec6861bd58_token.zip.d58/token.txt",
+		"/C/Users/samue/AppData/Local/Temp/63709892-c1ae-463e-9d8a-2f7b18c52343_token.zip.343/token.txt",
+		"/C/Users/samue/AppData/Local/Temp/7576435c-1c86-490c-a443-1f898dcd6bce_token.zip.bce/token.txt",
+		"/C/Users/samue/AppData/Local/Temp/f3096e7b-9fdc-4650-b2da-beb5c27f7326_token.zip.326/token.txt",
+		"/C/Users/samue/AppData/Local/Temp/330c30a6-2a01-4d03-9671-4ff12c64231c_token.zip.31c/token.txt",
+		"/C/Users/samue/Documents/Github/FighterDDA/logging/ActionTargetLog.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/core/Action.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/logging/CharacterActionLog.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/logging/ActionQueueLog.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/core/GameState.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/core/DirectorAction.js",
+		"/C/Users/samue/AppData/Local/Temp/ebf0b6e3-66ac-4bdc-86ca-52e638f12cfe_token.zip.cfe/token.txt",
+		"/C/Users/samue/Documents/Github/FighterDDA/logging/TimeStepLog.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/logging/DirectorActionOutcomeLog.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/logging/Logger.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/logging/DirectorTargetOutcomeLog.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/README.md",
+		"/C/Users/samue/Documents/Github/FighterDDA/output/1746756389184/simulation_100/0.8185439060321875.json",
+		"/C/Users/samue/AppData/Local/Temp/462d564c-efa4-417c-a723-94c4e377b644_token.zip.644/token.txt",
+		"/E/token.txt",
+		"/C/Users/samue/Documents/Github/FighterDDA/output/1746754363793/simulation_99/0.35627703776397746.json",
+		"/C/Users/samue/Documents/Github/FighterDDA/output/1746752469228/simulation_1/0.13739792926476335.json",
+		"/C/Users/samue/Documents/Github/FighterDDA/output/1746751850966/simulation_3/0.9707390948512675.json",
+		"/C/Users/samue/Documents/Github/FighterDDA/output/1746751850966/simulation_2/0.9707390948512675.json",
+		"/C/Users/samue/Documents/Github/FighterDDA/output/1746751850966/simulation_1/0.9707390948512675.json",
+		"/C/Users/samue/Documents/Github/FighterDDA/output/1746751605227/simulation_2/0.2543214688211346.json",
+		"/C/Users/samue/Documents/Github/FighterDDA/output/1746751605227/simulation_1/0.2543214688211346.json",
+		"/C/Users/samue/Documents/Github/FighterDDA/output/1746751605227/simulation_3/0.2543214688211346.json",
+		"/C/Users/samue/Documents/Github/FighterDDA/logging/CharacterActionOutcomeLog.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/logging/DirectorActionLog.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/utils/Utils.js",
+		"/C/Users/samue/Documents/Github/FighterAGB_Headless/fighterAGB_headless_sim.txt",
+		"/C/Users/samue/Documents/Github/FighterDDA/agents/action_score/ChosenAction.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/agents/action_score/ActionScore.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/agents/AIPlayer.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/fighterAGB_headless_sim.js",
+		"/C/Users/samue/Downloads/unstructured_multi_shot_notes.txt",
+		"/C/Users/samue/Downloads/dfs_search.js",
+		"/C/Users/samue/Downloads/Output_Format(1).txt",
+		"/C/Users/samue/Downloads/Unstructured_Single_Prompt.txt",
+		"/C/Users/samue/Downloads/j.txt",
+		"/C/Users/samue/Downloads/multishot_analysis.txt",
+		"/C/Users/samue/Documents/test.txt",
+		"/C/Users/samue/Documents/terms.txt",
+		"/C/Users/samue/Documents/term_frequencies.txt",
+		"/C/Users/samue/Documents/Narrative_Reading.txt",
+		"/C/Users/samue/Documents/multishot_analysis.txt",
+		"/C/Users/samue/Documents/LLM_Story_DFS.js",
+		"/C/Users/samue/Documents/Github/github_access_token",
+		"/C/Users/samue/Downloads/Node.gitignore",
+		"/C/Users/samue/Documents/Github/FighterDDA/utils/RNG.js",
+		"/C/Users/samue/Documents/Github/FighterDDA/RNG.js",
+		"/C/Users/samue/OneDrive/Desktop/fighterAGB_design_doc.txt",
+		"/C/Users/samue/OneDrive/Desktop/simulation_log_1741831124061.json",
+		"/C/Users/samue/OneDrive/Desktop/simulation_log_1741832116942.json",
+		"/C/Users/samue/OneDrive/Desktop/simulation_log_1741833540357.json",
+		"/C/Users/samue/OneDrive/Desktop/simulation_log_1741833605175.json",
+		"/C/Users/samue/OneDrive/Documents/ToG/Structured_One_Shot_Prompt.txt",
+		"/C/Users/samue/OneDrive/Documents/ToG/Unstructured_Multi_Shot_Prompt.txt",
+		"/C/Users/samue/OneDrive/Documents/ToG/Unstructured_Zero_Shot_Prompt.txt",
+		"/C/Users/samue/OneDrive/Documents/ToG/Output_Format.txt",
+		"/C/Users/samue/AppData/Roaming/Sublime Text/Packages/User/JavaScript.sublime-build",
+		"/C/Users/samue/OneDrive/Desktop/simulation_log_1741828944346.json",
+		"/C/Users/samue/OneDrive/Documents/GitHub/BalanceTaxonomy/color_mapping.json",
+		"/C/Users/samue/OneDrive/Documents/GitHub/BalanceTaxonomy/sankey_data.csv",
+		"/C/Users/samue/OneDrive/Documents/GitHub/BalanceTaxonomy/sankey_data.json",
+		"/C/Users/samue/OneDrive/Documents/GitHub/BalanceTaxonomy/convert_sankey_data.py",
+		"/C/Users/samue/OneDrive/Documents/GitHub/BalanceTaxonomy/balance_sankey.py",
+		"/C/Users/samue/OneDrive/Documents/GitHub/BalanceTaxonomy/balance_taxonomy_data.json",
+		"/C/Users/samue/OneDrive/Documents/ToG/Structured_One_Shot_Output.txt",
+		"/C/Users/samue/OneDrive/Documents/ToG/Unstructured_Multi_Shot_Output.txt",
+		"/C/Users/samue/OneDrive/Documents/ToG/Unstructured_Zero_Shot_Output.txt",
+		"/C/Users/samue/OneDrive/Documents/ToG/Academical_2.0_Output.txt",
+		"/C/Users/samue/OneDrive/Documents/ToG/Academical_2.0_Prompt.txt",
+		"/C/Users/samue/OneDrive/Documents/GitHub/TermCountUtility/terms.txt",
+		"/C/Users/samue/OneDrive/Documents/GitHub/TermCountUtility/CountTermFrequency.py",
+		"/C/Users/samue/OneDrive/Desktop/IntoTheBlue",
+		"/C/Users/samue/OneDrive/Documents/ToG/Human_Authored_Tree.txt",
+		"/C/Users/samue/OneDrive/Documents/GitHub/LLMInteractiveNarrative/SemanticCorrectRunningAvg"
+	],
+	"find":
+	{
+		"height": 27.3333333333
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+			"",
+			"<current file>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"target.baseStats",
+			"baseStats",
+			"currentHP",
+			"initialLog",
+			"timesteplog",
+			"console.log(action",
+			"executeAIDire",
+			"executeAIDirectorAction",
+			"console.log",
+			"new DirectorAction",
+			"DirectorAction",
+			"outcomes",
+			"getTargets",
+			"actionOutcomeLog",
+			"logger",
+			"lowHealthThreshold",
+			"mapDamageT",
+			"mapDamageToRaw",
+			"balanceDamage",
+			"actionCurrHP",
+			"_INITIAL",
+			"_BASE",
+			"Math.random()",
+			"Math.Rand",
+			"getRandom",
+			"RNG",
+			"seed",
+			"RNG.next",
+			"RNG",
+			"AI_Director",
+			"Math.random()",
+			"HEAL_SCALAR",
+			"MULTI_HEAL_SCALAR",
+			"MULTI_TARGET_SCALAR",
+			"SINGLE_TARGET_SCALAR",
+			"HEAL_SCALAR",
+			"MULTI_HEAL_SCALAR",
+			"SPEED_SCALAR",
+			"heal_scalar",
+			"single_target_Scalar",
+			"multi_target_Scalar",
+			"SINGLE_TARGET_SCALAR",
+			"MULTI_TARGET_SCALAR",
+			"SPEED_SCALAR",
+			"MULTI_Constants.HEAL_SCALAR",
+			"MULTI_HEAL_SCALAR",
+			"HEAL_SCALAR",
+			"SINGLE_TARGET_SCALAR",
+			"MULTI_TARGET_SCALAR",
+			"this.safeDivide(",
+			"this.map(",
+			";\n",
+			"heal",
+			"\"queueLength\":",
+			"24",
+			"multi",
+			"ff7f0e",
+			"]",
+			"[",
+			"relationship_threshold:",
+			"relationship_stat_current:",
+			"relationship_symbol:",
+			"relationship_stat_change:",
+			"relationship_stat_current:",
+			"relationship_stat:",
+			"character2:",
+			"character1:",
+			"attribute_change:",
+			"attribute:",
+			"character:",
+			"relationship_symbol",
+			"relationship_stat_change",
+			"relationship_stat_change:",
+			"relationship_stat_current:",
+			"relationship_threshold:",
+			"relationship_stat_current:",
+			"relationship_symbol:",
+			"relationship_stat:",
+			"character2:",
+			"character1:",
+			"attribute_change:",
+			"attribute:",
+			"character:",
+			"id:",
+			"\"stat_changes\" {",
+			"preconditions:",
+			"next_id:",
+			"choice_content:",
+			"choices:",
+			"attributes:",
+			"relationships:",
+			"stat_changes {",
+			"stat_changes:",
+			"dialogue:",
+			"dialogue_summary:",
+			"player_character:",
+			"speaking_character:",
+			"prev_id:",
+			"\"prev_id\"",
+			"22"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"_BASE",
+			"",
+			"RNG.next()",
+			"AIDirector",
+			"RNG.next()",
+			"Constants.MULTI_TARGET_SCALAR",
+			"Constants.SINGLE_TARGET_SCALAR",
+			"Constants.HEAL_SCALAR",
+			"Constants.MULTI_HEAL_SCALAR",
+			"Constants.SPEED_SCALAR",
+			"Constants.SINGLE_TARGET_SCALAR",
+			"Constants.MULTI_TARGET_SCALAR",
+			"Constants.SPEED_SCALAR",
+			"Constants.MULTI_HEAL_SCALAR",
+			"Constants.HEAL_SCALAR",
+			"Constants.HEAL_TARGET_SCALAR",
+			"Constants.HEAL_SCALAR",
+			"Constants.SINGLE_TARGET_SCALAR",
+			"Constants.MULTI_TARGET_SCALAR",
+			"Utils.safeDivide(",
+			"Utils.map(",
+			"],",
+			"",
+			"\"relationship_threshold\":",
+			"\"relationship_stat_current\":",
+			"\"relationship_symbol\":",
+			"\"relationship_stat_change\":",
+			"\"relationship_stat_current\":",
+			"\"relationship_stat\":",
+			"\"character2\":",
+			"\"character1\":",
+			"\"attribute_change\":",
+			"\"attribute\":",
+			"\"character\":",
+			"\"relationship_stat_change\":",
+			"\"relationship_threshold\":",
+			"\"relationship_stat_current\":",
+			"\"relationship_symbol\":",
+			"\"relationship_stat\":",
+			"\"character2\":",
+			"\"character1\":",
+			"\"attribute_change\":",
+			"\"attribute\":",
+			"\"character\":",
+			"\"id\":",
+			"\"stat_changes\": {",
+			"\"preconditions\":",
+			"\"next_id\":",
+			"\"choice_content\":",
+			"\"choices\":",
+			"\"attributes\":",
+			"\"relationships\":",
+			"\"stat_changes\" {",
+			"\"stat_changes\":",
+			"\"dialogue\":",
+			"\"dialogue_summary\":",
+			"\"player_character\":",
+			"\"speaking_character\":",
+			"\"prev_id\":"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.3333333333
+	},
+	"input":
+	{
+		"height": 39.3333333333
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 545.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.nodejs":
+	{
+		"height": 35.3333333333,
+		"history":
+		[
+		]
+	},
+	"pinned_build_system": "Packages/Nodejs/Nodejs.sublime-build",
+	"project": "FighterDDA_Frontend.sublime-project",
+	"replace":
+	{
+		"height": 50.6666666667
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

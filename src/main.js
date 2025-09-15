@@ -1,11 +1,11 @@
-import Level from "./scenes/Level.js";
+import Battle from "./scenes/Battle.js";
 import Preload from "./scenes/Preload.js";
 
 window.addEventListener('load', function () {
 
 	var game = new Phaser.Game({
-		width: 1280,
-		height: 720,
+		width: 1920,
+		height: 1080,
 		type: Phaser.AUTO,
         backgroundColor: "#242424",
 		scale: {
@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
 	});
 
 	game.scene.add("Preload", Preload);
-	game.scene.add("Level", Level);
+	game.scene.add("Battle", Battle);
 	game.scene.add("Boot", Boot, true);
 });
 

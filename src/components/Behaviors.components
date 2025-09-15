@@ -1,5 +1,101 @@
 {
-    "components": [],
+    "components": [
+        {
+            "name": "ObjectBounceAnimation",
+            "displayName": "",
+            "objectDisplayFormat": "",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "generateGameObjectField": true,
+            "properties": [
+                {
+                    "name": "mode",
+                    "label": "Mode",
+                    "tooltip": "Determines the method of bounce animation",
+                    "defValue": "position",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "option",
+                        "options": [
+                            "position",
+                            "scale",
+                            "both"
+                        ]
+                    }
+                },
+                {
+                    "name": "active",
+                    "label": "Active",
+                    "tooltip": "Determines if the bounce animation is active.",
+                    "defValue": true,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
+                    "name": "posOffset",
+                    "label": "Offset Position",
+                    "tooltip": "Determines the number of pixels that a bounce will offset.",
+                    "defValue": 5,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "posDuration",
+                    "label": "Duration Position",
+                    "tooltip": "Determines how long the position animation takes to cycle.",
+                    "defValue": 500,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "scaleXDelta",
+                    "label": "X-Axis Scaling",
+                    "tooltip": "Determines how much to scale the animation in the x-dimension.",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "scaleYDelta",
+                    "label": "Y-Axis Scaling",
+                    "tooltip": "Determines how much to scale the animation in the y-dimension.",
+                    "defValue": 0.05,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "scaleDuration",
+                    "label": "Duration Scaling",
+                    "tooltip": "Determines how long the scaling animation takes to cycle.",
+                    "defValue": 500,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "scaleEase",
+                    "label": "Ease Function Scaling",
+                    "tooltip": "Determines the function used for scaling easing.",
+                    "defValue": "Sine.easeInOut",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
+                    }
+                }
+            ]
+        }
+    ],
     "meta": {
         "app": "Phaser Editor 2D - User Components Editor",
         "url": "https://phasereditor2d.com",
