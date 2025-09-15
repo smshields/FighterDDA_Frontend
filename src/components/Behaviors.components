@@ -2,9 +2,9 @@
     "components": [
         {
             "name": "ObjectBounceAnimation",
-            "displayName": "",
+            "displayName": "Object Bounce",
             "objectDisplayFormat": "",
-            "baseClass": "",
+            "baseClass": "UserComponent",
             "gameObjectType": "Phaser.GameObjects.Image",
             "generateGameObjectField": true,
             "properties": [
@@ -84,13 +84,109 @@
                     }
                 },
                 {
-                    "name": "scaleEase",
-                    "label": "Ease Function Scaling",
-                    "tooltip": "Determines the function used for scaling easing.",
-                    "defValue": "Sine.easeInOut",
+                    "name": "posEase",
+                    "label": "Tweening Ease Function Position",
+                    "tooltip": "Determines the function used for position tweening easing.",
+                    "defValue": "Sine.easeIn",
                     "customDefinition": false,
                     "type": {
-                        "id": "string"
+                        "id": "option",
+                        "options": [
+                            "Linear",
+                            "Sine.easeIn",
+                            "Sine.easeOut",
+                            "Sine.easeInOut",
+                            "Quad.easeIn",
+                            "Quad.easeOut",
+                            "Quad.easeInOut",
+                            "Cubic.easeIn",
+                            "Cubic.easeOut",
+                            "Cubic.easeInOut",
+                            "Quart.easeIn",
+                            "Quart.easeOut",
+                            "Quart.easeInOut",
+                            "Quint.easeIn",
+                            "Quint.easeOut",
+                            "Quint.easeInOut",
+                            "Expo.easeIn",
+                            "Expo.easeOut",
+                            "Expo.easeInOut",
+                            "Circ.easeIn",
+                            "Circ.easeOut",
+                            "Circ.easeInOut",
+                            "Back.easeIn",
+                            "Back.easeOut",
+                            "Back.easeInOut",
+                            "Bounce.easeIn",
+                            "Bounce.easeOut",
+                            "Bounce.easeInOut",
+                            "Elastic.easeIn",
+                            "Elastic.easeOut",
+                            "Elastic.easeInOut"
+                        ]
+                    }
+                },
+                {
+                    "name": "scaleEase",
+                    "label": "Tweening Ease Function Scaling",
+                    "tooltip": "Determines the function used for scaling tweening easing.",
+                    "defValue": "Sine.easeIn",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "option",
+                        "options": [
+                            "Linear",
+                            "Sine.easeIn",
+                            "Sine.easeOut",
+                            "Sine.easeInOut",
+                            "Quad.easeIn",
+                            "Quad.easeOut",
+                            "Quad.easeInOut",
+                            "Cubic.easeIn",
+                            "Cubic.easeOut",
+                            "Cubic.easeInOut",
+                            "Quart.easeIn",
+                            "Quart.easeOut",
+                            "Quart.easeInOut",
+                            "Quint.easeIn",
+                            "Quint.easeOut",
+                            "Quint.easeInOut",
+                            "Expo.easeIn",
+                            "Expo.easeOut",
+                            "Expo.easeInOut",
+                            "Circ.easeIn",
+                            "Circ.easeOut",
+                            "Circ.easeInOut",
+                            "Back.easeIn",
+                            "Back.easeOut",
+                            "Back.easeInOut",
+                            "Bounce.easeIn",
+                            "Bounce.easeOut",
+                            "Bounce.easeInOut",
+                            "Elastic.easeIn",
+                            "Elastic.easeOut",
+                            "Elastic.easeInOut"
+                        ]
+                    }
+                },
+                {
+                    "name": "posDelay",
+                    "label": "Delay Position",
+                    "tooltip": "Determines how long to delay initial run of position animation.",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "scaleDelay",
+                    "label": "Delay Scale",
+                    "tooltip": "Determines how long to delay initial run of scale animation.",
+                    "defValue": 0,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
                     }
                 }
             ]

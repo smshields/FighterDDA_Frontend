@@ -25,6 +25,9 @@ export default class ObjectBounceAnimation extends UserComponent {
     /** @type {"position"|"scale"|"both"} */ this.mode = "position";
     /** @type {boolean} */ this.active = true;
 
+    /** @type {number} */ this.posDelay = 0;    // ms before position bounce starts
+		/** @type {number} */ this.scaleDelay = 0;  // ms before scale bounce starts
+
     // Position bounce settings
     /** @type {number} */ this.posOffset = 5;                 // pixels (vertical travel)
     /** @type {number} */ this.posDuration = 500;             // ms per half-cycle
@@ -49,8 +52,6 @@ export default class ObjectBounceAnimation extends UserComponent {
     this.scene.events.on(Phaser.Scenes.Events.WAKE, this.resume, this);
     this.scene.events.on(Phaser.Scenes.Events.SHUTDOWN, this.destroy, this);
 
-    console.log("Mode: " + this.mode);
-
   }
 
   /**
@@ -66,12 +67,12 @@ export default class ObjectBounceAnimation extends UserComponent {
 
     // Position bounce
     if (this.mode === "position" || this.mode === "both") {
-    	console.log("reached position");
       const t = this.scene.tweens.add({
         targets: this.gameObject,
         y: `+=${this.posOffset}`,
         duration: this.posDuration,
         yoyo: true,
+        delay: this.posDelay,  
         repeat: -1,
         ease: this.posEase
       });
@@ -80,7 +81,6 @@ export default class ObjectBounceAnimation extends UserComponent {
 
     // Scale bounce
     if (this.mode === "scale" || this.mode === "both") {
-    	console.log("reached scale");
       // Build tween props only for axes with a delta
       /** @type {Record<string, any>} */
       const props = {};
@@ -93,6 +93,7 @@ export default class ObjectBounceAnimation extends UserComponent {
           ...props,
           duration: this.scaleDuration,
           yoyo: true,
+          delay: this.scaleDelay,  
           repeat: -1,
           ease: this.scaleEase
         });

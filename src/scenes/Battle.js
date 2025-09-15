@@ -37,7 +37,9 @@ export default class Battle extends Phaser.Scene {
 		// warrior_p1 (components)
 		const warrior_p1ObjectBounceAnimation = new ObjectBounceAnimation(warrior_p1);
 		warrior_p1ObjectBounceAnimation.mode = "both";
-		warrior_p1ObjectBounceAnimation.posOffset = 10;
+		warrior_p1ObjectBounceAnimation.posEase = "Expo.easeIn";
+		warrior_p1ObjectBounceAnimation.scaleEase = "Expo.easeIn";
+		warrior_p1ObjectBounceAnimation.posDelay = 250;
 
 		this.warrior_p1 = warrior_p1;
 		this.warrior_p2 = warrior_p2;

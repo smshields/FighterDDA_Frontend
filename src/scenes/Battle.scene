@@ -37,7 +37,9 @@
                 "ObjectBounceAnimation"
             ],
             "ObjectBounceAnimation.mode": "both",
-            "ObjectBounceAnimation.posOffset": 10,
+            "ObjectBounceAnimation.posEase": "Expo.easeIn",
+            "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
+            "ObjectBounceAnimation.posDelay": 250,
             "texture": {
                 "key": "warrior"
             },
