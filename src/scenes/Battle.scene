@@ -18,7 +18,8 @@
         {
             "type": "Rectangle",
             "id": "d748cab7-a2ef-4c2f-9243-c494aeef538b",
-            "label": "rectangle_1",
+            "label": "background",
+            "displayName": "Background",
             "scaleX": 15,
             "scaleY": 8.5,
             "originX": 0,
@@ -29,34 +30,170 @@
             "height": 128
         },
         {
-            "type": "Image",
-            "id": "cb84052a-eee5-4045-ab90-38adf4f4986b",
-            "label": "warrior_p1",
-            "scope": "CLASS",
-            "components": [
-                "ObjectBounceAnimation"
-            ],
-            "ObjectBounceAnimation.mode": "both",
-            "ObjectBounceAnimation.posEase": "Expo.easeIn",
-            "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
-            "ObjectBounceAnimation.posDelay": 250,
-            "texture": {
-                "key": "warrior"
-            },
-            "x": 220,
-            "y": 230,
-            "flipX": true
+            "type": "Container",
+            "id": "76db04b7-1f60-4239-a3ee-166158389a2c",
+            "label": "action_menu",
+            "displayName": "Action Menu",
+            "y": 600,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "d4191fc1-f8db-4088-8f73-e212e55344f0",
+                    "label": "action_menu",
+                    "displayName": "Action Menu",
+                    "y": 230,
+                    "scaleX": 5.563164224190958,
+                    "scaleY": 1.9373375897746044,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "strokeColor": "#000000",
+                    "lineWidth": 2,
+                    "isStroked": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "3b4a847d-121b-494e-ba1c-d26eb51a289d",
+                    "label": "action_menu_label_Container",
+                    "displayName": "Action Menu Label Container",
+                    "x": 841,
+                    "scaleX": 4.9556534420716325,
+                    "scaleY": 1.2436903236788002,
+                    "isFilled": true,
+                    "width": 128,
+                    "height": 128
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "80d49e1c-5586-4434-8f17-d2e950914d56",
+                    "label": "action_menu_label",
+                    "displayName": "Action Menu Label",
+                    "x": 10,
+                    "y": 230,
+                    "text": "SELECT ACTION FOR CHARACTER\n",
+                    "font": "vcr_osd_mono_bold",
+                    "fontSize": -40
+                }
+            ]
         },
         {
-            "type": "Image",
-            "id": "f4ed6ff1-366d-4701-981a-2b8bd5766ba9",
-            "label": "warrior_p2",
-            "scope": "CLASS",
-            "texture": {
-                "key": "warrior"
-            },
+            "type": "Container",
+            "id": "6fe6bd79-bf07-47c1-b3a2-827a28b692e1",
+            "label": "characters_p1",
+            "displayName": "Player 1 Team",
+            "x": 220,
+            "y": 230,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "cb84052a-eee5-4045-ab90-38adf4f4986b",
+                    "label": "warrior_p1",
+                    "displayName": "P1 Warrior",
+                    "scope": "CLASS",
+                    "components": [
+                        "ObjectBounceAnimation"
+                    ],
+                    "ObjectBounceAnimation.mode": "both",
+                    "ObjectBounceAnimation.posEase": "Expo.easeIn",
+                    "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
+                    "ObjectBounceAnimation.posDelay": 250,
+                    "texture": {
+                        "key": "warrior"
+                    },
+                    "x": 10,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "fa40266c-dae5-43b6-853e-d24260bb5824",
+                    "label": "mage_p1",
+                    "displayName": "P1 Mage",
+                    "texture": {
+                        "key": "mage"
+                    },
+                    "x": 10,
+                    "y": 130,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "edbcbb3f-c685-47d4-a2f5-5541ece0dd66",
+                    "label": "priest_p1",
+                    "displayName": "P1 Priest",
+                    "texture": {
+                        "key": "priest"
+                    },
+                    "x": 10,
+                    "y": 270,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "1b988025-b7d7-4814-868d-e0d621cb7226",
+                    "label": "rogue_p1",
+                    "displayName": "P1 Rogue",
+                    "texture": {
+                        "key": "rogue"
+                    },
+                    "y": 400,
+                    "flipX": true
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "1d92f71a-8a9b-488b-8038-1a9d2554fd4e",
+            "label": "characters_p2",
+            "displayName": "Player 2 Team",
             "x": 1640,
-            "y": 230
+            "y": 230,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "f4ed6ff1-366d-4701-981a-2b8bd5766ba9",
+                    "label": "warrior_p2",
+                    "displayName": "P2 Warrior",
+                    "scope": "CLASS",
+                    "texture": {
+                        "key": "warrior"
+                    }
+                },
+                {
+                    "type": "Image",
+                    "id": "ed7a724b-cd57-44e9-97a3-b5bcf07c1808",
+                    "label": "mage_p2",
+                    "displayName": "P2 Mage",
+                    "texture": {
+                        "key": "mage"
+                    },
+                    "x": 10,
+                    "y": 140
+                },
+                {
+                    "type": "Image",
+                    "id": "78ca31c4-bf4b-44b1-92f4-1ab6b7f1311e",
+                    "label": "priest_p2",
+                    "displayName": "P2 Priest",
+                    "texture": {
+                        "key": "priest"
+                    },
+                    "x": 10,
+                    "y": 270
+                },
+                {
+                    "type": "Image",
+                    "id": "ce3ec146-1873-4d3b-9b2b-12211f74f19d",
+                    "label": "rogue_p2",
+                    "displayName": "P2 Rogue",
+                    "texture": {
+                        "key": "rogue"
+                    },
+                    "x": 20,
+                    "y": 410
+                }
+            ]
         }
     ],
     "plainObjects": [],

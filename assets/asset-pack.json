@@ -2,9 +2,31 @@
     "section1": {
         "files": [
             {
-                "url": "assets/dino.png",
-                "key": "dino",
-                "type": "image"
+                "url": "assets/characters/mage.png",
+                "type": "image",
+                "key": "mage"
+            },
+            {
+                "url": "assets/characters/priest.png",
+                "type": "image",
+                "key": "priest"
+            },
+            {
+                "url": "assets/characters/rogue.png",
+                "type": "image",
+                "key": "rogue"
+            },
+            {
+                "textureURL": "assets/fonts/vcr_osd_mono_0.png",
+                "fontDataURL": "assets/fonts/vcr_osd_mono.xml",
+                "type": "bitmapFont",
+                "key": "vcr_osd_mono"
+            },
+            {
+                "textureURL": "assets/fonts/vcr_osd_mono_bold_0.png",
+                "fontDataURL": "assets/fonts/vcr_osd_mono_bold.xml",
+                "type": "bitmapFont",
+                "key": "vcr_osd_mono_bold"
             },
             {
                 "url": "assets/characters/warrior.png",
