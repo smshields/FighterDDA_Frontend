@@ -17,6 +17,21 @@
                 "key": "rogue"
             },
             {
+                "url": "assets/ui/selection_arrow.png",
+                "type": "image",
+                "key": "selection_arrow"
+            },
+            {
+                "url": "assets/ui/selection_arrow_pressed.png",
+                "type": "image",
+                "key": "selection_arrow_pressed"
+            },
+            {
+                "url": "assets/ui/selection_arrow_selected.png",
+                "type": "image",
+                "key": "selection_arrow_selected"
+            },
+            {
                 "textureURL": "assets/fonts/vcr_osd_mono_0.png",
                 "fontDataURL": "assets/fonts/vcr_osd_mono.xml",
                 "type": "bitmapFont",

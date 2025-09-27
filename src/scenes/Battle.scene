@@ -3,8 +3,8 @@
     "sceneType": "SCENE",
     "settings": {
         "snapEnabled": true,
-        "snapWidth": 10,
-        "snapHeight": 10,
+        "snapWidth": 5,
+        "snapHeight": 5,
         "exportClass": true,
         "autoImport": true,
         "importFileExtension": true,
@@ -21,7 +21,7 @@
             "label": "background",
             "displayName": "Background",
             "scaleX": 15,
-            "scaleY": 8.5,
+            "scaleY": 8.45,
             "originX": 0,
             "originY": 0,
             "isFilled": true,
@@ -34,36 +34,47 @@
             "id": "76db04b7-1f60-4239-a3ee-166158389a2c",
             "label": "action_menu",
             "displayName": "Action Menu",
-            "y": 600,
+            "x": 10,
+            "y": 760,
             "list": [
                 {
                     "type": "Rectangle",
                     "id": "d4191fc1-f8db-4088-8f73-e212e55344f0",
-                    "label": "action_menu",
-                    "displayName": "Action Menu",
-                    "y": 230,
-                    "scaleX": 5.563164224190958,
-                    "scaleY": 1.9373375897746044,
+                    "label": "action_menu_background",
+                    "displayName": "Action Menu Background",
+                    "y": 10,
                     "originX": 0,
                     "originY": 0,
                     "isFilled": true,
                     "strokeColor": "#000000",
-                    "lineWidth": 2,
+                    "lineWidth": 10,
                     "isStroked": true,
-                    "width": 128,
-                    "height": 128
+                    "width": 600,
+                    "height": 300
+                },
+                {
+                    "type": "Container",
+                    "id": "3b4a847d-121b-494e-ba1c-d26eb51a289d",
+                    "label": "action_buttons_container",
+                    "displayName": "Action Buttons Container",
+                    "x": 841
                 },
                 {
                     "type": "Rectangle",
-                    "id": "3b4a847d-121b-494e-ba1c-d26eb51a289d",
-                    "label": "action_menu_label_Container",
-                    "displayName": "Action Menu Label Container",
-                    "x": 841,
-                    "scaleX": 4.9556534420716325,
-                    "scaleY": 1.2436903236788002,
+                    "id": "900e97f7-8eeb-4122-adec-cddf179d951f",
+                    "label": "action_menu_label_background",
+                    "displayName": "Action Menu Label Background",
+                    "x": 5,
+                    "y": 15,
+                    "originX": 0,
+                    "originY": 0,
                     "isFilled": true,
-                    "width": 128,
-                    "height": 128
+                    "fillColor": "#b4b4b4",
+                    "strokeColor": "#000000",
+                    "lineWidth": 5,
+                    "isStroked": true,
+                    "width": 590,
+                    "height": 50
                 },
                 {
                     "type": "BitmapText",
@@ -71,9 +82,10 @@
                     "label": "action_menu_label",
                     "displayName": "Action Menu Label",
                     "x": 10,
-                    "y": 230,
-                    "text": "SELECT ACTION FOR CHARACTER\n",
+                    "y": 20,
+                    "text": "SELECT CHARACTER ACTION\n",
                     "font": "vcr_osd_mono_bold",
+                    "align": 1,
                     "fontSize": -40
                 }
             ]
@@ -102,7 +114,8 @@
                     "texture": {
                         "key": "warrior"
                     },
-                    "x": 10,
+                    "x": 200,
+                    "y": -20,
                     "flipX": true
                 },
                 {
@@ -113,8 +126,8 @@
                     "texture": {
                         "key": "mage"
                     },
-                    "x": 10,
-                    "y": 130,
+                    "x": 195,
+                    "y": 120,
                     "flipX": true
                 },
                 {
@@ -125,8 +138,8 @@
                     "texture": {
                         "key": "priest"
                     },
-                    "x": 10,
-                    "y": 270,
+                    "x": 200,
+                    "y": 255,
                     "flipX": true
                 },
                 {
@@ -137,6 +150,7 @@
                     "texture": {
                         "key": "rogue"
                     },
+                    "x": 195,
                     "y": 400,
                     "flipX": true
                 }
@@ -158,7 +172,9 @@
                     "scope": "CLASS",
                     "texture": {
                         "key": "warrior"
-                    }
+                    },
+                    "x": -140,
+                    "y": -5
                 },
                 {
                     "type": "Image",
@@ -168,8 +184,8 @@
                     "texture": {
                         "key": "mage"
                     },
-                    "x": 10,
-                    "y": 140
+                    "x": -140,
+                    "y": 135
                 },
                 {
                     "type": "Image",
@@ -179,7 +195,7 @@
                     "texture": {
                         "key": "priest"
                     },
-                    "x": 10,
+                    "x": -145,
                     "y": 270
                 },
                 {
@@ -190,10 +206,233 @@
                     "texture": {
                         "key": "rogue"
                     },
-                    "x": 20,
-                    "y": 410
+                    "x": -135,
+                    "y": 415
                 }
             ]
+        },
+        {
+            "type": "Container",
+            "id": "3fe29812-9653-4a5d-86a0-5466bcf4e479",
+            "label": "target_menu",
+            "displayName": "Target Menu",
+            "x": -100,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "df99ec99-6f9c-482f-b70a-4f542541c537",
+                    "label": "target_menu_background",
+                    "displayName": "Target Menu Background",
+                    "x": 730,
+                    "y": 770,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "strokeColor": "#000000",
+                    "lineWidth": 10,
+                    "isStroked": true,
+                    "width": 450,
+                    "height": 300
+                },
+                {
+                    "type": "Image",
+                    "id": "0162af25-004d-45ff-967f-de2e79f64e03",
+                    "label": "target_selection_arrow",
+                    "texture": {
+                        "key": "selection_arrow"
+                    },
+                    "x": 770,
+                    "y": 855,
+                    "scaleX": 0.684678102714157,
+                    "scaleY": 0.684678102714157
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "89828088-3483-4f4e-b9a4-de2234d37cf0",
+                    "label": "action_menu_label_background_1",
+                    "displayName": "Action Menu Label Background",
+                    "x": 735,
+                    "y": 775,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#b4b4b4",
+                    "strokeColor": "#000000",
+                    "lineWidth": 5,
+                    "isStroked": true,
+                    "width": 440,
+                    "height": 50
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "eebc40f4-cf14-422c-9e70-6b36254a2d66",
+                    "label": "action_menu_label_1",
+                    "displayName": "Action Menu Label",
+                    "x": 790,
+                    "y": 780,
+                    "text": "SELECT TARGET",
+                    "font": "vcr_osd_mono_bold",
+                    "align": 1,
+                    "fontSize": -40
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "b3981320-e8fd-4ddc-b90c-7e3403297816",
+                    "label": "action_menu_label_2",
+                    "displayName": "Action Menu Label",
+                    "x": 800,
+                    "y": 835,
+                    "text": "ENEMY WARRIOR",
+                    "font": "vcr_osd_mono_bold",
+                    "align": 1,
+                    "fontSize": -40
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "baf3f1b3-1b95-4ec2-a50f-48b124c6b513",
+                    "label": "action_menu_label_3",
+                    "displayName": "Action Menu Label",
+                    "x": 800,
+                    "y": 1015,
+                    "text": "ENEMY ROGUE",
+                    "font": "vcr_osd_mono_bold",
+                    "align": 1,
+                    "fontSize": -40
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "70e3a757-a6e3-40c0-8bea-735dff0f3f64",
+                    "label": "action_menu_label_4",
+                    "displayName": "Action Menu Label",
+                    "x": 800,
+                    "y": 955,
+                    "text": "ENEMY PRIEST",
+                    "font": "vcr_osd_mono_bold",
+                    "align": 1,
+                    "fontSize": -40
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "e02b8f3d-054d-44ff-ba4c-e610914fa834",
+                    "label": "action_menu_label_5",
+                    "displayName": "Action Menu Label",
+                    "x": 800,
+                    "y": 895,
+                    "text": "ENEMY MAGE",
+                    "font": "vcr_osd_mono_bold",
+                    "align": 1,
+                    "fontSize": -40
+                },
+                {
+                    "type": "Image",
+                    "id": "85a5a0f1-ea31-42f8-92dd-13539f4cd797",
+                    "label": "target_selection_arrow_1",
+                    "texture": {
+                        "key": "selection_arrow"
+                    },
+                    "x": 770,
+                    "y": 915,
+                    "scaleX": 0.684678102714157,
+                    "scaleY": 0.684678102714157
+                },
+                {
+                    "type": "Image",
+                    "id": "5dc647d7-64d0-438a-8188-35fecad2b56b",
+                    "label": "target_selection_arrow_2",
+                    "texture": {
+                        "key": "selection_arrow"
+                    },
+                    "x": 770,
+                    "y": 975,
+                    "scaleX": 0.684678102714157,
+                    "scaleY": 0.684678102714157
+                },
+                {
+                    "type": "Image",
+                    "id": "874ef7e1-4662-49cf-80e9-1ba1f09b3f56",
+                    "label": "target_selection_arrow_3",
+                    "texture": {
+                        "key": "selection_arrow"
+                    },
+                    "x": 770,
+                    "y": 1035,
+                    "scaleX": 0.684678102714157,
+                    "scaleY": 0.684678102714157
+                }
+            ]
+        },
+        {
+            "type": "Rectangle",
+            "id": "6a5f0f8f-fb48-4b7a-b1b5-b6409b8ec0c3",
+            "label": "notification_background",
+            "displayName": "Action Menu Background",
+            "x": 10,
+            "y": 10,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "strokeColor": "#000000",
+            "lineWidth": 10,
+            "isStroked": true,
+            "width": 1900,
+            "height": 90
+        },
+        {
+            "type": "Rectangle",
+            "id": "3566d9cb-f284-485e-bd54-8dc83d2702f7",
+            "label": "notification_background_1",
+            "displayName": "Action Menu Background",
+            "x": 1100,
+            "y": 770,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "strokeColor": "#000000",
+            "lineWidth": 10,
+            "isStroked": true,
+            "width": 810,
+            "height": 300
+        },
+        {
+            "type": "BitmapText",
+            "id": "c72173ae-5ad8-4b77-ace8-f068358cad45",
+            "label": "action_menu_label_6",
+            "displayName": "Action Menu Label",
+            "x": 75,
+            "y": 20,
+            "text": "THIS IS A SAMPLE NOTIFICATION. DAMAGE TAKEN!",
+            "font": "vcr_osd_mono_bold",
+            "align": 1,
+            "fontSize": -64
+        },
+        {
+            "type": "Rectangle",
+            "id": "3a4a8bf6-1c0e-4a79-9ad1-578f3ebf0da3",
+            "label": "action_menu_label_background_2",
+            "displayName": "Action Menu Label Background",
+            "x": 1105,
+            "y": 775,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#b4b4b4",
+            "strokeColor": "#000000",
+            "lineWidth": 5,
+            "isStroked": true,
+            "width": 800,
+            "height": 50
+        },
+        {
+            "type": "BitmapText",
+            "id": "328e1bb0-2ae3-4e19-bf51-e496634b52ef",
+            "label": "action_menu_label_7",
+            "displayName": "Action Menu Label",
+            "x": 1350,
+            "y": 780,
+            "text": "ACTION QUEUE",
+            "font": "vcr_osd_mono_bold",
+            "align": 1,
+            "fontSize": -40
         }
     ],
     "plainObjects": [],
