@@ -2,14 +2,64 @@
     "section1": {
         "files": [
             {
+                "url": "assets/ui/attack_icon.png",
+                "type": "image",
+                "key": "attack_icon"
+            },
+            {
+                "url": "assets/tile/backgroundtile.png",
+                "type": "image",
+                "key": "backgroundtile"
+            },
+            {
+                "url": "assets/tile/backgroundtile2.png",
+                "type": "image",
+                "key": "backgroundtile2"
+            },
+            {
+                "url": "assets/tile/backgroundtile3.png",
+                "type": "image",
+                "key": "backgroundtile3"
+            },
+            {
+                "url": "assets/tile/backgroundtile4.png",
+                "type": "image",
+                "key": "backgroundtile4"
+            },
+            {
+                "url": "assets/tile/backgroundtile5.png",
+                "type": "image",
+                "key": "backgroundtile5"
+            },
+            {
+                "url": "assets/ui/defend_icon.png",
+                "type": "image",
+                "key": "defend_icon"
+            },
+            {
+                "url": "assets/ui/heal_icon.png",
+                "type": "image",
+                "key": "heal_icon"
+            },
+            {
                 "url": "assets/characters/mage.png",
                 "type": "image",
                 "key": "mage"
             },
             {
+                "url": "assets/ui/mattack_icon.png",
+                "type": "image",
+                "key": "mattack_icon"
+            },
+            {
                 "url": "assets/characters/priest.png",
                 "type": "image",
                 "key": "priest"
+            },
+            {
+                "url": "assets/characters/priest_invert.png",
+                "type": "image",
+                "key": "priest_invert"
             },
             {
                 "url": "assets/characters/rogue.png",
