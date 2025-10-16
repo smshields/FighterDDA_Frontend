@@ -99,7 +99,7 @@ export default class Battle extends Phaser.Scene {
 				layers: [
 					{
 						type: "tilelayer",
-						name: "layer",
+						name: "backdground_layer",
 						width: 96,
 						height: 54,
 						opacity: 1,
@@ -115,14 +115,103 @@ export default class Battle extends Phaser.Scene {
 		background.addTilesetImage("backgroundtile4");
 		background.addTilesetImage("backgroundtile5");
 
-		// layer
-		background.createLayer("layer", ["backgroundtile5","backgroundtile4"], 0, 0);
+		// backdground_layer
+		const backdground_layer = background.createLayer("backdground_layer", ["backgroundtile5","backgroundtile4"], 0, 0);
+		backdground_layer.name = "backdground_layer";
+
+		// action_queue_container
+		const action_queue_container = this.add.container(1100, 770);
+
+		// action_queue_background
+		const action_queue_background = this.add.rectangle(0, 0, 810, 300);
+		action_queue_background.name = "action_queue_background";
+		action_queue_background.setOrigin(0, 0);
+		action_queue_background.isFilled = true;
+		action_queue_background.isStroked = true;
+		action_queue_background.strokeColor = 0;
+		action_queue_background.lineWidth = 10;
+		action_queue_container.add(action_queue_background);
+
+		// action_queue_history
+		const action_queue_history = this.add.container(120, 5);
+		action_queue_history.name = "action_queue_history";
+		action_queue_container.add(action_queue_history);
+
+		// action_queue_history_title_background
+		const action_queue_history_title_background = this.add.rectangle(0, 0, 685, 50);
+		action_queue_history_title_background.name = "action_queue_history_title_background";
+		action_queue_history_title_background.setOrigin(0, 0);
+		action_queue_history_title_background.isFilled = true;
+		action_queue_history_title_background.fillColor = 11842740;
+		action_queue_history_title_background.isStroked = true;
+		action_queue_history_title_background.strokeColor = 0;
+		action_queue_history_title_background.lineWidth = 5;
+		action_queue_history.add(action_queue_history_title_background);
+
+		// action_queue_history_title
+		const action_queue_history_title = this.add.bitmapText(85, 5, "vcr_osd_mono_bold", "ACTION QUEUE HISTORY");
+		action_queue_history_title.name = "action_queue_history_title";
+		action_queue_history_title.text = "ACTION QUEUE HISTORY";
+		action_queue_history_title.fontSize = -40;
+		action_queue_history_title.align = 1;
+		action_queue_history.add(action_queue_history_title);
+
+		// action_queue_history_background
+		const action_queue_history_background = this.add.rectangle(0, 55, 685, 235);
+		action_queue_history_background.name = "action_queue_history_background";
+		action_queue_history_background.setOrigin(0, 0);
+		action_queue_history_background.isFilled = true;
+		action_queue_history_background.isStroked = true;
+		action_queue_history_background.strokeColor = 0;
+		action_queue_history_background.lineWidth = 5;
+		action_queue_history.add(action_queue_history_background);
+
+		// action_queue_next
+		const action_queue_next = this.add.container(5, 5);
+		action_queue_next.name = "action_queue_next";
+		action_queue_container.add(action_queue_next);
+
+		// action_queue_next_title_background
+		const action_queue_next_title_background = this.add.rectangle(0, 0, 110, 50);
+		action_queue_next_title_background.name = "action_queue_next_title_background";
+		action_queue_next_title_background.setOrigin(0, 0);
+		action_queue_next_title_background.isFilled = true;
+		action_queue_next_title_background.fillColor = 11842740;
+		action_queue_next_title_background.isStroked = true;
+		action_queue_next_title_background.strokeColor = 0;
+		action_queue_next_title_background.lineWidth = 5;
+		action_queue_next.add(action_queue_next_title_background);
+
+		// action_queue_next_background
+		const action_queue_next_background = this.add.rectangle(0, 55, 110, 235);
+		action_queue_next_background.name = "action_queue_next_background";
+		action_queue_next_background.setOrigin(0, 0);
+		action_queue_next_background.isFilled = true;
+		action_queue_next_background.isStroked = true;
+		action_queue_next_background.strokeColor = 0;
+		action_queue_next_background.lineWidth = 5;
+		action_queue_next.add(action_queue_next_background);
+
+		// action_queue_next_title
+		const action_queue_next_title = this.add.bitmapText(5, 5, "vcr_osd_mono_bold", "NEXT");
+		action_queue_next_title.name = "action_queue_next_title";
+		action_queue_next_title.text = "NEXT";
+		action_queue_next_title.fontSize = -40;
+		action_queue_next_title.align = 1;
+		action_queue_next.add(action_queue_next_title);
 
 		// action_menu
 		const action_menu = this.add.container(10, 760);
+		action_menu.name = "action_menu";
+
+		// action_buttons_container
+		const action_buttons_container = this.add.container(841, 0);
+		action_buttons_container.name = "action_buttons_container";
+		action_menu.add(action_buttons_container);
 
 		// action_menu_background
 		const action_menu_background = this.add.rectangle(0, 10, 600, 300);
+		action_menu_background.name = "action_menu_background";
 		action_menu_background.setOrigin(0, 0);
 		action_menu_background.isFilled = true;
 		action_menu_background.isStroked = true;
@@ -130,107 +219,32 @@ export default class Battle extends Phaser.Scene {
 		action_menu_background.lineWidth = 10;
 		action_menu.add(action_menu_background);
 
-		// action_buttons_container
-		const action_buttons_container = this.add.container(841, 0);
-		action_menu.add(action_buttons_container);
+		// action_menu_title_background
+		const action_menu_title_background = this.add.rectangle(5, 15, 590, 50);
+		action_menu_title_background.name = "action_menu_title_background";
+		action_menu_title_background.setOrigin(0, 0);
+		action_menu_title_background.isFilled = true;
+		action_menu_title_background.fillColor = 11842740;
+		action_menu_title_background.isStroked = true;
+		action_menu_title_background.strokeColor = 0;
+		action_menu_title_background.lineWidth = 5;
+		action_menu.add(action_menu_title_background);
 
-		// action_menu_label_background
-		const action_menu_label_background = this.add.rectangle(5, 15, 590, 50);
-		action_menu_label_background.setOrigin(0, 0);
-		action_menu_label_background.isFilled = true;
-		action_menu_label_background.fillColor = 11842740;
-		action_menu_label_background.isStroked = true;
-		action_menu_label_background.strokeColor = 0;
-		action_menu_label_background.lineWidth = 5;
-		action_menu.add(action_menu_label_background);
-
-		// action_menu_label
-		const action_menu_label = this.add.bitmapText(10, 20, "vcr_osd_mono_bold", "SELECT CHARACTER ACTION\n");
-		action_menu_label.text = "SELECT CHARACTER ACTION\n";
-		action_menu_label.fontSize = -40;
-		action_menu_label.align = 1;
-		action_menu.add(action_menu_label);
-
-		// characters_p1
-		const characters_p1 = this.add.container(220, 230);
-
-		// P1_Rogue
-		const p1_Rogue = this.add.container(-220, -105);
-		characters_p1.add(p1_Rogue);
-
-		// rogue_p1
-		const rogue_p1 = this.add.image(415, 55, "rogue");
-		rogue_p1.flipX = true;
-		p1_Rogue.add(rogue_p1);
-
-		// glowFx_2
-		rogue_p1.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
-
-		// status_bar
-		const status_bar = new StatusBar(this, 0, 0);
-		p1_Rogue.add(status_bar);
-
-		// P1_Priest
-		const p1_Priest = this.add.container(-220, 230);
-		characters_p1.add(p1_Priest);
-
-		// priest_p1
-		const priest_p1 = this.add.image(415, 60, "priest");
-		priest_p1.flipX = true;
-		priest_p1.alpha = 0.9;
-		priest_p1.alphaTopLeft = 0.9;
-		priest_p1.alphaTopRight = 0.9;
-		priest_p1.alphaBottomLeft = 0.9;
-		priest_p1.alphaBottomRight = 0.9;
-		p1_Priest.add(priest_p1);
-
-		// glowFx
-		priest_p1.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
-
-		// statusBar_1
-		const statusBar_1 = new StatusBar(this, 0, 0);
-		p1_Priest.add(statusBar_1);
-
-		// P1_Mage
-		const p1_Mage = this.add.container(-220, 65);
-		characters_p1.add(p1_Mage);
-
-		// mage_p1
-		const mage_p1 = this.add.image(415, 55, "mage");
-		mage_p1.flipX = true;
-		p1_Mage.add(mage_p1);
-
-		// glowFx_1
-		mage_p1.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
-
-		// statusBar
-		const statusBar = new StatusBar(this, 0, 0);
-		p1_Mage.add(statusBar);
-
-		// P1_Warrior
-		const p1_Warrior = this.add.container(-220, 405);
-		characters_p1.add(p1_Warrior);
-
-		// warrior_p1
-		const warrior_p1 = this.add.image(420, 55, "warrior");
-		warrior_p1.flipX = true;
-		p1_Warrior.add(warrior_p1);
-
-		// glowFx_3
-		warrior_p1.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
-
-		// statusBar_2
-		const statusBar_2 = new StatusBar(this, 0, 0);
-		p1_Warrior.add(statusBar_2);
-
-		// characters_p2
-		this.add.container(1640, 230);
+		// action_menu_title
+		const action_menu_title = this.add.bitmapText(10, 20, "vcr_osd_mono_bold", "SELECT CHARACTER ACTION\n");
+		action_menu_title.name = "action_menu_title";
+		action_menu_title.text = "SELECT CHARACTER ACTION\n";
+		action_menu_title.fontSize = -40;
+		action_menu_title.align = 1;
+		action_menu.add(action_menu_title);
 
 		// target_menu
-		const target_menu = this.add.container(-100, 0);
+		const target_menu = this.add.container(630, 770);
+		target_menu.name = "target_menu";
 
 		// target_menu_background
-		const target_menu_background = this.add.rectangle(730, 770, 450, 300);
+		const target_menu_background = this.add.rectangle(0, 0, 450, 300);
+		target_menu_background.name = "target_menu_background";
 		target_menu_background.setOrigin(0, 0);
 		target_menu_background.isFilled = true;
 		target_menu_background.isStroked = true;
@@ -238,148 +252,276 @@ export default class Battle extends Phaser.Scene {
 		target_menu_background.lineWidth = 10;
 		target_menu.add(target_menu_background);
 
-		// target_selection_arrow
-		const target_selection_arrow = this.add.image(770, 855, "selection_arrow");
-		target_selection_arrow.scaleX = 0.684678102714157;
-		target_selection_arrow.scaleY = 0.684678102714157;
-		target_menu.add(target_selection_arrow);
+		// target_title_background
+		const target_title_background = this.add.rectangle(5, 5, 440, 50);
+		target_title_background.name = "target_title_background";
+		target_title_background.setOrigin(0, 0);
+		target_title_background.isFilled = true;
+		target_title_background.fillColor = 11842740;
+		target_title_background.isStroked = true;
+		target_title_background.strokeColor = 0;
+		target_title_background.lineWidth = 5;
+		target_menu.add(target_title_background);
 
-		// action_menu_label_background_1
-		const action_menu_label_background_1 = this.add.rectangle(735, 775, 440, 50);
-		action_menu_label_background_1.setOrigin(0, 0);
-		action_menu_label_background_1.isFilled = true;
-		action_menu_label_background_1.fillColor = 11842740;
-		action_menu_label_background_1.isStroked = true;
-		action_menu_label_background_1.strokeColor = 0;
-		action_menu_label_background_1.lineWidth = 5;
-		target_menu.add(action_menu_label_background_1);
+		// target_title
+		const target_title = this.add.bitmapText(60, 10, "vcr_osd_mono_bold", "SELECT TARGET");
+		target_title.name = "target_title";
+		target_title.text = "SELECT TARGET";
+		target_title.fontSize = -40;
+		target_title.align = 1;
+		target_menu.add(target_title);
 
-		// action_menu_label_1
-		const action_menu_label_1 = this.add.bitmapText(790, 780, "vcr_osd_mono_bold", "SELECT TARGET");
-		action_menu_label_1.text = "SELECT TARGET";
-		action_menu_label_1.fontSize = -40;
-		action_menu_label_1.align = 1;
-		target_menu.add(action_menu_label_1);
+		// rogue_target
+		const rogue_target = this.add.container(40, 245);
+		rogue_target.name = "rogue_target";
+		target_menu.add(rogue_target);
 
-		// action_menu_label_2
-		const action_menu_label_2 = this.add.bitmapText(800, 835, "vcr_osd_mono_bold", "ENEMY WARRIOR");
-		action_menu_label_2.text = "ENEMY WARRIOR";
-		action_menu_label_2.fontSize = -40;
-		action_menu_label_2.align = 1;
-		target_menu.add(action_menu_label_2);
+		// rogue_target_label
+		const rogue_target_label = this.add.bitmapText(30, 0, "vcr_osd_mono_bold", "ENEMY ROGUE");
+		rogue_target_label.name = "rogue_target_label";
+		rogue_target_label.text = "ENEMY ROGUE";
+		rogue_target_label.fontSize = -40;
+		rogue_target_label.align = 1;
+		rogue_target.add(rogue_target_label);
 
-		// action_menu_label_3
-		const action_menu_label_3 = this.add.bitmapText(800, 1015, "vcr_osd_mono_bold", "ENEMY ROGUE");
-		action_menu_label_3.text = "ENEMY ROGUE";
-		action_menu_label_3.fontSize = -40;
-		action_menu_label_3.align = 1;
-		target_menu.add(action_menu_label_3);
+		// rogue_target_arrow
+		const rogue_target_arrow = this.add.image(0, 20, "selection_arrow");
+		rogue_target_arrow.name = "rogue_target_arrow";
+		rogue_target_arrow.scaleX = 0.684678102714157;
+		rogue_target_arrow.scaleY = 0.684678102714157;
+		rogue_target.add(rogue_target_arrow);
 
-		// action_menu_label_4
-		const action_menu_label_4 = this.add.bitmapText(800, 955, "vcr_osd_mono_bold", "ENEMY PRIEST");
-		action_menu_label_4.text = "ENEMY PRIEST";
-		action_menu_label_4.fontSize = -40;
-		action_menu_label_4.align = 1;
-		target_menu.add(action_menu_label_4);
+		// priest_target
+		const priest_target = this.add.container(40, 185);
+		priest_target.name = "priest_target";
+		target_menu.add(priest_target);
 
-		// action_menu_label_5
-		const action_menu_label_5 = this.add.bitmapText(800, 895, "vcr_osd_mono_bold", "ENEMY MAGE");
-		action_menu_label_5.text = "ENEMY MAGE";
-		action_menu_label_5.fontSize = -40;
-		action_menu_label_5.align = 1;
-		target_menu.add(action_menu_label_5);
+		// priest_target_label
+		const priest_target_label = this.add.bitmapText(30, 0, "vcr_osd_mono_bold", "ENEMY PRIEST");
+		priest_target_label.name = "priest_target_label";
+		priest_target_label.text = "ENEMY PRIEST";
+		priest_target_label.fontSize = -40;
+		priest_target_label.align = 1;
+		priest_target.add(priest_target_label);
 
-		// target_selection_arrow_1
-		const target_selection_arrow_1 = this.add.image(770, 915, "selection_arrow");
-		target_selection_arrow_1.scaleX = 0.684678102714157;
-		target_selection_arrow_1.scaleY = 0.684678102714157;
-		target_menu.add(target_selection_arrow_1);
+		// priest_target_arrow
+		const priest_target_arrow = this.add.image(0, 20, "selection_arrow");
+		priest_target_arrow.name = "priest_target_arrow";
+		priest_target_arrow.scaleX = 0.684678102714157;
+		priest_target_arrow.scaleY = 0.684678102714157;
+		priest_target.add(priest_target_arrow);
 
-		// target_selection_arrow_2
-		const target_selection_arrow_2 = this.add.image(770, 975, "selection_arrow");
-		target_selection_arrow_2.scaleX = 0.684678102714157;
-		target_selection_arrow_2.scaleY = 0.684678102714157;
-		target_menu.add(target_selection_arrow_2);
+		// mage_target
+		const mage_target = this.add.container(40, 125);
+		mage_target.name = "mage_target";
+		target_menu.add(mage_target);
 
-		// target_selection_arrow_3
-		const target_selection_arrow_3 = this.add.image(770, 1035, "selection_arrow");
-		target_selection_arrow_3.scaleX = 0.684678102714157;
-		target_selection_arrow_3.scaleY = 0.684678102714157;
-		target_menu.add(target_selection_arrow_3);
+		// mage_target_label
+		const mage_target_label = this.add.bitmapText(30, 0, "vcr_osd_mono_bold", "ENEMY MAGE");
+		mage_target_label.text = "ENEMY MAGE";
+		mage_target_label.fontSize = -40;
+		mage_target_label.align = 1;
+		mage_target.add(mage_target_label);
 
-		// characters_p
-		const characters_p = this.add.container(895, 225);
+		// mage_target_arrow
+		const mage_target_arrow = this.add.image(0, 20, "selection_arrow");
+		mage_target_arrow.name = "mage_target_arrow";
+		mage_target_arrow.scaleX = 0.684678102714157;
+		mage_target_arrow.scaleY = 0.684678102714157;
+		mage_target.add(mage_target_arrow);
 
-		// P1_Rogue_1
-		const p1_Rogue_1 = this.add.container(-220, -105);
-		characters_p.add(p1_Rogue_1);
+		// warrior_target
+		const warrior_target = this.add.container(40, 65);
+		warrior_target.name = "warrior_target";
+		target_menu.add(warrior_target);
 
-		// rogue_p
-		const rogue_p = this.add.image(825, 55, "rogue");
-		p1_Rogue_1.add(rogue_p);
+		// warrior_target_arrow
+		const warrior_target_arrow = this.add.image(0, 20, "selection_arrow");
+		warrior_target_arrow.name = "warrior_target_arrow";
+		warrior_target_arrow.scaleX = 0.684678102714157;
+		warrior_target_arrow.scaleY = 0.684678102714157;
+		warrior_target.add(warrior_target_arrow);
+
+		// warrior_target_label
+		const warrior_target_label = this.add.bitmapText(30, 0, "vcr_osd_mono_bold", "ENEMY WARRIOR");
+		warrior_target_label.name = "warrior_target_label";
+		warrior_target_label.text = "ENEMY WARRIOR";
+		warrior_target_label.fontSize = -40;
+		warrior_target_label.align = 1;
+		warrior_target.add(warrior_target_label);
+
+		// p1_team
+		const p1_team = this.add.container(220, 230);
+		p1_team.name = "p1_team";
+
+		// p1_Rogue
+		const p1_Rogue = this.add.container(-220, -105);
+		p1_Rogue.name = "p1_Rogue";
+		p1_team.add(p1_Rogue);
+
+		// p1_rogue_sprite
+		const p1_rogue_sprite = this.add.image(515, 55, "rogue");
+		p1_rogue_sprite.name = "p1_rogue_sprite";
+		p1_rogue_sprite.flipX = true;
+		p1_Rogue.add(p1_rogue_sprite);
+
+		// glowFx_2
+		p1_rogue_sprite.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
+
+		// p1_rogue_status_bar
+		const p1_rogue_status_bar = new StatusBar(this, 0, 0);
+		p1_rogue_status_bar.name = "p1_rogue_status_bar";
+		p1_Rogue.add(p1_rogue_status_bar);
+
+		// p1_Priest
+		const p1_Priest = this.add.container(-220, 230);
+		p1_Priest.name = "p1_Priest";
+		p1_team.add(p1_Priest);
+
+		// p1_priest_sprite
+		const p1_priest_sprite = this.add.image(515, 60, "priest");
+		p1_priest_sprite.name = "p1_priest_sprite";
+		p1_priest_sprite.flipX = true;
+		p1_priest_sprite.alpha = 0.9;
+		p1_priest_sprite.alphaTopLeft = 0.9;
+		p1_priest_sprite.alphaTopRight = 0.9;
+		p1_priest_sprite.alphaBottomLeft = 0.9;
+		p1_priest_sprite.alphaBottomRight = 0.9;
+		p1_Priest.add(p1_priest_sprite);
+
+		// glowFx
+		p1_priest_sprite.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
+
+		// p1_priest_status_bar
+		const p1_priest_status_bar = new StatusBar(this, 0, 0);
+		p1_priest_status_bar.name = "p1_priest_status_bar";
+		p1_Priest.add(p1_priest_status_bar);
+
+		// p1_Mage
+		const p1_Mage = this.add.container(-220, 65);
+		p1_Mage.name = "p1_Mage";
+		p1_team.add(p1_Mage);
+
+		// p1_mage_sprite
+		const p1_mage_sprite = this.add.image(515, 55, "mage");
+		p1_mage_sprite.name = "p1_mage_sprite";
+		p1_mage_sprite.flipX = true;
+		p1_Mage.add(p1_mage_sprite);
+
+		// glowFx_1
+		p1_mage_sprite.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
+
+		// p1_mage_status_bar
+		const p1_mage_status_bar = new StatusBar(this, 0, 0);
+		p1_mage_status_bar.name = "p1_mage_status_bar";
+		p1_Mage.add(p1_mage_status_bar);
+
+		// p1_warrior
+		const p1_warrior = this.add.container(-220, 405);
+		p1_warrior.name = "p1_warrior";
+		p1_team.add(p1_warrior);
+
+		// p1_warrior_sprite
+		const p1_warrior_sprite = this.add.image(520, 55, "warrior");
+		p1_warrior_sprite.name = "p1_warrior_sprite";
+		p1_warrior_sprite.flipX = true;
+		p1_warrior.add(p1_warrior_sprite);
+
+		// glowFx_3
+		p1_warrior_sprite.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
+
+		// p1_warrior_status_bar
+		const p1_warrior_status_bar = new StatusBar(this, 0, 0);
+		p1_warrior_status_bar.name = "p1_warrior_status_bar";
+		p1_warrior.add(p1_warrior_status_bar);
+
+		// p2_team
+		const p2_team = this.add.container(1400, 125);
+		p2_team.name = "p2_team";
+
+		// p2_rogue
+		const p2_rogue = this.add.container(0, 0);
+		p2_rogue.name = "p2_rogue";
+		p2_team.add(p2_rogue);
+
+		// p2_rogue_sprite
+		const p2_rogue_sprite = this.add.image(0, 50, "rogue");
+		p2_rogue_sprite.name = "p2_rogue_sprite";
+		p2_rogue.add(p2_rogue_sprite);
 
 		// glowFx_6
-		rogue_p.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
+		p2_rogue_sprite.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
-		// status_bar_1
-		const status_bar_1 = new StatusBar(this, 910, 5);
-		p1_Rogue_1.add(status_bar_1);
+		// p2_rogue_status_bar
+		const p2_rogue_status_bar = new StatusBar(this, 185, 0);
+		p2_rogue_status_bar.name = "p2_rogue_status_bar";
+		p2_rogue.add(p2_rogue_status_bar);
 
-		// P1_Priest_1
-		const p1_Priest_1 = this.add.container(-220, 230);
-		characters_p.add(p1_Priest_1);
+		// p2_priest
+		const p2_priest = this.add.container(0, 335);
+		p2_priest.name = "p2_priest";
+		p2_team.add(p2_priest);
 
-		// priest_p
-		const priest_p = this.add.image(825, 60, "priest");
-		priest_p.alpha = 0.9;
-		priest_p.alphaTopLeft = 0.9;
-		priest_p.alphaTopRight = 0.9;
-		priest_p.alphaBottomLeft = 0.9;
-		priest_p.alphaBottomRight = 0.9;
-		p1_Priest_1.add(priest_p);
+		// p1_priest_sprite
+		const p1_priest_sprite = this.add.image(0, 55, "priest");
+		p1_priest_sprite.name = "p1_priest_sprite";
+		p1_priest_sprite.alpha = 0.9;
+		p1_priest_sprite.alphaTopLeft = 0.9;
+		p1_priest_sprite.alphaTopRight = 0.9;
+		p1_priest_sprite.alphaBottomLeft = 0.9;
+		p1_priest_sprite.alphaBottomRight = 0.9;
+		p2_priest.add(p1_priest_sprite);
 
 		// glowFx_7
-		priest_p.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
+		p1_priest_sprite.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
-		// statusBar_3
-		const statusBar_3 = new StatusBar(this, 910, 5);
-		p1_Priest_1.add(statusBar_3);
+		// p1_priest_status_bar
+		const p1_priest_status_bar = new StatusBar(this, 185, 0);
+		p1_priest_status_bar.name = "p1_priest_status_bar";
+		p2_priest.add(p1_priest_status_bar);
 
-		// P1_Mage_1
-		const p1_Mage_1 = this.add.container(-220, 65);
-		characters_p.add(p1_Mage_1);
+		// p2_mage
+		const p2_mage = this.add.container(0, 170);
+		p2_mage.name = "p2_mage";
+		p2_team.add(p2_mage);
 
-		// mage_p
-		const mage_p = this.add.image(825, 55, "mage");
-		p1_Mage_1.add(mage_p);
+		// p1_mage_sprite
+		const p1_mage_sprite = this.add.image(0, 50, "mage");
+		p1_mage_sprite.name = "p1_mage_sprite";
+		p2_mage.add(p1_mage_sprite);
 
 		// glowFx_8
-		mage_p.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
+		p1_mage_sprite.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
-		// statusBar_4
-		const statusBar_4 = new StatusBar(this, 910, 5);
-		p1_Mage_1.add(statusBar_4);
+		// p1_mage_status_bar
+		const p1_mage_status_bar = new StatusBar(this, 185, 0);
+		p1_mage_status_bar.name = "p1_mage_status_bar";
+		p2_mage.add(p1_mage_status_bar);
 
-		// P1_Warrior_1
-		const p1_Warrior_1 = this.add.container(-220, 405);
-		characters_p.add(p1_Warrior_1);
+		// p2_warrior
+		const p2_warrior = this.add.container(5, 510);
+		p2_warrior.name = "p2_warrior";
+		p2_team.add(p2_warrior);
 
-		// warrior_p
-		const warrior_p = this.add.image(830, 55, "warrior");
-		p1_Warrior_1.add(warrior_p);
+		// p2_warrior_sprite
+		const p2_warrior_sprite = this.add.image(0, 50, "warrior");
+		p2_warrior_sprite.name = "p2_warrior_sprite";
+		p2_warrior.add(p2_warrior_sprite);
 
 		// glowFx_9
-		warrior_p.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
+		p2_warrior_sprite.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
-		// statusBar_5
-		const statusBar_5 = new StatusBar(this, 910, 5);
-		p1_Warrior_1.add(statusBar_5);
+		// p2_warrior_status_bar
+		const p2_warrior_status_bar = new StatusBar(this, 180, 0);
+		p2_warrior_status_bar.name = "p2_warrior_status_bar";
+		p2_warrior.add(p2_warrior_status_bar);
 
 		// notifications
 		const notifications = this.add.container(10, 10);
 
 		// notification_background
 		const notification_background = this.add.rectangle(0, 0, 1900, 90);
+		notification_background.name = "notification_background";
 		notification_background.setOrigin(0, 0);
 		notification_background.isFilled = true;
 		notification_background.isStroked = true;
@@ -387,93 +529,39 @@ export default class Battle extends Phaser.Scene {
 		notification_background.lineWidth = 10;
 		notifications.add(notification_background);
 
-		// action_menu_label_6
-		const action_menu_label_6 = this.add.bitmapText(65, 10, "vcr_osd_mono_bold", "THIS IS A SAMPLE NOTIFICATION. DAMAGE TAKEN!");
-		action_menu_label_6.text = "THIS IS A SAMPLE NOTIFICATION. DAMAGE TAKEN!";
-		action_menu_label_6.fontSize = -64;
-		action_menu_label_6.align = 1;
-		notifications.add(action_menu_label_6);
+		// notification
+		const notification = this.add.bitmapText(65, 10, "vcr_osd_mono_bold", "THIS IS A SAMPLE NOTIFICATION. DAMAGE TAKEN!");
+		notification.name = "notification";
+		notification.text = "THIS IS A SAMPLE NOTIFICATION. DAMAGE TAKEN!";
+		notification.fontSize = -64;
+		notification.align = 1;
+		notifications.add(notification);
 
-		// action_queue_container
-		const action_queue_container = this.add.container(1100, 770);
+		// p1_warrior_sprite (components)
+		const p1_warrior_spriteObjectBounceAnimation = new ObjectBounceAnimation(p1_warrior_sprite);
+		p1_warrior_spriteObjectBounceAnimation.mode = "both";
+		p1_warrior_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
+		p1_warrior_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
+		p1_warrior_spriteObjectBounceAnimation.posDelay = 250;
 
-		// notification_background_1
-		const notification_background_1 = this.add.rectangle(0, 0, 810, 300);
-		notification_background_1.setOrigin(0, 0);
-		notification_background_1.isFilled = true;
-		notification_background_1.isStroked = true;
-		notification_background_1.strokeColor = 0;
-		notification_background_1.lineWidth = 10;
-		action_queue_container.add(notification_background_1);
+		// p2_warrior_sprite (components)
+		const p2_warrior_spriteObjectBounceAnimation = new ObjectBounceAnimation(p2_warrior_sprite);
+		p2_warrior_spriteObjectBounceAnimation.mode = "both";
+		p2_warrior_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
+		p2_warrior_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
+		p2_warrior_spriteObjectBounceAnimation.posDelay = 250;
 
-		// action_menu_label_background_2
-		const action_menu_label_background_2 = this.add.rectangle(5, 5, 110, 50);
-		action_menu_label_background_2.setOrigin(0, 0);
-		action_menu_label_background_2.isFilled = true;
-		action_menu_label_background_2.fillColor = 11842740;
-		action_menu_label_background_2.isStroked = true;
-		action_menu_label_background_2.strokeColor = 0;
-		action_menu_label_background_2.lineWidth = 5;
-		action_queue_container.add(action_menu_label_background_2);
-
-		// action_menu_label_background_3
-		const action_menu_label_background_3 = this.add.rectangle(115, 5, 690, 50);
-		action_menu_label_background_3.setOrigin(0, 0);
-		action_menu_label_background_3.isFilled = true;
-		action_menu_label_background_3.fillColor = 11842740;
-		action_menu_label_background_3.isStroked = true;
-		action_menu_label_background_3.strokeColor = 0;
-		action_menu_label_background_3.lineWidth = 5;
-		action_queue_container.add(action_menu_label_background_3);
-
-		// action_menu_label_7
-		const action_menu_label_7 = this.add.bitmapText(205, 10, "vcr_osd_mono_bold", "ACTION QUEUE HISTORY");
-		action_menu_label_7.text = "ACTION QUEUE HISTORY";
-		action_menu_label_7.fontSize = -40;
-		action_menu_label_7.align = 1;
-		action_queue_container.add(action_menu_label_7);
-
-		// action_menu_label_background_4
-		const action_menu_label_background_4 = this.add.rectangle(5, 60, 110, 235);
-		action_menu_label_background_4.setOrigin(0, 0);
-		action_menu_label_background_4.isFilled = true;
-		action_menu_label_background_4.isStroked = true;
-		action_menu_label_background_4.strokeColor = 0;
-		action_menu_label_background_4.lineWidth = 5;
-		action_queue_container.add(action_menu_label_background_4);
-
-		// action_menu_label_8
-		const action_menu_label_8 = this.add.bitmapText(10, 10, "vcr_osd_mono_bold", "NEXT");
-		action_menu_label_8.text = "NEXT";
-		action_menu_label_8.fontSize = -40;
-		action_menu_label_8.align = 1;
-		action_queue_container.add(action_menu_label_8);
-
-		// warrior_p1 (components)
-		const warrior_p1ObjectBounceAnimation = new ObjectBounceAnimation(warrior_p1);
-		warrior_p1ObjectBounceAnimation.mode = "both";
-		warrior_p1ObjectBounceAnimation.posEase = "Expo.easeIn";
-		warrior_p1ObjectBounceAnimation.scaleEase = "Expo.easeIn";
-		warrior_p1ObjectBounceAnimation.posDelay = 250;
-
-		// warrior_p (components)
-		const warrior_pObjectBounceAnimation = new ObjectBounceAnimation(warrior_p);
-		warrior_pObjectBounceAnimation.mode = "both";
-		warrior_pObjectBounceAnimation.posEase = "Expo.easeIn";
-		warrior_pObjectBounceAnimation.scaleEase = "Expo.easeIn";
-		warrior_pObjectBounceAnimation.posDelay = 250;
-
-		this.warrior_p1 = warrior_p1;
-		this.warrior_p = warrior_p;
+		this.p1_warrior_sprite = p1_warrior_sprite;
+		this.p2_warrior_sprite = p2_warrior_sprite;
 		this.background = background;
 
 		this.events.emit("scene-awake");
 	}
 
 	/** @type {Phaser.GameObjects.Image} */
-	warrior_p1;
+	p1_warrior_sprite;
 	/** @type {Phaser.GameObjects.Image} */
-	warrior_p;
+	p2_warrior_sprite;
 	/** @type {Phaser.Tilemaps.Tilemap} */
 	background;
 

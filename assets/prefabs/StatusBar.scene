@@ -1,38 +1,29 @@
 {
     "id": "2ea7b495-3149-4e61-9f72-f3c89bd4363d",
+    "sceneType": "PREFAB",
     "settings": {
-        "createMethodName": "",
-        "preloadMethodName": "",
-        "compilerOutputLanguage": "JAVA_SCRIPT",
         "exportClass": true,
         "autoImport": true,
         "importFileExtension": true,
-        "generateAwakeHandler": false,
-        "compilerInsertSpaces": false,
-        "compilerTabSize": 4,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
         "borderWidth": 1920,
-        "borderHeight": 1080,
-        "borderX": 0,
-        "borderY": 0
+        "borderHeight": 1080
     },
-    "sceneType": "PREFAB",
     "displayList": [
         {
-            "unlock": [
-                "x",
-                "y"
-            ],
             "type": "Container",
             "id": "e37e06f6-e4c8-4ffd-9f91-65003f6e57b0",
             "label": "status_bar",
             "displayName": "Status Bar",
-            "x": 0,
-            "y": 0,
             "list": [
                 {
                     "type": "Rectangle",
                     "id": "76ece219-d5c5-4d89-9215-f046b90155c5",
-                    "label": "rectangle_4",
+                    "label": "character_status_background",
+                    "displayName": "Character Status Background",
+                    "useGameObjectName": true,
                     "x": 165,
                     "y": 55,
                     "isFilled": true,
@@ -45,7 +36,9 @@
                 {
                     "type": "BitmapText",
                     "id": "2664013d-c15e-4c0d-9283-5a3385517845",
-                    "label": "bitmaptext_1",
+                    "label": "character_name_label",
+                    "displayName": "Character Name Label",
+                    "useGameObjectName": true,
                     "x": 165,
                     "y": 10,
                     "originX": 0.5,
@@ -57,7 +50,9 @@
                 {
                     "type": "BitmapText",
                     "id": "057dd793-04b2-4783-bfb2-51064836963b",
-                    "label": "bitmaptext_2",
+                    "label": "health_meter_label",
+                    "displayName": "Health Meter Label",
+                    "useGameObjectName": true,
                     "x": 60,
                     "y": 50,
                     "originX": 0.5,
@@ -69,7 +64,9 @@
                 {
                     "type": "BitmapText",
                     "id": "6bacdbaa-213d-4db7-b9e1-8d2b9d7a17d7",
-                    "label": "bitmaptext",
+                    "label": "action_meter_label",
+                    "displayName": "Action Meter Label",
+                    "useGameObjectName": true,
                     "x": 60,
                     "y": 90,
                     "originX": 0.5,
@@ -81,7 +78,9 @@
                 {
                     "type": "Rectangle",
                     "id": "33f91215-0106-4b98-b8cd-42bebdb902e3",
-                    "label": "rectangle_5",
+                    "label": "health_meter_background",
+                    "displayName": "Health Meter Background",
+                    "useGameObjectName": true,
                     "x": 230,
                     "y": 52,
                     "isFilled": true,
@@ -92,7 +91,9 @@
                 {
                     "type": "Rectangle",
                     "id": "fd82fd54-ef14-4358-b46c-b6d3c052f088",
-                    "label": "rectangle",
+                    "label": "action_meter_background",
+                    "displayName": "Action Meter Background",
+                    "useGameObjectName": true,
                     "x": 230,
                     "y": 92,
                     "isFilled": true,
@@ -103,7 +104,9 @@
                 {
                     "type": "Rectangle",
                     "id": "82393991-45f8-4543-a215-bf40f70e683e",
-                    "label": "rectangle_6",
+                    "label": "health_meter",
+                    "displayName": "Health Meter",
+                    "useGameObjectName": true,
                     "x": 230,
                     "y": 52,
                     "isFilled": true,
@@ -114,7 +117,9 @@
                 {
                     "type": "Rectangle",
                     "id": "ac0d8321-f9f2-4c0c-8429-0150a952ec2e",
-                    "label": "rectangle_7",
+                    "label": "action_meter",
+                    "displayName": "Action Meter",
+                    "useGameObjectName": true,
                     "x": 230,
                     "y": 92,
                     "isFilled": true,
@@ -125,9 +130,11 @@
             ]
         }
     ],
+    "plainObjects": [],
     "meta": {
-        "app": "Phaser Editor 2D - Scene Editor",
-        "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
     }
 }
