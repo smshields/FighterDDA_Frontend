@@ -190,6 +190,15 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "CharacterManagerComponent",
+            "displayName": "Character Manager",
+            "objectDisplayFormat": "",
+            "baseClass": "UserComponent",
+            "gameObjectType": "any",
+            "generateGameObjectField": true,
+            "properties": []
         }
     ],
     "meta": {

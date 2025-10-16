@@ -16,7 +16,6 @@ window.addEventListener('load', function () {
 
 	game.scene.add("Preload", Preload);
 	game.scene.add("Battle", Battle);
-	game.scene.add("Boot", Boot, true);
 });
 
 class Boot extends Phaser.Scene {

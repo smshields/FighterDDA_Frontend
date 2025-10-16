@@ -1,0 +1,32 @@
+{
+    "playerNum": 0,
+    "characterName": "",
+    
+    "currentHP": 0,
+    "actionMeter": 0,
+    
+    "isDead": false,
+    "isDefending": false,
+    "isReadyForPlayerAction": false,
+    "isNPC": false,
+
+    "initialStats": {
+        "totalHP": 0,
+        "attack": 0,
+        "magicAttack": 0,
+        "defense": 0,
+        "magicDefense": 0,
+        "speed": 0,
+        "luck": 0
+    },
+
+    "currentStats": {
+        "totalHP": 0,
+        "attack": 0,
+        "magicAttack": 0,
+        "defense": 0,
+        "magicDefense": 0,
+        "speed": 0,
+        "luck": 0
+    }
+}

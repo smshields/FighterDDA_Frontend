@@ -693,8 +693,8 @@
                         {
                             "type": "Image",
                             "id": "745b39b5-1b5f-436b-a034-90bb2ec4599d",
-                            "label": "p1_priest_sprite",
-                            "displayName": "P1 Priest Sprite",
+                            "label": "p2_priest_sprite",
+                            "displayName": "P2 Priest Sprite",
                             "useGameObjectName": true,
                             "texture": {
                                 "key": "priest"
@@ -721,8 +721,8 @@
                                 "x",
                                 "y"
                             ],
-                            "label": "p1_priest_status_bar",
-                            "displayName": "P1 Priest Status Bar",
+                            "label": "p2_priest_status_bar",
+                            "displayName": "P2 Priest Status Bar",
                             "useGameObjectName": true,
                             "x": 185,
                             "y": 0
@@ -740,8 +740,8 @@
                         {
                             "type": "Image",
                             "id": "f8298d0a-5de8-47fa-a040-b64412c1e367",
-                            "label": "p1_mage_sprite",
-                            "displayName": "P1 Mage Sprite",
+                            "label": "p2_mage_sprite",
+                            "displayName": "P2 Mage Sprite",
                             "useGameObjectName": true,
                             "texture": {
                                 "key": "mage"
@@ -763,8 +763,8 @@
                                 "x",
                                 "y"
                             ],
-                            "label": "p1_mage_status_bar",
-                            "displayName": "P1 Mage Status Bar",
+                            "label": "p2_mage_status_bar",
+                            "displayName": "P2 Mage Status Bar",
                             "useGameObjectName": true,
                             "x": 185,
                             "y": 0

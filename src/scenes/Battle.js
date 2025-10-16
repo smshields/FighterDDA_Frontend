@@ -462,41 +462,41 @@ export default class Battle extends Phaser.Scene {
 		p2_priest.name = "p2_priest";
 		p2_team.add(p2_priest);
 
-		// p1_priest_sprite
-		const p1_priest_sprite = this.add.image(0, 55, "priest");
-		p1_priest_sprite.name = "p1_priest_sprite";
-		p1_priest_sprite.alpha = 0.9;
-		p1_priest_sprite.alphaTopLeft = 0.9;
-		p1_priest_sprite.alphaTopRight = 0.9;
-		p1_priest_sprite.alphaBottomLeft = 0.9;
-		p1_priest_sprite.alphaBottomRight = 0.9;
-		p2_priest.add(p1_priest_sprite);
+		// p2_priest_sprite
+		const p2_priest_sprite = this.add.image(0, 55, "priest");
+		p2_priest_sprite.name = "p2_priest_sprite";
+		p2_priest_sprite.alpha = 0.9;
+		p2_priest_sprite.alphaTopLeft = 0.9;
+		p2_priest_sprite.alphaTopRight = 0.9;
+		p2_priest_sprite.alphaBottomLeft = 0.9;
+		p2_priest_sprite.alphaBottomRight = 0.9;
+		p2_priest.add(p2_priest_sprite);
 
 		// glowFx_7
-		p1_priest_sprite.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
+		p2_priest_sprite.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
-		// p1_priest_status_bar
-		const p1_priest_status_bar = new StatusBar(this, 185, 0);
-		p1_priest_status_bar.name = "p1_priest_status_bar";
-		p2_priest.add(p1_priest_status_bar);
+		// p2_priest_status_bar
+		const p2_priest_status_bar = new StatusBar(this, 185, 0);
+		p2_priest_status_bar.name = "p2_priest_status_bar";
+		p2_priest.add(p2_priest_status_bar);
 
 		// p2_mage
 		const p2_mage = this.add.container(0, 170);
 		p2_mage.name = "p2_mage";
 		p2_team.add(p2_mage);
 
-		// p1_mage_sprite
-		const p1_mage_sprite = this.add.image(0, 50, "mage");
-		p1_mage_sprite.name = "p1_mage_sprite";
-		p2_mage.add(p1_mage_sprite);
+		// p2_mage_sprite
+		const p2_mage_sprite = this.add.image(0, 50, "mage");
+		p2_mage_sprite.name = "p2_mage_sprite";
+		p2_mage.add(p2_mage_sprite);
 
 		// glowFx_8
-		p1_mage_sprite.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
+		p2_mage_sprite.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
-		// p1_mage_status_bar
-		const p1_mage_status_bar = new StatusBar(this, 185, 0);
-		p1_mage_status_bar.name = "p1_mage_status_bar";
-		p2_mage.add(p1_mage_status_bar);
+		// p2_mage_status_bar
+		const p2_mage_status_bar = new StatusBar(this, 185, 0);
+		p2_mage_status_bar.name = "p2_mage_status_bar";
+		p2_mage.add(p2_mage_status_bar);
 
 		// p2_warrior
 		const p2_warrior = this.add.container(5, 510);
