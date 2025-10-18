@@ -1116,7 +1116,6 @@
                             "components": [
                                 "ObjectBounceAnimation"
                             ],
-                            "ObjectBounceAnimation.mode": "both",
                             "ObjectBounceAnimation.posEase": "Expo.easeIn",
                             "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
                             "ObjectBounceAnimation.posDelay": 250,
@@ -1310,7 +1309,6 @@
                             "components": [
                                 "ObjectBounceAnimation"
                             ],
-                            "ObjectBounceAnimation.mode": "both",
                             "ObjectBounceAnimation.posEase": "Expo.easeIn",
                             "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
                             "ObjectBounceAnimation.posDelay": 250,

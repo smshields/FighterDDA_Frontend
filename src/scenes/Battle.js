@@ -716,14 +716,12 @@ export default class Battle extends Phaser.Scene {
 
 		// p1_warrior_sprite (components)
 		const p1_warrior_spriteObjectBounceAnimation = new ObjectBounceAnimation(p1_warrior_sprite);
-		p1_warrior_spriteObjectBounceAnimation.mode = "both";
 		p1_warrior_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
 		p1_warrior_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
 		p1_warrior_spriteObjectBounceAnimation.posDelay = 250;
 
 		// p2_warrior_sprite (components)
 		const p2_warrior_spriteObjectBounceAnimation = new ObjectBounceAnimation(p2_warrior_sprite);
-		p2_warrior_spriteObjectBounceAnimation.mode = "both";
 		p2_warrior_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
 		p2_warrior_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
 		p2_warrior_spriteObjectBounceAnimation.posDelay = 250;
