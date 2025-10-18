@@ -3,6 +3,8 @@ import Preload from "./scenes/Preload.js";
 
 window.addEventListener('load', function () {
 
+	console.log("Initializing Phaser.")
+
 	var game = new Phaser.Game({
 		width: 1920,
 		height: 1080,
@@ -14,8 +16,10 @@ window.addEventListener('load', function () {
 		}
 	});
 
+
 	game.scene.add("Preload", Preload);
 	game.scene.add("Battle", Battle);
+	game.scene.add("Boot", Boot, true);
 });
 
 class Boot extends Phaser.Scene {
@@ -25,6 +29,7 @@ class Boot extends Phaser.Scene {
 	}
 
 	create() {
+		console.log("Main create ca")
 
 		this.scene.start("Preload");
 	}

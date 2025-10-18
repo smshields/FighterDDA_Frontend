@@ -45,6 +45,7 @@ export default class Preload extends Phaser.Scene {
 		this.progressBar = progressBar;
 
 		this.events.emit("scene-awake");
+
 	}
 
 	/** @type {Phaser.GameObjects.Rectangle} */

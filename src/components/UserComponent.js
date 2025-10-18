@@ -1,5 +1,3 @@
-import Phaser from "../lib/phaser";
-
 export default class UserComponent {
 
     /**
