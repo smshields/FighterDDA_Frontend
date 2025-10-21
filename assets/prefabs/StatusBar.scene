@@ -17,6 +17,12 @@
             "id": "e37e06f6-e4c8-4ffd-9f91-65003f6e57b0",
             "label": "status_bar",
             "displayName": "Status Bar",
+            "components": [
+                "StatusBarViewComponent"
+            ],
+            "StatusBarViewComponent.hp_meter_fill": "health_meter",
+            "StatusBarViewComponent.hp_meter_background": "health_meter_background",
+            "StatusBarViewComponent.character_name": "character_name_label",
             "list": [
                 {
                     "type": "Rectangle",
@@ -107,8 +113,10 @@
                     "label": "health_meter",
                     "displayName": "Health Meter",
                     "useGameObjectName": true,
-                    "x": 230,
-                    "y": 52,
+                    "x": 130,
+                    "y": 40,
+                    "originX": 0,
+                    "originY": 0,
                     "isFilled": true,
                     "fillColor": "#36c63d",
                     "width": 200,
@@ -120,8 +128,10 @@
                     "label": "action_meter",
                     "displayName": "Action Meter",
                     "useGameObjectName": true,
-                    "x": 230,
-                    "y": 92,
+                    "x": 130,
+                    "y": 80,
+                    "originX": 0,
+                    "originY": 0,
                     "isFilled": true,
                     "fillColor": "#4732ed",
                     "width": 200,

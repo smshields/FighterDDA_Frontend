@@ -3,6 +3,7 @@
 
 /* START OF COMPILED CODE */
 
+import StatusBarViewComponent from "../../src/components/StatusBarViewComponent.js";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -59,18 +60,26 @@ export default class StatusBar extends Phaser.GameObjects.Container {
 		this.add(action_meter_background);
 
 		// health_meter
-		const health_meter = scene.add.rectangle(230, 52, 200, 24);
+		const health_meter = scene.add.rectangle(130, 40, 200, 24);
 		health_meter.name = "health_meter";
+		health_meter.setOrigin(0, 0);
 		health_meter.isFilled = true;
 		health_meter.fillColor = 3589693;
 		this.add(health_meter);
 
 		// action_meter
-		const action_meter = scene.add.rectangle(230, 92, 200, 24);
+		const action_meter = scene.add.rectangle(130, 80, 200, 24);
 		action_meter.name = "action_meter";
+		action_meter.setOrigin(0, 0);
 		action_meter.isFilled = true;
 		action_meter.fillColor = 4666093;
 		this.add(action_meter);
+
+		// this (components)
+		const thisStatusBarViewComponent = new StatusBarViewComponent(this);
+		thisStatusBarViewComponent.hp_meter_fill = health_meter;
+		thisStatusBarViewComponent.hp_meter_background = health_meter_background;
+		thisStatusBarViewComponent.character_name = character_name_label;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

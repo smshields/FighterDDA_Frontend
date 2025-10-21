@@ -1,6 +1,6 @@
 {
-    "playerNum": 0,
-    "characterName": "",
+    "playerNum": 1,
+    "characterName": "Warrior",
     
     "currentActionMeter": 0,
     "maxActionMeter": 100,
@@ -11,8 +11,8 @@
     "isNPC": false,
 
     "initialStats": {
-        "maxHp": 0,
-        "currentHp": 0,
+        "maxHp": 100,
+        "currentHp": 100,
         "attack": 0,
         "magicAttack": 0,
         "defense": 0,
@@ -22,8 +22,8 @@
     },
 
     "currentStats": {
-        "maxHp": 0,
-        "currentHp": 0,
+        "maxHp": 100,
+        "currentHp": 25,
         "attack": 0,
         "magicAttack": 0,
         "defense": 0,
@@ -33,9 +33,9 @@
     },
 
     "availableActions": {
-        "attack": false,
-        "multiAttack": false,
-        "defend": false,
+        "attack": true,
+        "multiAttack": true,
+        "defend": true,
         "magicAttack": false,
         "multiMagicAttack": false,
         "heal": false,

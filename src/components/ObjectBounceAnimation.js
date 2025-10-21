@@ -1,24 +1,22 @@
-// src/components/ObjectBounceAnimation.js
-// @ts-check
-import UserComponent from '../../phaserjs_editor_scripts_base/UserComponent.js';
 
-/**
- * ObjectBounceAnimation
- * Idle animation component for Phaser Editor 2D.
- * Lets you bounce an object vertically, stretch it via scale, or do both.
- *
- * Attach this as a User Component to any Image/Sprite/Container/etc.
- * Inspector-exposed properties below can be edited per instance.
- */
+// You can write more code here
+
+/* START OF COMPILED CODE */
+
+import UserComponent from "./UserComponent.js";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
 export default class ObjectBounceAnimation extends UserComponent {
-  /**
-   * @param {Phaser.GameObjects.GameObject & Phaser.GameObjects.Components.Transform} gameObject
-   */
-  constructor(gameObject) {
-    super(gameObject);
-    /** @type {Phaser.GameObjects.GameObject & Phaser.GameObjects.Components.Transform} */
-    this.gameObject = gameObject;
-    /** @type {Phaser.Scene} */
+
+	constructor(gameObject) {
+		super(gameObject);
+
+		this.gameObject = gameObject;
+		gameObject["__ObjectBounceAnimation"] = this;
+
+		/* START-USER-CTR-CODE */
+		/** @type {Phaser.Scene} */
     this.scene = gameObject.scene;
 
     // ==== Inspector Properties (must match names exactly in the Editor) ====
@@ -51,13 +49,40 @@ export default class ObjectBounceAnimation extends UserComponent {
     this.scene.events.on(Phaser.Scenes.Events.SLEEP, this.pause, this);
     this.scene.events.on(Phaser.Scenes.Events.WAKE, this.resume, this);
     this.scene.events.on(Phaser.Scenes.Events.SHUTDOWN, this.destroy, this);
+		/* END-USER-CTR-CODE */
+	}
 
-  }
+	/** @returns {ObjectBounceAnimation} */
+	static getComponent(gameObject) {
+		return gameObject["__ObjectBounceAnimation"];
+	}
 
-  /**
-   * Called by Phaser Editor after applying Inspector values.
-   */
-  awake() {
+	/** @type {"position"|"scale"|"both"} */
+	mode = "position";
+	/** @type {boolean} */
+	active = true;
+	/** @type {number} */
+	posOffset = 5;
+	/** @type {number} */
+	posDuration = 500;
+	/** @type {number} */
+	scaleXDelta = 0;
+	/** @type {number} */
+	scaleYDelta = 0.05;
+	/** @type {number} */
+	scaleDuration = 500;
+	/** @type {"Linear"|"Sine.easeIn"|"Sine.easeOut"|"Sine.easeInOut"|"Quad.easeIn"|"Quad.easeOut"|"Quad.easeInOut"|"Cubic.easeIn"|"Cubic.easeOut"|"Cubic.easeInOut"|"Quart.easeIn"|"Quart.easeOut"|"Quart.easeInOut"|"Quint.easeIn"|"Quint.easeOut"|"Quint.easeInOut"|"Expo.easeIn"|"Expo.easeOut"|"Expo.easeInOut"|"Circ.easeIn"|"Circ.easeOut"|"Circ.easeInOut"|"Back.easeIn"|"Back.easeOut"|"Back.easeInOut"|"Bounce.easeIn"|"Bounce.easeOut"|"Bounce.easeInOut"|"Elastic.easeIn"|"Elastic.easeOut"|"Elastic.easeInOut"} */
+	posEase = "Sine.easeIn";
+	/** @type {"Linear"|"Sine.easeIn"|"Sine.easeOut"|"Sine.easeInOut"|"Quad.easeIn"|"Quad.easeOut"|"Quad.easeInOut"|"Cubic.easeIn"|"Cubic.easeOut"|"Cubic.easeInOut"|"Quart.easeIn"|"Quart.easeOut"|"Quart.easeInOut"|"Quint.easeIn"|"Quint.easeOut"|"Quint.easeInOut"|"Expo.easeIn"|"Expo.easeOut"|"Expo.easeInOut"|"Circ.easeIn"|"Circ.easeOut"|"Circ.easeInOut"|"Back.easeIn"|"Back.easeOut"|"Back.easeInOut"|"Bounce.easeIn"|"Bounce.easeOut"|"Bounce.easeInOut"|"Elastic.easeIn"|"Elastic.easeOut"|"Elastic.easeInOut"} */
+	scaleEase = "Sine.easeIn";
+	/** @type {number} */
+	posDelay = 0;
+	/** @type {number} */
+	scaleDelay = 0;
+
+	/* START-USER-CODE */
+
+	awake() {
     if (this.active) this.start();
   }
 
@@ -138,4 +163,10 @@ export default class ObjectBounceAnimation extends UserComponent {
     this.gameObject?.off?.(Phaser.GameObjects.Events.DESTROY, this.destroy, this);
     this.gameObject = null;
   }
+
+	/* END-USER-CODE */
 }
+
+/* END OF COMPILED CODE */
+
+// You can write more code here

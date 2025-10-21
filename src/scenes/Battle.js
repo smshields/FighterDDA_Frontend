@@ -2,8 +2,10 @@
 
 /* START OF COMPILED CODE */
 
+import CharacterViewComponent from "../components/CharacterViewComponent.js";
 import StatusBar from "../../assets/prefabs/StatusBar.js";
 import ObjectBounceAnimation from "../components/ObjectBounceAnimation.js";
+import CharacterManagerComponent from "../components/CharacterManagerComponent.js";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -25,272 +27,266 @@ export default class Battle extends Phaser.Scene {
 		background.name = "background";
 
 		// backgroundtile5
-		const backgroundtile5 = this.add.image(120, 120, "backgroundtile5");
+		const backgroundtile5 = this.add.image(65, 25, "backgroundtile5");
 		backgroundtile5.scaleX = 0.25;
 		backgroundtile5.scaleY = 0.25;
 		backgroundtile5.flipX = true;
 		background.add(backgroundtile5);
 
 		// backgroundtile4
-		const backgroundtile4 = this.add.image(370, 120, "backgroundtile4");
+		const backgroundtile4 = this.add.image(315, 25, "backgroundtile4");
 		backgroundtile4.scaleX = 0.25;
 		backgroundtile4.scaleY = 0.25;
 		background.add(backgroundtile4);
 
 		// backgroundtile2
-		const backgroundtile2 = this.add.image(880, 120, "backgroundtile2");
+		const backgroundtile2 = this.add.image(825, 25, "backgroundtile2");
 		backgroundtile2.scaleX = 0.25;
 		backgroundtile2.scaleY = 0.25;
 		background.add(backgroundtile2);
 
 		// backgroundtile3
-		const backgroundtile3 = this.add.image(625, 120, "backgroundtile3");
+		const backgroundtile3 = this.add.image(570, 25, "backgroundtile3");
 		backgroundtile3.scaleX = 0.25;
 		backgroundtile3.scaleY = 0.25;
 		background.add(backgroundtile3);
 
 		// backgroundtile
-		const backgroundtile = this.add.image(1135, 120, "backgroundtile");
+		const backgroundtile = this.add.image(1080, 25, "backgroundtile");
 		backgroundtile.scaleX = 0.25;
 		backgroundtile.scaleY = 0.25;
 		backgroundtile.flipX = true;
 		background.add(backgroundtile);
 
 		// backgroundtile_1
-		const backgroundtile_1 = this.add.image(120, 375, "backgroundtile5");
+		const backgroundtile_1 = this.add.image(65, 280, "backgroundtile5");
 		backgroundtile_1.scaleX = 0.25;
 		backgroundtile_1.scaleY = 0.25;
 		backgroundtile_1.flipX = true;
 		background.add(backgroundtile_1);
 
 		// backgroundtile_2
-		const backgroundtile_2 = this.add.image(370, 375, "backgroundtile4");
+		const backgroundtile_2 = this.add.image(315, 280, "backgroundtile4");
 		backgroundtile_2.scaleX = 0.25;
 		backgroundtile_2.scaleY = 0.25;
 		backgroundtile_2.flipX = true;
 		background.add(backgroundtile_2);
 
 		// backgroundtile_3
-		const backgroundtile_3 = this.add.image(1390, 120, "backgroundtile2");
+		const backgroundtile_3 = this.add.image(1335, 25, "backgroundtile2");
 		backgroundtile_3.scaleX = 0.25;
 		backgroundtile_3.scaleY = 0.25;
 		backgroundtile_3.flipX = true;
 		background.add(backgroundtile_3);
 
 		// backgroundtile_4
-		const backgroundtile_4 = this.add.image(625, 375, "backgroundtile3");
+		const backgroundtile_4 = this.add.image(570, 280, "backgroundtile3");
 		backgroundtile_4.scaleX = 0.25;
 		backgroundtile_4.scaleY = 0.25;
 		backgroundtile_4.flipX = true;
 		background.add(backgroundtile_4);
 
 		// backgroundtile_5
-		const backgroundtile_5 = this.add.image(1135, 375, "backgroundtile");
+		const backgroundtile_5 = this.add.image(1080, 280, "backgroundtile");
 		backgroundtile_5.scaleX = 0.25;
 		backgroundtile_5.scaleY = 0.25;
 		backgroundtile_5.flipX = true;
 		background.add(backgroundtile_5);
 
 		// backgroundtile_6
-		const backgroundtile_6 = this.add.image(120, 630, "backgroundtile5");
+		const backgroundtile_6 = this.add.image(65, 535, "backgroundtile5");
 		backgroundtile_6.scaleX = 0.25;
 		backgroundtile_6.scaleY = 0.25;
 		backgroundtile_6.flipX = true;
 		background.add(backgroundtile_6);
 
 		// backgroundtile_8
-		const backgroundtile_8 = this.add.image(1390, 375, "backgroundtile2");
+		const backgroundtile_8 = this.add.image(1335, 280, "backgroundtile2");
 		backgroundtile_8.scaleX = 0.25;
 		backgroundtile_8.scaleY = 0.25;
 		backgroundtile_8.flipX = true;
 		background.add(backgroundtile_8);
 
 		// backgroundtile_9
-		const backgroundtile_9 = this.add.image(625, 630, "backgroundtile3");
+		const backgroundtile_9 = this.add.image(570, 535, "backgroundtile3");
 		backgroundtile_9.scaleX = 0.25;
 		backgroundtile_9.scaleY = 0.25;
 		backgroundtile_9.flipX = true;
 		background.add(backgroundtile_9);
 
 		// backgroundtile_10
-		const backgroundtile_10 = this.add.image(1135, 630, "backgroundtile");
+		const backgroundtile_10 = this.add.image(1080, 535, "backgroundtile");
 		backgroundtile_10.scaleX = 0.25;
 		backgroundtile_10.scaleY = 0.25;
 		backgroundtile_10.flipX = true;
 		background.add(backgroundtile_10);
 
 		// backgroundtile_11
-		const backgroundtile_11 = this.add.image(120, 885, "backgroundtile5");
+		const backgroundtile_11 = this.add.image(65, 790, "backgroundtile5");
 		backgroundtile_11.scaleX = 0.25;
 		backgroundtile_11.scaleY = 0.25;
 		backgroundtile_11.flipX = true;
 		background.add(backgroundtile_11);
 
 		// backgroundtile_12
-		const backgroundtile_12 = this.add.image(370, 885, "backgroundtile4");
+		const backgroundtile_12 = this.add.image(315, 790, "backgroundtile4");
 		backgroundtile_12.scaleX = 0.25;
 		backgroundtile_12.scaleY = 0.25;
 		background.add(backgroundtile_12);
 
 		// backgroundtile_13
-		const backgroundtile_13 = this.add.image(1390, 630, "backgroundtile2");
+		const backgroundtile_13 = this.add.image(1335, 535, "backgroundtile2");
 		backgroundtile_13.scaleX = 0.25;
 		backgroundtile_13.scaleY = 0.25;
 		background.add(backgroundtile_13);
 
 		// backgroundtile_14
-		const backgroundtile_14 = this.add.image(625, 885, "backgroundtile3");
+		const backgroundtile_14 = this.add.image(570, 790, "backgroundtile3");
 		backgroundtile_14.scaleX = 0.25;
 		backgroundtile_14.scaleY = 0.25;
 		backgroundtile_14.flipX = true;
 		background.add(backgroundtile_14);
 
 		// backgroundtile_15
-		const backgroundtile_15 = this.add.image(1135, 885, "backgroundtile");
+		const backgroundtile_15 = this.add.image(1080, 790, "backgroundtile");
 		backgroundtile_15.scaleX = 0.25;
 		backgroundtile_15.scaleY = 0.25;
 		backgroundtile_15.flipX = true;
 		background.add(backgroundtile_15);
 
 		// backgroundtile_16
-		const backgroundtile_16 = this.add.image(120, 1140, "backgroundtile5");
+		const backgroundtile_16 = this.add.image(65, 1045, "backgroundtile5");
 		backgroundtile_16.scaleX = 0.25;
 		backgroundtile_16.scaleY = 0.25;
 		background.add(backgroundtile_16);
 
 		// backgroundtile_17
-		const backgroundtile_17 = this.add.image(370, 1140, "backgroundtile4");
+		const backgroundtile_17 = this.add.image(315, 1045, "backgroundtile4");
 		backgroundtile_17.scaleX = 0.25;
 		backgroundtile_17.scaleY = 0.25;
 		background.add(backgroundtile_17);
 
 		// backgroundtile_18
-		const backgroundtile_18 = this.add.image(880, 1140, "backgroundtile2");
+		const backgroundtile_18 = this.add.image(825, 1045, "backgroundtile2");
 		backgroundtile_18.scaleX = 0.25;
 		backgroundtile_18.scaleY = 0.25;
 		background.add(backgroundtile_18);
 
 		// backgroundtile_19
-		const backgroundtile_19 = this.add.image(625, 1140, "backgroundtile3");
+		const backgroundtile_19 = this.add.image(570, 1045, "backgroundtile3");
 		backgroundtile_19.scaleX = 0.25;
 		backgroundtile_19.scaleY = 0.25;
 		background.add(backgroundtile_19);
 
 		// backgroundtile_20
-		const backgroundtile_20 = this.add.image(1135, 1140, "backgroundtile");
+		const backgroundtile_20 = this.add.image(1080, 1045, "backgroundtile");
 		backgroundtile_20.scaleX = 0.25;
 		backgroundtile_20.scaleY = 0.25;
 		background.add(backgroundtile_20);
 
 		// backgroundtile_21
-		const backgroundtile_21 = this.add.image(880, 375, "backgroundtile3");
+		const backgroundtile_21 = this.add.image(825, 280, "backgroundtile3");
 		backgroundtile_21.scaleX = 0.25;
 		backgroundtile_21.scaleY = 0.25;
 		backgroundtile_21.flipX = true;
 		background.add(backgroundtile_21);
 
 		// backgroundtile_22
-		const backgroundtile_22 = this.add.image(1645, 620, "backgroundtile3");
+		const backgroundtile_22 = this.add.image(1590, 535, "backgroundtile3");
 		backgroundtile_22.scaleX = 0.25;
 		backgroundtile_22.scaleY = 0.25;
 		backgroundtile_22.flipX = true;
 		background.add(backgroundtile_22);
 
-		// backgroundtile_23
-		const backgroundtile_23 = this.add.image(575, 1135, "backgroundtile3");
-		backgroundtile_23.scaleX = 0.25;
-		backgroundtile_23.scaleY = 0.25;
-		background.add(backgroundtile_23);
-
 		// backgroundtile_24
-		const backgroundtile_24 = this.add.image(880, 630, "backgroundtile");
+		const backgroundtile_24 = this.add.image(825, 535, "backgroundtile");
 		backgroundtile_24.scaleX = 0.25;
 		backgroundtile_24.scaleY = 0.25;
 		background.add(backgroundtile_24);
 
 		// backgroundtile_25
-		const backgroundtile_25 = this.add.image(880, 885, "backgroundtile2");
+		const backgroundtile_25 = this.add.image(825, 790, "backgroundtile2");
 		backgroundtile_25.scaleX = 0.25;
 		backgroundtile_25.scaleY = 0.25;
 		background.add(backgroundtile_25);
 
 		// backgroundtile_26
-		const backgroundtile_26 = this.add.image(1390, 875, "backgroundtile3");
+		const backgroundtile_26 = this.add.image(1335, 790, "backgroundtile3");
 		backgroundtile_26.scaleX = 0.25;
 		backgroundtile_26.scaleY = 0.25;
 		backgroundtile_26.flipX = true;
 		background.add(backgroundtile_26);
 
 		// backgroundtile_27
-		const backgroundtile_27 = this.add.image(1645, 875, "backgroundtile4");
+		const backgroundtile_27 = this.add.image(1590, 790, "backgroundtile4");
 		backgroundtile_27.scaleX = 0.25;
 		backgroundtile_27.scaleY = 0.25;
 		backgroundtile_27.flipX = true;
 		background.add(backgroundtile_27);
 
 		// backgroundtile_7
-		const backgroundtile_7 = this.add.image(1645, 125, "backgroundtile4");
+		const backgroundtile_7 = this.add.image(1590, 30, "backgroundtile4");
 		backgroundtile_7.scaleX = 0.25;
 		backgroundtile_7.scaleY = 0.25;
 		backgroundtile_7.flipX = true;
 		background.add(backgroundtile_7);
 
 		// backgroundtile_28
-		const backgroundtile_28 = this.add.image(370, 630, "backgroundtile3");
+		const backgroundtile_28 = this.add.image(315, 535, "backgroundtile3");
 		backgroundtile_28.scaleX = 0.25;
 		backgroundtile_28.scaleY = 0.25;
 		backgroundtile_28.flipX = true;
 		background.add(backgroundtile_28);
 
 		// backgroundtile_29
-		const backgroundtile_29 = this.add.image(1645, 375, "backgroundtile");
+		const backgroundtile_29 = this.add.image(1590, 280, "backgroundtile");
 		backgroundtile_29.scaleX = 0.25;
 		backgroundtile_29.scaleY = 0.25;
 		background.add(backgroundtile_29);
 
 		// backgroundtile_30
-		const backgroundtile_30 = this.add.image(1900, 125, "backgroundtile");
+		const backgroundtile_30 = this.add.image(1845, 30, "backgroundtile");
 		backgroundtile_30.scaleX = 0.25;
 		backgroundtile_30.scaleY = 0.25;
 		backgroundtile_30.flipX = true;
 		background.add(backgroundtile_30);
 
 		// backgroundtile_31
-		const backgroundtile_31 = this.add.image(1900, 380, "backgroundtile");
+		const backgroundtile_31 = this.add.image(1845, 285, "backgroundtile");
 		backgroundtile_31.scaleX = 0.25;
 		backgroundtile_31.scaleY = 0.25;
 		backgroundtile_31.flipX = true;
 		background.add(backgroundtile_31);
 
 		// backgroundtile_32
-		const backgroundtile_32 = this.add.image(1900, 635, "backgroundtile");
+		const backgroundtile_32 = this.add.image(1845, 540, "backgroundtile");
 		backgroundtile_32.scaleX = 0.25;
 		backgroundtile_32.scaleY = 0.25;
 		backgroundtile_32.flipX = true;
 		background.add(backgroundtile_32);
 
 		// backgroundtile_33
-		const backgroundtile_33 = this.add.image(1900, 890, "backgroundtile");
+		const backgroundtile_33 = this.add.image(1845, 790, "backgroundtile");
 		backgroundtile_33.scaleX = 0.25;
 		backgroundtile_33.scaleY = 0.25;
 		backgroundtile_33.flipX = true;
 		background.add(backgroundtile_33);
 
 		// backgroundtile_34
-		const backgroundtile_34 = this.add.image(1900, 1145, "backgroundtile");
+		const backgroundtile_34 = this.add.image(1845, 1045, "backgroundtile");
 		backgroundtile_34.scaleX = 0.25;
 		backgroundtile_34.scaleY = 0.25;
 		background.add(backgroundtile_34);
 
 		// backgroundtile_35
-		const backgroundtile_35 = this.add.image(1390, 1130, "backgroundtile3");
+		const backgroundtile_35 = this.add.image(1335, 1045, "backgroundtile3");
 		backgroundtile_35.scaleX = 0.25;
 		backgroundtile_35.scaleY = 0.25;
 		backgroundtile_35.flipX = true;
 		background.add(backgroundtile_35);
 
 		// backgroundtile_36
-		const backgroundtile_36 = this.add.image(1645, 1130, "backgroundtile4");
+		const backgroundtile_36 = this.add.image(1590, 1045, "backgroundtile4");
 		backgroundtile_36.scaleX = 0.25;
 		backgroundtile_36.scaleY = 0.25;
 		backgroundtile_36.flipX = true;
@@ -714,17 +710,64 @@ export default class Battle extends Phaser.Scene {
 		notification.align = 1;
 		notifications.add(notification);
 
+		// character_manager
+		const character_manager = this.add.container(0, 0);
+		character_manager.name = "character_manager";
+
+		// p1_Rogue (components)
+		const p1_RogueCharacterViewComponent = new CharacterViewComponent(p1_Rogue);
+		p1_RogueCharacterViewComponent.status_bar = p1_rogue_status_bar;
+
+		// p1_Priest (components)
+		const p1_PriestCharacterViewComponent = new CharacterViewComponent(p1_Priest);
+		p1_PriestCharacterViewComponent.status_bar = p1_priest_status_bar;
+
+		// p1_Mage (components)
+		const p1_MageCharacterViewComponent = new CharacterViewComponent(p1_Mage);
+		p1_MageCharacterViewComponent.status_bar = p1_mage_status_bar;
+
+		// p1_warrior (components)
+		const p1_warriorCharacterViewComponent = new CharacterViewComponent(p1_warrior);
+		p1_warriorCharacterViewComponent.status_bar = p1_warrior_status_bar;
+
 		// p1_warrior_sprite (components)
 		const p1_warrior_spriteObjectBounceAnimation = new ObjectBounceAnimation(p1_warrior_sprite);
 		p1_warrior_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
 		p1_warrior_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
 		p1_warrior_spriteObjectBounceAnimation.posDelay = 250;
 
+		// p2_rogue (components)
+		const p2_rogueCharacterViewComponent = new CharacterViewComponent(p2_rogue);
+		p2_rogueCharacterViewComponent.status_bar = p2_rogue_status_bar;
+
+		// p2_priest (components)
+		const p2_priestCharacterViewComponent = new CharacterViewComponent(p2_priest);
+		p2_priestCharacterViewComponent.status_bar = p2_priest_status_bar;
+
+		// p2_mage (components)
+		const p2_mageCharacterViewComponent = new CharacterViewComponent(p2_mage);
+		p2_mageCharacterViewComponent.status_bar = p2_mage_status_bar;
+
+		// p2_warrior (components)
+		const p2_warriorCharacterViewComponent = new CharacterViewComponent(p2_warrior);
+		p2_warriorCharacterViewComponent.status_bar = p2_warrior_status_bar;
+
 		// p2_warrior_sprite (components)
 		const p2_warrior_spriteObjectBounceAnimation = new ObjectBounceAnimation(p2_warrior_sprite);
 		p2_warrior_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
 		p2_warrior_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
 		p2_warrior_spriteObjectBounceAnimation.posDelay = 250;
+
+		// character_manager (components)
+		const character_managerCharacterManagerComponent = new CharacterManagerComponent(character_manager);
+		character_managerCharacterManagerComponent.p1_warrior_ui = p1_warrior;
+		character_managerCharacterManagerComponent.p1_mage_ui = p1_Mage;
+		character_managerCharacterManagerComponent.p1_priest_ui = p1_Priest;
+		character_managerCharacterManagerComponent.p1_rogue_ui = p1_Rogue;
+		character_managerCharacterManagerComponent.p2_warrior_ui = p2_warrior;
+		character_managerCharacterManagerComponent.p2_mage_ui = p2_mage;
+		character_managerCharacterManagerComponent.p2_priest_ui = p2_priest;
+		character_managerCharacterManagerComponent.p2_rogue_ui = p2_rogue;
 
 		this.p1_warrior_sprite = p1_warrior_sprite;
 		this.p2_warrior_sprite = p2_warrior_sprite;
@@ -740,6 +783,21 @@ export default class Battle extends Phaser.Scene {
 	/* START-USER-CODE */
 
     // Write your code here
+
+	preload() {
+		this.load.start();
+
+		this.load.json('p1_warrior_json', 'assets/data/character_json_stubs/P1Warrior.json');
+		this.load.json('p1_mage_json', 'assets/data/character_json_stubs/P1Mage.json');
+		this.load.json('p1_rogue_json', 'assets/data/character_json_stubs/P1Rogue.JSON');
+		this.load.json('p1_priest_json', 'assets/data/character_json_stubs/P1Priest.JSON');
+
+		this.load.json('p2_warrior_json', 'assets/data/character_json_stubs/P2Warrior.json');
+		this.load.json('p2_mage_json', 'assets/data/character_json_stubs/P2Mage.json');
+		this.load.json('p2_rogue_json', 'assets/data/character_json_stubs/P2Rogue.JSON');
+		this.load.json('p2_priest_json', 'assets/data/character_json_stubs/P2Priest.JSON');
+
+	}
 
     create() {
 

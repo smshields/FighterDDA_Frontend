@@ -1,13 +1,12 @@
 /** Model for each character. Used to track the state and available actions for each character. */
 export default class CharacterModel{
     
-    
-    
     constructor(initial = {}){
         
         //Initial Stats
         this.initialStats = {
-            totalHP: 0,
+            maxHp: 0,
+            currentHp: 0,
             attack: 0,
             magicAttack: 0,
             defense: 0,
@@ -18,7 +17,8 @@ export default class CharacterModel{
 
         //Current Stats
         this.currentStats = {
-            totalHP: 0,
+            maxHp: 0,
+            currentHp: 0,
             attack: 0,
             magicAttack: 0,
             defense: 0,
@@ -36,7 +36,44 @@ export default class CharacterModel{
         this.isReadyForPlayerAction = false;
         this.isNPC = false;
 
-        this.currentHP = 0;
-        this.actionMeter = 0;  
+        this.currentActionMeter = 0;
+        this.maxActionMeter = 0;
+
+        //Actions
+        this.availableActions = {
+            attack: false,
+            multiAttack: false,
+            defend: false,
+            magicAttack: false,
+            multiMagicAttack: false,
+            heal: false,
+            multiHeal: false
+        }
+    }
+
+    updateFromJson(characterSchemaJSON){
+        if (typeof characterSchemaJSON !== "object" || characterSchemaJSON == null){
+            console.log(characterSchemaJSON);
+            throw new TypeError("ERROR: CharacterModel updateFromJSON expects an object.");
+            
+        }
+
+        for (const key of Object.keys(characterSchemaJSON)){
+            if(key in this){
+                if( 
+                    typeof characterSchemaJSON[key] === "object" &&
+                    characterSchemaJSON[key] !== null &&
+                    typeof this[key] === "object" &&
+                    !Array.isArray(characterSchemaJSON[key])
+                ){
+                    Object.assign(this[key], characterSchemaJSON[key]);
+                } else {
+                    this[key] = characterSchemaJSON[key];
+                }
+            } else {
+                console.warn(`ignoring unknown property '${key}'`);
+            }
+        }
+
     }
 }

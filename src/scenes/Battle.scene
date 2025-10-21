@@ -30,8 +30,8 @@
                     "texture": {
                         "key": "backgroundtile5"
                     },
-                    "x": 120,
-                    "y": 120,
+                    "x": 65,
+                    "y": 25,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -43,8 +43,8 @@
                     "texture": {
                         "key": "backgroundtile4"
                     },
-                    "x": 370,
-                    "y": 120,
+                    "x": 315,
+                    "y": 25,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -55,8 +55,8 @@
                     "texture": {
                         "key": "backgroundtile2"
                     },
-                    "x": 880,
-                    "y": 120,
+                    "x": 825,
+                    "y": 25,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -67,8 +67,8 @@
                     "texture": {
                         "key": "backgroundtile3"
                     },
-                    "x": 625,
-                    "y": 120,
+                    "x": 570,
+                    "y": 25,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -79,8 +79,8 @@
                     "texture": {
                         "key": "backgroundtile"
                     },
-                    "x": 1135,
-                    "y": 120,
+                    "x": 1080,
+                    "y": 25,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -92,8 +92,8 @@
                     "texture": {
                         "key": "backgroundtile5"
                     },
-                    "x": 120,
-                    "y": 375,
+                    "x": 65,
+                    "y": 280,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -105,8 +105,8 @@
                     "texture": {
                         "key": "backgroundtile4"
                     },
-                    "x": 370,
-                    "y": 375,
+                    "x": 315,
+                    "y": 280,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -118,8 +118,8 @@
                     "texture": {
                         "key": "backgroundtile2"
                     },
-                    "x": 1390,
-                    "y": 120,
+                    "x": 1335,
+                    "y": 25,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -131,8 +131,8 @@
                     "texture": {
                         "key": "backgroundtile3"
                     },
-                    "x": 625,
-                    "y": 375,
+                    "x": 570,
+                    "y": 280,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -144,8 +144,8 @@
                     "texture": {
                         "key": "backgroundtile"
                     },
-                    "x": 1135,
-                    "y": 375,
+                    "x": 1080,
+                    "y": 280,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -157,8 +157,8 @@
                     "texture": {
                         "key": "backgroundtile5"
                     },
-                    "x": 120,
-                    "y": 630,
+                    "x": 65,
+                    "y": 535,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -170,8 +170,8 @@
                     "texture": {
                         "key": "backgroundtile2"
                     },
-                    "x": 1390,
-                    "y": 375,
+                    "x": 1335,
+                    "y": 280,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -183,8 +183,8 @@
                     "texture": {
                         "key": "backgroundtile3"
                     },
-                    "x": 625,
-                    "y": 630,
+                    "x": 570,
+                    "y": 535,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -196,8 +196,8 @@
                     "texture": {
                         "key": "backgroundtile"
                     },
-                    "x": 1135,
-                    "y": 630,
+                    "x": 1080,
+                    "y": 535,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -209,8 +209,8 @@
                     "texture": {
                         "key": "backgroundtile5"
                     },
-                    "x": 120,
-                    "y": 885,
+                    "x": 65,
+                    "y": 790,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -222,8 +222,8 @@
                     "texture": {
                         "key": "backgroundtile4"
                     },
-                    "x": 370,
-                    "y": 885,
+                    "x": 315,
+                    "y": 790,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -234,8 +234,8 @@
                     "texture": {
                         "key": "backgroundtile2"
                     },
-                    "x": 1390,
-                    "y": 630,
+                    "x": 1335,
+                    "y": 535,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -246,8 +246,8 @@
                     "texture": {
                         "key": "backgroundtile3"
                     },
-                    "x": 625,
-                    "y": 885,
+                    "x": 570,
+                    "y": 790,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -259,8 +259,8 @@
                     "texture": {
                         "key": "backgroundtile"
                     },
-                    "x": 1135,
-                    "y": 885,
+                    "x": 1080,
+                    "y": 790,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -272,8 +272,8 @@
                     "texture": {
                         "key": "backgroundtile5"
                     },
-                    "x": 120,
-                    "y": 1140,
+                    "x": 65,
+                    "y": 1045,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -284,8 +284,8 @@
                     "texture": {
                         "key": "backgroundtile4"
                     },
-                    "x": 370,
-                    "y": 1140,
+                    "x": 315,
+                    "y": 1045,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -296,8 +296,8 @@
                     "texture": {
                         "key": "backgroundtile2"
                     },
-                    "x": 880,
-                    "y": 1140,
+                    "x": 825,
+                    "y": 1045,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -308,8 +308,8 @@
                     "texture": {
                         "key": "backgroundtile3"
                     },
-                    "x": 625,
-                    "y": 1140,
+                    "x": 570,
+                    "y": 1045,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -320,8 +320,8 @@
                     "texture": {
                         "key": "backgroundtile"
                     },
-                    "x": 1135,
-                    "y": 1140,
+                    "x": 1080,
+                    "y": 1045,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -332,8 +332,8 @@
                     "texture": {
                         "key": "backgroundtile3"
                     },
-                    "x": 880,
-                    "y": 375,
+                    "x": 825,
+                    "y": 280,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -345,23 +345,11 @@
                     "texture": {
                         "key": "backgroundtile3"
                     },
-                    "x": 1645,
-                    "y": 620,
+                    "x": 1590,
+                    "y": 535,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
-                },
-                {
-                    "type": "Image",
-                    "id": "1ee828a4-4423-491d-bddc-9281e300b9ea",
-                    "label": "backgroundtile_23",
-                    "texture": {
-                        "key": "backgroundtile3"
-                    },
-                    "x": 575,
-                    "y": 1135,
-                    "scaleX": 0.25,
-                    "scaleY": 0.25
                 },
                 {
                     "type": "Image",
@@ -370,8 +358,8 @@
                     "texture": {
                         "key": "backgroundtile"
                     },
-                    "x": 880,
-                    "y": 630,
+                    "x": 825,
+                    "y": 535,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -382,8 +370,8 @@
                     "texture": {
                         "key": "backgroundtile2"
                     },
-                    "x": 880,
-                    "y": 885,
+                    "x": 825,
+                    "y": 790,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -394,8 +382,8 @@
                     "texture": {
                         "key": "backgroundtile3"
                     },
-                    "x": 1390,
-                    "y": 875,
+                    "x": 1335,
+                    "y": 790,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -407,8 +395,8 @@
                     "texture": {
                         "key": "backgroundtile4"
                     },
-                    "x": 1645,
-                    "y": 875,
+                    "x": 1590,
+                    "y": 790,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -420,8 +408,8 @@
                     "texture": {
                         "key": "backgroundtile4"
                     },
-                    "x": 1645,
-                    "y": 125,
+                    "x": 1590,
+                    "y": 30,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -433,8 +421,8 @@
                     "texture": {
                         "key": "backgroundtile3"
                     },
-                    "x": 370,
-                    "y": 630,
+                    "x": 315,
+                    "y": 535,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -446,8 +434,8 @@
                     "texture": {
                         "key": "backgroundtile"
                     },
-                    "x": 1645,
-                    "y": 375,
+                    "x": 1590,
+                    "y": 280,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -458,8 +446,8 @@
                     "texture": {
                         "key": "backgroundtile"
                     },
-                    "x": 1900,
-                    "y": 125,
+                    "x": 1845,
+                    "y": 30,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -471,8 +459,8 @@
                     "texture": {
                         "key": "backgroundtile"
                     },
-                    "x": 1900,
-                    "y": 380,
+                    "x": 1845,
+                    "y": 285,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -484,8 +472,8 @@
                     "texture": {
                         "key": "backgroundtile"
                     },
-                    "x": 1900,
-                    "y": 635,
+                    "x": 1845,
+                    "y": 540,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -497,8 +485,8 @@
                     "texture": {
                         "key": "backgroundtile"
                     },
-                    "x": 1900,
-                    "y": 890,
+                    "x": 1845,
+                    "y": 790,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -510,8 +498,8 @@
                     "texture": {
                         "key": "backgroundtile"
                     },
-                    "x": 1900,
-                    "y": 1145,
+                    "x": 1845,
+                    "y": 1045,
                     "scaleX": 0.25,
                     "scaleY": 0.25
                 },
@@ -522,8 +510,8 @@
                     "texture": {
                         "key": "backgroundtile3"
                     },
-                    "x": 1390,
-                    "y": 1130,
+                    "x": 1335,
+                    "y": 1045,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -535,8 +523,8 @@
                     "texture": {
                         "key": "backgroundtile4"
                     },
-                    "x": 1645,
-                    "y": 1130,
+                    "x": 1590,
+                    "y": 1045,
                     "scaleX": 0.25,
                     "scaleY": 0.25,
                     "flipX": true
@@ -963,6 +951,10 @@
                     "label": "p1_Rogue",
                     "displayName": "P1 Rogue",
                     "useGameObjectName": true,
+                    "components": [
+                        "CharacterViewComponent"
+                    ],
+                    "CharacterViewComponent.status_bar": "p1_rogue_status_bar",
                     "x": -220,
                     "y": -105,
                     "list": [
@@ -1008,6 +1000,10 @@
                     "label": "p1_Priest",
                     "displayName": "P1 Priest",
                     "useGameObjectName": true,
+                    "components": [
+                        "CharacterViewComponent"
+                    ],
+                    "CharacterViewComponent.status_bar": "p1_priest_status_bar",
                     "x": -220,
                     "y": 230,
                     "list": [
@@ -1058,6 +1054,10 @@
                     "label": "p1_Mage",
                     "displayName": "P1 Mage",
                     "useGameObjectName": true,
+                    "components": [
+                        "CharacterViewComponent"
+                    ],
+                    "CharacterViewComponent.status_bar": "p1_mage_status_bar",
                     "x": -220,
                     "y": 65,
                     "list": [
@@ -1103,6 +1103,10 @@
                     "label": "p1_warrior",
                     "displayName": "P1 Warrior",
                     "useGameObjectName": true,
+                    "components": [
+                        "CharacterViewComponent"
+                    ],
+                    "CharacterViewComponent.status_bar": "p1_warrior_status_bar",
                     "x": -220,
                     "y": 405,
                     "list": [
@@ -1166,6 +1170,10 @@
                     "label": "p2_rogue",
                     "displayName": "P2 Rogue",
                     "useGameObjectName": true,
+                    "components": [
+                        "CharacterViewComponent"
+                    ],
+                    "CharacterViewComponent.status_bar": "p2_rogue_status_bar",
                     "list": [
                         {
                             "type": "Image",
@@ -1207,6 +1215,10 @@
                     "label": "p2_priest",
                     "displayName": "P2 Priest",
                     "useGameObjectName": true,
+                    "components": [
+                        "CharacterViewComponent"
+                    ],
+                    "CharacterViewComponent.status_bar": "p2_priest_status_bar",
                     "y": 335,
                     "list": [
                         {
@@ -1254,6 +1266,10 @@
                     "label": "p2_mage",
                     "displayName": "P2 Mage",
                     "useGameObjectName": true,
+                    "components": [
+                        "CharacterViewComponent"
+                    ],
+                    "CharacterViewComponent.status_bar": "p2_mage_status_bar",
                     "y": 170,
                     "list": [
                         {
@@ -1296,6 +1312,10 @@
                     "label": "p2_warrior",
                     "displayName": "P2 Warrior",
                     "useGameObjectName": true,
+                    "components": [
+                        "CharacterViewComponent"
+                    ],
+                    "CharacterViewComponent.status_bar": "p2_warrior_status_bar",
                     "x": 5,
                     "y": 510,
                     "list": [
@@ -1379,6 +1399,24 @@
                     "fontSize": -64
                 }
             ]
+        },
+        {
+            "type": "Container",
+            "id": "19de2c48-3460-4714-8cd7-407159b7f2a5",
+            "label": "character_manager",
+            "displayName": "Character Manager",
+            "useGameObjectName": true,
+            "components": [
+                "CharacterManagerComponent"
+            ],
+            "CharacterManagerComponent.p1_warrior_ui": "p1_warrior",
+            "CharacterManagerComponent.p1_mage_ui": "p1_Mage",
+            "CharacterManagerComponent.p1_priest_ui": "p1_Priest",
+            "CharacterManagerComponent.p1_rogue_ui": "p1_Rogue",
+            "CharacterManagerComponent.p2_warrior_ui": "p2_warrior",
+            "CharacterManagerComponent.p2_mage_ui": "p2_mage",
+            "CharacterManagerComponent.p2_priest_ui": "p2_priest",
+            "CharacterManagerComponent.p2_rogue_ui": "p2_rogue"
         }
     ],
     "plainObjects": [],

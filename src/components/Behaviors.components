@@ -198,7 +198,160 @@
             "baseClass": "UserComponent",
             "gameObjectType": "any",
             "generateGameObjectField": true,
-            "properties": []
+            "properties": [
+                {
+                    "name": "p1_warrior_ui",
+                    "label": "P1 Warrior UI",
+                    "tooltip": "The UI object for the P1 warrior and their corresponding status bar.",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "p1_mage_ui",
+                    "label": "P1 Mage UI",
+                    "tooltip": "The UI object for the P1 mage and their corresponding status bar.",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "p1_priest_ui",
+                    "label": "P1 Priest UI",
+                    "tooltip": "The UI object for the P1 priest and their corresponding status bar.",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "p1_rogue_ui",
+                    "label": "P1 Rogue UI",
+                    "tooltip": "The UI object for the P1 rogue and their corresponding status bar.",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "p2_warrior_ui",
+                    "label": "P2 Warrior UI",
+                    "tooltip": "The UI object for the P2 warrior and their corresponding status bar.",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "p2_mage_ui",
+                    "label": "P2 Mage UI",
+                    "tooltip": "The UI object for the P2 mage and their corresponding status bar.",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "p2_priest_ui",
+                    "label": "P2 Priest UI",
+                    "tooltip": "The UI object for the P2 priest and their corresponding status bar.",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "p2_rogue_ui",
+                    "label": "P2 Rogue UI",
+                    "tooltip": "The UI object for the P2 rogue and their corresponding status bar.",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "CharacterViewComponent",
+            "displayName": "Character View Component",
+            "objectDisplayFormat": "",
+            "baseClass": "UserComponent",
+            "gameObjectType": "any",
+            "generateGameObjectField": true,
+            "properties": [
+                {
+                    "name": "status_bar",
+                    "label": "Status Bar",
+                    "tooltip": "The Status Bar Prefab",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "StatusBarViewComponent",
+            "displayName": "Status Bar View Component",
+            "objectDisplayFormat": "",
+            "baseClass": "UserComponent",
+            "gameObjectType": "any",
+            "generateGameObjectField": true,
+            "properties": [
+                {
+                    "name": "hp_meter_fill",
+                    "label": "HP Meter Fill",
+                    "tooltip": "The HP meter fill",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "hp_meter_background",
+                    "label": "HP Meter Background",
+                    "tooltip": "The background to the HP meter",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "character_name",
+                    "label": "Character Name",
+                    "tooltip": "The name of the character",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                }
+            ]
         }
     ],
     "meta": {
