@@ -307,6 +307,28 @@
                         "id": "object-var",
                         "expressionType": "Phaser.GameObjects.GameObject"
                     }
+                },
+                {
+                    "name": "gravestone",
+                    "label": "Gravestone",
+                    "tooltip": "The sprite to show if a character dies",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "character_sprite",
+                    "label": "Character Sprite",
+                    "tooltip": "The sprite of the character",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
                 }
             ]
         },

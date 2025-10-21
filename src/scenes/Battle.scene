@@ -955,6 +955,8 @@
                         "CharacterViewComponent"
                     ],
                     "CharacterViewComponent.status_bar": "p1_rogue_status_bar",
+                    "CharacterViewComponent.gravestone": "p1_rogue_gravestone",
+                    "CharacterViewComponent.character_sprite": "p1_rogue_sprite",
                     "x": -220,
                     "y": -105,
                     "list": [
@@ -991,6 +993,20 @@
                             "useGameObjectName": true,
                             "x": 0,
                             "y": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "089938ac-2007-4133-b621-6fd406672c40",
+                            "label": "p1_rogue_gravestone",
+                            "displayName": "P1 Rogue Gravestone",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "gravestone"
+                            },
+                            "x": 515,
+                            "y": 55,
+                            "scaleX": 0.26717669100700636,
+                            "scaleY": 0.26717669100700636
                         }
                     ]
                 },
@@ -1004,6 +1020,8 @@
                         "CharacterViewComponent"
                     ],
                     "CharacterViewComponent.status_bar": "p1_priest_status_bar",
+                    "CharacterViewComponent.gravestone": "p1_priest_gravestone",
+                    "CharacterViewComponent.character_sprite": "p1_priest_sprite",
                     "x": -220,
                     "y": 230,
                     "list": [
@@ -1045,6 +1063,20 @@
                             "useGameObjectName": true,
                             "x": 0,
                             "y": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "358fdd4b-3370-416f-aa33-bf898a42c556",
+                            "label": "p1_priest_gravestone",
+                            "displayName": "P1 Priest Gravestone",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "gravestone"
+                            },
+                            "x": 515,
+                            "y": 55,
+                            "scaleX": 0.26717669100700636,
+                            "scaleY": 0.26717669100700636
                         }
                     ]
                 },
@@ -1058,6 +1090,8 @@
                         "CharacterViewComponent"
                     ],
                     "CharacterViewComponent.status_bar": "p1_mage_status_bar",
+                    "CharacterViewComponent.gravestone": "p1_mage_gravestone",
+                    "CharacterViewComponent.character_sprite": "p1_mage_sprite",
                     "x": -220,
                     "y": 65,
                     "list": [
@@ -1094,6 +1128,20 @@
                             "useGameObjectName": true,
                             "x": 0,
                             "y": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "89ba04ee-f3c2-4afd-867e-ec355bd27ac3",
+                            "label": "p1_mage_gravestone",
+                            "displayName": "P1 Mage Gravestone",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "gravestone"
+                            },
+                            "x": 515,
+                            "y": 55,
+                            "scaleX": 0.26717669100700636,
+                            "scaleY": 0.26717669100700636
                         }
                     ]
                 },
@@ -1107,6 +1155,8 @@
                         "CharacterViewComponent"
                     ],
                     "CharacterViewComponent.status_bar": "p1_warrior_status_bar",
+                    "CharacterViewComponent.gravestone": "p1_warrior_gravestone",
+                    "CharacterViewComponent.character_sprite": "p1_warrior_sprite",
                     "x": -220,
                     "y": 405,
                     "list": [
@@ -1114,7 +1164,7 @@
                             "type": "Image",
                             "id": "cb84052a-eee5-4045-ab90-38adf4f4986b",
                             "label": "p1_warrior_sprite",
-                            "displayName": "P1 Warrior Spritte",
+                            "displayName": "P1 Warrior Sprite",
                             "useGameObjectName": true,
                             "scope": "CLASS",
                             "components": [
@@ -1150,6 +1200,20 @@
                             "useGameObjectName": true,
                             "x": 0,
                             "y": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "5b0eda3e-7136-4a2f-bc6b-35921ff0f5e2",
+                            "label": "p1_warrior_gravestone",
+                            "displayName": "P1 Warrior Gravestone",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "gravestone"
+                            },
+                            "x": 515,
+                            "y": 50,
+                            "scaleX": 0.26717669100700636,
+                            "scaleY": 0.26717669100700636
                         }
                     ]
                 }
@@ -1174,6 +1238,8 @@
                         "CharacterViewComponent"
                     ],
                     "CharacterViewComponent.status_bar": "p2_rogue_status_bar",
+                    "CharacterViewComponent.gravestone": "p2_rogue_gravestone",
+                    "CharacterViewComponent.character_sprite": "p2_rogue_sprite",
                     "list": [
                         {
                             "type": "Image",
@@ -1206,6 +1272,19 @@
                             "useGameObjectName": true,
                             "x": 185,
                             "y": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "21525508-2d49-457a-80b3-e63fa53c0e55",
+                            "label": "p2_rogue_gravestone",
+                            "displayName": "P2 Rogue Gravestone",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "gravestone"
+                            },
+                            "y": 50,
+                            "scaleX": 0.26717669100700636,
+                            "scaleY": 0.26717669100700636
                         }
                     ]
                 },
@@ -1219,6 +1298,8 @@
                         "CharacterViewComponent"
                     ],
                     "CharacterViewComponent.status_bar": "p2_priest_status_bar",
+                    "CharacterViewComponent.gravestone": "p2_priest_gravestone",
+                    "CharacterViewComponent.character_sprite": "p2_priest_sprite",
                     "y": 335,
                     "list": [
                         {
@@ -1257,6 +1338,20 @@
                             "useGameObjectName": true,
                             "x": 185,
                             "y": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "d07844b9-d90d-436d-8825-3b4b632fc0f4",
+                            "label": "p2_priest_gravestone",
+                            "displayName": "P2 Priest Gravestone",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "gravestone"
+                            },
+                            "x": 5,
+                            "y": 55,
+                            "scaleX": 0.26717669100700636,
+                            "scaleY": 0.26717669100700636
                         }
                     ]
                 },
@@ -1270,6 +1365,8 @@
                         "CharacterViewComponent"
                     ],
                     "CharacterViewComponent.status_bar": "p2_mage_status_bar",
+                    "CharacterViewComponent.gravestone": "p2_mage_gravestone",
+                    "CharacterViewComponent.character_sprite": "p2_mage_sprite",
                     "y": 170,
                     "list": [
                         {
@@ -1303,6 +1400,19 @@
                             "useGameObjectName": true,
                             "x": 185,
                             "y": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "b8276951-d302-4a35-956e-88605f6511dc",
+                            "label": "p2_mage_gravestone",
+                            "displayName": "P2 Mage Gravestone",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "gravestone"
+                            },
+                            "y": 50,
+                            "scaleX": 0.26717669100700636,
+                            "scaleY": 0.26717669100700636
                         }
                     ]
                 },
@@ -1316,6 +1426,8 @@
                         "CharacterViewComponent"
                     ],
                     "CharacterViewComponent.status_bar": "p2_warrior_status_bar",
+                    "CharacterViewComponent.gravestone": "p2_warrior_gravestone",
+                    "CharacterViewComponent.character_sprite": "p2_warrior_sprite",
                     "x": 5,
                     "y": 510,
                     "list": [
@@ -1357,6 +1469,19 @@
                             "useGameObjectName": true,
                             "x": 180,
                             "y": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "e415d49b-4b3c-4927-b6fd-65447843be3f",
+                            "label": "p2_warrior_gravestone",
+                            "displayName": "P2 Warrior Gravestone",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "gravestone"
+                            },
+                            "y": 45,
+                            "scaleX": 0.26717669100700636,
+                            "scaleY": 0.26717669100700636
                         }
                     ]
                 }

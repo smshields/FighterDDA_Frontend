@@ -86,7 +86,7 @@ export default class CharacterManagerComponent extends UserComponent {
 		this.p1_mage_status_bar_ui = null;
 		this.p1_rogue_status_bar_ui = null;
 		this.p1_priest_status_bar_ui = null;						
-		
+
 		this.p2_warrior_status_bar_ui = null;
 		this.p2_mage_status_bar_ui = null;
 		this.p2_rogue_status_bar_ui = null;
@@ -99,8 +99,6 @@ export default class CharacterManagerComponent extends UserComponent {
 	static getComponent(gameObject) {
 		return gameObject["__CharacterManagerComponent"];
 	}
-
-
 
 
 	/* START-USER-CODE */
@@ -145,7 +143,7 @@ export default class CharacterManagerComponent extends UserComponent {
 			this.p1_mage_status_bar_ui = this.p1_mage_ui.characterViewComponent.status_bar.statusBarViewComponent;
 			this.p1_rogue_status_bar_ui = this.p1_rogue_ui.characterViewComponent.status_bar.statusBarViewComponent;
 			this.p1_priest_status_bar_ui = this.p1_priest_ui.characterViewComponent.status_bar.statusBarViewComponent;						
-			
+
 			this.p2_warrior_status_bar_ui = this.p2_warrior_ui.characterViewComponent.status_bar.statusBarViewComponent;
 			this.p2_mage_status_bar_ui = this.p2_mage_ui.characterViewComponent.status_bar.statusBarViewComponent;
 			this.p2_rogue_status_bar_ui = this.p2_rogue_ui.characterViewComponent.status_bar.statusBarViewComponent;
@@ -176,19 +174,24 @@ export default class CharacterManagerComponent extends UserComponent {
 	}
 
 	start() {
+		this.gameObject.characterManagerComponent = this;
+
 		this.initializeCharacterUIModelMap();
-		this.updateCharacterViews();
-		
+
+		for(let mapItem of this.characterUIModelMap){
+			mapItem.ui.characterViewComponent.init(mapItem);
+		}
+
 	}
 
+	//Update character model
+	updateCharacterModel(){}
+
+	//Update character view based on model
+	updateCharacterView(){}
+
 	//Update character views based on models
-	updateCharacterViews(){
-		console.log(this);
-		for(let mapItem of this.characterUIModelMap){
-			console.log(mapItem);
-			mapItem.statusUi.updateCharacterName(mapItem.model.characterName);
-		}
-	}
+	updateCharacterViews(){}
 
 
 	/* END-USER-CODE */

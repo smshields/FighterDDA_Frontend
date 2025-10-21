@@ -24,6 +24,12 @@ export default class CharacterViewComponent extends UserComponent {
 		/** @type {Phaser.GameObjects.GameObject} */
 		this.status_bar = null;
 
+		/** @type {Phaser.GameObjects.GameObject} */
+		this.gravestone = null;
+
+		/** @type {Phaser.GameObjects.GameObject} */
+		this.character_sprite = null;
+
 		// === Internal Properties ===
 
 		this.characterModel = null;
@@ -39,12 +45,38 @@ export default class CharacterViewComponent extends UserComponent {
 
 	/* START-USER-CODE */
 
+	start(){
+		// === References ===
+		this.gameObject.characterViewComponent = this;
+	}
+
+	init(characterModelUIMapItem){
+		this.setCharacterModel(characterModelUIMapItem.model);
+		this.updateCharacterName(this.characterModel.characterName);
+		this.updateIsDead(this.characterModel.isDead);
+		
+	}
+
 	setCharacterModel(characterModel){
 		this.characterModel = characterModel;
 	}
 
 	updateCharacterName(characterName){
-		this.gameObject.statusBarViewComponent.updateCharacterName(characterName);
+		console.log(this.gameObject);
+		this.status_bar.statusBarViewComponent.updateCharacterName(characterName);
+	}
+
+	updateIsDead(isDead){
+		console.log(this.gameObject);
+
+		this.gameObject.characterViewComponent.gravestone.setActive(isDead);
+		this.gameObject.characterViewComponent.gravestone.setVisible(isDead);
+		this.gameObject.characterViewComponent.character_sprite.setActive(!isDead);
+		this.gameObject.characterViewComponent.character_sprite.setVisible(!isDead);
+
+		if(isDead){
+			this.updateCharacterName(this.characterModel.characterName + " (DEAD)");
+		}
 	}
 
 	updateHealthMeter(){

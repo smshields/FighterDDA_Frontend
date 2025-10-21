@@ -37,6 +37,11 @@
                 "key": "defend_icon"
             },
             {
+                "url": "assets/characters/gravestone.png",
+                "type": "image",
+                "key": "gravestone"
+            },
+            {
                 "url": "assets/ui/heal_icon.png",
                 "type": "image",
                 "key": "heal_icon"

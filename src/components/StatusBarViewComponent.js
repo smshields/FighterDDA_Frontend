@@ -16,8 +16,7 @@ export default class StatusBarViewComponent extends UserComponent {
 		gameObject["__StatusBarViewComponent"] = this;
 
 		/* START-USER-CTR-CODE */
-		// === References ===
-		gameObject.statusBarViewComponent = this;
+
 
 		// === Inspector Properties ===
 
@@ -39,6 +38,12 @@ export default class StatusBarViewComponent extends UserComponent {
 
 
 	/* START-USER-CODE */
+
+	start(){
+		// === References ===
+		this.gameObject.statusBarViewComponent = this;
+		console.log("reached statusBarViewComponent start");
+	}
 
 	updateCharacterName(characterName){
 		this.character_name.setText(characterName);
