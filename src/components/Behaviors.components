@@ -329,6 +329,17 @@
                         "id": "object-var",
                         "expressionType": "Phaser.GameObjects.GameObject"
                     }
+                },
+                {
+                    "name": "defending",
+                    "label": "Defending",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
                 }
             ]
         },

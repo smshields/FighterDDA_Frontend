@@ -30,6 +30,9 @@ export default class CharacterViewComponent extends UserComponent {
 		/** @type {Phaser.GameObjects.GameObject} */
 		this.character_sprite = null;
 
+		/** @type {Phaser.GameObjects.GameObject} */
+		this.defending = null;
+
 		// === Internal Properties ===
 
 		this.characterModel = null;
@@ -53,8 +56,9 @@ export default class CharacterViewComponent extends UserComponent {
 	init(characterModelUIMapItem){
 		this.setCharacterModel(characterModelUIMapItem.model);
 		this.updateCharacterName(this.characterModel.characterName);
-		this.updateIsDead(this.characterModel.isDead);
-		
+		this.updateIsDead(this.characterModel);
+		this.updateIsDefending(this.characterModel);
+
 	}
 
 	setCharacterModel(characterModel){
@@ -62,12 +66,11 @@ export default class CharacterViewComponent extends UserComponent {
 	}
 
 	updateCharacterName(characterName){
-		console.log(this.gameObject);
 		this.status_bar.statusBarViewComponent.updateCharacterName(characterName);
 	}
 
-	updateIsDead(isDead){
-		console.log(this.gameObject);
+	updateIsDead(model){
+		let isDead = model.isDead;
 
 		this.gameObject.characterViewComponent.gravestone.setActive(isDead);
 		this.gameObject.characterViewComponent.gravestone.setVisible(isDead);
@@ -75,8 +78,24 @@ export default class CharacterViewComponent extends UserComponent {
 		this.gameObject.characterViewComponent.character_sprite.setVisible(!isDead);
 
 		if(isDead){
-			this.updateCharacterName(this.characterModel.characterName + " (DEAD)");
+			this.updateCharacterName(model.characterName + " (DEAD)");
+			this.updateIsDefending(false);
 		}
+	}
+
+	updateIsDefending(model){
+		console.log(model);
+
+		let isDefending = model.isDefending;
+		let isDead = model.isDead;
+
+		if(isDead){
+			isDefending = false;
+		}
+
+		this.gameObject.characterViewComponent.defending.setActive(isDefending);
+		this.gameObject.characterViewComponent.defending.setVisible(isDefending);
+		
 	}
 
 	updateHealthMeter(){

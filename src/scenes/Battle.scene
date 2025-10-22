@@ -957,6 +957,7 @@
                     "CharacterViewComponent.status_bar": "p1_rogue_status_bar",
                     "CharacterViewComponent.gravestone": "p1_rogue_gravestone",
                     "CharacterViewComponent.character_sprite": "p1_rogue_sprite",
+                    "CharacterViewComponent.defending": "p1_rogue_defend",
                     "x": -220,
                     "y": -105,
                     "list": [
@@ -1007,6 +1008,20 @@
                             "y": 55,
                             "scaleX": 0.26717669100700636,
                             "scaleY": 0.26717669100700636
+                        },
+                        {
+                            "type": "Image",
+                            "id": "fe491bfd-ae8e-4025-856c-cf262d2253ac",
+                            "label": "p1_rogue_defend",
+                            "displayName": "P1 Rogue Defend",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "defend"
+                            },
+                            "x": 560,
+                            "y": 70,
+                            "scaleX": 0.2788076925413643,
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 },
@@ -1022,6 +1037,7 @@
                     "CharacterViewComponent.status_bar": "p1_priest_status_bar",
                     "CharacterViewComponent.gravestone": "p1_priest_gravestone",
                     "CharacterViewComponent.character_sprite": "p1_priest_sprite",
+                    "CharacterViewComponent.defending": "p1_priest_defend",
                     "x": -220,
                     "y": 230,
                     "list": [
@@ -1059,7 +1075,7 @@
                                 "y"
                             ],
                             "label": "p1_priest_status_bar",
-                            "displayName": "P1_Priest_Status_Bar",
+                            "displayName": "P1 Priest Status Bar",
                             "useGameObjectName": true,
                             "x": 0,
                             "y": 0
@@ -1077,6 +1093,20 @@
                             "y": 55,
                             "scaleX": 0.26717669100700636,
                             "scaleY": 0.26717669100700636
+                        },
+                        {
+                            "type": "Image",
+                            "id": "8f703dff-d9a4-4608-bfd6-73184bb9e6ce",
+                            "label": "p1_priest_defend",
+                            "displayName": "P1 Priest Defend",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "defend"
+                            },
+                            "x": 560,
+                            "y": 70,
+                            "scaleX": 0.2788076925413643,
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 },
@@ -1092,6 +1122,7 @@
                     "CharacterViewComponent.status_bar": "p1_mage_status_bar",
                     "CharacterViewComponent.gravestone": "p1_mage_gravestone",
                     "CharacterViewComponent.character_sprite": "p1_mage_sprite",
+                    "CharacterViewComponent.defending": "p1_mage_defend",
                     "x": -220,
                     "y": 65,
                     "list": [
@@ -1142,6 +1173,20 @@
                             "y": 55,
                             "scaleX": 0.26717669100700636,
                             "scaleY": 0.26717669100700636
+                        },
+                        {
+                            "type": "Image",
+                            "id": "3866c857-eef9-4efa-ba41-dd2e34de5957",
+                            "label": "p1_mage_defend",
+                            "displayName": "P1 Mage Defend",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "defend"
+                            },
+                            "x": 560,
+                            "y": 70,
+                            "scaleX": 0.2788076925413643,
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 },
@@ -1157,6 +1202,7 @@
                     "CharacterViewComponent.status_bar": "p1_warrior_status_bar",
                     "CharacterViewComponent.gravestone": "p1_warrior_gravestone",
                     "CharacterViewComponent.character_sprite": "p1_warrior_sprite",
+                    "CharacterViewComponent.defending": "p1_mage_defend",
                     "x": -220,
                     "y": 405,
                     "list": [
@@ -1214,6 +1260,20 @@
                             "y": 50,
                             "scaleX": 0.26717669100700636,
                             "scaleY": 0.26717669100700636
+                        },
+                        {
+                            "type": "Image",
+                            "id": "917a6fd9-fa7d-4b7a-8610-21e45e5eba4e",
+                            "label": "p1_warrior_defend",
+                            "displayName": "P1 Warrior Defend",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "defend"
+                            },
+                            "x": 560,
+                            "y": 65,
+                            "scaleX": 0.2788076925413643,
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 }
@@ -1240,6 +1300,7 @@
                     "CharacterViewComponent.status_bar": "p2_rogue_status_bar",
                     "CharacterViewComponent.gravestone": "p2_rogue_gravestone",
                     "CharacterViewComponent.character_sprite": "p2_rogue_sprite",
+                    "CharacterViewComponent.defending": "p2_rogue_defend",
                     "list": [
                         {
                             "type": "Image",
@@ -1285,6 +1346,20 @@
                             "y": 50,
                             "scaleX": 0.26717669100700636,
                             "scaleY": 0.26717669100700636
+                        },
+                        {
+                            "type": "Image",
+                            "id": "219fe1fc-b18d-4137-9ffe-9829a3d685e7",
+                            "label": "p2_rogue_defend",
+                            "displayName": "P2 rogue Defend",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "defend"
+                            },
+                            "x": -45,
+                            "y": 65,
+                            "scaleX": 0.2788076925413643,
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 },
@@ -1300,6 +1375,7 @@
                     "CharacterViewComponent.status_bar": "p2_priest_status_bar",
                     "CharacterViewComponent.gravestone": "p2_priest_gravestone",
                     "CharacterViewComponent.character_sprite": "p2_priest_sprite",
+                    "CharacterViewComponent.defending": "p2_priest_defend",
                     "y": 335,
                     "list": [
                         {
@@ -1352,6 +1428,20 @@
                             "y": 55,
                             "scaleX": 0.26717669100700636,
                             "scaleY": 0.26717669100700636
+                        },
+                        {
+                            "type": "Image",
+                            "id": "adca3057-7cd4-443c-82e0-e9ed3f8ba7b9",
+                            "label": "p2_priest_defend",
+                            "displayName": "P2 Priest Defend",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "defend"
+                            },
+                            "x": -40,
+                            "y": 65,
+                            "scaleX": 0.2788076925413643,
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 },
@@ -1367,6 +1457,7 @@
                     "CharacterViewComponent.status_bar": "p2_mage_status_bar",
                     "CharacterViewComponent.gravestone": "p2_mage_gravestone",
                     "CharacterViewComponent.character_sprite": "p2_mage_sprite",
+                    "CharacterViewComponent.defending": "p2_mage_defend",
                     "y": 170,
                     "list": [
                         {
@@ -1413,6 +1504,20 @@
                             "y": 50,
                             "scaleX": 0.26717669100700636,
                             "scaleY": 0.26717669100700636
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4b70e4f6-0b8a-474d-9278-4f26953b8c5b",
+                            "label": "p2_mage_defend",
+                            "displayName": "P2 Mage Defend",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "defend"
+                            },
+                            "x": -45,
+                            "y": 65,
+                            "scaleX": 0.2788076925413643,
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 },
@@ -1428,6 +1533,7 @@
                     "CharacterViewComponent.status_bar": "p2_warrior_status_bar",
                     "CharacterViewComponent.gravestone": "p2_warrior_gravestone",
                     "CharacterViewComponent.character_sprite": "p2_warrior_sprite",
+                    "CharacterViewComponent.defending": "p2_warrior_defend",
                     "x": 5,
                     "y": 510,
                     "list": [
@@ -1482,6 +1588,20 @@
                             "y": 45,
                             "scaleX": 0.26717669100700636,
                             "scaleY": 0.26717669100700636
+                        },
+                        {
+                            "type": "Image",
+                            "id": "fd6ef2c5-219a-4f45-8106-155188fb907d",
+                            "label": "p2_warrior_defend",
+                            "displayName": "P2 Warrior Defend",
+                            "useGameObjectName": true,
+                            "texture": {
+                                "key": "defend"
+                            },
+                            "x": -45,
+                            "y": 60,
+                            "scaleX": 0.2788076925413643,
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 }

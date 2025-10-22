@@ -6,7 +6,7 @@
     "maxActionMeter": 100,
     
     "isDead": false,
-    "isDefending": false,
+    "isDefending": true,
     "isReadyForPlayerAction": false,
     "isNPC": true,
 

@@ -32,6 +32,11 @@
                 "key": "backgroundtile5"
             },
             {
+                "url": "assets/ui/defend.png",
+                "type": "image",
+                "key": "defend"
+            },
+            {
                 "url": "assets/ui/defend_icon.png",
                 "type": "image",
                 "key": "defend_icon"
