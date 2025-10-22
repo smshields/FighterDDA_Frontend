@@ -49,6 +49,13 @@ export default class StatusBarViewComponent extends UserComponent {
 		this.character_name.setText(characterName);
 	}
 
+	updateHealthBar(currentHp, maxHp){
+		let baseWidth = this.hp_meter_fill.width;
+		let widthRatio = currentHp/maxHp;
+		this.hp_meter_fill.setScale(widthRatio, 1);
+
+	}
+
 	/* END-USER-CODE */
 }
 

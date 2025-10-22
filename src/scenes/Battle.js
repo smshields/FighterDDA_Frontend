@@ -560,6 +560,9 @@ export default class Battle extends Phaser.Scene {
 		p1_rogue_defend.scaleY = 0.2788076925413643;
 		p1_Rogue.add(p1_rogue_defend);
 
+		// glowFx_4
+		p1_rogue_defend.preFX.addGlow(7505407, 4, 0, false);
+
 		// p1_Priest
 		const p1_Priest = this.add.container(-220, 230);
 		p1_Priest.name = "p1_Priest";
@@ -598,6 +601,9 @@ export default class Battle extends Phaser.Scene {
 		p1_priest_defend.scaleY = 0.2788076925413643;
 		p1_Priest.add(p1_priest_defend);
 
+		// glowFx_5
+		p1_priest_defend.preFX.addGlow(7505407, 4, 0, false);
+
 		// p1_Mage
 		const p1_Mage = this.add.container(-220, 65);
 		p1_Mage.name = "p1_Mage";
@@ -631,6 +637,9 @@ export default class Battle extends Phaser.Scene {
 		p1_mage_defend.scaleY = 0.2788076925413643;
 		p1_Mage.add(p1_mage_defend);
 
+		// glowFx_10
+		p1_mage_defend.preFX.addGlow(7505407, 4, 0, false);
+
 		// p1_warrior
 		const p1_warrior = this.add.container(-220, 405);
 		p1_warrior.name = "p1_warrior";
@@ -663,6 +672,9 @@ export default class Battle extends Phaser.Scene {
 		p1_warrior_defend.scaleX = 0.2788076925413643;
 		p1_warrior_defend.scaleY = 0.2788076925413643;
 		p1_warrior.add(p1_warrior_defend);
+
+		// glowFx_11
+		p1_warrior_defend.preFX.addGlow(7505407, 4, 0, false);
 
 		// p2_team
 		const p2_team = this.add.container(1400, 125);
@@ -699,6 +711,9 @@ export default class Battle extends Phaser.Scene {
 		p2_rogue_defend.scaleX = 0.2788076925413643;
 		p2_rogue_defend.scaleY = 0.2788076925413643;
 		p2_rogue.add(p2_rogue_defend);
+
+		// glowFx_12
+		p2_rogue_defend.preFX.addGlow(16742263, 4, 0, false);
 
 		// p2_priest
 		const p2_priest = this.add.container(0, 335);
@@ -737,6 +752,9 @@ export default class Battle extends Phaser.Scene {
 		p2_priest_defend.scaleY = 0.2788076925413643;
 		p2_priest.add(p2_priest_defend);
 
+		// glowFx_13
+		p2_priest_defend.preFX.addGlow(16742263, 4, 0, false);
+
 		// p2_mage
 		const p2_mage = this.add.container(0, 170);
 		p2_mage.name = "p2_mage";
@@ -769,6 +787,9 @@ export default class Battle extends Phaser.Scene {
 		p2_mage_defend.scaleY = 0.2788076925413643;
 		p2_mage.add(p2_mage_defend);
 
+		// glowFx_14
+		p2_mage_defend.preFX.addGlow(16742263, 4, 0, false);
+
 		// p2_warrior
 		const p2_warrior = this.add.container(5, 510);
 		p2_warrior.name = "p2_warrior";
@@ -800,6 +821,9 @@ export default class Battle extends Phaser.Scene {
 		p2_warrior_defend.scaleX = 0.2788076925413643;
 		p2_warrior_defend.scaleY = 0.2788076925413643;
 		p2_warrior.add(p2_warrior_defend);
+
+		// glowFx_15
+		p2_warrior_defend.preFX.addGlow(16777215, 4, 0, false);
 
 		// notifications
 		const notifications = this.add.container(10, 10);

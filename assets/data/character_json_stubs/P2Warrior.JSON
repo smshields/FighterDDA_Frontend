@@ -22,7 +22,7 @@
     },
 
     "currentStats": {
-        "maxHP": 100,
+        "maxHp": 100,
         "currentHp": 25,
         "attack": 0,
         "magicAttack": 0,

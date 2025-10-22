@@ -56,8 +56,17 @@ export default class CharacterViewComponent extends UserComponent {
 	init(characterModelUIMapItem){
 		this.setCharacterModel(characterModelUIMapItem.model);
 		this.updateCharacterName(this.characterModel.characterName);
-		this.updateIsDead(this.characterModel);
-		this.updateIsDefending(this.characterModel);
+		this.updateIsDead();
+		this.updateIsDefending();
+		this.updateHealthBar();
+
+	}
+
+	updateHealthBar(){
+		let currentHp = this.characterModel.currentStats.currentHp;
+		let totalHp = this.characterModel.currentStats.maxHp;
+
+		this.status_bar.statusBarViewComponent.updateHealthBar(currentHp, totalHp);
 
 	}
 
@@ -69,8 +78,8 @@ export default class CharacterViewComponent extends UserComponent {
 		this.status_bar.statusBarViewComponent.updateCharacterName(characterName);
 	}
 
-	updateIsDead(model){
-		let isDead = model.isDead;
+	updateIsDead(){
+		let isDead = this.characterModel.isDead;
 
 		this.gameObject.characterViewComponent.gravestone.setActive(isDead);
 		this.gameObject.characterViewComponent.gravestone.setVisible(isDead);
@@ -78,16 +87,14 @@ export default class CharacterViewComponent extends UserComponent {
 		this.gameObject.characterViewComponent.character_sprite.setVisible(!isDead);
 
 		if(isDead){
-			this.updateCharacterName(model.characterName + " (DEAD)");
+			this.updateCharacterName(this.characterModel.characterName + " (DEAD)");
 			this.updateIsDefending(false);
 		}
 	}
 
-	updateIsDefending(model){
-		console.log(model);
-
-		let isDefending = model.isDefending;
-		let isDead = model.isDead;
+	updateIsDefending(){
+		let isDefending = this.characterModel.isDefending;
+		let isDead = this.characterModel.isDead;
 
 		if(isDead){
 			isDefending = false;
