@@ -35,6 +35,9 @@ export default class StatusBarViewComponent extends UserComponent {
 		/** @type {Phaser.GameObjects.GameObject} */
 		this.action_meter_background = null;
 
+		/** @type {Phaser.GameOBjects.GameObject} */
+		this.status_bar_background = null;
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -64,6 +67,12 @@ export default class StatusBarViewComponent extends UserComponent {
 	updateActionBar(currentActionMeter, maxActionMeter){
 		let widthRatio = currentActionMeter/maxActionMeter;
 		this.action_meter_fill.setScale(widthRatio, 1);
+	}
+
+	updateStatusBarBackground(isDead){
+		if(isDead){
+			this.status_bar_background.setFillStyle(0x5f5f5f);
+		}
 	}
 
 	/* END-USER-CODE */

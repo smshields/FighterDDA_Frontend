@@ -405,6 +405,17 @@
                         "id": "object-var",
                         "expressionType": "Phaser.GameObjects.GameObject"
                     }
+                },
+                {
+                    "name": "status_bar_background",
+                    "label": "Status Bar Background",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
                 }
             ]
         }

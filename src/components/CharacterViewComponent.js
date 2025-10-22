@@ -103,6 +103,7 @@ export default class CharacterViewComponent extends UserComponent {
 
 		if(isDead){
 			this.updateCharacterName(this.characterModel.characterName + " (DEAD)");
+			this.status_bar.statusBarViewComponent.updateStatusBarBackground(isDead);
 			this.updateIsDefending(false);
 		}
 	}

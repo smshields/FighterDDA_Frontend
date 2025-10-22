@@ -82,6 +82,7 @@ export default class StatusBar extends Phaser.GameObjects.Container {
 		thisStatusBarViewComponent.character_name = character_name_label;
 		thisStatusBarViewComponent.action_meter_fill = action_meter;
 		thisStatusBarViewComponent.action_meter_background = action_meter_background;
+		thisStatusBarViewComponent.status_bar_background = character_status_background;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

@@ -25,6 +25,7 @@
             "StatusBarViewComponent.character_name": "character_name_label",
             "StatusBarViewComponent.action_meter_fill": "action_meter",
             "StatusBarViewComponent.action_meter_background": "action_meter_background",
+            "StatusBarViewComponent.status_bar_background": "character_status_background",
             "list": [
                 {
                     "type": "Rectangle",
