@@ -967,6 +967,12 @@
                             "label": "p1_rogue_sprite",
                             "displayName": "P1 Rogue Sprite",
                             "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.active": false,
+                            "ObjectBounceAnimation.posEase": "Expo.easeIn",
+                            "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
                             "texture": {
                                 "key": "rogue"
                             },
@@ -1018,8 +1024,8 @@
                             "texture": {
                                 "key": "defend"
                             },
-                            "x": 560,
-                            "y": 70,
+                            "x": 580,
+                            "y": 80,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643,
                             "list": [
@@ -1027,8 +1033,7 @@
                                     "type": "Glow",
                                     "id": "430380ff-9f29-438c-958b-9d95d4c08336",
                                     "label": "glowFx_4",
-                                    "color": "#7285ff",
-                                    "preFX": true
+                                    "color": "#7285ff"
                                 }
                             ]
                         }
@@ -1056,6 +1061,12 @@
                             "label": "p1_priest_sprite",
                             "displayName": "P1 Priest Sprite",
                             "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.active": false,
+                            "ObjectBounceAnimation.posEase": "Expo.easeIn",
+                            "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
                             "texture": {
                                 "key": "priest"
                             },
@@ -1112,8 +1123,8 @@
                             "texture": {
                                 "key": "defend"
                             },
-                            "x": 560,
-                            "y": 70,
+                            "x": 580,
+                            "y": 80,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643,
                             "list": [
@@ -1121,8 +1132,7 @@
                                     "type": "Glow",
                                     "id": "184e44fc-2573-4c4c-afb3-600b12acb0a9",
                                     "label": "glowFx_5",
-                                    "color": "#7285ff",
-                                    "preFX": true
+                                    "color": "#7285ff"
                                 }
                             ]
                         }
@@ -1150,6 +1160,12 @@
                             "label": "p1_mage_sprite",
                             "displayName": "P1 Mage Sprite",
                             "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.active": false,
+                            "ObjectBounceAnimation.posEase": "Expo.easeIn",
+                            "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
                             "texture": {
                                 "key": "mage"
                             },
@@ -1201,8 +1217,8 @@
                             "texture": {
                                 "key": "defend"
                             },
-                            "x": 560,
-                            "y": 70,
+                            "x": 580,
+                            "y": 80,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643,
                             "list": [
@@ -1210,8 +1226,7 @@
                                     "type": "Glow",
                                     "id": "ad86ac92-369f-436f-8735-019624caf85f",
                                     "label": "glowFx_10",
-                                    "color": "#7285ff",
-                                    "preFX": true
+                                    "color": "#7285ff"
                                 }
                             ]
                         }
@@ -1243,9 +1258,9 @@
                             "components": [
                                 "ObjectBounceAnimation"
                             ],
+                            "ObjectBounceAnimation.active": false,
                             "ObjectBounceAnimation.posEase": "Expo.easeIn",
                             "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
-                            "ObjectBounceAnimation.posDelay": 250,
                             "texture": {
                                 "key": "warrior"
                             },
@@ -1297,8 +1312,8 @@
                             "texture": {
                                 "key": "defend"
                             },
-                            "x": 560,
-                            "y": 65,
+                            "x": 580,
+                            "y": 75,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643,
                             "list": [
@@ -1306,8 +1321,7 @@
                                     "type": "Glow",
                                     "id": "f3eb7340-2b9c-46e9-bca5-126a395e3098",
                                     "label": "glowFx_11",
-                                    "color": "#7285ff",
-                                    "preFX": true
+                                    "color": "#7285ff"
                                 }
                             ]
                         }
@@ -1344,6 +1358,12 @@
                             "label": "p2_rogue_sprite",
                             "displayName": "P2 Rogue Sprite",
                             "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.active": false,
+                            "ObjectBounceAnimation.posEase": "Expo.easeIn",
+                            "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
                             "texture": {
                                 "key": "rogue"
                             },
@@ -1392,8 +1412,8 @@
                             "texture": {
                                 "key": "defend"
                             },
-                            "x": -45,
-                            "y": 65,
+                            "x": -60,
+                            "y": 75,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643,
                             "list": [
@@ -1401,8 +1421,7 @@
                                     "type": "Glow",
                                     "id": "f91d9233-84e5-4cd6-a32b-df59e84cbe72",
                                     "label": "glowFx_12",
-                                    "color": "#ff7777",
-                                    "preFX": true
+                                    "color": "#ff7777"
                                 }
                             ]
                         }
@@ -1429,6 +1448,12 @@
                             "label": "p2_priest_sprite",
                             "displayName": "P2 Priest Sprite",
                             "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.active": false,
+                            "ObjectBounceAnimation.posEase": "Expo.easeIn",
+                            "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
                             "texture": {
                                 "key": "priest"
                             },
@@ -1483,8 +1508,8 @@
                             "texture": {
                                 "key": "defend"
                             },
-                            "x": -40,
-                            "y": 65,
+                            "x": -55,
+                            "y": 75,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643,
                             "list": [
@@ -1492,8 +1517,7 @@
                                     "type": "Glow",
                                     "id": "7114f6c1-7729-4d3b-a1e3-f805f5551809",
                                     "label": "glowFx_13",
-                                    "color": "#ff7777",
-                                    "preFX": true
+                                    "color": "#ff7777"
                                 }
                             ]
                         }
@@ -1520,6 +1544,12 @@
                             "label": "p2_mage_sprite",
                             "displayName": "P2 Mage Sprite",
                             "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.active": false,
+                            "ObjectBounceAnimation.posEase": "Expo.easeIn",
+                            "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
                             "texture": {
                                 "key": "mage"
                             },
@@ -1568,8 +1598,8 @@
                             "texture": {
                                 "key": "defend"
                             },
-                            "x": -45,
-                            "y": 65,
+                            "x": -60,
+                            "y": 75,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643,
                             "list": [
@@ -1577,8 +1607,7 @@
                                     "type": "Glow",
                                     "id": "fc301c4b-d527-4f33-8ae6-dc52b390b4d5",
                                     "label": "glowFx_14",
-                                    "color": "#ff7777",
-                                    "preFX": true
+                                    "color": "#ff7777"
                                 }
                             ]
                         }
@@ -1610,9 +1639,9 @@
                             "components": [
                                 "ObjectBounceAnimation"
                             ],
+                            "ObjectBounceAnimation.active": false,
                             "ObjectBounceAnimation.posEase": "Expo.easeIn",
                             "ObjectBounceAnimation.scaleEase": "Expo.easeIn",
-                            "ObjectBounceAnimation.posDelay": 250,
                             "texture": {
                                 "key": "warrior"
                             },
@@ -1661,8 +1690,8 @@
                             "texture": {
                                 "key": "defend"
                             },
-                            "x": -45,
-                            "y": 60,
+                            "x": -60,
+                            "y": 70,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643,
                             "list": [
@@ -1670,7 +1699,7 @@
                                     "type": "Glow",
                                     "id": "a18050b0-8c1f-4748-b306-5a552e17028c",
                                     "label": "glowFx_15",
-                                    "preFX": true
+                                    "color": "#ff7777"
                                 }
                             ]
                         }

@@ -59,6 +59,7 @@ export default class CharacterViewComponent extends UserComponent {
 		this.updateIsDead();
 		this.updateIsDefending();
 		this.updateHealthBar();
+		this.updateActionBar();
 
 	}
 
@@ -67,7 +68,21 @@ export default class CharacterViewComponent extends UserComponent {
 		let totalHp = this.characterModel.currentStats.maxHp;
 
 		this.status_bar.statusBarViewComponent.updateHealthBar(currentHp, totalHp);
+	}
 
+	updateActionBar(){
+		let currentActionMeter = this.characterModel.currentActionMeter;
+		let maxActionMeter = this.characterModel.maxActionMeter;
+
+		if(this.characterModel.isDead){
+			currentActionMeter = 0;
+		}
+
+		//turn on character bounce if action is ready
+		let bounceIsEnabled = currentActionMeter >= maxActionMeter;
+		this.character_sprite.objectBounceAnimation.setEnabled(bounceIsEnabled);
+
+		this.status_bar.statusBarViewComponent.updateActionBar(currentActionMeter, maxActionMeter);
 	}
 
 	setCharacterModel(characterModel){
@@ -102,12 +117,7 @@ export default class CharacterViewComponent extends UserComponent {
 
 		this.gameObject.characterViewComponent.defending.setActive(isDefending);
 		this.gameObject.characterViewComponent.defending.setVisible(isDefending);
-		
-	}
 
-	updateHealthMeter(){
-		let maxHP = this.characterModel.currentStats.totalHP;
-		let currentHP = this.characterModel.currentStats.totalHP;
 	}
 
 	/* END-USER-CODE */

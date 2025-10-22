@@ -3,8 +3,8 @@
 /* START OF COMPILED CODE */
 
 import CharacterViewComponent from "../components/CharacterViewComponent.js";
-import StatusBar from "../../assets/prefabs/StatusBar.js";
 import ObjectBounceAnimation from "../components/ObjectBounceAnimation.js";
+import StatusBar from "../../assets/prefabs/StatusBar.js";
 import CharacterManagerComponent from "../components/CharacterManagerComponent.js";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
@@ -554,14 +554,14 @@ export default class Battle extends Phaser.Scene {
 		p1_Rogue.add(p1_rogue_gravestone);
 
 		// p1_rogue_defend
-		const p1_rogue_defend = this.add.image(560, 70, "defend");
+		const p1_rogue_defend = this.add.image(580, 80, "defend");
 		p1_rogue_defend.name = "p1_rogue_defend";
 		p1_rogue_defend.scaleX = 0.2788076925413643;
 		p1_rogue_defend.scaleY = 0.2788076925413643;
 		p1_Rogue.add(p1_rogue_defend);
 
 		// glowFx_4
-		p1_rogue_defend.preFX.addGlow(7505407, 4, 0, false);
+		p1_rogue_defend.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
 
 		// p1_Priest
 		const p1_Priest = this.add.container(-220, 230);
@@ -595,14 +595,14 @@ export default class Battle extends Phaser.Scene {
 		p1_Priest.add(p1_priest_gravestone);
 
 		// p1_priest_defend
-		const p1_priest_defend = this.add.image(560, 70, "defend");
+		const p1_priest_defend = this.add.image(580, 80, "defend");
 		p1_priest_defend.name = "p1_priest_defend";
 		p1_priest_defend.scaleX = 0.2788076925413643;
 		p1_priest_defend.scaleY = 0.2788076925413643;
 		p1_Priest.add(p1_priest_defend);
 
 		// glowFx_5
-		p1_priest_defend.preFX.addGlow(7505407, 4, 0, false);
+		p1_priest_defend.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
 
 		// p1_Mage
 		const p1_Mage = this.add.container(-220, 65);
@@ -631,14 +631,14 @@ export default class Battle extends Phaser.Scene {
 		p1_Mage.add(p1_mage_gravestone);
 
 		// p1_mage_defend
-		const p1_mage_defend = this.add.image(560, 70, "defend");
+		const p1_mage_defend = this.add.image(580, 80, "defend");
 		p1_mage_defend.name = "p1_mage_defend";
 		p1_mage_defend.scaleX = 0.2788076925413643;
 		p1_mage_defend.scaleY = 0.2788076925413643;
 		p1_Mage.add(p1_mage_defend);
 
 		// glowFx_10
-		p1_mage_defend.preFX.addGlow(7505407, 4, 0, false);
+		p1_mage_defend.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
 
 		// p1_warrior
 		const p1_warrior = this.add.container(-220, 405);
@@ -667,14 +667,14 @@ export default class Battle extends Phaser.Scene {
 		p1_warrior.add(p1_warrior_gravestone);
 
 		// p1_warrior_defend
-		const p1_warrior_defend = this.add.image(560, 65, "defend");
+		const p1_warrior_defend = this.add.image(580, 75, "defend");
 		p1_warrior_defend.name = "p1_warrior_defend";
 		p1_warrior_defend.scaleX = 0.2788076925413643;
 		p1_warrior_defend.scaleY = 0.2788076925413643;
 		p1_warrior.add(p1_warrior_defend);
 
 		// glowFx_11
-		p1_warrior_defend.preFX.addGlow(7505407, 4, 0, false);
+		p1_warrior_defend.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
 
 		// p2_team
 		const p2_team = this.add.container(1400, 125);
@@ -706,14 +706,14 @@ export default class Battle extends Phaser.Scene {
 		p2_rogue.add(p2_rogue_gravestone);
 
 		// p2_rogue_defend
-		const p2_rogue_defend = this.add.image(-45, 65, "defend");
+		const p2_rogue_defend = this.add.image(-60, 75, "defend");
 		p2_rogue_defend.name = "p2_rogue_defend";
 		p2_rogue_defend.scaleX = 0.2788076925413643;
 		p2_rogue_defend.scaleY = 0.2788076925413643;
 		p2_rogue.add(p2_rogue_defend);
 
 		// glowFx_12
-		p2_rogue_defend.preFX.addGlow(16742263, 4, 0, false);
+		p2_rogue_defend.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
 		// p2_priest
 		const p2_priest = this.add.container(0, 335);
@@ -746,14 +746,14 @@ export default class Battle extends Phaser.Scene {
 		p2_priest.add(p2_priest_gravestone);
 
 		// p2_priest_defend
-		const p2_priest_defend = this.add.image(-40, 65, "defend");
+		const p2_priest_defend = this.add.image(-55, 75, "defend");
 		p2_priest_defend.name = "p2_priest_defend";
 		p2_priest_defend.scaleX = 0.2788076925413643;
 		p2_priest_defend.scaleY = 0.2788076925413643;
 		p2_priest.add(p2_priest_defend);
 
 		// glowFx_13
-		p2_priest_defend.preFX.addGlow(16742263, 4, 0, false);
+		p2_priest_defend.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
 		// p2_mage
 		const p2_mage = this.add.container(0, 170);
@@ -781,14 +781,14 @@ export default class Battle extends Phaser.Scene {
 		p2_mage.add(p2_mage_gravestone);
 
 		// p2_mage_defend
-		const p2_mage_defend = this.add.image(-45, 65, "defend");
+		const p2_mage_defend = this.add.image(-60, 75, "defend");
 		p2_mage_defend.name = "p2_mage_defend";
 		p2_mage_defend.scaleX = 0.2788076925413643;
 		p2_mage_defend.scaleY = 0.2788076925413643;
 		p2_mage.add(p2_mage_defend);
 
 		// glowFx_14
-		p2_mage_defend.preFX.addGlow(16742263, 4, 0, false);
+		p2_mage_defend.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
 		// p2_warrior
 		const p2_warrior = this.add.container(5, 510);
@@ -816,14 +816,14 @@ export default class Battle extends Phaser.Scene {
 		p2_warrior.add(p2_warrior_gravestone);
 
 		// p2_warrior_defend
-		const p2_warrior_defend = this.add.image(-45, 60, "defend");
+		const p2_warrior_defend = this.add.image(-60, 70, "defend");
 		p2_warrior_defend.name = "p2_warrior_defend";
 		p2_warrior_defend.scaleX = 0.2788076925413643;
 		p2_warrior_defend.scaleY = 0.2788076925413643;
 		p2_warrior.add(p2_warrior_defend);
 
 		// glowFx_15
-		p2_warrior_defend.preFX.addGlow(16777215, 4, 0, false);
+		p2_warrior_defend.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
 		// notifications
 		const notifications = this.add.container(10, 10);
@@ -857,6 +857,12 @@ export default class Battle extends Phaser.Scene {
 		p1_RogueCharacterViewComponent.character_sprite = p1_rogue_sprite;
 		p1_RogueCharacterViewComponent.defending = p1_rogue_defend;
 
+		// p1_rogue_sprite (components)
+		const p1_rogue_spriteObjectBounceAnimation = new ObjectBounceAnimation(p1_rogue_sprite);
+		p1_rogue_spriteObjectBounceAnimation.active = false;
+		p1_rogue_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
+		p1_rogue_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
+
 		// p1_Priest (components)
 		const p1_PriestCharacterViewComponent = new CharacterViewComponent(p1_Priest);
 		p1_PriestCharacterViewComponent.status_bar = p1_priest_status_bar;
@@ -864,12 +870,24 @@ export default class Battle extends Phaser.Scene {
 		p1_PriestCharacterViewComponent.character_sprite = p1_priest_sprite;
 		p1_PriestCharacterViewComponent.defending = p1_priest_defend;
 
+		// p1_priest_sprite (components)
+		const p1_priest_spriteObjectBounceAnimation = new ObjectBounceAnimation(p1_priest_sprite);
+		p1_priest_spriteObjectBounceAnimation.active = false;
+		p1_priest_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
+		p1_priest_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
+
 		// p1_Mage (components)
 		const p1_MageCharacterViewComponent = new CharacterViewComponent(p1_Mage);
 		p1_MageCharacterViewComponent.status_bar = p1_mage_status_bar;
 		p1_MageCharacterViewComponent.gravestone = p1_mage_gravestone;
 		p1_MageCharacterViewComponent.character_sprite = p1_mage_sprite;
 		p1_MageCharacterViewComponent.defending = p1_mage_defend;
+
+		// p1_mage_sprite (components)
+		const p1_mage_spriteObjectBounceAnimation = new ObjectBounceAnimation(p1_mage_sprite);
+		p1_mage_spriteObjectBounceAnimation.active = false;
+		p1_mage_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
+		p1_mage_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
 
 		// p1_warrior (components)
 		const p1_warriorCharacterViewComponent = new CharacterViewComponent(p1_warrior);
@@ -880,9 +898,9 @@ export default class Battle extends Phaser.Scene {
 
 		// p1_warrior_sprite (components)
 		const p1_warrior_spriteObjectBounceAnimation = new ObjectBounceAnimation(p1_warrior_sprite);
+		p1_warrior_spriteObjectBounceAnimation.active = false;
 		p1_warrior_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
 		p1_warrior_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
-		p1_warrior_spriteObjectBounceAnimation.posDelay = 250;
 
 		// p2_rogue (components)
 		const p2_rogueCharacterViewComponent = new CharacterViewComponent(p2_rogue);
@@ -891,6 +909,12 @@ export default class Battle extends Phaser.Scene {
 		p2_rogueCharacterViewComponent.character_sprite = p2_rogue_sprite;
 		p2_rogueCharacterViewComponent.defending = p2_rogue_defend;
 
+		// p2_rogue_sprite (components)
+		const p2_rogue_spriteObjectBounceAnimation = new ObjectBounceAnimation(p2_rogue_sprite);
+		p2_rogue_spriteObjectBounceAnimation.active = false;
+		p2_rogue_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
+		p2_rogue_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
+
 		// p2_priest (components)
 		const p2_priestCharacterViewComponent = new CharacterViewComponent(p2_priest);
 		p2_priestCharacterViewComponent.status_bar = p2_priest_status_bar;
@@ -898,12 +922,24 @@ export default class Battle extends Phaser.Scene {
 		p2_priestCharacterViewComponent.character_sprite = p2_priest_sprite;
 		p2_priestCharacterViewComponent.defending = p2_priest_defend;
 
+		// p2_priest_sprite (components)
+		const p2_priest_spriteObjectBounceAnimation = new ObjectBounceAnimation(p2_priest_sprite);
+		p2_priest_spriteObjectBounceAnimation.active = false;
+		p2_priest_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
+		p2_priest_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
+
 		// p2_mage (components)
 		const p2_mageCharacterViewComponent = new CharacterViewComponent(p2_mage);
 		p2_mageCharacterViewComponent.status_bar = p2_mage_status_bar;
 		p2_mageCharacterViewComponent.gravestone = p2_mage_gravestone;
 		p2_mageCharacterViewComponent.character_sprite = p2_mage_sprite;
 		p2_mageCharacterViewComponent.defending = p2_mage_defend;
+
+		// p2_mage_sprite (components)
+		const p2_mage_spriteObjectBounceAnimation = new ObjectBounceAnimation(p2_mage_sprite);
+		p2_mage_spriteObjectBounceAnimation.active = false;
+		p2_mage_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
+		p2_mage_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
 
 		// p2_warrior (components)
 		const p2_warriorCharacterViewComponent = new CharacterViewComponent(p2_warrior);
@@ -914,9 +950,9 @@ export default class Battle extends Phaser.Scene {
 
 		// p2_warrior_sprite (components)
 		const p2_warrior_spriteObjectBounceAnimation = new ObjectBounceAnimation(p2_warrior_sprite);
+		p2_warrior_spriteObjectBounceAnimation.active = false;
 		p2_warrior_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
 		p2_warrior_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
-		p2_warrior_spriteObjectBounceAnimation.posDelay = 250;
 
 		// character_manager (components)
 		const character_managerCharacterManagerComponent = new CharacterManagerComponent(character_manager);

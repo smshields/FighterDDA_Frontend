@@ -16,6 +16,8 @@ export default class ObjectBounceAnimation extends UserComponent {
 		gameObject["__ObjectBounceAnimation"] = this;
 
 		/* START-USER-CTR-CODE */
+    gameObject.objectBounceAnimation = this;
+
 		/** @type {Phaser.Scene} */
     this.scene = gameObject.scene;
 

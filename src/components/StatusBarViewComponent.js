@@ -28,6 +28,13 @@ export default class StatusBarViewComponent extends UserComponent {
 
 		/** @type {Phaser.GameObjects.GameObject} */
 		this.character_name = null;
+
+		/** @type {Phaser.GameObjects.GameObject} */
+		this.action_meter_fill = null;
+
+		/** @type {Phaser.GameObjects.GameObject} */
+		this.action_meter_background = null;
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -50,10 +57,13 @@ export default class StatusBarViewComponent extends UserComponent {
 	}
 
 	updateHealthBar(currentHp, maxHp){
-		let baseWidth = this.hp_meter_fill.width;
 		let widthRatio = currentHp/maxHp;
 		this.hp_meter_fill.setScale(widthRatio, 1);
+	}
 
+	updateActionBar(currentActionMeter, maxActionMeter){
+		let widthRatio = currentActionMeter/maxActionMeter;
+		this.action_meter_fill.setScale(widthRatio, 1);
 	}
 
 	/* END-USER-CODE */
