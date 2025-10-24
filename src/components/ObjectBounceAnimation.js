@@ -18,31 +18,13 @@ export default class ObjectBounceAnimation extends UserComponent {
 		/* START-USER-CTR-CODE */
     gameObject.objectBounceAnimation = this;
 
-		/** @type {Phaser.Scene} */
+    /** @type {Phaser.Scene} */
     this.scene = gameObject.scene;
 
-    // ==== Inspector Properties (must match names exactly in the Editor) ====
-    /** @type {"position"|"scale"|"both"} */ this.mode = "position";
-    /** @type {boolean} */ this.active = true;
 
-    /** @type {number} */ this.posDelay = 0;    // ms before position bounce starts
-		/** @type {number} */ this.scaleDelay = 0;  // ms before scale bounce starts
-
-    // Position bounce settings
-    /** @type {number} */ this.posOffset = 5;                 // pixels (vertical travel)
-    /** @type {number} */ this.posDuration = 500;             // ms per half-cycle
-    /** @type {string} */ this.posEase = "Sine.easeInOut";
-
-    // Scale bounce (stretch) settings
-    // Positive values stretch outward; negative values compress inward.
-    // You can set one axis only (e.g., scaleYDelta = 0.06, scaleXDelta = 0) for classic "squash & stretch".
-    /** @type {number} */ this.scaleXDelta = 0.00;            // e.g., 0.03 for subtle x stretch
-    /** @type {number} */ this.scaleYDelta = 0.06;            // e.g., 0.06 for subtle y stretch
-    /** @type {number} */ this.scaleDuration = 500;           // ms per half-cycle
-    /** @type {string} */ this.scaleEase = "Sine.easeInOut";
 
     // ==== Internals ====
-    /** @type {(Phaser.Tweens.Tween|null)[]} */ this.tweens = [];
+    this.tweens = [];
 
     // Teardown when object is destroyed
     gameObject.once(Phaser.GameObjects.Events.DESTROY, this.destroy, this);
@@ -51,7 +33,7 @@ export default class ObjectBounceAnimation extends UserComponent {
     this.scene.events.on(Phaser.Scenes.Events.SLEEP, this.pause, this);
     this.scene.events.on(Phaser.Scenes.Events.WAKE, this.resume, this);
     this.scene.events.on(Phaser.Scenes.Events.SHUTDOWN, this.destroy, this);
-		/* END-USER-CTR-CODE */
+    /* END-USER-CTR-CODE */
 	}
 
 	/** @returns {ObjectBounceAnimation} */
@@ -84,7 +66,7 @@ export default class ObjectBounceAnimation extends UserComponent {
 
 	/* START-USER-CODE */
 
-	awake() {
+  awake() {
     if (this.active) this.start();
   }
 
@@ -99,7 +81,7 @@ export default class ObjectBounceAnimation extends UserComponent {
         y: `+=${this.posOffset}`,
         duration: this.posDuration,
         yoyo: true,
-        delay: this.posDelay,  
+        delay: this.posDelay,
         repeat: -1,
         ease: this.posEase
       });
@@ -120,7 +102,7 @@ export default class ObjectBounceAnimation extends UserComponent {
           ...props,
           duration: this.scaleDuration,
           yoyo: true,
-          delay: this.scaleDelay,  
+          delay: this.scaleDelay,
           repeat: -1,
           ease: this.scaleEase
         });
@@ -166,7 +148,7 @@ export default class ObjectBounceAnimation extends UserComponent {
     this.gameObject = null;
   }
 
-	/* END-USER-CODE */
+  /* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */

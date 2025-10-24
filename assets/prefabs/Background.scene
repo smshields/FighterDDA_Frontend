@@ -1,0 +1,547 @@
+{
+    "id": "aec438ea-a8c3-4c48-8ad8-a0b5c8171b1e",
+    "settings": {
+        "createMethodName": "",
+        "preloadMethodName": "",
+        "compilerOutputLanguage": "JAVA_SCRIPT",
+        "exportClass": true,
+        "autoImport": true,
+        "importFileExtension": true,
+        "generateAwakeHandler": false,
+        "compilerInsertSpaces": false,
+        "compilerTabSize": 4,
+        "borderWidth": 1920,
+        "borderHeight": 1080,
+        "borderX": 0,
+        "borderY": 0
+    },
+    "sceneType": "PREFAB",
+    "displayList": [
+        {
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "type": "Layer",
+            "id": "aac04a67-2a34-4044-aee2-d98b44a4ef24",
+            "label": "background",
+            "displayName": "Background",
+            "useGameObjectName": true,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "d3c86f22-c2bb-42d3-8a13-927088c1fda1",
+                    "label": "backgroundtile5",
+                    "texture": {
+                        "key": "backgroundtile5"
+                    },
+                    "x": 65,
+                    "y": 25,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "bdaf88d9-67e2-482b-9d45-d6568bb48020",
+                    "label": "backgroundtile4",
+                    "texture": {
+                        "key": "backgroundtile4"
+                    },
+                    "x": 315,
+                    "y": 25,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "ade5971c-5181-4e40-b333-8a2c3c65afcd",
+                    "label": "backgroundtile2",
+                    "texture": {
+                        "key": "backgroundtile2"
+                    },
+                    "x": 825,
+                    "y": 25,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "b1c4fe43-aacb-4b16-b39c-2b76a26b6791",
+                    "label": "backgroundtile3",
+                    "texture": {
+                        "key": "backgroundtile3"
+                    },
+                    "x": 570,
+                    "y": 25,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "d5581f74-ebfd-4f52-aeea-f2c301eb04d4",
+                    "label": "backgroundtile",
+                    "texture": {
+                        "key": "backgroundtile"
+                    },
+                    "x": 1080,
+                    "y": 25,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "693ae27c-ebeb-45ff-93a1-142a0e9a5783",
+                    "label": "backgroundtile_1",
+                    "texture": {
+                        "key": "backgroundtile5"
+                    },
+                    "x": 65,
+                    "y": 280,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "77ff8134-a0b6-4980-bb2f-6247e9fdd476",
+                    "label": "backgroundtile_2",
+                    "texture": {
+                        "key": "backgroundtile4"
+                    },
+                    "x": 315,
+                    "y": 280,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "1f70e9d7-1744-4d5b-b4f7-d8e0224c2480",
+                    "label": "backgroundtile_3",
+                    "texture": {
+                        "key": "backgroundtile2"
+                    },
+                    "x": 1335,
+                    "y": 25,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "e1c082ed-7197-4904-9b98-ee5de669fb9b",
+                    "label": "backgroundtile_4",
+                    "texture": {
+                        "key": "backgroundtile3"
+                    },
+                    "x": 570,
+                    "y": 280,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "5df57575-6dfa-42d5-b070-a52622d2623d",
+                    "label": "backgroundtile_5",
+                    "texture": {
+                        "key": "backgroundtile"
+                    },
+                    "x": 1080,
+                    "y": 280,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "539d80de-6d80-4fb6-844e-e62e93810964",
+                    "label": "backgroundtile_6",
+                    "texture": {
+                        "key": "backgroundtile5"
+                    },
+                    "x": 65,
+                    "y": 535,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "bdb200c4-bd12-4fdd-81a3-5a6e4a3665da",
+                    "label": "backgroundtile_8",
+                    "texture": {
+                        "key": "backgroundtile2"
+                    },
+                    "x": 1335,
+                    "y": 280,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "e468b885-b434-401c-ab84-1b293ab2c321",
+                    "label": "backgroundtile_9",
+                    "texture": {
+                        "key": "backgroundtile3"
+                    },
+                    "x": 570,
+                    "y": 535,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "7c02d4be-f61c-460b-b48a-2cd40899e996",
+                    "label": "backgroundtile_10",
+                    "texture": {
+                        "key": "backgroundtile"
+                    },
+                    "x": 1080,
+                    "y": 535,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "94c731de-1eef-4953-9e1b-b4c543c0eef9",
+                    "label": "backgroundtile_11",
+                    "texture": {
+                        "key": "backgroundtile5"
+                    },
+                    "x": 65,
+                    "y": 790,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "c5e2202c-66f0-47be-94de-7be37a80b80b",
+                    "label": "backgroundtile_12",
+                    "texture": {
+                        "key": "backgroundtile4"
+                    },
+                    "x": 315,
+                    "y": 790,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "37c89820-b364-4871-99c8-7f21eddde89f",
+                    "label": "backgroundtile_13",
+                    "texture": {
+                        "key": "backgroundtile2"
+                    },
+                    "x": 1335,
+                    "y": 535,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "c2848d98-cc74-4d49-aff2-00ea04a993a3",
+                    "label": "backgroundtile_14",
+                    "texture": {
+                        "key": "backgroundtile3"
+                    },
+                    "x": 570,
+                    "y": 790,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "617a4e6e-6b22-49ef-8e29-9517593acc94",
+                    "label": "backgroundtile_15",
+                    "texture": {
+                        "key": "backgroundtile"
+                    },
+                    "x": 1080,
+                    "y": 790,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "653ff995-9160-4ed8-8265-66e236bddf2e",
+                    "label": "backgroundtile_16",
+                    "texture": {
+                        "key": "backgroundtile5"
+                    },
+                    "x": 65,
+                    "y": 1045,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "04c0fab5-6292-43f5-a7e9-1edd141df56e",
+                    "label": "backgroundtile_17",
+                    "texture": {
+                        "key": "backgroundtile4"
+                    },
+                    "x": 315,
+                    "y": 1045,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "9b037ed4-42b9-4374-ae09-74ef1494d2b4",
+                    "label": "backgroundtile_18",
+                    "texture": {
+                        "key": "backgroundtile2"
+                    },
+                    "x": 825,
+                    "y": 1045,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "a521f0ba-c579-4ccd-bb13-5220c411c2ac",
+                    "label": "backgroundtile_19",
+                    "texture": {
+                        "key": "backgroundtile3"
+                    },
+                    "x": 570,
+                    "y": 1045,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "f8b22fc6-0476-4742-8d70-e3374b4cbc0c",
+                    "label": "backgroundtile_20",
+                    "texture": {
+                        "key": "backgroundtile"
+                    },
+                    "x": 1080,
+                    "y": 1045,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "35f30c48-cceb-4d31-855d-643d6b71c5f0",
+                    "label": "backgroundtile_21",
+                    "texture": {
+                        "key": "backgroundtile3"
+                    },
+                    "x": 825,
+                    "y": 280,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "7a2334e5-52b0-481b-ba7b-f762b99ddac7",
+                    "label": "backgroundtile_22",
+                    "texture": {
+                        "key": "backgroundtile3"
+                    },
+                    "x": 1590,
+                    "y": 535,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "c30e9552-4513-4fbe-accd-041e7fe8799d",
+                    "label": "backgroundtile_24",
+                    "texture": {
+                        "key": "backgroundtile"
+                    },
+                    "x": 825,
+                    "y": 535,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "5655017f-7822-424c-b6f6-f1c7e4a105e0",
+                    "label": "backgroundtile_25",
+                    "texture": {
+                        "key": "backgroundtile2"
+                    },
+                    "x": 825,
+                    "y": 790,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "0da040c4-e915-45d2-b633-480b00278079",
+                    "label": "backgroundtile_26",
+                    "texture": {
+                        "key": "backgroundtile3"
+                    },
+                    "x": 1335,
+                    "y": 790,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "4f8999e1-eec8-41f8-a38d-fb37f419f66d",
+                    "label": "backgroundtile_27",
+                    "texture": {
+                        "key": "backgroundtile4"
+                    },
+                    "x": 1590,
+                    "y": 790,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "d98c8bac-f11c-45d2-a77f-ad533b91ac81",
+                    "label": "backgroundtile_7",
+                    "texture": {
+                        "key": "backgroundtile4"
+                    },
+                    "x": 1590,
+                    "y": 30,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "e9fae9cc-7cfc-43a6-b354-05da33792876",
+                    "label": "backgroundtile_28",
+                    "texture": {
+                        "key": "backgroundtile3"
+                    },
+                    "x": 315,
+                    "y": 535,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "c531ea08-98eb-4712-a402-08818926951b",
+                    "label": "backgroundtile_29",
+                    "texture": {
+                        "key": "backgroundtile"
+                    },
+                    "x": 1590,
+                    "y": 280,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "29cc3aaf-e024-49f6-b562-350513311157",
+                    "label": "backgroundtile_30",
+                    "texture": {
+                        "key": "backgroundtile"
+                    },
+                    "x": 1845,
+                    "y": 30,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "f1e05487-a8ab-4f88-8a7e-4ad123489216",
+                    "label": "backgroundtile_31",
+                    "texture": {
+                        "key": "backgroundtile"
+                    },
+                    "x": 1845,
+                    "y": 285,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "54b65a84-f43a-4a63-afb1-cc3e271d2823",
+                    "label": "backgroundtile_32",
+                    "texture": {
+                        "key": "backgroundtile"
+                    },
+                    "x": 1845,
+                    "y": 540,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "a53ddb6f-192a-476f-8919-8ea9d300a471",
+                    "label": "backgroundtile_33",
+                    "texture": {
+                        "key": "backgroundtile"
+                    },
+                    "x": 1845,
+                    "y": 790,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "c8ac3b45-3992-4c7d-be39-2bfb3f57c16b",
+                    "label": "backgroundtile_34",
+                    "texture": {
+                        "key": "backgroundtile"
+                    },
+                    "x": 1845,
+                    "y": 1045,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25
+                },
+                {
+                    "type": "Image",
+                    "id": "35300e1b-e349-4b6d-9788-1c426c85193d",
+                    "label": "backgroundtile_35",
+                    "texture": {
+                        "key": "backgroundtile3"
+                    },
+                    "x": 1335,
+                    "y": 1045,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "d815f2f1-d5a3-463b-8ad8-1b8b8a75605d",
+                    "label": "backgroundtile_36",
+                    "texture": {
+                        "key": "backgroundtile4"
+                    },
+                    "x": 1590,
+                    "y": 1045,
+                    "scaleX": 0.25,
+                    "scaleY": 0.25,
+                    "flipX": true
+                }
+            ],
+            "x": 0,
+            "y": 0
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

@@ -29,8 +29,6 @@ class Boot extends Phaser.Scene {
 	}
 
 	create() {
-		console.log("Main create ca")
-
 		this.scene.start("Preload");
 	}
 }

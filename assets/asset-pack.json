@@ -77,6 +77,16 @@
                 "key": "rogue"
             },
             {
+                "url": "assets/ui/scroll_arrow.png",
+                "type": "image",
+                "key": "scroll_arrow"
+            },
+            {
+                "url": "assets/ui/scroll_container.png",
+                "type": "image",
+                "key": "scroll_container"
+            },
+            {
                 "url": "assets/ui/selection_arrow.png",
                 "type": "image",
                 "key": "selection_arrow"

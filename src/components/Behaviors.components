@@ -418,6 +418,263 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "GeometryMaskSetupComponent",
+            "displayName": "Geometry Mask Setup Component",
+            "objectDisplayFormat": "",
+            "baseClass": "UserComponent",
+            "gameObjectType": "any",
+            "generateGameObjectField": true,
+            "properties": [
+                {
+                    "name": "hide_mask_graphics_after_setup",
+                    "label": "Hide Mask Graphics After Setup",
+                    "tooltip": "",
+                    "defValue": true,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
+                    "name": "target_container",
+                    "label": "Target Container",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "mask",
+                    "label": "Mask",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "DynamicOptionsListComponent",
+            "displayName": "Dynamic Options List Component",
+            "objectDisplayFormat": "",
+            "baseClass": "UserComponent",
+            "gameObjectType": "any",
+            "generateGameObjectField": true,
+            "properties": [
+                {
+                    "name": "viewport_width",
+                    "label": "Viewport Width",
+                    "tooltip": "",
+                    "defValue": 400,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "viewport_height",
+                    "label": "Viewport Height",
+                    "tooltip": "",
+                    "defValue": 300,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "vertical",
+                    "label": "Is Vertical",
+                    "tooltip": "",
+                    "defValue": true,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
+                    "name": "wheel_step",
+                    "label": "Wheel Step",
+                    "tooltip": "",
+                    "defValue": 24,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "track_key",
+                    "label": "Track Key",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
+                    }
+                },
+                {
+                    "name": "bar_key",
+                    "label": "Bar Key",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
+                    }
+                },
+                {
+                    "name": "tween_duration",
+                    "label": "Tween Duration",
+                    "tooltip": "",
+                    "defValue": 150,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "tween_ease",
+                    "label": "Tween Ease",
+                    "tooltip": "",
+                    "defValue": "Linear",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
+                    }
+                },
+                {
+                    "name": "row_height",
+                    "label": "Row Height",
+                    "tooltip": "",
+                    "defValue": 48,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "row_padding_x",
+                    "label": "Row Padding X",
+                    "tooltip": "",
+                    "defValue": 8,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "row_padding_y",
+                    "label": "Row Padding Y",
+                    "tooltip": "",
+                    "defValue": 6,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "fit_mode",
+                    "label": "Fit Mode",
+                    "tooltip": "",
+                    "defValue": "contain",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "option",
+                        "options": [
+                            "contain",
+                            "cover",
+                            "stretch"
+                        ]
+                    }
+                },
+                {
+                    "name": "min_scale",
+                    "label": "Min Scale",
+                    "tooltip": "",
+                    "defValue": 0.001,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "max_scale",
+                    "label": "Max Scale",
+                    "tooltip": "",
+                    "defValue": 8,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "font_size_px",
+                    "label": "Font Size (Pixel)",
+                    "tooltip": "",
+                    "defValue": 16,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "font_color",
+                    "label": "Font Color (Hex)",
+                    "tooltip": "",
+                    "defValue": "#ffffff",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
+                    }
+                },
+                {
+                    "name": "scroll_bar_name",
+                    "label": "Scroll Bar Name",
+                    "tooltip": "",
+                    "defValue": "scroll_bar",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
+                    }
+                },
+                {
+                    "name": "scroll_background_name",
+                    "label": "Scroll Background Name",
+                    "tooltip": "",
+                    "defValue": "scroll_background",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
+                    }
+                },
+                {
+                    "name": "use_prefab_scrollbar_skins",
+                    "label": "Use Prefab Scrollbar Skins",
+                    "tooltip": "",
+                    "defValue": true,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                },
+                {
+                    "name": "destroy_skin_sprites_after_binding",
+                    "label": "Destroy Skin Sprites After Binding",
+                    "tooltip": "",
+                    "defValue": true,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "boolean"
+                    }
+                }
+            ]
         }
     ],
     "meta": {

@@ -1,0 +1,634 @@
+
+// You can write more code here
+
+/* START OF COMPILED CODE */
+
+import UserComponent from "./UserComponent.js";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
+
+export default class DynamicOptionsListComponent extends UserComponent {
+
+	constructor(gameObject) {
+		super(gameObject);
+
+		this.gameObject = gameObject;
+		gameObject["__DynamicOptionsListComponent"] = this;
+
+		/* START-USER-CTR-CODE */
+
+		// === Internal Properties ===
+		this.ui = null; // window.uiWidgets
+		this.viewport = null; // uiWidgets.Viewport
+		this.scrollbar = null; // uiWidgets.Scrollbar
+		this.column = null; // uiWidgets.Column
+		this.content_container = null;
+		this.selected_index = -1;
+		this.option_rows = [];
+
+		/* END-USER-CTR-CODE */
+	}
+
+	/** @returns {DynamicOptionsListComponent} */
+	static getComponent(gameObject) {
+		return gameObject["__DynamicOptionsListComponent"];
+	}
+
+	/** @type {number} */
+	viewport_width = 400;
+	/** @type {number} */
+	viewport_height = 300;
+	/** @type {boolean} */
+	vertical = true;
+	/** @type {number} */
+	wheel_step = 24;
+	/** @type {string} */
+	track_key = "";
+	/** @type {string} */
+	bar_key = "";
+	/** @type {number} */
+	tween_duration = 150;
+	/** @type {string} */
+	tween_ease = "Linear";
+	/** @type {number} */
+	row_height = 48;
+	/** @type {number} */
+	row_padding_x = 8;
+	/** @type {number} */
+	row_padding_y = 6;
+	/** @type {"contain"|"cover"|"stretch"} */
+	fit_mode = "contain";
+	/** @type {number} */
+	min_scale = 0.001;
+	/** @type {number} */
+	max_scale = 8;
+	/** @type {number} */
+	font_size_px = 16;
+	/** @type {string} */
+	font_color = "#ffffff";
+	/** @type {string} */
+	scroll_bar_name = "scroll_bar";
+	/** @type {string} */
+	scroll_background_name = "scroll_background";
+	/** @type {boolean} */
+	use_prefab_scrollbar_skins = true;
+	/** @type {boolean} */
+	destroy_skin_sprites_after_binding = true;
+
+	/* START-USER-CODE */
+
+	awake() {
+		var root_container = this.gameObject;
+		var content = typeof root_container.getByName === "function"
+			? root_container.getByName("content")
+			: null;
+
+		if (!content) {
+			throw new Error("DynamicOptionsListComponent: expected a child Container named 'content'.");
+		}
+		this.content_container = content;
+
+		var window_object = window;
+		if (!window_object || !window_object.uiWidgets) {
+			throw new Error("DynamicOptionsListComponent: uiWidgets (phaser-ui-tools) not found on window.");
+		}
+		this.ui = window_object.uiWidgets;
+	}
+
+	start() {
+		// Optional mask
+		var mask_graphics = this.scene.children.getByName("viewport_mask");
+		if (mask_graphics && typeof mask_graphics.createGeometryMask === "function") {
+			var geometry_mask = mask_graphics.createGeometryMask();
+			this.content_container.setMask(geometry_mask);
+			mask_graphics.visible = false;
+		}
+
+		var viewport_x = this.gameObject.x;
+		var viewport_y = this.gameObject.y;
+
+		var plugin_viewport = new this.ui.Viewport(
+			this.scene,
+			viewport_x,
+			viewport_y,
+			this.viewport_width,
+			this.viewport_height
+		);
+		this.viewport = plugin_viewport;
+
+		var ui_column = new this.ui.Column(this.scene, 0, 0);
+		this.column = ui_column;
+
+		this.content_container.removeFromDisplayList();
+		this.viewport.addNode(this.column);
+
+		var has_scrollbar_textures = (typeof this.track_key === "string") && (typeof this.bar_key === "string");
+		if (has_scrollbar_textures === true) {
+			var is_draggable = true;
+			var is_vertical = this.vertical === true;
+			var tween_parameters = { duration: this.tween_duration, ease: this.tween_ease };
+
+			var scrollbar_instance = new this.ui.Scrollbar(
+				this.scene,
+				this.viewport,
+				is_draggable,
+				is_vertical,
+				this.track_key,
+				this.bar_key,
+				tween_parameters
+			);
+			this.scrollbar = scrollbar_instance;
+
+			this.scrollbar.x = viewport_x + this.viewport_width + 8;
+			this.scrollbar.y = viewport_y;
+			this.scrollbar.height = this.viewport_height;
+		}
+
+		var self_reference = this;
+		this.scene.input.on(
+			"wheel",
+			function (_pointer, _x, _y, wheel_delta_x, wheel_delta_y) {
+				var active_pointer = self_reference.scene.input.activePointer;
+
+				var pointer_is_inside_x = (active_pointer.x >= viewport_x) && (active_pointer.x <= viewport_x + self_reference.viewport_width);
+				var pointer_is_inside_y = (active_pointer.y >= viewport_y) && (active_pointer.y <= viewport_y + self_reference.viewport_height);
+				if (pointer_is_inside_x === false || pointer_is_inside_y === false) {
+					return;
+				}
+
+				var primary_wheel_delta = self_reference.vertical === true ? wheel_delta_y : wheel_delta_x;
+				var scroll_amount = primary_wheel_delta > 0 ? self_reference.wheel_step : -self_reference.wheel_step;
+
+				self_reference.nudgeContent(scroll_amount);
+				self_reference.syncScrollbarToContent();
+			},
+			this
+		);
+
+		this.bindPrefabScrollbarSkins();
+
+
+		this.addOptionText("ATTACK", "1");
+		this.addOptionText("MULTI ATTACK", "2");
+		this.addOptionText("MAGIC ATTACK", "3");
+		this.addOptionText("MULTI MAGIC ATTACK", "4");
+		this.addOptionText("DEFEND", "5");
+	}
+
+	addOptionText(label_text, id_value) {
+		var row_width = this.viewport_width;
+		var row_height = this.row_height;
+
+		var row_container = this.scene.add.container(0, 0);
+
+		var background_rectangle = this.scene.add.rectangle(0, 0, row_width, row_height, 0x000000, 0.0);
+		background_rectangle.setOrigin(0, 0);
+
+		var text_style = { fontSize: String(this.font_size_px) + "px", color: this.font_color_css };
+		var text_object = this.scene.add.text(this.row_padding_x, this.row_padding_y, label_text, text_style);
+
+		row_container.add([background_rectangle, text_object]);
+
+		this.finalizeRow(row_container, id_value);
+	}
+
+	// ---------- Public API (simple prefab) ----------
+	addPrefab(prefab_constructor, id_value, options) {
+		if (typeof prefab_constructor !== "function") {
+			throw new Error("addPrefab: expected a Prefab constructor (class/function).");
+		}
+
+		var resolved_options = options || {};
+
+		var row_width = this.viewport_width;
+		var row_height = (typeof resolved_options.row_height === "number") ? resolved_options.row_height : this.row_height;
+
+		var padding_x = (typeof resolved_options.padding_x === "number") ? resolved_options.padding_x : this.row_padding_x;
+		var padding_y = (typeof resolved_options.padding_y === "number") ? resolved_options.padding_y : this.row_padding_y;
+
+		var fit_mode = (typeof resolved_options.fit_mode === "string") ? resolved_options.fit_mode : this.fit_mode;
+		var minimum_scale = (typeof resolved_options.min_scale === "number") ? resolved_options.min_scale : this.min_scale;
+		var maximum_scale = (typeof resolved_options.max_scale === "number") ? resolved_options.max_scale : this.max_scale;
+
+		var instance = new prefab_constructor(this.scene, 0, 0);
+		this.scene.add.existing(instance);
+
+		var row_container = this.scene.add.container(0, 0);
+		var background_rectangle = this.scene.add.rectangle(0, 0, row_width, row_height, 0x000000, 0.0);
+		background_rectangle.setOrigin(0, 0);
+		row_container.add(background_rectangle);
+
+		this.fitChildInRow(instance, row_width, row_height, padding_x, padding_y, fit_mode, minimum_scale, maximum_scale);
+		row_container.add(instance);
+
+		row_container.setSize(row_width, row_height);
+		var interactive_rectangle = new Phaser.Geom.Rectangle(0, 0, row_width, row_height);
+		row_container.setInteractive(interactive_rectangle, Phaser.Geom.Rectangle.Contains);
+
+		this.finalizeRow(row_container, id_value);
+	}
+
+	// ---------- Public API (factory) ----------
+	addPrefabFactory(factory_function, id_value, options) {
+		if (typeof factory_function !== "function") {
+			throw new Error("addPrefabFactory: expected a function returning a GameObject/Container.");
+		}
+
+		var resolved_options = options || {};
+
+		var row_width = this.viewport_width;
+		var row_height = (typeof resolved_options.row_height === "number") ? resolved_options.row_height : this.row_height;
+
+		var padding_x = (typeof resolved_options.padding_x === "number") ? resolved_options.padding_x : this.row_padding_x;
+		var padding_y = (typeof resolved_options.padding_y === "number") ? resolved_options.padding_y : this.row_padding_y;
+
+		var fit_mode = (typeof resolved_options.fit_mode === "string") ? resolved_options.fit_mode : this.fit_mode;
+		var minimum_scale = (typeof resolved_options.min_scale === "number") ? resolved_options.min_scale : this.min_scale;
+		var maximum_scale = (typeof resolved_options.max_scale === "number") ? resolved_options.max_scale : this.max_scale;
+
+		var child_object = factory_function(this.scene);
+		if (!child_object || typeof child_object.getBounds !== "function") {
+			throw new Error("addPrefabFactory: factory_function must return a Phaser GameObject or Container.");
+		}
+
+		var row_container = this.scene.add.container(0, 0);
+		var background_rectangle = this.scene.add.rectangle(0, 0, row_width, row_height, 0x000000, 0.0);
+		background_rectangle.setOrigin(0, 0);
+		row_container.add(background_rectangle);
+
+		this.fitChildInRow(child_object, row_width, row_height, padding_x, padding_y, fit_mode, minimum_scale, maximum_scale);
+		row_container.add(child_object);
+
+		row_container.setSize(row_width, row_height);
+		var interactive_rectangle = new Phaser.Geom.Rectangle(0, 0, row_width, row_height);
+		row_container.setInteractive(interactive_rectangle, Phaser.Geom.Rectangle.Contains);
+
+		this.finalizeRow(row_container, id_value);
+	}
+
+	// ---------- Public API (configured prefab) ----------
+	addPrefabConfigured(prefab_constructor, id_value, config, options) {
+		if (typeof prefab_constructor !== "function") {
+			throw new Error("addPrefabConfigured: expected a Prefab constructor (class/function).");
+		}
+
+		var resolved_config = config || {};
+		var resolved_options = options || {};
+
+		var row_width = this.viewport_width;
+		var row_height = (typeof resolved_options.row_height === "number") ? resolved_options.row_height : this.row_height;
+
+		var padding_x = (typeof resolved_options.padding_x === "number") ? resolved_options.padding_x : this.row_padding_x;
+		var padding_y = (typeof resolved_options.padding_y === "number") ? resolved_options.padding_y : this.row_padding_y;
+
+		var fit_mode = (typeof resolved_options.fit_mode === "string") ? resolved_options.fit_mode : this.fit_mode;
+		var minimum_scale = (typeof resolved_options.min_scale === "number") ? resolved_options.min_scale : this.min_scale;
+		var maximum_scale = (typeof resolved_options.max_scale === "number") ? resolved_options.max_scale : this.max_scale;
+
+		var extra_constructor_arguments = Array.isArray(resolved_config.constructor_args) ? resolved_config.constructor_args.slice() : [];
+		var instance = new prefab_constructor(this.scene, 0, 0, ...extra_constructor_arguments);
+		this.scene.add.existing(instance);
+
+		if (resolved_config.origin_zero === true && typeof instance.setOrigin === "function") {
+			instance.setOrigin(0, 0);
+		}
+
+		this.applyConfigToPrefab(instance, resolved_config);
+
+		var row_container = this.scene.add.container(0, 0);
+		var background_rectangle = this.scene.add.rectangle(0, 0, row_width, row_height, 0x000000, 0.0);
+		background_rectangle.setOrigin(0, 0);
+		row_container.add(background_rectangle);
+
+		this.fitChildInRow(instance, row_width, row_height, padding_x, padding_y, fit_mode, minimum_scale, maximum_scale);
+		row_container.add(instance);
+
+		var interactive_width = (resolved_options.interactive_rect && typeof resolved_options.interactive_rect.width === "number")
+			? resolved_options.interactive_rect.width
+			: row_width;
+		var interactive_height = (resolved_options.interactive_rect && typeof resolved_options.interactive_rect.height === "number")
+			? resolved_options.interactive_rect.height
+			: row_height;
+
+		row_container.setSize(interactive_width, interactive_height);
+		var interactive_rectangle = new Phaser.Geom.Rectangle(0, 0, interactive_width, interactive_height);
+		row_container.setInteractive(interactive_rectangle, Phaser.Geom.Rectangle.Contains);
+
+		this.finalizeRow(row_container, id_value);
+	}
+
+	// ---------- Internals ----------
+	applyConfigToPrefab(instance, config) {
+		if (config && config.inject_by_name && typeof config.inject_by_name === "object") {
+			var inject_property_names = Object.keys(config.inject_by_name);
+			for (var i = 0; i < inject_property_names.length; i += 1) {
+				var property_name = inject_property_names[i];
+				var lookup_name = config.inject_by_name[property_name];
+				instance[property_name] = this.scene.children.getByName(lookup_name);
+			}
+		}
+
+		if (config && config.assign && typeof config.assign === "object") {
+			var assign_property_names = Object.keys(config.assign);
+			for (var j = 0; j < assign_property_names.length; j += 1) {
+				var assign_property_name = assign_property_names[j];
+				instance[assign_property_name] = config.assign[assign_property_name];
+			}
+		}
+
+		if (config && config.set_data && typeof config.set_data === "object" && typeof instance.setData === "function") {
+			var data_keys = Object.keys(config.set_data);
+			for (var d = 0; d < data_keys.length; d += 1) {
+				var data_key = data_keys[d];
+				instance.setData(data_key, config.set_data[data_key]);
+			}
+		}
+
+		if (config && config.call && typeof config.call === "object") {
+			var method_names = Object.keys(config.call);
+			for (var c = 0; c < method_names.length; c += 1) {
+				var method_name = method_names[c];
+				var method_arguments = Array.isArray(config.call[method_name]) ? config.call[method_name] : [];
+				var method_reference = instance[method_name];
+				if (typeof method_reference === "function") {
+					method_reference.apply(instance, method_arguments);
+				}
+			}
+		}
+
+		if (config && typeof config.init === "function") {
+			config.init(instance, this.scene);
+		}
+	}
+
+	fitChildInRow(child_object, row_width, row_height, padding_x, padding_y, fit_mode, minimum_scale, maximum_scale) {
+		var inner_width = Math.max(1, row_width - (padding_x * 2));
+		var inner_height = Math.max(1, row_height - (padding_y * 2));
+
+		var original_scale_x = (typeof child_object.scaleX === "number") ? child_object.scaleX : 1;
+		var original_scale_y = (typeof child_object.scaleY === "number") ? child_object.scaleY : 1;
+
+		if (typeof child_object.setScale === "function") {
+			child_object.setScale(1, 1);
+		}
+
+		var base_bounds = child_object.getBounds();
+		var base_width = Math.max(1e-3, base_bounds.width);
+		var base_height = Math.max(1e-3, base_bounds.height);
+
+		var target_scale_x = 1;
+		var target_scale_y = 1;
+
+		if (fit_mode === "stretch") {
+			target_scale_x = inner_width / base_width;
+			target_scale_y = inner_height / base_height;
+		} else {
+			var scale_to_contain = Math.min(inner_width / base_width, inner_height / base_height);
+			var scale_to_cover = Math.max(inner_width / base_width, inner_height / base_height);
+			var uniform_scale = (fit_mode === "cover") ? scale_to_cover : scale_to_contain;
+			target_scale_x = uniform_scale;
+			target_scale_y = uniform_scale;
+		}
+
+		target_scale_x = Phaser.Math.Clamp(target_scale_x, minimum_scale, maximum_scale);
+		target_scale_y = Phaser.Math.Clamp(target_scale_y, minimum_scale, maximum_scale);
+
+		if (typeof child_object.setScale === "function") {
+			child_object.setScale(target_scale_x, target_scale_y);
+		}
+
+		if (typeof child_object.setPosition === "function") {
+			child_object.setPosition(padding_x, padding_y);
+		}
+	}
+
+	finalizeRow(row_container, id_value) {
+		var self_reference = this;
+
+		row_container.__option_id = id_value;
+
+		row_container.on("pointerover", function () {
+			self_reference.setRowHover(row_container, true);
+		});
+
+		row_container.on("pointerout", function () {
+			self_reference.setRowHover(row_container, false);
+		});
+
+		row_container.on("pointerup", function (pointer) {
+			var is_inside = self_reference.isPointerInsideViewport(pointer);
+			if (is_inside === true) {
+				self_reference.selectRow(row_container);
+			}
+		});
+
+		var x_offset = 0;
+		var y_padding = 4;
+		this.column.addNode(row_container, x_offset, y_padding);
+
+		this.option_rows.push(row_container);
+
+		this.syncScrollbarToContent();
+	}
+
+	setRowHover(row_container, is_hovering) {
+		var background_rectangle = row_container.getAt(0);
+		if (!background_rectangle) {
+			return;
+		}
+		if (is_hovering === true) {
+			background_rectangle.setFillStyle(0xffffff, 0.08);
+		} else {
+			background_rectangle.setFillStyle(0x000000, 0.0);
+		}
+	}
+
+	selectRow(row_container) {
+		var has_previous_selection = this.selected_index >= 0 && this.selected_index < this.option_rows.length;
+		if (has_previous_selection === true) {
+			var previous_row = this.option_rows[this.selected_index];
+			var previous_background_rectangle = previous_row.getAt(0);
+			if (previous_background_rectangle && typeof previous_background_rectangle.setStrokeStyle === "function") {
+				previous_background_rectangle.setStrokeStyle(); // clear stroke
+			}
+		}
+
+		this.selected_index = this.option_rows.indexOf(row_container);
+
+		var background_rectangle = row_container.getAt(0);
+		if (background_rectangle && typeof background_rectangle.setStrokeStyle === "function") {
+			background_rectangle.setStrokeStyle(1, 0x66ccff, 1.0);
+		}
+
+		this.scrollRowIntoView(row_container);
+	}
+
+	isPointerInsideViewport(pointer) {
+		var pointer_x = pointer.x;
+		var pointer_y = pointer.y;
+
+		var viewport_x = this.viewport.x;
+		var viewport_y = this.viewport.y;
+
+		var within_x = (pointer_x >= viewport_x) && (pointer_x <= viewport_x + this.viewport_width);
+		var within_y = (pointer_y >= viewport_y) && (pointer_y <= viewport_y + this.viewport_height);
+
+		return within_x && within_y;
+	}
+
+	nudgeContent(scroll_amount) {
+		var viewport_width_value = this.viewport_width;
+		var viewport_height_value = this.viewport_height;
+
+		var content_bounds = this.column.getBounds();
+		var content_width = content_bounds.width;
+		var content_height = content_bounds.height;
+
+		var minimum_x = Math.min(0, viewport_width_value - content_width);
+		var minimum_y = Math.min(0, viewport_height_value - content_height);
+
+		if (this.vertical === true) {
+			var next_y = this.column.y - scroll_amount;
+			this.column.y = Phaser.Math.Clamp(next_y, minimum_y, 0);
+		} else {
+			var next_x = this.column.x - scroll_amount;
+			this.column.x = Phaser.Math.Clamp(next_x, minimum_x, 0);
+		}
+	}
+
+	syncScrollbarToContent() {
+		if (!this.scrollbar) {
+			return;
+		}
+
+		var is_vertical_mode = this.vertical === true;
+		var viewport_range = new this.ui.ViewportRange(this.viewport, is_vertical_mode);
+
+		var content_bounds = this.column.getBounds();
+		var content_extent = is_vertical_mode ? content_bounds.height : content_bounds.width;
+		var viewport_extent = is_vertical_mode ? this.viewport_height : this.viewport_width;
+
+		var maximum_offset = Math.max(0, content_extent - viewport_extent);
+		var current_offset = is_vertical_mode ? -this.column.y : -this.column.x;
+
+		var scrollbar_value = (maximum_offset === 0) ? 0 : Phaser.Math.Clamp(current_offset / maximum_offset, 0, 1);
+		viewport_range.adjustValue(scrollbar_value);
+	}
+
+	scrollRowIntoView(row_container) {
+		var row_top = row_container.y + this.column.y;
+		var row_bottom = row_top + row_container.height;
+
+		var delta_to_move = 0;
+		if (row_top < 0) {
+			delta_to_move = row_top;
+		} else if (row_bottom > this.viewport_height) {
+			delta_to_move = row_bottom - this.viewport_height;
+		}
+
+		if (delta_to_move !== 0) {
+			this.nudgeContent(delta_to_move);
+			this.syncScrollbarToContent();
+		}
+	}
+
+	bindPrefabScrollbarSkins() {
+		if (this.use_prefab_scrollbar_skins !== true) {
+			return;
+		}
+
+		var sprites = this.findScrollbarSkinSprites();
+		if (!sprites || !sprites.track_sprite || !sprites.bar_sprite) {
+			// If either sprite is missing, skip skin binding quietly.
+			return;
+		}
+
+		this.createScrollbarFromSkinSprites(sprites.track_sprite, sprites.bar_sprite);
+		this.placeScrollbarFromTrackSprite(sprites.track_sprite);
+		this.finalizeSkinSprites(sprites.track_sprite, sprites.bar_sprite);
+	}
+
+	findScrollbarSkinSprites() {
+		// Prefer direct children if you exposed them on the component (e.g., scrollbar_track_sprite, scrollbar_bar_sprite).
+		var track_sprite = this.scrollbar_track_sprite || null;
+		var bar_sprite = this.scrollbar_bar_sprite || null;
+
+		// If not present, fall back to name lookup on the prefab root (safe for components inside the prefab).
+		if (!track_sprite && typeof this.gameObject.getByName === "function" && typeof this.scrollbar_track_sprite_name === "string") {
+			track_sprite = this.gameObject.getByName(this.scrollbar_track_sprite_name);
+		}
+		if (!bar_sprite && typeof this.gameObject.getByName === "function" && typeof this.scrollbar_bar_sprite_name === "string") {
+			bar_sprite = this.gameObject.getByName(this.scrollbar_bar_sprite_name);
+		}
+
+		if (!track_sprite || !bar_sprite) {
+			return null;
+		}
+
+		return {
+			track_sprite: track_sprite,
+			bar_sprite: bar_sprite
+		};
+	}
+
+	createScrollbarFromSkinSprites(track_sprite, bar_sprite) {
+		var is_draggable = true;
+		var is_vertical_mode = this.vertical === true;
+		var tween_parameters = { duration: this.tween_duration, ease: this.tween_ease };
+
+		var track_key = track_sprite.texture && track_sprite.texture.key ? track_sprite.texture.key : undefined;
+		var track_frame = track_sprite.frame && track_sprite.frame.name ? track_sprite.frame.name : undefined;
+
+		var bar_key = bar_sprite.texture && bar_sprite.texture.key ? bar_sprite.texture.key : undefined;
+		var bar_frame = bar_sprite.frame && bar_sprite.frame.name ? bar_sprite.frame.name : undefined;
+
+		// Build descriptor objects accepted by the plugin (it can take keys or key+frame)
+		var track_descriptor = track_frame !== undefined ? { key: track_key, frame: track_frame } : track_key;
+		var bar_descriptor = bar_frame !== undefined ? { key: bar_key, frame: bar_frame } : bar_key;
+
+		var scrollbar_instance = new this.ui.Scrollbar(
+			this.scene.game,
+			this.viewport,
+			is_draggable,
+			is_vertical_mode,
+			track_descriptor,
+			bar_descriptor,
+			tween_parameters
+		);
+
+		this.scrollbar = scrollbar_instance;
+	}
+
+	placeScrollbarFromTrackSprite(track_sprite) {
+		// Use the laid-out bounds of the track sprite as the ruler.
+		var track_bounds = track_sprite.getBounds();
+
+		if (this.vertical === true) {
+			this.scrollbar.x = track_bounds.x;
+			this.scrollbar.y = track_bounds.y;
+			this.scrollbar.height = track_bounds.height;
+		} else {
+			this.scrollbar.x = track_bounds.x;
+			this.scrollbar.y = track_bounds.y;
+			this.scrollbar.width = track_bounds.width;
+		}
+	}
+
+	finalizeSkinSprites(track_sprite, bar_sprite) {
+		if (this.destroy_skin_sprites_after_binding === true) {
+			track_sprite.destroy();
+			bar_sprite.destroy();
+			return;
+		}
+
+		track_sprite.visible = false;
+		bar_sprite.visible = false;
+	}
+
+
+	/* END-USER-CODE */
+}
+
+/* END OF COMPILED CODE */
+
+// You can write more code here
