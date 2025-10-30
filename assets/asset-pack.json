@@ -82,6 +82,11 @@
                 "key": "scroll_arrow"
             },
             {
+                "url": "assets/ui/scroll_bar.png",
+                "type": "image",
+                "key": "scroll_bar"
+            },
+            {
                 "url": "assets/ui/scroll_container.png",
                 "type": "image",
                 "key": "scroll_container"

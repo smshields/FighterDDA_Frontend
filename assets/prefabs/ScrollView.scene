@@ -19,23 +19,18 @@
             "displayName": "Viewport Box",
             "useGameObjectName": true,
             "components": [
-                "GeometryMaskSetupComponent"
+                "ScrollViewComponent"
             ],
-            "GeometryMaskSetupComponent.target_container": "content",
-            "GeometryMaskSetupComponent.mask": "viewport_mask",
+            "ScrollViewComponent.scrollbar_track": "scroll_background",
+            "ScrollViewComponent.scrollbar_bar": "scroll_bar",
+            "ScrollViewComponent.viewport_background": "viewport_background",
+            "ScrollViewComponent.content": "content",
             "list": [
-                {
-                    "type": "Container",
-                    "id": "99076db2-0bf3-4369-bb9c-720933225190",
-                    "label": "content",
-                    "displayName": "Content",
-                    "useGameObjectName": true
-                },
                 {
                     "type": "Rectangle",
                     "id": "8fa42d29-91b6-4c5b-80a5-dbb9f61dbd47",
-                    "label": "viewport_mask",
-                    "displayName": "Viewport Mask",
+                    "label": "viewport_background",
+                    "displayName": "Viewport Background",
                     "useGameObjectName": true,
                     "originX": 0,
                     "originY": 0,
@@ -108,6 +103,13 @@
                     "originX": 0,
                     "originY": 0,
                     "flipY": true
+                },
+                {
+                    "type": "Container",
+                    "id": "99076db2-0bf3-4369-bb9c-720933225190",
+                    "label": "content",
+                    "displayName": "Content",
+                    "useGameObjectName": true
                 }
             ]
         }
@@ -118,137 +120,5 @@
         "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    },
-    "prefabProperties": [
-        {
-            "name": "viewport_width",
-            "label": "Viewport Width",
-            "tooltip": "",
-            "defValue": 400,
-            "customDefinition": true,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "viewport_height",
-            "label": "Viewport Height",
-            "tooltip": "",
-            "defValue": 300,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "is_vertical",
-            "label": "Is Vertical",
-            "tooltip": "",
-            "defValue": true,
-            "customDefinition": false,
-            "type": {
-                "id": "boolean"
-            }
-        },
-        {
-            "name": "wheelstep",
-            "label": "Wheelstep",
-            "tooltip": "",
-            "defValue": 24,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "track_key",
-            "label": "Track Key",
-            "tooltip": "",
-            "defValue": "",
-            "customDefinition": false,
-            "type": {
-                "id": "string"
-            }
-        },
-        {
-            "name": "bar_key",
-            "label": "Bar Key",
-            "tooltip": "",
-            "defValue": "",
-            "customDefinition": false,
-            "type": {
-                "id": "string"
-            }
-        },
-        {
-            "name": "tween_duration",
-            "label": "Tween Duration",
-            "tooltip": "",
-            "defValue": 1,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "tween_ease",
-            "label": "Tween Ease",
-            "tooltip": "",
-            "defValue": 0,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "row_height",
-            "label": "Row Height",
-            "tooltip": "",
-            "defValue": 36,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "row_padding_x",
-            "label": "Row Padding X",
-            "tooltip": "",
-            "defValue": 8,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "row_padding_y",
-            "label": "Row Padding Y",
-            "tooltip": "",
-            "defValue": 4,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "font_size_px",
-            "label": "Font Size (Pixel)",
-            "tooltip": "",
-            "defValue": 16,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        },
-        {
-            "name": "font_color",
-            "label": "Font Color (Hex)",
-            "tooltip": "",
-            "defValue": "#ffffff",
-            "customDefinition": false,
-            "type": {
-                "id": "string"
-            }
-        }
-    ]
+    }
 }

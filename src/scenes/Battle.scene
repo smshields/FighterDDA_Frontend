@@ -164,93 +164,6 @@
         },
         {
             "type": "Container",
-            "id": "76db04b7-1f60-4239-a3ee-166158389a2c",
-            "label": "action_menu",
-            "displayName": "Action Menu",
-            "useGameObjectName": true,
-            "x": 10,
-            "y": 760,
-            "list": [
-                {
-                    "type": "Container",
-                    "id": "3b4a847d-121b-494e-ba1c-d26eb51a289d",
-                    "label": "action_buttons_container",
-                    "displayName": "Action Buttons Container",
-                    "useGameObjectName": true,
-                    "x": 841
-                },
-                {
-                    "type": "Rectangle",
-                    "id": "d4191fc1-f8db-4088-8f73-e212e55344f0",
-                    "label": "action_menu_background",
-                    "displayName": "Action Menu Background",
-                    "useGameObjectName": true,
-                    "y": 10,
-                    "originX": 0,
-                    "originY": 0,
-                    "isFilled": true,
-                    "strokeColor": "#000000",
-                    "lineWidth": 10,
-                    "isStroked": true,
-                    "width": 600,
-                    "height": 300
-                },
-                {
-                    "type": "Rectangle",
-                    "id": "900e97f7-8eeb-4122-adec-cddf179d951f",
-                    "label": "action_menu_title_background",
-                    "displayName": "Action Menu Title Background",
-                    "useGameObjectName": true,
-                    "x": 5,
-                    "y": 15,
-                    "originX": 0,
-                    "originY": 0,
-                    "isFilled": true,
-                    "fillColor": "#b4b4b4",
-                    "strokeColor": "#000000",
-                    "lineWidth": 5,
-                    "isStroked": true,
-                    "width": 590,
-                    "height": 50
-                },
-                {
-                    "type": "BitmapText",
-                    "id": "80d49e1c-5586-4434-8f17-d2e950914d56",
-                    "label": "action_menu_title",
-                    "displayName": "Action Menu Title",
-                    "useGameObjectName": true,
-                    "x": 10,
-                    "y": 20,
-                    "text": "SELECT CHARACTER ACTION\n",
-                    "font": "vcr_osd_mono_bold",
-                    "align": 1,
-                    "fontSize": -40
-                },
-                {
-                    "prefabId": "a561d8ee-6122-4fbc-b89d-0b3d86873ef1",
-                    "id": "f8bff67a-fcbb-4c92-8b30-b1f43c99609c",
-                    "unlock": [
-                        "x",
-                        "y",
-                        "scaleX",
-                        "scaleY"
-                    ],
-                    "label": "scrollView",
-                    "components": [
-                        "DynamicOptionsListComponent"
-                    ],
-                    "DynamicOptionsListComponent.viewport_width": 590,
-                    "DynamicOptionsListComponent.viewport_height": 240,
-                    "DynamicOptionsListComponent.row_height": 60,
-                    "x": 5,
-                    "y": 65,
-                    "scaleX": 1,
-                    "scaleY": 1
-                }
-            ]
-        },
-        {
-            "type": "Container",
             "id": "3fe29812-9653-4a5d-86a0-5466bcf4e479",
             "label": "target_menu",
             "displayName": "Target Menu",
@@ -491,15 +404,7 @@
                             },
                             "x": 515,
                             "y": 55,
-                            "flipX": true,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "8b8d2fe3-5423-42cd-b334-39e6f14863a2",
-                                    "label": "glowFx_2",
-                                    "color": "#7285ff"
-                                }
-                            ]
+                            "flipX": true
                         },
                         {
                             "prefabId": "2ea7b495-3149-4e61-9f72-f3c89bd4363d",
@@ -540,15 +445,7 @@
                             "x": 580,
                             "y": 80,
                             "scaleX": 0.2788076925413643,
-                            "scaleY": 0.2788076925413643,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "430380ff-9f29-438c-958b-9d95d4c08336",
-                                    "label": "glowFx_4",
-                                    "color": "#7285ff"
-                                }
-                            ]
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 },
@@ -590,15 +487,7 @@
                             "alphaTopLeft": 0.9,
                             "alphaTopRight": 0.9,
                             "alphaBottomLeft": 0.9,
-                            "alphaBottomRight": 0.9,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "7e372351-f471-4963-8d57-fa2d9d5c5c3d",
-                                    "label": "glowFx",
-                                    "color": "#7285ff"
-                                }
-                            ]
+                            "alphaBottomRight": 0.9
                         },
                         {
                             "prefabId": "2ea7b495-3149-4e61-9f72-f3c89bd4363d",
@@ -639,15 +528,7 @@
                             "x": 580,
                             "y": 80,
                             "scaleX": 0.2788076925413643,
-                            "scaleY": 0.2788076925413643,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "184e44fc-2573-4c4c-afb3-600b12acb0a9",
-                                    "label": "glowFx_5",
-                                    "color": "#7285ff"
-                                }
-                            ]
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 },
@@ -684,15 +565,7 @@
                             },
                             "x": 515,
                             "y": 55,
-                            "flipX": true,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "9bbd39c4-9c19-4291-83cb-d072f1bf1310",
-                                    "label": "glowFx_1",
-                                    "color": "#7285ff"
-                                }
-                            ]
+                            "flipX": true
                         },
                         {
                             "prefabId": "2ea7b495-3149-4e61-9f72-f3c89bd4363d",
@@ -733,15 +606,7 @@
                             "x": 580,
                             "y": 80,
                             "scaleX": 0.2788076925413643,
-                            "scaleY": 0.2788076925413643,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "ad86ac92-369f-436f-8735-019624caf85f",
-                                    "label": "glowFx_10",
-                                    "color": "#7285ff"
-                                }
-                            ]
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 },
@@ -757,7 +622,7 @@
                     "CharacterViewComponent.status_bar": "p1_warrior_status_bar",
                     "CharacterViewComponent.gravestone": "p1_warrior_gravestone",
                     "CharacterViewComponent.character_sprite": "p1_warrior_sprite",
-                    "CharacterViewComponent.defending": "p1_mage_defend",
+                    "CharacterViewComponent.defending": "p1_warrior_defend",
                     "x": -220,
                     "y": 405,
                     "list": [
@@ -779,15 +644,7 @@
                             },
                             "x": 520,
                             "y": 55,
-                            "flipX": true,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "260204c8-4231-4453-a2f3-916d4c6403f3",
-                                    "label": "glowFx_3",
-                                    "color": "#7285ff"
-                                }
-                            ]
+                            "flipX": true
                         },
                         {
                             "prefabId": "2ea7b495-3149-4e61-9f72-f3c89bd4363d",
@@ -828,15 +685,7 @@
                             "x": 580,
                             "y": 75,
                             "scaleX": 0.2788076925413643,
-                            "scaleY": 0.2788076925413643,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "f3eb7340-2b9c-46e9-bca5-126a395e3098",
-                                    "label": "glowFx_11",
-                                    "color": "#7285ff"
-                                }
-                            ]
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 }
@@ -880,15 +729,7 @@
                             "texture": {
                                 "key": "rogue"
                             },
-                            "y": 50,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "f8d0064a-def6-4193-8fd4-6e125e2c25c7",
-                                    "label": "glowFx_6",
-                                    "color": "#ff7777"
-                                }
-                            ]
+                            "y": 50
                         },
                         {
                             "prefabId": "2ea7b495-3149-4e61-9f72-f3c89bd4363d",
@@ -928,15 +769,7 @@
                             "x": -60,
                             "y": 75,
                             "scaleX": 0.2788076925413643,
-                            "scaleY": 0.2788076925413643,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "f91d9233-84e5-4cd6-a32b-df59e84cbe72",
-                                    "label": "glowFx_12",
-                                    "color": "#ff7777"
-                                }
-                            ]
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 },
@@ -975,15 +808,7 @@
                             "alphaTopLeft": 0.9,
                             "alphaTopRight": 0.9,
                             "alphaBottomLeft": 0.9,
-                            "alphaBottomRight": 0.9,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "7a53c34d-58ef-417d-8685-acdf77409018",
-                                    "label": "glowFx_7",
-                                    "color": "#ff7777"
-                                }
-                            ]
+                            "alphaBottomRight": 0.9
                         },
                         {
                             "prefabId": "2ea7b495-3149-4e61-9f72-f3c89bd4363d",
@@ -1024,15 +849,7 @@
                             "x": -55,
                             "y": 75,
                             "scaleX": 0.2788076925413643,
-                            "scaleY": 0.2788076925413643,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "7114f6c1-7729-4d3b-a1e3-f805f5551809",
-                                    "label": "glowFx_13",
-                                    "color": "#ff7777"
-                                }
-                            ]
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 },
@@ -1066,15 +883,7 @@
                             "texture": {
                                 "key": "mage"
                             },
-                            "y": 50,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "1e79d073-17ae-49e1-ac42-1123c27d8684",
-                                    "label": "glowFx_8",
-                                    "color": "#ff7777"
-                                }
-                            ]
+                            "y": 50
                         },
                         {
                             "prefabId": "2ea7b495-3149-4e61-9f72-f3c89bd4363d",
@@ -1114,15 +923,7 @@
                             "x": -60,
                             "y": 75,
                             "scaleX": 0.2788076925413643,
-                            "scaleY": 0.2788076925413643,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "fc301c4b-d527-4f33-8ae6-dc52b390b4d5",
-                                    "label": "glowFx_14",
-                                    "color": "#ff7777"
-                                }
-                            ]
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 },
@@ -1158,15 +959,7 @@
                             "texture": {
                                 "key": "warrior"
                             },
-                            "y": 50,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "634168df-ac48-4f05-b016-c63ff96d0181",
-                                    "label": "glowFx_9",
-                                    "color": "#ff7777"
-                                }
-                            ]
+                            "y": 50
                         },
                         {
                             "prefabId": "2ea7b495-3149-4e61-9f72-f3c89bd4363d",
@@ -1206,15 +999,7 @@
                             "x": -60,
                             "y": 70,
                             "scaleX": 0.2788076925413643,
-                            "scaleY": 0.2788076925413643,
-                            "list": [
-                                {
-                                    "type": "Glow",
-                                    "id": "a18050b0-8c1f-4748-b306-5a552e17028c",
-                                    "label": "glowFx_15",
-                                    "color": "#ff7777"
-                                }
-                            ]
+                            "scaleY": 0.2788076925413643
                         }
                     ]
                 }
@@ -1275,6 +1060,99 @@
             "CharacterManagerComponent.p2_mage_ui": "p2_mage",
             "CharacterManagerComponent.p2_priest_ui": "p2_priest",
             "CharacterManagerComponent.p2_rogue_ui": "p2_rogue"
+        },
+        {
+            "type": "Container",
+            "id": "76db04b7-1f60-4239-a3ee-166158389a2c",
+            "label": "action_menu",
+            "displayName": "Action Menu",
+            "useGameObjectName": true,
+            "x": 10,
+            "y": 760,
+            "list": [
+                {
+                    "type": "Container",
+                    "id": "3b4a847d-121b-494e-ba1c-d26eb51a289d",
+                    "label": "action_buttons_container",
+                    "displayName": "Action Buttons Container",
+                    "useGameObjectName": true,
+                    "x": 841
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "d4191fc1-f8db-4088-8f73-e212e55344f0",
+                    "label": "action_menu_background",
+                    "displayName": "Action Menu Background",
+                    "useGameObjectName": true,
+                    "y": 10,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "strokeColor": "#000000",
+                    "lineWidth": 10,
+                    "isStroked": true,
+                    "width": 600,
+                    "height": 300
+                },
+                {
+                    "type": "Rectangle",
+                    "id": "900e97f7-8eeb-4122-adec-cddf179d951f",
+                    "label": "action_menu_title_background",
+                    "displayName": "Action Menu Title Background",
+                    "useGameObjectName": true,
+                    "x": 5,
+                    "y": 15,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#b4b4b4",
+                    "strokeColor": "#000000",
+                    "lineWidth": 5,
+                    "isStroked": true,
+                    "width": 590,
+                    "height": 50
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "80d49e1c-5586-4434-8f17-d2e950914d56",
+                    "label": "action_menu_title",
+                    "displayName": "Action Menu Title",
+                    "useGameObjectName": true,
+                    "x": 10,
+                    "y": 20,
+                    "text": "SELECT CHARACTER ACTION\n",
+                    "font": "vcr_osd_mono_bold",
+                    "align": 1,
+                    "fontSize": -40
+                },
+                {
+                    "prefabId": "a561d8ee-6122-4fbc-b89d-0b3d86873ef1",
+                    "id": "f8bff67a-fcbb-4c92-8b30-b1f43c99609c",
+                    "unlock": [
+                        "x",
+                        "y",
+                        "scaleX",
+                        "scaleY",
+                        "ScrollViewComponent.viewport_x",
+                        "ScrollViewComponent.viewport_y",
+                        "ScrollViewComponent.viewport_width",
+                        "ScrollViewComponent.viewport_height",
+                        "ScrollViewComponent.container"
+                    ],
+                    "label": "scrollView",
+                    "components": [
+                        "DynamicOptionsListComponent"
+                    ],
+                    "ScrollViewComponent.viewport_x": 295,
+                    "ScrollViewComponent.viewport_y": 120,
+                    "ScrollViewComponent.viewport_width": 590,
+                    "ScrollViewComponent.viewport_height": 240,
+                    "x": 5,
+                    "y": 65,
+                    "scaleX": 1,
+                    "scaleY": 1
+                }
+            ]
         }
     ],
     "plainObjects": [],

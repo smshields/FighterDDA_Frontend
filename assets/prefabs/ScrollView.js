@@ -3,7 +3,7 @@
 
 /* START OF COMPILED CODE */
 
-import GeometryMaskSetupComponent from "../../src/components/GeometryMaskSetupComponent.js";
+import ScrollViewComponent from "../../src/components/ScrollViewComponent.js";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -14,17 +14,12 @@ export default class ScrollView extends Phaser.GameObjects.Container {
 
 		this.name = "viewport_box";
 
-		// content
-		const content = scene.add.container(0, 0);
-		content.name = "content";
-		this.add(content);
-
-		// viewport_mask
-		const viewport_mask = scene.add.rectangle(0, 0, 590, 240);
-		viewport_mask.name = "viewport_mask";
-		viewport_mask.setOrigin(0, 0);
-		viewport_mask.isFilled = true;
-		this.add(viewport_mask);
+		// viewport_background
+		const viewport_background = scene.add.rectangle(0, 0, 590, 240);
+		viewport_background.name = "viewport_background";
+		viewport_background.setOrigin(0, 0);
+		viewport_background.isFilled = true;
+		this.add(viewport_background);
 
 		// scroll_background
 		const scroll_background = scene.add.image(565, 0, "scroll_container");
@@ -62,43 +57,22 @@ export default class ScrollView extends Phaser.GameObjects.Container {
 		up_scroll_arrow.flipY = true;
 		this.add(up_scroll_arrow);
 
+		// content
+		const content = scene.add.container(0, 0);
+		content.name = "content";
+		this.add(content);
+
 		// this (components)
-		const thisGeometryMaskSetupComponent = new GeometryMaskSetupComponent(this);
-		thisGeometryMaskSetupComponent.target_container = content;
-		thisGeometryMaskSetupComponent.mask = viewport_mask;
+		const thisScrollViewComponent = new ScrollViewComponent(this);
+		thisScrollViewComponent.scrollbar_track = scroll_background;
+		thisScrollViewComponent.scrollbar_bar = scroll_bar;
+		thisScrollViewComponent.viewport_background = viewport_background;
+		thisScrollViewComponent.content = content;
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		/* END-USER-CTR-CODE */
-
-		// custom definition props
-		this.viewport_width = 400;
 	}
-
-	/** @type {number} */
-	viewport_height = 300;
-	/** @type {boolean} */
-	is_vertical = true;
-	/** @type {number} */
-	wheelstep = 24;
-	/** @type {string} */
-	track_key = "";
-	/** @type {string} */
-	bar_key = "";
-	/** @type {number} */
-	tween_duration = 1;
-	/** @type {number} */
-	tween_ease = 0;
-	/** @type {number} */
-	row_height = 36;
-	/** @type {number} */
-	row_padding_x = 8;
-	/** @type {number} */
-	row_padding_y = 4;
-	/** @type {number} */
-	font_size_px = 16;
-	/** @type {string} */
-	font_color = "#ffffff";
 
 	/* START-USER-CODE */
 

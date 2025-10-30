@@ -120,7 +120,6 @@ export default class CharacterManagerComponent extends UserComponent {
 			this.p2_rogue_model.updateFromJson(this.scene.cache.json.get(this.p2_rogue_label + jsonString));
 			this.p2_priest_model.updateFromJson(this.scene.cache.json.get(this.p2_priest_label + jsonString));
 
-			console.log(this.p1_warrior_model);
 		}
 	}
 

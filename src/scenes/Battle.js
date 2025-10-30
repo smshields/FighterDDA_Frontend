@@ -3,12 +3,12 @@
 /* START OF COMPILED CODE */
 
 import Background from "../../assets/prefabs/Background.js";
-import ScrollView from "../../assets/prefabs/ScrollView.js";
-import DynamicOptionsListComponent from "../components/DynamicOptionsListComponent.js";
 import CharacterViewComponent from "../components/CharacterViewComponent.js";
 import ObjectBounceAnimation from "../components/ObjectBounceAnimation.js";
 import StatusBar from "../../assets/prefabs/StatusBar.js";
 import CharacterManagerComponent from "../components/CharacterManagerComponent.js";
+import ScrollView from "../../assets/prefabs/ScrollView.js";
+import ScrollViewComponent from "../components/ScrollViewComponent.js";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -18,8 +18,8 @@ export default class Battle extends Phaser.Scene {
 		super("Battle");
 
 		/* START-USER-CTR-CODE */
-        // Write your code here.
-        /* END-USER-CTR-CODE */
+		// Write your code here.
+		/* END-USER-CTR-CODE */
 	}
 
 	/** @returns {void} */
@@ -110,50 +110,6 @@ export default class Battle extends Phaser.Scene {
 		action_queue_next_title.fontSize = -40;
 		action_queue_next_title.align = 1;
 		action_queue_next.add(action_queue_next_title);
-
-		// action_menu
-		const action_menu = this.add.container(10, 760);
-		action_menu.name = "action_menu";
-
-		// action_buttons_container
-		const action_buttons_container = this.add.container(841, 0);
-		action_buttons_container.name = "action_buttons_container";
-		action_menu.add(action_buttons_container);
-
-		// action_menu_background
-		const action_menu_background = this.add.rectangle(0, 10, 600, 300);
-		action_menu_background.name = "action_menu_background";
-		action_menu_background.setOrigin(0, 0);
-		action_menu_background.isFilled = true;
-		action_menu_background.isStroked = true;
-		action_menu_background.strokeColor = 0;
-		action_menu_background.lineWidth = 10;
-		action_menu.add(action_menu_background);
-
-		// action_menu_title_background
-		const action_menu_title_background = this.add.rectangle(5, 15, 590, 50);
-		action_menu_title_background.name = "action_menu_title_background";
-		action_menu_title_background.setOrigin(0, 0);
-		action_menu_title_background.isFilled = true;
-		action_menu_title_background.fillColor = 11842740;
-		action_menu_title_background.isStroked = true;
-		action_menu_title_background.strokeColor = 0;
-		action_menu_title_background.lineWidth = 5;
-		action_menu.add(action_menu_title_background);
-
-		// action_menu_title
-		const action_menu_title = this.add.bitmapText(10, 20, "vcr_osd_mono_bold", "SELECT CHARACTER ACTION\n");
-		action_menu_title.name = "action_menu_title";
-		action_menu_title.text = "SELECT CHARACTER ACTION\n";
-		action_menu_title.fontSize = -40;
-		action_menu_title.align = 1;
-		action_menu.add(action_menu_title);
-
-		// scrollView
-		const scrollView = new ScrollView(this, 5, 65);
-		scrollView.scaleX = 1;
-		scrollView.scaleY = 1;
-		action_menu.add(scrollView);
 
 		// target_menu
 		const target_menu = this.add.container(630, 770);
@@ -282,9 +238,6 @@ export default class Battle extends Phaser.Scene {
 		p1_rogue_sprite.flipX = true;
 		p1_Rogue.add(p1_rogue_sprite);
 
-		// glowFx_2
-		p1_rogue_sprite.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
-
 		// p1_rogue_status_bar
 		const p1_rogue_status_bar = new StatusBar(this, 0, 0);
 		p1_rogue_status_bar.name = "p1_rogue_status_bar";
@@ -304,9 +257,6 @@ export default class Battle extends Phaser.Scene {
 		p1_rogue_defend.scaleY = 0.2788076925413643;
 		p1_Rogue.add(p1_rogue_defend);
 
-		// glowFx_4
-		p1_rogue_defend.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
-
 		// p1_Priest
 		const p1_Priest = this.add.container(-220, 230);
 		p1_Priest.name = "p1_Priest";
@@ -322,9 +272,6 @@ export default class Battle extends Phaser.Scene {
 		p1_priest_sprite.alphaBottomLeft = 0.9;
 		p1_priest_sprite.alphaBottomRight = 0.9;
 		p1_Priest.add(p1_priest_sprite);
-
-		// glowFx
-		p1_priest_sprite.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
 
 		// p1_priest_status_bar
 		const p1_priest_status_bar = new StatusBar(this, 0, 0);
@@ -345,9 +292,6 @@ export default class Battle extends Phaser.Scene {
 		p1_priest_defend.scaleY = 0.2788076925413643;
 		p1_Priest.add(p1_priest_defend);
 
-		// glowFx_5
-		p1_priest_defend.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
-
 		// p1_Mage
 		const p1_Mage = this.add.container(-220, 65);
 		p1_Mage.name = "p1_Mage";
@@ -358,9 +302,6 @@ export default class Battle extends Phaser.Scene {
 		p1_mage_sprite.name = "p1_mage_sprite";
 		p1_mage_sprite.flipX = true;
 		p1_Mage.add(p1_mage_sprite);
-
-		// glowFx_1
-		p1_mage_sprite.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
 
 		// p1_mage_status_bar
 		const p1_mage_status_bar = new StatusBar(this, 0, 0);
@@ -381,9 +322,6 @@ export default class Battle extends Phaser.Scene {
 		p1_mage_defend.scaleY = 0.2788076925413643;
 		p1_Mage.add(p1_mage_defend);
 
-		// glowFx_10
-		p1_mage_defend.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
-
 		// p1_warrior
 		const p1_warrior = this.add.container(-220, 405);
 		p1_warrior.name = "p1_warrior";
@@ -394,9 +332,6 @@ export default class Battle extends Phaser.Scene {
 		p1_warrior_sprite.name = "p1_warrior_sprite";
 		p1_warrior_sprite.flipX = true;
 		p1_warrior.add(p1_warrior_sprite);
-
-		// glowFx_3
-		p1_warrior_sprite.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
 
 		// p1_warrior_status_bar
 		const p1_warrior_status_bar = new StatusBar(this, 0, 0);
@@ -417,9 +352,6 @@ export default class Battle extends Phaser.Scene {
 		p1_warrior_defend.scaleY = 0.2788076925413643;
 		p1_warrior.add(p1_warrior_defend);
 
-		// glowFx_11
-		p1_warrior_defend.postFX.addGlow(7505407, 4, 0, false, 0.1, 10);
-
 		// p2_team
 		const p2_team = this.add.container(1400, 125);
 		p2_team.name = "p2_team";
@@ -433,9 +365,6 @@ export default class Battle extends Phaser.Scene {
 		const p2_rogue_sprite = this.add.image(0, 50, "rogue");
 		p2_rogue_sprite.name = "p2_rogue_sprite";
 		p2_rogue.add(p2_rogue_sprite);
-
-		// glowFx_6
-		p2_rogue_sprite.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
 		// p2_rogue_status_bar
 		const p2_rogue_status_bar = new StatusBar(this, 185, 0);
@@ -456,9 +385,6 @@ export default class Battle extends Phaser.Scene {
 		p2_rogue_defend.scaleY = 0.2788076925413643;
 		p2_rogue.add(p2_rogue_defend);
 
-		// glowFx_12
-		p2_rogue_defend.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
-
 		// p2_priest
 		const p2_priest = this.add.container(0, 335);
 		p2_priest.name = "p2_priest";
@@ -473,9 +399,6 @@ export default class Battle extends Phaser.Scene {
 		p2_priest_sprite.alphaBottomLeft = 0.9;
 		p2_priest_sprite.alphaBottomRight = 0.9;
 		p2_priest.add(p2_priest_sprite);
-
-		// glowFx_7
-		p2_priest_sprite.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
 		// p2_priest_status_bar
 		const p2_priest_status_bar = new StatusBar(this, 185, 0);
@@ -496,9 +419,6 @@ export default class Battle extends Phaser.Scene {
 		p2_priest_defend.scaleY = 0.2788076925413643;
 		p2_priest.add(p2_priest_defend);
 
-		// glowFx_13
-		p2_priest_defend.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
-
 		// p2_mage
 		const p2_mage = this.add.container(0, 170);
 		p2_mage.name = "p2_mage";
@@ -508,9 +428,6 @@ export default class Battle extends Phaser.Scene {
 		const p2_mage_sprite = this.add.image(0, 50, "mage");
 		p2_mage_sprite.name = "p2_mage_sprite";
 		p2_mage.add(p2_mage_sprite);
-
-		// glowFx_8
-		p2_mage_sprite.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
 		// p2_mage_status_bar
 		const p2_mage_status_bar = new StatusBar(this, 185, 0);
@@ -531,9 +448,6 @@ export default class Battle extends Phaser.Scene {
 		p2_mage_defend.scaleY = 0.2788076925413643;
 		p2_mage.add(p2_mage_defend);
 
-		// glowFx_14
-		p2_mage_defend.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
-
 		// p2_warrior
 		const p2_warrior = this.add.container(5, 510);
 		p2_warrior.name = "p2_warrior";
@@ -543,9 +457,6 @@ export default class Battle extends Phaser.Scene {
 		const p2_warrior_sprite = this.add.image(0, 50, "warrior");
 		p2_warrior_sprite.name = "p2_warrior_sprite";
 		p2_warrior.add(p2_warrior_sprite);
-
-		// glowFx_9
-		p2_warrior_sprite.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
 		// p2_warrior_status_bar
 		const p2_warrior_status_bar = new StatusBar(this, 180, 0);
@@ -565,9 +476,6 @@ export default class Battle extends Phaser.Scene {
 		p2_warrior_defend.scaleX = 0.2788076925413643;
 		p2_warrior_defend.scaleY = 0.2788076925413643;
 		p2_warrior.add(p2_warrior_defend);
-
-		// glowFx_15
-		p2_warrior_defend.postFX.addGlow(16742263, 4, 0, false, 0.1, 10);
 
 		// notifications
 		const notifications = this.add.container(10, 10);
@@ -594,11 +502,49 @@ export default class Battle extends Phaser.Scene {
 		const character_manager = this.add.container(0, 0);
 		character_manager.name = "character_manager";
 
-		// scrollView (components)
-		const scrollViewDynamicOptionsListComponent = new DynamicOptionsListComponent(scrollView);
-		scrollViewDynamicOptionsListComponent.viewport_width = 590;
-		scrollViewDynamicOptionsListComponent.viewport_height = 240;
-		scrollViewDynamicOptionsListComponent.row_height = 60;
+		// action_menu
+		const action_menu = this.add.container(10, 760);
+		action_menu.name = "action_menu";
+
+		// action_buttons_container
+		const action_buttons_container = this.add.container(841, 0);
+		action_buttons_container.name = "action_buttons_container";
+		action_menu.add(action_buttons_container);
+
+		// action_menu_background
+		const action_menu_background = this.add.rectangle(0, 10, 600, 300);
+		action_menu_background.name = "action_menu_background";
+		action_menu_background.setOrigin(0, 0);
+		action_menu_background.isFilled = true;
+		action_menu_background.isStroked = true;
+		action_menu_background.strokeColor = 0;
+		action_menu_background.lineWidth = 10;
+		action_menu.add(action_menu_background);
+
+		// action_menu_title_background
+		const action_menu_title_background = this.add.rectangle(5, 15, 590, 50);
+		action_menu_title_background.name = "action_menu_title_background";
+		action_menu_title_background.setOrigin(0, 0);
+		action_menu_title_background.isFilled = true;
+		action_menu_title_background.fillColor = 11842740;
+		action_menu_title_background.isStroked = true;
+		action_menu_title_background.strokeColor = 0;
+		action_menu_title_background.lineWidth = 5;
+		action_menu.add(action_menu_title_background);
+
+		// action_menu_title
+		const action_menu_title = this.add.bitmapText(10, 20, "vcr_osd_mono_bold", "SELECT CHARACTER ACTION\n");
+		action_menu_title.name = "action_menu_title";
+		action_menu_title.text = "SELECT CHARACTER ACTION\n";
+		action_menu_title.fontSize = -40;
+		action_menu_title.align = 1;
+		action_menu.add(action_menu_title);
+
+		// scrollView
+		const scrollView = new ScrollView(this, 5, 65);
+		scrollView.scaleX = 1;
+		scrollView.scaleY = 1;
+		action_menu.add(scrollView);
 
 		// p1_Rogue (components)
 		const p1_RogueCharacterViewComponent = new CharacterViewComponent(p1_Rogue);
@@ -644,7 +590,7 @@ export default class Battle extends Phaser.Scene {
 		p1_warriorCharacterViewComponent.status_bar = p1_warrior_status_bar;
 		p1_warriorCharacterViewComponent.gravestone = p1_warrior_gravestone;
 		p1_warriorCharacterViewComponent.character_sprite = p1_warrior_sprite;
-		p1_warriorCharacterViewComponent.defending = p1_mage_defend;
+		p1_warriorCharacterViewComponent.defending = p1_warrior_defend;
 
 		// p1_warrior_sprite (components)
 		const p1_warrior_spriteObjectBounceAnimation = new ObjectBounceAnimation(p1_warrior_sprite);
@@ -715,6 +661,13 @@ export default class Battle extends Phaser.Scene {
 		character_managerCharacterManagerComponent.p2_priest_ui = p2_priest;
 		character_managerCharacterManagerComponent.p2_rogue_ui = p2_rogue;
 
+		// scrollView (components)
+		const scrollViewScrollViewComponent = ScrollViewComponent.getComponent(scrollView);
+		scrollViewScrollViewComponent.viewport_x = 295;
+		scrollViewScrollViewComponent.viewport_y = 120;
+		scrollViewScrollViewComponent.viewport_width = 590;
+		scrollViewScrollViewComponent.viewport_height = 240;
+
 		this.p1_warrior_sprite = p1_warrior_sprite;
 		this.p2_warrior_sprite = p2_warrior_sprite;
 
@@ -728,7 +681,7 @@ export default class Battle extends Phaser.Scene {
 
 	/* START-USER-CODE */
 
-    // Write your code here
+	// Write your code here
 
 	preload() {
 		this.load.start();
@@ -743,16 +696,25 @@ export default class Battle extends Phaser.Scene {
 		this.load.json('p2_rogue_json', 'assets/data/character_json_stubs/P2Rogue.JSON');
 		this.load.json('p2_priest_json', 'assets/data/character_json_stubs/P2Priest.JSON');
 
+		this.load.scenePlugin({
+			key: 'rexuiplugin',
+			url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/v4.0.0-alpha/dist/rexuiplugin.min.js',
+			sceneKey: 'rexUI'
+		});
+
+
+
 	}
 
-    create() {
+	create() {
 
-        this.editorCreate();
+		this.editorCreate();
 
 
-    }
 
-    /* END-USER-CODE */
+	}
+
+	/* END-USER-CODE */
 }
 
 /* END OF COMPILED CODE */

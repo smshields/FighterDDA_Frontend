@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "phaser": "^3.90.0",
+    "phaser": "^4.0.0-rc.5",
     "phaser-ui-tools": "^2.0.0-beta"
   }
 }

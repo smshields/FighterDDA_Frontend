@@ -16,8 +16,6 @@ export default class CharacterViewComponent extends UserComponent {
 		gameObject["__CharacterViewComponent"] = this;
 
 		/* START-USER-CTR-CODE */
-		// === References ===
-		gameObject.characterViewComponent = this;
 
 		// === Inspector Properties ===
 
@@ -60,6 +58,26 @@ export default class CharacterViewComponent extends UserComponent {
 		this.updateIsDefending();
 		this.updateHealthBar();
 		this.updateActionBar();
+		this.addCharacterGlow(this.characterModel.playerNum);
+
+	}
+
+	addCharacterGlow(playerNum){
+		let color = "";
+		if(playerNum == 1){
+			color = 0x7285ff;
+		} else {
+			color = 0xff7777;
+		}
+		this.character_sprite
+    		.enableFilters()
+    		.filters.internal.addGlow(color, 4, 0, 2, false, 0.1, 10)
+    		.setPaddingOverride(null);
+
+		this.defending
+    		.enableFilters()
+    		.filters.internal.addGlow(color, 4, 0, 4, false, 0.1, 10)
+    		.setPaddingOverride(null);
 
 	}
 
