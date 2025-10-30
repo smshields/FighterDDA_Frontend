@@ -714,6 +714,67 @@ export default class Battle extends Phaser.Scene {
 
 	}
 
+	CreateScrollView(name, x, y, width, height){
+		console.log(this.rexUI);
+		console.log("Reached: " + name);
+
+		const background = this.rexUI.add.roundRectangle(0, 0, 0, 0, 6, 0xeeeeee);
+		const track = this.rexUI.add.roundRectangle(0, 0, 4, height, 2, 0x666666);
+		const thumb = this.rexUI.add.roundRectangle(0, 0, 8, 24, 4, 0x333333);
+
+		const content = this.rexUI.add.sizer({
+		 	orientation: 1, // vertical
+		});
+
+		let items = ['Attack', 'Defend', 'Heal', 'Magic Attack', 'Multi Attack', 'Multi Magic Attack', 'Multi Heal', 'Attack 2', 'Attack 3', 'Attack 4', 'Attack 5'];
+
+
+		for (let i = 0; i < items.length; i += 1) {
+			const label = this.add.text(0, 0, items[i], {
+				fontFamily: "Arial, sans-serif",
+				fontSize: "32px",
+				color: "#000000",
+				wordWrap: { width: width - 32 }
+			});
+			content.add(
+				label,
+				0,                      // proportion
+				"left",                 // align
+				{ left: 8, right: 8, top: 4, bottom: 4 }, // padding
+				false                   // expand
+			);
+		}
+		content.layout();
+
+		const panel = this.rexUI.add.scrollablePanel({
+			width: width,
+			height: height,
+			background: background,
+			panel: {
+				child: content,
+				mask: {mask: true, padding:1},
+				childOrigin0: true
+			},
+			slider: {
+				track: track,
+				thumb: thumb,
+				position: "right",
+				adaptThumbSize: true,
+				hideUnscrollableSlider: false
+			},
+			mouseWheelScroller: { focus: false, speed: 0.1 },
+			scrollDetectionMode: 1 
+		});
+
+		panel.layout();
+
+		this.add.container(panel);
+		this.panel = panel;
+
+		panel.setOrigin(x, y);
+		panel.setPosition(x, y);
+	}
+
 	/* END-USER-CODE */
 }
 
