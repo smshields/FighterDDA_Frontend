@@ -468,28 +468,6 @@
                     }
                 },
                 {
-                    "name": "scrollbar_track",
-                    "label": "Scrollbar Track",
-                    "tooltip": "",
-                    "defValue": "",
-                    "customDefinition": false,
-                    "type": {
-                        "id": "object-var",
-                        "expressionType": "Phaser.GameObjects.GameObject"
-                    }
-                },
-                {
-                    "name": "scrollbar_bar",
-                    "label": "Scroll Bar Bar",
-                    "tooltip": "",
-                    "defValue": "",
-                    "customDefinition": false,
-                    "type": {
-                        "id": "object-var",
-                        "expressionType": "Phaser.GameObjects.GameObject"
-                    }
-                },
-                {
                     "name": "viewport_background",
                     "label": "Viewport Background",
                     "tooltip": "",
@@ -509,6 +487,16 @@
                     "type": {
                         "id": "object-var",
                         "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "name",
+                    "label": "Name",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
                     }
                 }
             ]

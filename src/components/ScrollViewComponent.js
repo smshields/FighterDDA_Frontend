@@ -25,12 +25,6 @@ export default class ScrollViewComponent extends UserComponent {
 		/** @type {Phaser.GameObjects.GameObject} */
 		this.viewport_background = null;
 
-		/** @type {Phaser.GameObjects.GameObject} */
-		this.scrollbar_track = null;
-
-		/** @type {Phaser.GameObjects.GameObject} */
-		this.scrollbar_bar = null;
-
 		// === Internal Properties ===
 		this.content = null;
 
@@ -55,6 +49,8 @@ export default class ScrollViewComponent extends UserComponent {
 	viewport_width = 0;
 	/** @type {number} */
 	viewport_height = 0;
+	/** @type {string} */
+	name = "";
 
 	/* START-USER-CODE */
 

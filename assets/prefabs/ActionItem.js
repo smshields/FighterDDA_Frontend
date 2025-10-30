@@ -11,15 +11,44 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 	constructor(scene, x, y) {
 		super(scene, x ?? 0, y ?? 0);
 
-		this.name = "action_item";
+		this.name = "action";
 
-		// action_text
-		const action_text = scene.add.bitmapText(0, 0, "vcr_osd_mono_bold", "Action");
-		action_text.name = "action_text";
-		action_text.setOrigin(0.5, 0.5);
-		action_text.text = "Action";
-		action_text.fontSize = -32;
-		this.add(action_text);
+		// action_name_background
+		const action_name_background = scene.add.rectangle(0, 0, 570, 50);
+		action_name_background.setOrigin(0, 0);
+		action_name_background.isFilled = true;
+		action_name_background.fillColor = 9803157;
+		this.add(action_name_background);
+
+		// action_name
+		const action_name = scene.add.bitmapText(295, 25, "vcr_osd_mono_bold", "Action");
+		action_name.name = "action_name";
+		action_name.setOrigin(0.5, 0.5);
+		action_name.text = "Action";
+		action_name.fontSize = -40;
+		action_name.align = 1;
+		this.add(action_name);
+
+		// action_arrow
+		const action_arrow = scene.add.image(15, 5, "selection_arrow");
+		action_arrow.scaleX = 0.5;
+		action_arrow.scaleY = 0.5;
+		action_arrow.setOrigin(0, 0);
+		this.add(action_arrow);
+
+		// action_hover_arrow
+		const action_hover_arrow = scene.add.image(60, 5, "selection_arrow_pressed");
+		action_hover_arrow.name = "action_hover_arrow";
+		action_hover_arrow.scaleX = 0.5;
+		action_hover_arrow.scaleY = 0.5;
+		action_hover_arrow.setOrigin(0, 0);
+		this.add(action_hover_arrow);
+
+		// selection_arrow_selected
+		const selection_arrow_selected = scene.add.image(545, 25, "selection_arrow_selected");
+		selection_arrow_selected.scaleX = 0.5;
+		selection_arrow_selected.scaleY = 0.5;
+		this.add(selection_arrow_selected);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.

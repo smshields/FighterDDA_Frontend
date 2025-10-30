@@ -9,6 +9,7 @@ import StatusBar from "../../assets/prefabs/StatusBar.js";
 import CharacterManagerComponent from "../components/CharacterManagerComponent.js";
 import ScrollView from "../../assets/prefabs/ScrollView.js";
 import ScrollViewComponent from "../components/ScrollViewComponent.js";
+import ActionItem from "../../assets/prefabs/ActionItem.js";
 /* START-USER-IMPORTS */
 /* END-USER-IMPORTS */
 
@@ -546,6 +547,10 @@ export default class Battle extends Phaser.Scene {
 		scrollView.scaleY = 1;
 		action_menu.add(scrollView);
 
+		// actionItem
+		const actionItem = new ActionItem(this, 15, 75);
+		action_menu.add(actionItem);
+
 		// p1_Rogue (components)
 		const p1_RogueCharacterViewComponent = new CharacterViewComponent(p1_Rogue);
 		p1_RogueCharacterViewComponent.status_bar = p1_rogue_status_bar;
@@ -667,6 +672,7 @@ export default class Battle extends Phaser.Scene {
 		scrollViewScrollViewComponent.viewport_y = 120;
 		scrollViewScrollViewComponent.viewport_width = 590;
 		scrollViewScrollViewComponent.viewport_height = 240;
+		scrollViewScrollViewComponent.name = "action_scrollview";
 
 		this.p1_warrior_sprite = p1_warrior_sprite;
 		this.p2_warrior_sprite = p2_warrior_sprite;
@@ -729,15 +735,11 @@ export default class Battle extends Phaser.Scene {
 		let items = ['Attack', 'Defend', 'Heal', 'Magic Attack', 'Multi Attack', 'Multi Magic Attack', 'Multi Heal', 'Attack 2', 'Attack 3', 'Attack 4', 'Attack 5'];
 
 
+
 		for (let i = 0; i < items.length; i += 1) {
-			const label = this.add.text(0, 0, items[i], {
-				fontFamily: "Arial, sans-serif",
-				fontSize: "32px",
-				color: "#000000",
-				wordWrap: { width: width - 32 }
-			});
+			const testAction = new ActionItem(this, 0, 0);
 			content.add(
-				label,
+				testAction,
 				0,                      // proportion
 				"left",                 // align
 				{ left: 8, right: 8, top: 4, bottom: 4 }, // padding

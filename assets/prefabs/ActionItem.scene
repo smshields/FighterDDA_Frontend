@@ -1,5 +1,5 @@
 {
-    "id": "680cf373-e8d7-4a59-823b-0f03ad53792c",
+    "id": "87c0b56c-982d-4044-b3c5-2f121c1cf7b4",
     "settings": {
         "createMethodName": "",
         "preloadMethodName": "",
@@ -23,22 +23,82 @@
                 "y"
             ],
             "type": "Container",
-            "id": "8f31f26e-9340-4da6-830f-d779796e0a17",
-            "label": "action_item",
-            "displayName": "Action Item",
+            "id": "207b049e-1721-4014-b3a2-9a0fb1bf4b24",
+            "label": "action",
+            "displayName": "Action",
             "useGameObjectName": true,
             "x": 0,
             "y": 0,
             "list": [
                 {
+                    "type": "Rectangle",
+                    "id": "e7a28c08-7954-49f6-89c3-1225e1178c41",
+                    "label": "action_name_background",
+                    "displayName": "Action Name Background",
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#959595",
+                    "width": 570,
+                    "height": 50
+                },
+                {
                     "type": "BitmapText",
-                    "id": "c633ba49-4f0f-41df-a7b6-965140f76b16",
-                    "label": "action_text",
-                    "displayName": "Action Text",
+                    "id": "9c38f5fb-83bf-43a4-a0b4-752e792925e7",
+                    "label": "action_name",
+                    "displayName": "Action Name",
                     "useGameObjectName": true,
+                    "x": 295,
+                    "y": 25,
+                    "originX": 0.5,
+                    "originY": 0.5,
                     "text": "Action",
                     "font": "vcr_osd_mono_bold",
-                    "fontSize": -32
+                    "align": 1,
+                    "fontSize": -40
+                },
+                {
+                    "type": "Image",
+                    "id": "7dad7636-b3a6-407b-9cf9-1b06223ac4f0",
+                    "label": "action_arrow",
+                    "displayName": "Action Arrow",
+                    "texture": {
+                        "key": "selection_arrow"
+                    },
+                    "x": 15,
+                    "y": 5,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "3c910533-4dd4-4a11-b51d-73dc8f63bee0",
+                    "label": "action_hover_arrow",
+                    "displayName": "Action Hover Arrow",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "selection_arrow_pressed"
+                    },
+                    "x": 60,
+                    "y": 5,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "a5fa3a4e-3f9d-4ebc-abca-4039e850f434",
+                    "label": "selection_arrow_selected",
+                    "texture": {
+                        "key": "selection_arrow_selected"
+                    },
+                    "x": 545,
+                    "y": 25,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5
                 }
             ]
         }

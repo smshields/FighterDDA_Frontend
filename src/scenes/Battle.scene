@@ -1137,7 +1137,8 @@
                         "ScrollViewComponent.viewport_y",
                         "ScrollViewComponent.viewport_width",
                         "ScrollViewComponent.viewport_height",
-                        "ScrollViewComponent.container"
+                        "ScrollViewComponent.container",
+                        "ScrollViewComponent.name"
                     ],
                     "label": "scrollView",
                     "components": [
@@ -1147,10 +1148,22 @@
                     "ScrollViewComponent.viewport_y": 120,
                     "ScrollViewComponent.viewport_width": 590,
                     "ScrollViewComponent.viewport_height": 240,
+                    "ScrollViewComponent.name": "action_scrollview",
                     "x": 5,
                     "y": 65,
                     "scaleX": 1,
                     "scaleY": 1
+                },
+                {
+                    "prefabId": "87c0b56c-982d-4044-b3c5-2f121c1cf7b4",
+                    "id": "32ce90c9-9773-4874-8815-1f9a0e5acba8",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "actionItem",
+                    "x": 15,
+                    "y": 75
                 }
             ]
         }
