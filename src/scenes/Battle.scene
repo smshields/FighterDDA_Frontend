@@ -100,6 +100,156 @@
                             "isStroked": true,
                             "width": 685,
                             "height": 235
+                        },
+                        {
+                            "type": "Rectangle",
+                            "id": "565ebaa6-e9f9-4395-baf2-c8feba34917a",
+                            "label": "rectangle_1",
+                            "x": 5,
+                            "y": 60,
+                            "originX": 0,
+                            "originY": 0,
+                            "isFilled": true,
+                            "fillColor": "#b4b4b4",
+                            "width": 675,
+                            "height": 100
+                        },
+                        {
+                            "type": "Image",
+                            "id": "9cbe6886-c9a8-4793-8151-430556351ca5",
+                            "label": "action_queue_history_character",
+                            "displayName": "Action Queue History Character",
+                            "texture": {
+                                "key": "warrior"
+                            },
+                            "x": 50,
+                            "y": 70,
+                            "scaleX": 0.75,
+                            "scaleY": 0.75,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "60458a9c-a59b-411e-9797-d4e0ae1a8e68",
+                            "label": "attack_icon",
+                            "texture": {
+                                "key": "attack_icon"
+                            },
+                            "x": 150,
+                            "y": 70,
+                            "scaleX": 0.17777045335026118,
+                            "scaleY": 0.17777045335026118,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "474b5f9a-fde0-44a4-a7d7-f5bc05777495",
+                            "label": "warrior",
+                            "texture": {
+                                "key": "warrior"
+                            },
+                            "x": 260,
+                            "y": 65,
+                            "scaleX": 0.6,
+                            "scaleY": 0.6,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4018b33c-9118-47cc-89b6-76463ae5b5d7",
+                            "label": "mage",
+                            "texture": {
+                                "key": "mage"
+                            },
+                            "x": 365,
+                            "y": 60,
+                            "scaleX": 0.6,
+                            "scaleY": 0.6,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "3b4433c2-7209-427a-a00d-1f1b8605bda9",
+                            "label": "priest",
+                            "texture": {
+                                "key": "priest"
+                            },
+                            "x": 455,
+                            "y": 65,
+                            "scaleX": 0.6,
+                            "scaleY": 0.6,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "Image",
+                            "id": "5e31a03d-63c5-4898-97ba-8d590cbdc5f2",
+                            "label": "rogue",
+                            "texture": {
+                                "key": "rogue"
+                            },
+                            "x": 565,
+                            "y": 60,
+                            "scaleX": 0.6,
+                            "scaleY": 0.6,
+                            "originX": 0,
+                            "originY": 0
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "1bc1de5a-b7e8-4874-a2fa-ca063fe40a33",
+                            "label": "bitmaptext",
+                            "x": 270,
+                            "y": 130,
+                            "text": "100",
+                            "font": "vcr_osd_mono",
+                            "fontSize": -26,
+                            "dropShadowX": 2,
+                            "dropShadowY": 5,
+                            "dropShadowColor": "#e90000ff"
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "69a9adce-341f-479e-99ea-6d3a4b77aed1",
+                            "label": "bitmaptext_1",
+                            "x": 565,
+                            "y": 130,
+                            "text": "100",
+                            "font": "vcr_osd_mono",
+                            "fontSize": -26,
+                            "dropShadowX": 2,
+                            "dropShadowY": 5,
+                            "dropShadowColor": "#e90000ff"
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "8f209653-8155-4fc2-896b-710ca4193ed3",
+                            "label": "bitmaptext_2",
+                            "x": 460,
+                            "y": 130,
+                            "text": "100",
+                            "font": "vcr_osd_mono",
+                            "fontSize": -26,
+                            "dropShadowX": 2,
+                            "dropShadowY": 5,
+                            "dropShadowColor": "#e90000ff"
+                        },
+                        {
+                            "type": "BitmapText",
+                            "id": "cd8f58f3-dd38-4242-bea4-e04c6e8517f3",
+                            "label": "bitmaptext_3",
+                            "x": 365,
+                            "y": 130,
+                            "text": "100",
+                            "font": "vcr_osd_mono",
+                            "fontSize": -26,
+                            "dropShadowX": 2,
+                            "dropShadowY": 5,
+                            "dropShadowColor": "#0a9a02ff"
                         }
                     ]
                 },
@@ -157,6 +307,30 @@
                             "font": "vcr_osd_mono_bold",
                             "align": 1,
                             "fontSize": -40
+                        },
+                        {
+                            "prefabId": "910675b2-6ab8-4d50-926a-06405c8e3787",
+                            "id": "903a0762-cb40-483e-a1a6-ee3905341897",
+                            "unlock": [
+                                "x",
+                                "y"
+                            ],
+                            "label": "action_queue_next_scrollview",
+                            "x": 0,
+                            "y": 55
+                        },
+                        {
+                            "prefabId": "bac83d17-4a10-466a-8ab2-80995e162494",
+                            "id": "ab0a2e19-c1e6-41cf-9875-01381897fd1b",
+                            "unlock": [
+                                "x",
+                                "y"
+                            ],
+                            "label": "action_queue_next_character_item",
+                            "displayName": "Action Queue Next Character Item",
+                            "useGameObjectName": true,
+                            "x": 5,
+                            "y": 60
                         }
                     ]
                 }
@@ -199,7 +373,7 @@
                     "isFilled": true,
                     "fillColor": "#b4b4b4",
                     "strokeColor": "#000000",
-                    "lineWidth": 5,
+                    "lineWidth": 3.5,
                     "isStroked": true,
                     "width": 440,
                     "height": 50
@@ -1140,7 +1314,9 @@
                         "ScrollViewComponent.container",
                         "ScrollViewComponent.name"
                     ],
-                    "label": "scrollView",
+                    "label": "action_scrollview",
+                    "displayName": "Action Scrollview",
+                    "useGameObjectName": true,
                     "components": [
                         "DynamicOptionsListComponent"
                     ],
@@ -1153,17 +1329,6 @@
                     "y": 65,
                     "scaleX": 1,
                     "scaleY": 1
-                },
-                {
-                    "prefabId": "87c0b56c-982d-4044-b3c5-2f121c1cf7b4",
-                    "id": "32ce90c9-9773-4874-8815-1f9a0e5acba8",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "actionItem",
-                    "x": 15,
-                    "y": 75
                 }
             ]
         }

@@ -1,0 +1,60 @@
+{
+    "id": "910675b2-6ab8-4d50-926a-06405c8e3787",
+    "settings": {
+        "createMethodName": "",
+        "preloadMethodName": "",
+        "compilerOutputLanguage": "JAVA_SCRIPT",
+        "exportClass": true,
+        "autoImport": true,
+        "importFileExtension": true,
+        "generateAwakeHandler": false,
+        "compilerInsertSpaces": false,
+        "compilerTabSize": 4,
+        "borderWidth": 1920,
+        "borderHeight": 1080,
+        "borderX": 0,
+        "borderY": 0
+    },
+    "sceneType": "PREFAB",
+    "displayList": [
+        {
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "type": "Container",
+            "id": "98bdf20d-2c6a-4b0a-b713-71083792066d",
+            "label": "action_queue_next_scrollview",
+            "y": 0,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "4c032624-c1a2-4050-9c5a-24072639feb3",
+                    "label": "viewport_background_1",
+                    "displayName": "Viewport Background",
+                    "useGameObjectName": true,
+                    "x": 5,
+                    "y": 5,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "width": 100,
+                    "height": 230
+                },
+                {
+                    "type": "Container",
+                    "id": "ee823608-457c-4e7a-b6b2-643ffe136082",
+                    "label": "content_1",
+                    "displayName": "Content",
+                    "useGameObjectName": true
+                }
+            ],
+            "x": 0
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "id": "bac83d17-4a10-466a-8ab2-80995e162494",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "importFileExtension": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "bc5c71d9-be42-4b59-8559-15fa87e2c518",
+            "label": "action_queue_next_character_item",
+            "displayName": "Action Queue Next Character Item",
+            "useGameObjectName": true,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "6f00e61f-1690-46da-8b3c-87b9efcf885f",
+                    "label": "action_queue_next_character_background",
+                    "displayName": "Action Queue Next Character Background",
+                    "useGameObjectName": true,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#b4b4b4",
+                    "width": 100,
+                    "height": 100
+                },
+                {
+                    "type": "Image",
+                    "id": "021d1db5-d099-4950-8c47-9820e5bb3a34",
+                    "label": "action_queue_next_character",
+                    "displayName": "Action Queue Next Character",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "warrior"
+                    },
+                    "x": 50,
+                    "y": 50,
+                    "scaleX": 0.75,
+                    "scaleY": 0.75
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    }
+}

@@ -17,7 +17,6 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 		const action_name_background = scene.add.rectangle(0, 0, 570, 50);
 		action_name_background.setOrigin(0, 0);
 		action_name_background.isFilled = true;
-		action_name_background.fillColor = 9803157;
 		this.add(action_name_background);
 
 		// action_name
@@ -51,11 +50,30 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 		this.add(selection_arrow_selected);
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+		console.log('REACHED!!!!');
+		let bounds = this.getBounds();
+		console.log(bounds);
+		let hitZone = this.scene.add.zone(0, 0, bounds.width, bounds.height)
+			.setOrigin(0)
+  			.setInteractive({ useHandCursor: true });
+		this.add(hitZone);
+
+		hitZone.on('pointerover', () => action_name_background.fillColor = 0x777777);
+		hitZone.on('pointerout', () => action_name_background.fillColor = 0xffffff);
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {number} */
+	action_width = 0;
+	/** @type {number} */
+	action_height = 0;
+
 	/* START-USER-CODE */
+
+
+	addHoverListener(){
+
+	}
 
 	// Write your code here.
 

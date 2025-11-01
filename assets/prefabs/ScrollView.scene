@@ -21,8 +21,6 @@
             "components": [
                 "ScrollViewComponent"
             ],
-            "ScrollViewComponent.scrollbar_track": "scroll_background",
-            "ScrollViewComponent.scrollbar_bar": "scroll_bar",
             "ScrollViewComponent.viewport_background": "viewport_background",
             "ScrollViewComponent.content": "content",
             "list": [
@@ -30,7 +28,7 @@
                     "type": "Rectangle",
                     "id": "8fa42d29-91b6-4c5b-80a5-dbb9f61dbd47",
                     "label": "viewport_background",
-                    "displayName": "Viewport Background",
+                    "displayName": "(2 selected)",
                     "useGameObjectName": true,
                     "originX": 0,
                     "originY": 0,
@@ -42,7 +40,7 @@
                     "type": "Container",
                     "id": "99076db2-0bf3-4369-bb9c-720933225190",
                     "label": "content",
-                    "displayName": "Content",
+                    "displayName": "(2 selected)",
                     "useGameObjectName": true
                 }
             ]

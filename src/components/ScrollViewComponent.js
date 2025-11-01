@@ -73,7 +73,7 @@ export default class ScrollViewComponent extends UserComponent {
 		const centerX = bounds.centerX;
 		const centerY = bounds.centerY;
 
-		this.scene.CreateScrollView("action", centerX, centerY, this.viewport_width, this.viewport_height);
+		this.scene.createScrollView("action", centerX, centerY, this.viewport_width, this.viewport_height);
 
 
 

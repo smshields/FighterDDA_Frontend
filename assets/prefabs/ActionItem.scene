@@ -1,34 +1,23 @@
 {
     "id": "87c0b56c-982d-4044-b3c5-2f121c1cf7b4",
+    "sceneType": "PREFAB",
     "settings": {
-        "createMethodName": "",
-        "preloadMethodName": "",
-        "compilerOutputLanguage": "JAVA_SCRIPT",
         "exportClass": true,
         "autoImport": true,
         "importFileExtension": true,
-        "generateAwakeHandler": false,
-        "compilerInsertSpaces": false,
-        "compilerTabSize": 4,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
         "borderWidth": 1920,
-        "borderHeight": 1080,
-        "borderX": 0,
-        "borderY": 0
+        "borderHeight": 1080
     },
-    "sceneType": "PREFAB",
     "displayList": [
         {
-            "unlock": [
-                "x",
-                "y"
-            ],
             "type": "Container",
             "id": "207b049e-1721-4014-b3a2-9a0fb1bf4b24",
             "label": "action",
             "displayName": "Action",
             "useGameObjectName": true,
-            "x": 0,
-            "y": 0,
             "list": [
                 {
                     "type": "Rectangle",
@@ -38,7 +27,7 @@
                     "originX": 0,
                     "originY": 0,
                     "isFilled": true,
-                    "fillColor": "#959595",
+                    "fillColor": "#ffffff",
                     "width": 570,
                     "height": 50
                 },
@@ -103,9 +92,33 @@
             ]
         }
     ],
+    "plainObjects": [],
     "meta": {
-        "app": "Phaser Editor 2D - Scene Editor",
-        "url": "https://phasereditor2d.com",
-        "contentType": "phasereditor2d.core.scene.SceneContentType"
-    }
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "action_width",
+            "label": "Action Width",
+            "tooltip": "",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "action_height",
+            "label": "Action Height",
+            "tooltip": "",
+            "defValue": 0,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
 }

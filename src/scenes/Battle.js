@@ -3,14 +3,16 @@
 /* START OF COMPILED CODE */
 
 import Background from "../../assets/prefabs/Background.js";
+import ActionQueueNextScrollView from "../../assets/prefabs/ActionQueueNextScrollView.js";
+import ActionQueueNextCharacterItem from "../../assets/prefabs/ActionQueueNextCharacterItem.js";
 import CharacterViewComponent from "../components/CharacterViewComponent.js";
 import ObjectBounceAnimation from "../components/ObjectBounceAnimation.js";
 import StatusBar from "../../assets/prefabs/StatusBar.js";
 import CharacterManagerComponent from "../components/CharacterManagerComponent.js";
 import ScrollView from "../../assets/prefabs/ScrollView.js";
 import ScrollViewComponent from "../components/ScrollViewComponent.js";
-import ActionItem from "../../assets/prefabs/ActionItem.js";
 /* START-USER-IMPORTS */
+import ActionItem from "../../assets/prefabs/ActionItem.js";
 /* END-USER-IMPORTS */
 
 export default class Battle extends Phaser.Scene {
@@ -78,6 +80,91 @@ export default class Battle extends Phaser.Scene {
 		action_queue_history_background.lineWidth = 5;
 		action_queue_history.add(action_queue_history_background);
 
+		// rectangle_1
+		const rectangle_1 = this.add.rectangle(5, 60, 675, 100);
+		rectangle_1.setOrigin(0, 0);
+		rectangle_1.isFilled = true;
+		rectangle_1.fillColor = 11842740;
+		action_queue_history.add(rectangle_1);
+
+		// action_queue_history_character
+		const action_queue_history_character = this.add.image(50, 70, "warrior");
+		action_queue_history_character.scaleX = 0.75;
+		action_queue_history_character.scaleY = 0.75;
+		action_queue_history_character.setOrigin(0, 0);
+		action_queue_history.add(action_queue_history_character);
+
+		// attack_icon
+		const attack_icon = this.add.image(150, 70, "attack_icon");
+		attack_icon.scaleX = 0.17777045335026118;
+		attack_icon.scaleY = 0.17777045335026118;
+		attack_icon.setOrigin(0, 0);
+		action_queue_history.add(attack_icon);
+
+		// warrior
+		const warrior = this.add.image(260, 65, "warrior");
+		warrior.scaleX = 0.6;
+		warrior.scaleY = 0.6;
+		warrior.setOrigin(0, 0);
+		action_queue_history.add(warrior);
+
+		// mage
+		const mage = this.add.image(365, 60, "mage");
+		mage.scaleX = 0.6;
+		mage.scaleY = 0.6;
+		mage.setOrigin(0, 0);
+		action_queue_history.add(mage);
+
+		// priest
+		const priest = this.add.image(455, 65, "priest");
+		priest.scaleX = 0.6;
+		priest.scaleY = 0.6;
+		priest.setOrigin(0, 0);
+		action_queue_history.add(priest);
+
+		// rogue
+		const rogue = this.add.image(565, 60, "rogue");
+		rogue.scaleX = 0.6;
+		rogue.scaleY = 0.6;
+		rogue.setOrigin(0, 0);
+		action_queue_history.add(rogue);
+
+		// bitmaptext
+		const bitmaptext = this.add.bitmapText(270, 130, "vcr_osd_mono", "100");
+		bitmaptext.text = "100";
+		bitmaptext.fontSize = -26;
+		bitmaptext.dropShadowX = 2;
+		bitmaptext.dropShadowY = 5;
+		bitmaptext.dropShadowColor = 15269888;
+		action_queue_history.add(bitmaptext);
+
+		// bitmaptext_1
+		const bitmaptext_1 = this.add.bitmapText(565, 130, "vcr_osd_mono", "100");
+		bitmaptext_1.text = "100";
+		bitmaptext_1.fontSize = -26;
+		bitmaptext_1.dropShadowX = 2;
+		bitmaptext_1.dropShadowY = 5;
+		bitmaptext_1.dropShadowColor = 15269888;
+		action_queue_history.add(bitmaptext_1);
+
+		// bitmaptext_2
+		const bitmaptext_2 = this.add.bitmapText(460, 130, "vcr_osd_mono", "100");
+		bitmaptext_2.text = "100";
+		bitmaptext_2.fontSize = -26;
+		bitmaptext_2.dropShadowX = 2;
+		bitmaptext_2.dropShadowY = 5;
+		bitmaptext_2.dropShadowColor = 15269888;
+		action_queue_history.add(bitmaptext_2);
+
+		// bitmaptext_3
+		const bitmaptext_3 = this.add.bitmapText(365, 130, "vcr_osd_mono", "100");
+		bitmaptext_3.text = "100";
+		bitmaptext_3.fontSize = -26;
+		bitmaptext_3.dropShadowX = 2;
+		bitmaptext_3.dropShadowY = 5;
+		bitmaptext_3.dropShadowColor = 694786;
+		action_queue_history.add(bitmaptext_3);
+
 		// action_queue_next
 		const action_queue_next = this.add.container(5, 5);
 		action_queue_next.name = "action_queue_next";
@@ -112,6 +199,15 @@ export default class Battle extends Phaser.Scene {
 		action_queue_next_title.align = 1;
 		action_queue_next.add(action_queue_next_title);
 
+		// action_queue_next_scrollview
+		const action_queue_next_scrollview = new ActionQueueNextScrollView(this, 0, 55);
+		action_queue_next.add(action_queue_next_scrollview);
+
+		// action_queue_next_character_item
+		const action_queue_next_character_item = new ActionQueueNextCharacterItem(this, 5, 60);
+		action_queue_next_character_item.name = "action_queue_next_character_item";
+		action_queue_next.add(action_queue_next_character_item);
+
 		// target_menu
 		const target_menu = this.add.container(630, 770);
 		target_menu.name = "target_menu";
@@ -134,7 +230,7 @@ export default class Battle extends Phaser.Scene {
 		target_title_background.fillColor = 11842740;
 		target_title_background.isStroked = true;
 		target_title_background.strokeColor = 0;
-		target_title_background.lineWidth = 5;
+		target_title_background.lineWidth = 3.5;
 		target_menu.add(target_title_background);
 
 		// target_title
@@ -541,15 +637,12 @@ export default class Battle extends Phaser.Scene {
 		action_menu_title.align = 1;
 		action_menu.add(action_menu_title);
 
-		// scrollView
-		const scrollView = new ScrollView(this, 5, 65);
-		scrollView.scaleX = 1;
-		scrollView.scaleY = 1;
-		action_menu.add(scrollView);
-
-		// actionItem
-		const actionItem = new ActionItem(this, 15, 75);
-		action_menu.add(actionItem);
+		// action_scrollview
+		const action_scrollview = new ScrollView(this, 5, 65);
+		action_scrollview.name = "action_scrollview";
+		action_scrollview.scaleX = 1;
+		action_scrollview.scaleY = 1;
+		action_menu.add(action_scrollview);
 
 		// p1_Rogue (components)
 		const p1_RogueCharacterViewComponent = new CharacterViewComponent(p1_Rogue);
@@ -666,13 +759,13 @@ export default class Battle extends Phaser.Scene {
 		character_managerCharacterManagerComponent.p2_priest_ui = p2_priest;
 		character_managerCharacterManagerComponent.p2_rogue_ui = p2_rogue;
 
-		// scrollView (components)
-		const scrollViewScrollViewComponent = ScrollViewComponent.getComponent(scrollView);
-		scrollViewScrollViewComponent.viewport_x = 295;
-		scrollViewScrollViewComponent.viewport_y = 120;
-		scrollViewScrollViewComponent.viewport_width = 590;
-		scrollViewScrollViewComponent.viewport_height = 240;
-		scrollViewScrollViewComponent.name = "action_scrollview";
+		// action_scrollview (components)
+		const action_scrollviewScrollViewComponent = ScrollViewComponent.getComponent(action_scrollview);
+		action_scrollviewScrollViewComponent.viewport_x = 295;
+		action_scrollviewScrollViewComponent.viewport_y = 120;
+		action_scrollviewScrollViewComponent.viewport_width = 590;
+		action_scrollviewScrollViewComponent.viewport_height = 240;
+		action_scrollviewScrollViewComponent.name = "action_scrollview";
 
 		this.p1_warrior_sprite = p1_warrior_sprite;
 		this.p2_warrior_sprite = p2_warrior_sprite;
@@ -718,42 +811,54 @@ export default class Battle extends Phaser.Scene {
 
 
 
+
+
 	}
 
-	CreateScrollView(name, x, y, width, height){
-		console.log(this.rexUI);
-		console.log("Reached: " + name);
+	createActionScrollViewContent(scene, x, y){
 
-		const background = this.rexUI.add.roundRectangle(0, 0, 0, 0, 6, 0xeeeeee);
-		const track = this.rexUI.add.roundRectangle(0, 0, 4, height, 2, 0x666666);
-		const thumb = this.rexUI.add.roundRectangle(0, 0, 8, 24, 4, 0x333333);
-
-		const content = this.rexUI.add.sizer({
+		const content = scene.rexUI.add.sizer({
 		 	orientation: 1, // vertical
+			space: {item: 50}
 		});
+
+		console.log(x, y);
 
 		let items = ['Attack', 'Defend', 'Heal', 'Magic Attack', 'Multi Attack', 'Multi Magic Attack', 'Multi Heal', 'Attack 2', 'Attack 3', 'Attack 4', 'Attack 5'];
 
 
 
 		for (let i = 0; i < items.length; i += 1) {
-			const testAction = new ActionItem(this, 0, 0);
+			let action_width = 570;
+			let action_height = 50;
+			const testAction = scene.add.container(0,0,[new ActionItem(this, -(action_width/2), 0).setSize(action_width, action_height)]);
+
+			testAction.setDepth(10000);
+			testAction.setVisible(true);
 			content.add(
-				testAction,
-				0,                      // proportion
-				"left",                 // align
-				{ left: 8, right: 8, top: 4, bottom: 4 }, // padding
-				false                   // expand
+				testAction             
 			);
+			console.log(testAction.width, testAction.height, testAction.x, testAction.y, testAction.getBounds());
+
 		}
-		content.layout();
+		return content;
+
+	}
+
+	createScrollView(name, x, y, width, height){
+
+		const background = this.rexUI.add.roundRectangle(0, 0, 0, 0, 6, 0xeeeeee);
+		const track = this.rexUI.add.roundRectangle(0, 0, 4, height, 2, 0x666666);
+		const thumb = this.rexUI.add.roundRectangle(0, 0, 8, 24, 4, 0x333333);
+
+
 
 		const panel = this.rexUI.add.scrollablePanel({
 			width: width,
 			height: height,
 			background: background,
 			panel: {
-				child: content,
+				child: this.createActionScrollViewContent(this, x, y),
 				mask: {mask: true, padding:1},
 				childOrigin0: true
 			},
