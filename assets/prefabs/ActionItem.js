@@ -50,9 +50,7 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 		this.add(selection_arrow_selected);
 
 		/* START-USER-CTR-CODE */
-		console.log('REACHED!!!!');
 		let bounds = this.getBounds();
-		console.log(bounds);
 		let hitZone = this.scene.add.zone(0, 0, bounds.width, bounds.height)
 			.setOrigin(0)
   			.setInteractive({ useHandCursor: true });
@@ -64,9 +62,9 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 	}
 
 	/** @type {number} */
-	action_width = 0;
+	width = 570;
 	/** @type {number} */
-	action_height = 0;
+	height = 50;
 
 	/* START-USER-CODE */
 

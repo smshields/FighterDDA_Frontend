@@ -1,5 +1,5 @@
 {
-    "id": "87c0b56c-982d-4044-b3c5-2f121c1cf7b4",
+    "id": "51f758fe-6de7-4fde-ac2e-334bf06e9bdf",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
@@ -14,43 +14,45 @@
     "displayList": [
         {
             "type": "Container",
-            "id": "207b049e-1721-4014-b3a2-9a0fb1bf4b24",
-            "label": "action",
-            "displayName": "Action",
+            "id": "96508ad6-8a3d-483d-b9c1-2b7d2a662f69",
+            "label": "target_item",
+            "displayName": "Target Item",
             "useGameObjectName": true,
             "list": [
                 {
                     "type": "Rectangle",
-                    "id": "e7a28c08-7954-49f6-89c3-1225e1178c41",
-                    "label": "action_name_background",
-                    "displayName": "Action Name Background",
+                    "id": "94b2bbfb-d949-41f5-9c70-d3330ec700bd",
+                    "label": "target_name_background",
+                    "displayName": "Target Name Background",
+                    "useGameObjectName": true,
                     "originX": 0,
                     "originY": 0,
                     "isFilled": true,
                     "fillColor": "#ffffff",
-                    "width": 570,
+                    "width": 435,
                     "height": 50
                 },
                 {
                     "type": "BitmapText",
-                    "id": "9c38f5fb-83bf-43a4-a0b4-752e792925e7",
-                    "label": "action_name",
-                    "displayName": "Action Name",
+                    "id": "85b6a424-c1e5-49ad-a521-6ca744a64a0a",
+                    "label": "target_name",
+                    "displayName": "Target Name",
                     "useGameObjectName": true,
-                    "x": 295,
+                    "x": 270,
                     "y": 25,
                     "originX": 0.5,
                     "originY": 0.5,
-                    "text": "Action",
+                    "text": "Target\n",
                     "font": "vcr_osd_mono_bold",
                     "align": 1,
                     "fontSize": -40
                 },
                 {
                     "type": "Image",
-                    "id": "7dad7636-b3a6-407b-9cf9-1b06223ac4f0",
-                    "label": "action_arrow",
-                    "displayName": "Action Arrow",
+                    "id": "6703d743-02f0-4221-852d-b9b5a93ec5e5",
+                    "label": "target_arrow",
+                    "displayName": "Target Arrow",
+                    "useGameObjectName": true,
                     "texture": {
                         "key": "selection_arrow"
                     },
@@ -63,9 +65,9 @@
                 },
                 {
                     "type": "Image",
-                    "id": "3c910533-4dd4-4a11-b51d-73dc8f63bee0",
-                    "label": "action_hover_arrow",
-                    "displayName": "Action Hover Arrow",
+                    "id": "30489915-c9b3-4209-892b-cccc69cf599b",
+                    "label": "target_hover_arrow",
+                    "displayName": "Target Hover Arrow",
                     "useGameObjectName": true,
                     "texture": {
                         "key": "selection_arrow_pressed"
@@ -76,18 +78,6 @@
                     "scaleY": 0.5,
                     "originX": 0,
                     "originY": 0
-                },
-                {
-                    "type": "Image",
-                    "id": "a5fa3a4e-3f9d-4ebc-abca-4039e850f434",
-                    "label": "selection_arrow_selected",
-                    "texture": {
-                        "key": "selection_arrow_selected"
-                    },
-                    "x": 545,
-                    "y": 25,
-                    "scaleX": 0.5,
-                    "scaleY": 0.5
                 }
             ]
         }
@@ -101,20 +91,20 @@
     },
     "prefabProperties": [
         {
-            "name": "width",
-            "label": "Width",
+            "name": "height",
+            "label": "Height",
             "tooltip": "",
-            "defValue": 570,
+            "defValue": 50,
             "customDefinition": false,
             "type": {
                 "id": "number"
             }
         },
         {
-            "name": "height",
-            "label": "Height",
+            "name": "width",
+            "label": "Width",
             "tooltip": "",
-            "defValue": 50,
+            "defValue": 437,
             "customDefinition": false,
             "type": {
                 "id": "number"

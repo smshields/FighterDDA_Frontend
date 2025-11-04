@@ -1,5 +1,5 @@
 {
-    "id": "a561d8ee-6122-4fbc-b89d-0b3d86873ef1",
+    "id": "79e02c49-c81f-4f75-995b-345759103611",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
@@ -14,39 +14,39 @@
     "displayList": [
         {
             "type": "Container",
-            "id": "36c24e94-193e-4981-a28d-aa6efe6e4e24",
-            "label": "viewport_box",
-            "displayName": "Viewport Box",
+            "id": "169f9cbb-4d67-47ca-bbf0-0fe153c619a2",
+            "label": "target_scrollview",
+            "displayName": "Target Scrollview",
             "useGameObjectName": true,
             "components": [
                 "ScrollViewComponent"
             ],
-            "ScrollViewComponent.viewport_x": 15,
+            "ScrollViewComponent.viewport_x": 635,
             "ScrollViewComponent.viewport_y": 825,
-            "ScrollViewComponent.viewport_width": 590,
+            "ScrollViewComponent.viewport_width": 438,
             "ScrollViewComponent.viewport_height": 240,
-            "ScrollViewComponent.viewport_background": "viewport_background",
+            "ScrollViewComponent.viewport_background": "viewport",
             "ScrollViewComponent.content": "content",
-            "ScrollViewComponent.name": "action_scrollview",
+            "ScrollViewComponent.name": "target_scrollview",
             "list": [
                 {
+                    "type": "Container",
+                    "id": "98c89dce-a57d-4c3d-8b55-1d8d459878ac",
+                    "label": "content",
+                    "displayName": "Content",
+                    "useGameObjectName": true
+                },
+                {
                     "type": "Rectangle",
-                    "id": "8fa42d29-91b6-4c5b-80a5-dbb9f61dbd47",
-                    "label": "viewport_background",
-                    "displayName": "Viewport Background",
+                    "id": "f73d0d38-443f-431f-9786-1d8e1f0ca3cb",
+                    "label": "viewport",
+                    "displayName": "Viewport",
                     "useGameObjectName": true,
                     "originX": 0,
                     "originY": 0,
                     "isFilled": true,
-                    "width": 590,
+                    "width": 439,
                     "height": 240
-                },
-                {
-                    "type": "Container",
-                    "id": "99076db2-0bf3-4369-bb9c-720933225190",
-                    "label": "content",
-                    "displayName": "Content",
-                    "useGameObjectName": true
                 }
             ]
         }

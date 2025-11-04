@@ -1,5 +1,5 @@
 {
-    "id": "a561d8ee-6122-4fbc-b89d-0b3d86873ef1",
+    "id": "26891e35-8cc1-4522-ad25-26c107380b29",
     "sceneType": "PREFAB",
     "settings": {
         "exportClass": true,
@@ -14,36 +14,40 @@
     "displayList": [
         {
             "type": "Container",
-            "id": "36c24e94-193e-4981-a28d-aa6efe6e4e24",
-            "label": "viewport_box",
-            "displayName": "Viewport Box",
+            "id": "f44e2e85-7c99-400e-b7b1-1c1266b8da23",
+            "label": "action_queue_history_scrollview",
+            "displayName": "Action Queue History Scrollview",
             "useGameObjectName": true,
             "components": [
                 "ScrollViewComponent"
             ],
-            "ScrollViewComponent.viewport_x": 15,
-            "ScrollViewComponent.viewport_y": 825,
-            "ScrollViewComponent.viewport_width": 590,
-            "ScrollViewComponent.viewport_height": 240,
-            "ScrollViewComponent.viewport_background": "viewport_background",
+            "ScrollViewComponent.viewport_x": 1220,
+            "ScrollViewComponent.viewport_y": 830,
+            "ScrollViewComponent.viewport_width": 685,
+            "ScrollViewComponent.viewport_height": 235,
+            "ScrollViewComponent.viewport_background": "viewport",
             "ScrollViewComponent.content": "content",
-            "ScrollViewComponent.name": "action_scrollview",
+            "ScrollViewComponent.name": "action_queue_history",
             "list": [
                 {
                     "type": "Rectangle",
-                    "id": "8fa42d29-91b6-4c5b-80a5-dbb9f61dbd47",
-                    "label": "viewport_background",
-                    "displayName": "Viewport Background",
+                    "id": "9be26118-b43b-4056-870f-8663c4af04c2",
+                    "label": "viewport",
+                    "displayName": "Viewport",
                     "useGameObjectName": true,
                     "originX": 0,
                     "originY": 0,
                     "isFilled": true,
-                    "width": 590,
-                    "height": 240
+                    "fillColor": "#ffffff",
+                    "strokeColor": "#000000",
+                    "lineWidth": 5,
+                    "isStroked": true,
+                    "width": 685,
+                    "height": 235
                 },
                 {
                     "type": "Container",
-                    "id": "99076db2-0bf3-4369-bb9c-720933225190",
+                    "id": "0955fdd0-728f-4ef1-adea-925e953f22c4",
                     "label": "content",
                     "displayName": "Content",
                     "useGameObjectName": true

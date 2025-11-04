@@ -28,17 +28,22 @@ export default class ScrollView extends Phaser.GameObjects.Container {
 
 		// this (components)
 		const thisScrollViewComponent = new ScrollViewComponent(this);
+		thisScrollViewComponent.viewport_x = 15;
+		thisScrollViewComponent.viewport_y = 825;
+		thisScrollViewComponent.viewport_width = 590;
+		thisScrollViewComponent.viewport_height = 240;
 		thisScrollViewComponent.viewport_background = viewport_background;
 		thisScrollViewComponent.content = content;
+		thisScrollViewComponent.name = "action_scrollview";
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+		this.scrollViewComponent = thisScrollViewComponent; 
+		this.scrollViewComponent.buildScrollPanel();
 		/* END-USER-CTR-CODE */
 	}
 
 	/* START-USER-CODE */
 
-	// Write your code here.
 
 	/* END-USER-CODE */
 }

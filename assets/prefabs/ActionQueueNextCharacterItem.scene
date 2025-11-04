@@ -41,10 +41,12 @@
                     "texture": {
                         "key": "warrior"
                     },
-                    "x": 50,
-                    "y": 50,
+                    "x": 8,
+                    "y": 8,
                     "scaleX": 0.75,
-                    "scaleY": 0.75
+                    "scaleY": 0.75,
+                    "originX": 0,
+                    "originY": 0
                 }
             ]
         }
@@ -55,5 +57,27 @@
         "url": "https://phaser.io/editor",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 5
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "width",
+            "label": "Width",
+            "tooltip": "",
+            "defValue": 100,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "height",
+            "label": "Height",
+            "tooltip": "",
+            "defValue": 100,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
 }

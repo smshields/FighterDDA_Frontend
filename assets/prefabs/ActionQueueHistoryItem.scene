@@ -1,0 +1,229 @@
+{
+    "id": "89dbbba1-84b3-4431-b73e-0fca82db9cf4",
+    "sceneType": "PREFAB",
+    "settings": {
+        "exportClass": true,
+        "autoImport": true,
+        "importFileExtension": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Container",
+            "id": "b6392e41-d9d3-4cf3-8a3e-4b3074d56781",
+            "label": "action_queue_history_item",
+            "displayName": "Action Queue History Item",
+            "useGameObjectName": true,
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "565ebaa6-e9f9-4395-baf2-c8feba34917a",
+                    "label": "action_queue_history_item_background",
+                    "displayName": "Action Queue History Item Background",
+                    "useGameObjectName": true,
+                    "originX": 0,
+                    "originY": 0,
+                    "isFilled": true,
+                    "fillColor": "#b4b4b4",
+                    "width": 675,
+                    "height": 100
+                },
+                {
+                    "type": "Image",
+                    "id": "9cbe6886-c9a8-4793-8151-430556351ca5",
+                    "label": "acting_character",
+                    "displayName": "Acting Character",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "warrior"
+                    },
+                    "x": 45,
+                    "y": 10,
+                    "scaleX": 0.75,
+                    "scaleY": 0.75,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "60458a9c-a59b-411e-9797-d4e0ae1a8e68",
+                    "label": "action_icon",
+                    "displayName": "Action Icon",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "attack_icon"
+                    },
+                    "x": 153,
+                    "y": 10,
+                    "scaleX": 0.17777045335026118,
+                    "scaleY": 0.17777045335026118,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "474b5f9a-fde0-44a4-a7d7-f5bc05777495",
+                    "label": "character_1",
+                    "displayName": "Character 1",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "warrior"
+                    },
+                    "x": 255,
+                    "y": 5,
+                    "scaleX": 0.6,
+                    "scaleY": 0.6,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "4018b33c-9118-47cc-89b6-76463ae5b5d7",
+                    "label": "character_2",
+                    "displayName": "Character 2",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "mage"
+                    },
+                    "x": 360,
+                    "scaleX": 0.6,
+                    "scaleY": 0.6,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "3b4433c2-7209-427a-a00d-1f1b8605bda9",
+                    "label": "character_3",
+                    "displayName": "Character 3",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "priest"
+                    },
+                    "x": 450,
+                    "y": 5,
+                    "scaleX": 0.6,
+                    "scaleY": 0.6,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "5e31a03d-63c5-4898-97ba-8d590cbdc5f2",
+                    "label": "character_4",
+                    "displayName": "Character 4",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "rogue"
+                    },
+                    "x": 560,
+                    "scaleX": 0.6,
+                    "scaleY": 0.6,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "1bc1de5a-b7e8-4874-a2fa-ca063fe40a33",
+                    "label": "character_1_damage",
+                    "displayName": "Character 1 Damageu",
+                    "useGameObjectName": true,
+                    "x": 288,
+                    "y": 82,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "100",
+                    "font": "vcr_osd_mono",
+                    "fontSize": -26,
+                    "dropShadowX": 2,
+                    "dropShadowY": 5,
+                    "dropShadowColor": "#e90000ff"
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "69a9adce-341f-479e-99ea-6d3a4b77aed1",
+                    "label": "character_4_damage",
+                    "displayName": "Character 4 Damage",
+                    "useGameObjectName": true,
+                    "x": 581,
+                    "y": 81,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "100",
+                    "font": "vcr_osd_mono",
+                    "fontSize": -26,
+                    "dropShadowX": 2,
+                    "dropShadowY": 5,
+                    "dropShadowColor": "#e90000ff"
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "8f209653-8155-4fc2-896b-710ca4193ed3",
+                    "label": "character_3_damage",
+                    "displayName": "Character 3 Damage",
+                    "useGameObjectName": true,
+                    "x": 477,
+                    "y": 81,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "100",
+                    "font": "vcr_osd_mono",
+                    "fontSize": -26,
+                    "dropShadowX": 2,
+                    "dropShadowY": 5,
+                    "dropShadowColor": "#e90000ff"
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "cd8f58f3-dd38-4242-bea4-e04c6e8517f3",
+                    "label": "character_2_damage",
+                    "displayName": "Character 2 Damage",
+                    "useGameObjectName": true,
+                    "x": 386,
+                    "y": 81,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "100",
+                    "font": "vcr_osd_mono",
+                    "fontSize": -26,
+                    "dropShadowX": 2,
+                    "dropShadowY": 5,
+                    "dropShadowColor": "#0a9a02ff"
+                }
+            ]
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor - Scene Editor",
+        "url": "https://phaser.io/editor",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 5
+    },
+    "prefabProperties": [
+        {
+            "name": "width",
+            "label": "Width",
+            "tooltip": "",
+            "defValue": 675,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        },
+        {
+            "name": "height",
+            "label": "Height",
+            "tooltip": "",
+            "defValue": 100,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}

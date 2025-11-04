@@ -77,9 +77,11 @@
                             "label": "action_queue_history_title",
                             "displayName": "Action Queue History Title",
                             "useGameObjectName": true,
-                            "x": 85,
-                            "y": 5,
-                            "text": "ACTION QUEUE HISTORY",
+                            "x": 340,
+                            "y": 25,
+                            "originX": 0.5,
+                            "originY": 0.5,
+                            "text": "ACTION HISTORY",
                             "font": "vcr_osd_mono_bold",
                             "align": 1,
                             "fontSize": -40
@@ -102,154 +104,17 @@
                             "height": 235
                         },
                         {
-                            "type": "Rectangle",
-                            "id": "565ebaa6-e9f9-4395-baf2-c8feba34917a",
-                            "label": "rectangle_1",
-                            "x": 5,
-                            "y": 60,
-                            "originX": 0,
-                            "originY": 0,
-                            "isFilled": true,
-                            "fillColor": "#b4b4b4",
-                            "width": 675,
-                            "height": 100
-                        },
-                        {
-                            "type": "Image",
-                            "id": "9cbe6886-c9a8-4793-8151-430556351ca5",
-                            "label": "action_queue_history_character",
-                            "displayName": "Action Queue History Character",
-                            "texture": {
-                                "key": "warrior"
-                            },
-                            "x": 50,
-                            "y": 70,
-                            "scaleX": 0.75,
-                            "scaleY": 0.75,
-                            "originX": 0,
-                            "originY": 0
-                        },
-                        {
-                            "type": "Image",
-                            "id": "60458a9c-a59b-411e-9797-d4e0ae1a8e68",
-                            "label": "attack_icon",
-                            "texture": {
-                                "key": "attack_icon"
-                            },
-                            "x": 150,
-                            "y": 70,
-                            "scaleX": 0.17777045335026118,
-                            "scaleY": 0.17777045335026118,
-                            "originX": 0,
-                            "originY": 0
-                        },
-                        {
-                            "type": "Image",
-                            "id": "474b5f9a-fde0-44a4-a7d7-f5bc05777495",
-                            "label": "warrior",
-                            "texture": {
-                                "key": "warrior"
-                            },
-                            "x": 260,
-                            "y": 65,
-                            "scaleX": 0.6,
-                            "scaleY": 0.6,
-                            "originX": 0,
-                            "originY": 0
-                        },
-                        {
-                            "type": "Image",
-                            "id": "4018b33c-9118-47cc-89b6-76463ae5b5d7",
-                            "label": "mage",
-                            "texture": {
-                                "key": "mage"
-                            },
-                            "x": 365,
-                            "y": 60,
-                            "scaleX": 0.6,
-                            "scaleY": 0.6,
-                            "originX": 0,
-                            "originY": 0
-                        },
-                        {
-                            "type": "Image",
-                            "id": "3b4433c2-7209-427a-a00d-1f1b8605bda9",
-                            "label": "priest",
-                            "texture": {
-                                "key": "priest"
-                            },
-                            "x": 455,
-                            "y": 65,
-                            "scaleX": 0.6,
-                            "scaleY": 0.6,
-                            "originX": 0,
-                            "originY": 0
-                        },
-                        {
-                            "type": "Image",
-                            "id": "5e31a03d-63c5-4898-97ba-8d590cbdc5f2",
-                            "label": "rogue",
-                            "texture": {
-                                "key": "rogue"
-                            },
-                            "x": 565,
-                            "y": 60,
-                            "scaleX": 0.6,
-                            "scaleY": 0.6,
-                            "originX": 0,
-                            "originY": 0
-                        },
-                        {
-                            "type": "BitmapText",
-                            "id": "1bc1de5a-b7e8-4874-a2fa-ca063fe40a33",
-                            "label": "bitmaptext",
-                            "x": 270,
-                            "y": 130,
-                            "text": "100",
-                            "font": "vcr_osd_mono",
-                            "fontSize": -26,
-                            "dropShadowX": 2,
-                            "dropShadowY": 5,
-                            "dropShadowColor": "#e90000ff"
-                        },
-                        {
-                            "type": "BitmapText",
-                            "id": "69a9adce-341f-479e-99ea-6d3a4b77aed1",
-                            "label": "bitmaptext_1",
-                            "x": 565,
-                            "y": 130,
-                            "text": "100",
-                            "font": "vcr_osd_mono",
-                            "fontSize": -26,
-                            "dropShadowX": 2,
-                            "dropShadowY": 5,
-                            "dropShadowColor": "#e90000ff"
-                        },
-                        {
-                            "type": "BitmapText",
-                            "id": "8f209653-8155-4fc2-896b-710ca4193ed3",
-                            "label": "bitmaptext_2",
-                            "x": 460,
-                            "y": 130,
-                            "text": "100",
-                            "font": "vcr_osd_mono",
-                            "fontSize": -26,
-                            "dropShadowX": 2,
-                            "dropShadowY": 5,
-                            "dropShadowColor": "#e90000ff"
-                        },
-                        {
-                            "type": "BitmapText",
-                            "id": "cd8f58f3-dd38-4242-bea4-e04c6e8517f3",
-                            "label": "bitmaptext_3",
-                            "x": 365,
-                            "y": 130,
-                            "text": "100",
-                            "font": "vcr_osd_mono",
-                            "fontSize": -26,
-                            "dropShadowX": 2,
-                            "dropShadowY": 5,
-                            "dropShadowColor": "#0a9a02ff"
+                            "prefabId": "26891e35-8cc1-4522-ad25-26c107380b29",
+                            "id": "feda7793-32a1-46d0-96e9-32237c718341",
+                            "unlock": [
+                                "x",
+                                "y"
+                            ],
+                            "label": "action_queue_history_scrollview",
+                            "displayName": "Action Queue History Scrollview",
+                            "useGameObjectName": true,
+                            "x": 0,
+                            "y": 55
                         }
                     ]
                 },
@@ -316,21 +181,10 @@
                                 "y"
                             ],
                             "label": "action_queue_next_scrollview",
+                            "displayName": "Action Queue Next Scrollview",
+                            "useGameObjectName": true,
                             "x": 0,
                             "y": 55
-                        },
-                        {
-                            "prefabId": "bac83d17-4a10-466a-8ab2-80995e162494",
-                            "id": "ab0a2e19-c1e6-41cf-9875-01381897fd1b",
-                            "unlock": [
-                                "x",
-                                "y"
-                            ],
-                            "label": "action_queue_next_character_item",
-                            "displayName": "Action Queue Next Character Item",
-                            "useGameObjectName": true,
-                            "x": 5,
-                            "y": 60
                         }
                     ]
                 }
@@ -392,147 +246,17 @@
                     "fontSize": -40
                 },
                 {
-                    "type": "Container",
-                    "id": "71b52a47-0533-4a62-8596-0cbce0b40148",
-                    "label": "rogue_target",
-                    "displayName": "Rogue Target",
+                    "prefabId": "79e02c49-c81f-4f75-995b-345759103611",
+                    "id": "ed0bc4aa-6089-415e-b486-b0bd8cd8f46e",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "target_scrollview",
+                    "displayName": "Target Scrollview",
                     "useGameObjectName": true,
-                    "x": 40,
-                    "y": 245,
-                    "list": [
-                        {
-                            "type": "BitmapText",
-                            "id": "baf3f1b3-1b95-4ec2-a50f-48b124c6b513",
-                            "label": "rogue_target_label",
-                            "displayName": "Rogue Target Label",
-                            "useGameObjectName": true,
-                            "x": 30,
-                            "text": "ENEMY ROGUE",
-                            "font": "vcr_osd_mono_bold",
-                            "align": 1,
-                            "fontSize": -40
-                        },
-                        {
-                            "type": "Image",
-                            "id": "874ef7e1-4662-49cf-80e9-1ba1f09b3f56",
-                            "label": "rogue_target_arrow",
-                            "displayName": "Rogue Target Arrow",
-                            "useGameObjectName": true,
-                            "texture": {
-                                "key": "selection_arrow"
-                            },
-                            "y": 20,
-                            "scaleX": 0.684678102714157,
-                            "scaleY": 0.684678102714157
-                        }
-                    ]
-                },
-                {
-                    "type": "Container",
-                    "id": "cc3da790-14fb-4cde-90b2-d23dab4e7437",
-                    "label": "priest_target",
-                    "displayName": "Priest Target",
-                    "useGameObjectName": true,
-                    "x": 40,
-                    "y": 185,
-                    "list": [
-                        {
-                            "type": "BitmapText",
-                            "id": "70e3a757-a6e3-40c0-8bea-735dff0f3f64",
-                            "label": "priest_target_label",
-                            "displayName": "Priest Target Label",
-                            "useGameObjectName": true,
-                            "x": 30,
-                            "text": "ENEMY PRIEST",
-                            "font": "vcr_osd_mono_bold",
-                            "align": 1,
-                            "fontSize": -40
-                        },
-                        {
-                            "type": "Image",
-                            "id": "5dc647d7-64d0-438a-8188-35fecad2b56b",
-                            "label": "priest_target_arrow",
-                            "displayName": "Priest Target Arrow",
-                            "useGameObjectName": true,
-                            "texture": {
-                                "key": "selection_arrow"
-                            },
-                            "y": 20,
-                            "scaleX": 0.684678102714157,
-                            "scaleY": 0.684678102714157
-                        }
-                    ]
-                },
-                {
-                    "type": "Container",
-                    "id": "9a6a45f8-19e1-4aab-8393-e1f1be407d25",
-                    "label": "mage_target",
-                    "displayName": "Mage Target",
-                    "useGameObjectName": true,
-                    "x": 40,
-                    "y": 125,
-                    "list": [
-                        {
-                            "type": "BitmapText",
-                            "id": "e02b8f3d-054d-44ff-ba4c-e610914fa834",
-                            "label": "mage_target_label",
-                            "displayName": "Mage Target Label",
-                            "x": 30,
-                            "text": "ENEMY MAGE",
-                            "font": "vcr_osd_mono_bold",
-                            "align": 1,
-                            "fontSize": -40
-                        },
-                        {
-                            "type": "Image",
-                            "id": "85a5a0f1-ea31-42f8-92dd-13539f4cd797",
-                            "label": "mage_target_arrow",
-                            "displayName": "Mage Target Arrow",
-                            "useGameObjectName": true,
-                            "texture": {
-                                "key": "selection_arrow"
-                            },
-                            "y": 20,
-                            "scaleX": 0.684678102714157,
-                            "scaleY": 0.684678102714157
-                        }
-                    ]
-                },
-                {
-                    "type": "Container",
-                    "id": "0a929b4b-e754-4436-8cd5-0d7a90a2ad41",
-                    "label": "warrior_target",
-                    "displayName": "Warrior Target",
-                    "useGameObjectName": true,
-                    "x": 40,
-                    "y": 65,
-                    "list": [
-                        {
-                            "type": "Image",
-                            "id": "0162af25-004d-45ff-967f-de2e79f64e03",
-                            "label": "warrior_target_arrow",
-                            "displayName": "Warrior Target Arrow",
-                            "useGameObjectName": true,
-                            "texture": {
-                                "key": "selection_arrow"
-                            },
-                            "y": 20,
-                            "scaleX": 0.684678102714157,
-                            "scaleY": 0.684678102714157
-                        },
-                        {
-                            "type": "BitmapText",
-                            "id": "b3981320-e8fd-4ddc-b90c-7e3403297816",
-                            "label": "warrior_target_label",
-                            "displayName": "Warrior Target Label",
-                            "useGameObjectName": true,
-                            "x": 30,
-                            "text": "ENEMY WARRIOR",
-                            "font": "vcr_osd_mono_bold",
-                            "align": 1,
-                            "fontSize": -40
-                        }
-                    ]
+                    "x": 5,
+                    "y": 55
                 }
             ]
         },
@@ -1292,9 +1016,11 @@
                     "label": "action_menu_title",
                     "displayName": "Action Menu Title",
                     "useGameObjectName": true,
-                    "x": 10,
-                    "y": 20,
-                    "text": "SELECT CHARACTER ACTION\n",
+                    "x": 305,
+                    "y": 40,
+                    "originX": 0.5,
+                    "originY": 0.5,
+                    "text": "SELECT ACTION\n",
                     "font": "vcr_osd_mono_bold",
                     "align": 1,
                     "fontSize": -40
@@ -1323,7 +1049,7 @@
                     "ScrollViewComponent.viewport_x": 295,
                     "ScrollViewComponent.viewport_y": 120,
                     "ScrollViewComponent.viewport_width": 590,
-                    "ScrollViewComponent.viewport_height": 240,
+                    "ScrollViewComponent.viewport_height": 230,
                     "ScrollViewComponent.name": "action_scrollview",
                     "x": 5,
                     "y": 65,

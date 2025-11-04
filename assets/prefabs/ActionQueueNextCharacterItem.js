@@ -22,16 +22,22 @@ export default class ActionQueueNextCharacterItem extends Phaser.GameObjects.Con
 		this.add(action_queue_next_character_background);
 
 		// action_queue_next_character
-		const action_queue_next_character = scene.add.image(50, 50, "warrior");
+		const action_queue_next_character = scene.add.image(8, 8, "warrior");
 		action_queue_next_character.name = "action_queue_next_character";
 		action_queue_next_character.scaleX = 0.75;
 		action_queue_next_character.scaleY = 0.75;
+		action_queue_next_character.setOrigin(0, 0);
 		this.add(action_queue_next_character);
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
 		/* END-USER-CTR-CODE */
 	}
+
+	/** @type {number} */
+	width = 100;
+	/** @type {number} */
+	height = 100;
 
 	/* START-USER-CODE */
 
