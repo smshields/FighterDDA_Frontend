@@ -435,9 +435,10 @@ export default class Battle extends Phaser.Scene {
 		notifications.add(notification_background);
 
 		// notification
-		const notification = this.add.bitmapText(65, 10, "vcr_osd_mono_bold", "THIS IS A SAMPLE NOTIFICATION. DAMAGE TAKEN!");
+		const notification = this.add.bitmapText(960, 45, "vcr_osd_mono_bold", "SELECT ACTION FOR PRIEST\n");
 		notification.name = "notification";
-		notification.text = "THIS IS A SAMPLE NOTIFICATION. DAMAGE TAKEN!";
+		notification.setOrigin(0.5, 0.5);
+		notification.text = "SELECT ACTION FOR PRIEST\n";
 		notification.fontSize = -64;
 		notification.align = 1;
 		notifications.add(notification);
