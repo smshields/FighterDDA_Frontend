@@ -103,6 +103,68 @@ export default class CharacterManagerComponent extends UserComponent {
 
 	/* START-USER-CODE */
 
+	//character lookup
+	//TODO - I should build a lookup map instead of checking every time.
+	lookupCharacterUIFromModel(character){
+		let characterUI = null;
+		//get by team
+		if(character.playerNum == 1){
+			switch(character.name){
+				case 'warrior':{
+					characterUI = this.p1_warrior_ui;
+					break;
+				}
+				case 'mage':{
+					characterUI = this.p1_mage_ui;
+					break;
+				}
+				case 'priest':{
+					characterUI = this.p1_priest_ui;
+					break;
+				}
+				case 'rogue':{
+					characterUI = this.p1_rogue_ui;
+					break;
+				}
+				default:{
+					throw new Error('Invalid character name! ' + character.name);
+				}
+			}
+		} else {
+			switch(character.name){
+				case 'warrior':{
+					characterUI = this.p2_warrior_ui;
+					break;
+				}
+				case 'mage':{
+					characterUI = this.p2_mage_ui;
+					break;
+				}
+				case 'priest':{
+					characterUI = this.p2_priest_ui;
+					break;
+				}
+				case 'rogue':{
+					characterUI = this.p2_rogue_ui;
+					break;
+				}
+				default:{
+					throw new Error('Invalid character name! ' + character.name);
+				}
+			}
+		}
+		return characterUI;
+	}
+
+	//character ui set for acting
+	setCharacterUIActionSelection(character){
+		//get characterUI
+		let characterUI = this.lookupCharacterUIFromModel(character);
+
+		//update character
+
+	}
+
 	initializeCharacterModels(){
 		//if we have data from the server, use that. If not, use stubs for testing
 		if(this.socketInitialized){

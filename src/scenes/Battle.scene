@@ -282,6 +282,7 @@
                     "CharacterViewComponent.gravestone": "p1_rogue_gravestone",
                     "CharacterViewComponent.character_sprite": "p1_rogue_sprite",
                     "CharacterViewComponent.defending": "p1_rogue_defend",
+                    "CharacterViewComponent.acting_arrow": "p1_rogue_action_arrow",
                     "x": -220,
                     "y": -105,
                     "list": [
@@ -344,6 +345,23 @@
                             "y": 80,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643
+                        },
+                        {
+                            "type": "Image",
+                            "id": "a96a1a72-6e46-4317-923b-ea3e5a07f3c2",
+                            "label": "p1_rogue_action_arrow",
+                            "displayName": "P1 Rogue Action Arrow",
+                            "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.scaleXDelta": 0.05,
+                            "ObjectBounceAnimation.scaleYDelta": 0,
+                            "texture": {
+                                "key": "selection_arrow_selected"
+                            },
+                            "x": 410,
+                            "y": 50
                         }
                     ]
                 },
@@ -360,6 +378,7 @@
                     "CharacterViewComponent.gravestone": "p1_priest_gravestone",
                     "CharacterViewComponent.character_sprite": "p1_priest_sprite",
                     "CharacterViewComponent.defending": "p1_priest_defend",
+                    "CharacterViewComponent.acting_arrow": "p1_priest_action_arrow",
                     "x": -220,
                     "y": 230,
                     "list": [
@@ -427,6 +446,23 @@
                             "y": 80,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643
+                        },
+                        {
+                            "type": "Image",
+                            "id": "7a7e50e8-d82f-4ab3-a574-f9baa7f35e06",
+                            "label": "p1_priest_action_arrow",
+                            "displayName": "P1 Priest Action Arrow",
+                            "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.scaleXDelta": 0.05,
+                            "ObjectBounceAnimation.scaleYDelta": 0,
+                            "texture": {
+                                "key": "selection_arrow_selected"
+                            },
+                            "x": 405,
+                            "y": 55
                         }
                     ]
                 },
@@ -443,6 +479,7 @@
                     "CharacterViewComponent.gravestone": "p1_mage_gravestone",
                     "CharacterViewComponent.character_sprite": "p1_mage_sprite",
                     "CharacterViewComponent.defending": "p1_mage_defend",
+                    "CharacterViewComponent.acting_arrow": "p1_mage_action_arrow",
                     "x": -220,
                     "y": 65,
                     "list": [
@@ -505,6 +542,23 @@
                             "y": 80,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643
+                        },
+                        {
+                            "type": "Image",
+                            "id": "7fb059a5-d13a-40f9-a8db-c25f5edcf5be",
+                            "label": "p1_mage_action_arrow",
+                            "displayName": "P1 Mage Action Arrow",
+                            "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.scaleXDelta": 0.05,
+                            "ObjectBounceAnimation.scaleYDelta": 0,
+                            "texture": {
+                                "key": "selection_arrow_selected"
+                            },
+                            "x": 405,
+                            "y": 50
                         }
                     ]
                 },
@@ -521,6 +575,7 @@
                     "CharacterViewComponent.gravestone": "p1_warrior_gravestone",
                     "CharacterViewComponent.character_sprite": "p1_warrior_sprite",
                     "CharacterViewComponent.defending": "p1_warrior_defend",
+                    "CharacterViewComponent.acting_arrow": "p1_warrior_action_arrow",
                     "x": -220,
                     "y": 405,
                     "list": [
@@ -584,6 +639,23 @@
                             "y": 75,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643
+                        },
+                        {
+                            "type": "Image",
+                            "id": "4c5f12f2-9bca-495a-ba81-3918d461e92f",
+                            "label": "p1_warrior_action_arrow",
+                            "displayName": "P1 Warrior Action Arrow",
+                            "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.scaleXDelta": 0.05,
+                            "ObjectBounceAnimation.scaleYDelta": 0,
+                            "texture": {
+                                "key": "selection_arrow_selected"
+                            },
+                            "x": 405,
+                            "y": 55
                         }
                     ]
                 }
@@ -945,24 +1017,6 @@
         },
         {
             "type": "Container",
-            "id": "19de2c48-3460-4714-8cd7-407159b7f2a5",
-            "label": "character_manager",
-            "displayName": "Character Manager",
-            "useGameObjectName": true,
-            "components": [
-                "CharacterManagerComponent"
-            ],
-            "CharacterManagerComponent.p1_warrior_ui": "p1_warrior",
-            "CharacterManagerComponent.p1_mage_ui": "p1_Mage",
-            "CharacterManagerComponent.p1_priest_ui": "p1_Priest",
-            "CharacterManagerComponent.p1_rogue_ui": "p1_Rogue",
-            "CharacterManagerComponent.p2_warrior_ui": "p2_warrior",
-            "CharacterManagerComponent.p2_mage_ui": "p2_mage",
-            "CharacterManagerComponent.p2_priest_ui": "p2_priest",
-            "CharacterManagerComponent.p2_rogue_ui": "p2_rogue"
-        },
-        {
-            "type": "Container",
             "id": "76db04b7-1f60-4239-a3ee-166158389a2c",
             "label": "action_menu",
             "displayName": "Action Menu",
@@ -1059,6 +1113,37 @@
                     "scaleY": 1
                 }
             ]
+        },
+        {
+            "type": "Container",
+            "id": "19de2c48-3460-4714-8cd7-407159b7f2a5",
+            "label": "character_manager",
+            "displayName": "Character Manager",
+            "useGameObjectName": true,
+            "components": [
+                "CharacterManagerComponent"
+            ],
+            "CharacterManagerComponent.p1_warrior_ui": "p1_warrior",
+            "CharacterManagerComponent.p1_mage_ui": "p1_Mage",
+            "CharacterManagerComponent.p1_priest_ui": "p1_Priest",
+            "CharacterManagerComponent.p1_rogue_ui": "p1_Rogue",
+            "CharacterManagerComponent.p2_warrior_ui": "p2_warrior",
+            "CharacterManagerComponent.p2_mage_ui": "p2_mage",
+            "CharacterManagerComponent.p2_priest_ui": "p2_priest",
+            "CharacterManagerComponent.p2_rogue_ui": "p2_rogue"
+        },
+        {
+            "type": "Container",
+            "id": "6c6a3ca2-12ee-4a40-952d-74974c23df12",
+            "label": "game_manager",
+            "displayName": "Game Manager",
+            "useGameObjectName": true,
+            "components": [
+                "GameManagerComponent"
+            ],
+            "GameManagerComponent.character_manager": "character_manager",
+            "GameManagerComponent.action_menu": "action_menu",
+            "GameManagerComponent.target_menu": "target_menu"
         }
     ],
     "plainObjects": [],

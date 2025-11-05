@@ -104,7 +104,7 @@
             "name": "width",
             "label": "Width",
             "tooltip": "",
-            "defValue": 437,
+            "defValue": 435,
             "customDefinition": false,
             "type": {
                 "id": "number"

@@ -76,16 +76,28 @@ export default class ObjectBounceAnimation extends UserComponent {
 
     // Position bounce
     if (this.mode === "position" || this.mode === "both") {
-      const t = this.scene.tweens.add({
+
+      let tweenConfig = {
         targets: this.gameObject,
         y: `+=${this.posOffset}`,
+        x: `+=${this.posOffset}`,
         duration: this.posDuration,
         yoyo: true,
         delay: this.posDelay,
         repeat: -1,
         ease: this.posEase
-      });
-      this.tweens.push(t);
+      };
+
+      if(this.scaleXDelta == 0){
+        delete tweenConfig.x;
+      } 
+
+      if(this.scaleYDelta == 0){
+        delete tweenConfig.y;
+      }
+
+      const tween = this.scene.tweens.add(tweenConfig);
+      this.tweens.push(tween);
     }
 
     // Scale bounce

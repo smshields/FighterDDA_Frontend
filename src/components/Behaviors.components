@@ -340,6 +340,17 @@
                         "id": "object-var",
                         "expressionType": "Phaser.GameObjects.GameObject"
                     }
+                },
+                {
+                    "name": "acting_arrow",
+                    "label": "Acting Arrow",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
                 }
             ]
         },
@@ -497,6 +508,49 @@
                     "customDefinition": false,
                     "type": {
                         "id": "string"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "GameManagerComponent",
+            "displayName": "Game Manager",
+            "objectDisplayFormat": "",
+            "baseClass": "UserComponent",
+            "gameObjectType": "any",
+            "generateGameObjectField": true,
+            "properties": [
+                {
+                    "name": "character_manager",
+                    "label": "Character Manager",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "action_menu",
+                    "label": "Action Menu",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "target_menu",
+                    "label": "Target Menu",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
                     }
                 }
             ]

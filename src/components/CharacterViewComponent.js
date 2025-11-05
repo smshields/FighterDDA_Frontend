@@ -31,6 +31,9 @@ export default class CharacterViewComponent extends UserComponent {
 		/** @type {Phaser.GameObjects.GameObject} */
 		this.defending = null;
 
+		/** @type {Phaser.GameObjects.GameObject} */
+		this.acting_arrow = null;
+
 		// === Internal Properties ===
 
 		this.characterModel = null;
@@ -46,12 +49,12 @@ export default class CharacterViewComponent extends UserComponent {
 
 	/* START-USER-CODE */
 
-	start(){
+	start() {
 		// === References ===
 		this.gameObject.characterViewComponent = this;
 	}
 
-	init(characterModelUIMapItem){
+	init(characterModelUIMapItem) {
 		this.setCharacterModel(characterModelUIMapItem.model);
 		this.updateCharacterName(this.characterModel.characterName);
 		this.updateIsDead();
@@ -59,40 +62,49 @@ export default class CharacterViewComponent extends UserComponent {
 		this.updateHealthBar();
 		this.updateActionBar();
 		this.addCharacterGlow(this.characterModel.playerNum);
+		this.updateActingArrow();
 
 	}
 
-	addCharacterGlow(playerNum){
+	addCharacterGlow(playerNum) {
 		let color = "";
-		if(playerNum == 1){
+		if (playerNum == 1) {
 			color = 0x7285ff;
 		} else {
 			color = 0xff7777;
 		}
 		this.character_sprite
-    		.enableFilters()
-    		.filters.internal.addGlow(color, 4, 0, 2, false, 0.1, 10)
-    		.setPaddingOverride(null);
+			.enableFilters()
+			.filters.internal.addGlow(color, 4, 0, 2, false, 0.1, 10)
+			.setPaddingOverride(null);
 
 		this.defending
-    		.enableFilters()
-    		.filters.internal.addGlow(color, 4, 0, 4, false, 0.1, 10)
-    		.setPaddingOverride(null);
+			.enableFilters()
+			.filters.internal.addGlow(color, 4, 0, 4, false, 0.1, 10)
+			.setPaddingOverride(null);
 
 	}
 
-	updateHealthBar(){
+	updateActingArrow() {
+		let isActing = (this.characterModel.isSelectingAction && this.acting_arrow);
+		if (this.acting_arrow) {
+			this.acting_arrow.setActive(isActing);
+			this.acting_arrow.setVisible(isActing);
+		}
+	}
+
+	updateHealthBar() {
 		let currentHp = this.characterModel.currentStats.currentHp;
 		let totalHp = this.characterModel.currentStats.maxHp;
 
 		this.status_bar.statusBarViewComponent.updateHealthBar(currentHp, totalHp);
 	}
 
-	updateActionBar(){
+	updateActionBar() {
 		let currentActionMeter = this.characterModel.currentActionMeter;
 		let maxActionMeter = this.characterModel.maxActionMeter;
 
-		if(this.characterModel.isDead){
+		if (this.characterModel.isDead) {
 			currentActionMeter = 0;
 		}
 
@@ -103,15 +115,15 @@ export default class CharacterViewComponent extends UserComponent {
 		this.status_bar.statusBarViewComponent.updateActionBar(currentActionMeter, maxActionMeter);
 	}
 
-	setCharacterModel(characterModel){
+	setCharacterModel(characterModel) {
 		this.characterModel = characterModel;
 	}
 
-	updateCharacterName(characterName){
+	updateCharacterName(characterName) {
 		this.status_bar.statusBarViewComponent.updateCharacterName(characterName);
 	}
 
-	updateIsDead(){
+	updateIsDead() {
 		let isDead = this.characterModel.isDead;
 
 		this.gameObject.characterViewComponent.gravestone.setActive(isDead);
@@ -119,18 +131,18 @@ export default class CharacterViewComponent extends UserComponent {
 		this.gameObject.characterViewComponent.character_sprite.setActive(!isDead);
 		this.gameObject.characterViewComponent.character_sprite.setVisible(!isDead);
 
-		if(isDead){
+		if (isDead) {
 			this.updateCharacterName(this.characterModel.characterName + " (DEAD)");
 			this.status_bar.statusBarViewComponent.updateStatusBarBackground(isDead);
 			this.updateIsDefending(false);
 		}
 	}
 
-	updateIsDefending(){
+	updateIsDefending() {
 		let isDefending = this.characterModel.isDefending;
 		let isDead = this.characterModel.isDead;
 
-		if(isDead){
+		if (isDead) {
 			isDefending = false;
 		}
 

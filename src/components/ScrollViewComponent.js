@@ -59,6 +59,10 @@ export default class ScrollViewComponent extends UserComponent {
 		this.gameObject.scrollViewComponent = this;
 	}
 
+	updateScrollPanel(actions) {
+
+	}
+
 	buildScrollPanel() {
 
 		const worldTransform = new Phaser.GameObjects.Components.TransformMatrix();

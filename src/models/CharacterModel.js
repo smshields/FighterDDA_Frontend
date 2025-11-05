@@ -34,6 +34,9 @@ export default class CharacterModel{
         this.isDead = false;
         this.isDefending = false;
         this.isReadyForPlayerAction = false;
+        this.isSelectingAction = false;
+        this.isTargeting = false;
+
         this.isNPC = false;
 
         this.currentActionMeter = 0;

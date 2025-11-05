@@ -8,6 +8,8 @@
     "isDead": false,
     "isDefending": true,
     "isReadyForPlayerAction": false,
+    "isSelectingAction": false,
+    "isTargeting": false,
     "isNPC": false,
 
     "initialStats": {

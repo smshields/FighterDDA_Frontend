@@ -60,7 +60,7 @@ export default class TargetItem extends Phaser.GameObjects.Container {
 	/** @type {number} */
 	height = 50;
 	/** @type {number} */
-	width = 437;
+	width = 435;
 
 	/* START-USER-CODE */
 

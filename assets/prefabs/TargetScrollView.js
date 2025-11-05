@@ -38,13 +38,28 @@ export default class TargetScrollView extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 		this.scrollViewComponent = thisScrollViewComponent;
-		this.scrollViewComponent.buildScrollPanel();
+		this.panel = this.scrollViewComponent.buildScrollPanel();
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {boolean} */
+	is_enabled = false;
+
 	/* START-USER-CODE */
 
-	// Write your code here.
+	setEnabled(is_enabled) {
+		if (this.panel) {
+			this.panel.setActive(!is_enabled);
+
+			//set background to grey if disabled
+			if (!is_enabled) {
+				this.panel.background.fillColor = 0xffffff;
+			} else {
+				this.panel.background.fillColor = 0x777777;
+			}
+		}
+
+	}
 
 	/* END-USER-CODE */
 }
