@@ -41,7 +41,6 @@ export default class ActionQueueHistoryScrollView extends Phaser.GameObjects.Con
 
 		/* START-USER-CTR-CODE */
 		this.scrollViewComponent = thisScrollViewComponent;
-		this.scrollViewComponent.buildScrollPanel();
 		/* END-USER-CTR-CODE */
 	}
 

@@ -24,9 +24,10 @@ export default class GameManagerComponent extends UserComponent {
 		/** @type {Phaser.GameObjects.GameObject} */
 		this.action_menu = null;
 
-		/** @type {Phaser.GameObjects.GameObject} */
+		/** @type {Phaser.GameObjects.Container} */
 		this.target_menu = null;
 
+		// === Internal Properties ===
 		this.gameState = new GameState();
 		this.gameObject.gameManagerComponent = this;
 		/* END-USER-CTR-CODE */
@@ -41,10 +42,8 @@ export default class GameManagerComponent extends UserComponent {
 	/* START-USER-CODE */
 
 	start(){
-		let target_scrollview = this.gameObject.scene.targetPanel;
-		this.target_menu.add(target_scrollview);
-		console.log(this.target_menu.getByName('target_scrollview').scrollViewComponent);
-		this.target_menu.getByName('target_scrollview').setEnabled(false);
+		let targetScrollview = this.target_menu.getByName('target_scrollview');
+		targetScrollview.setEnabled(true);
 
 	}
 

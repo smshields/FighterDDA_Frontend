@@ -32,7 +32,7 @@ export default class ScrollViewComponent extends UserComponent {
 
 		this.items = ['Attack', 'Defend', 'Heal', 'Magic Attack', 'Multi Attack', 'Multi Magic Attack', 'Multi Heal', 'Attack 2', 'Attack 3', 'Attack 4', 'Attack 5'];
 
-
+		this.panel = null;
 		/* END-USER-CTR-CODE */
 	}
 
@@ -57,12 +57,14 @@ export default class ScrollViewComponent extends UserComponent {
 	start() {
 		//set up reference for convienience 
 		this.gameObject.scrollViewComponent = this;
+		this.buildScrollPanel();
 	}
 
 	updateScrollPanel(actions) {
 
 	}
 
+	//TODO: Refactor out positioning calculations
 	buildScrollPanel() {
 
 		const worldTransform = new Phaser.GameObjects.Components.TransformMatrix();
@@ -71,13 +73,25 @@ export default class ScrollViewComponent extends UserComponent {
 		const bounds = this.viewport_background.getBounds();
 
 		// center in world space (independent of origin)
-		const centerX = this.viewport_x + (this.viewport_width/2);
-		const centerY = this.viewport_y + (this.viewport_height/2);
+		const centerX = this.viewport_x + (this.viewport_width / 2);
+		const centerY = this.viewport_y + (this.viewport_height / 2);
 
-		this.scene.createScrollView(this.name, centerX, centerY, this.viewport_width, this.viewport_height);
+		this.panel = this.scene.createScrollView(this.name, centerX, centerY, this.viewport_width, this.viewport_height);
 
+	}
 
+	updateScrollPanel() {
 
+		const worldTransform = new Phaser.GameObjects.Components.TransformMatrix();
+		this.viewport_background.getWorldTransformMatrix(worldTransform);
+
+		const bounds = this.viewport_background.getBounds();
+
+		// center in world space (independent of origin)
+		const centerX = this.viewport_x + (this.viewport_width / 2);
+		const centerY = this.viewport_y + (this.viewport_height / 2);
+
+		this.panel = this.scene.updateScrollView(this.name, centerX, centerY, this.viewport_width, this.viewport_height);
 	}
 
 

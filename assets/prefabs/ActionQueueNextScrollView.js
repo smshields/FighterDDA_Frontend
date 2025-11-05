@@ -36,7 +36,6 @@ export default class ActionQueueNextScrollView extends Phaser.GameObjects.Contai
 
 		/* START-USER-CTR-CODE */
 		this.scrollViewComponent = thisScrollViewComponent;
-		this.scrollViewComponent.buildScrollPanel();
 		/* END-USER-CTR-CODE */
 	}
 

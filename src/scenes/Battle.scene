@@ -1102,8 +1102,8 @@
                     "components": [
                         "DynamicOptionsListComponent"
                     ],
-                    "ScrollViewComponent.viewport_x": 295,
-                    "ScrollViewComponent.viewport_y": 120,
+                    "ScrollViewComponent.viewport_x": 15,
+                    "ScrollViewComponent.viewport_y": 830,
                     "ScrollViewComponent.viewport_width": 590,
                     "ScrollViewComponent.viewport_height": 230,
                     "ScrollViewComponent.name": "action_scrollview",

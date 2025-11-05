@@ -648,8 +648,8 @@ export default class Battle extends Phaser.Scene {
 
 		// action_scrollview (components)
 		const action_scrollviewScrollViewComponent = ScrollViewComponent.getComponent(action_scrollview);
-		action_scrollviewScrollViewComponent.viewport_x = 295;
-		action_scrollviewScrollViewComponent.viewport_y = 120;
+		action_scrollviewScrollViewComponent.viewport_x = 15;
+		action_scrollviewScrollViewComponent.viewport_y = 830;
 		action_scrollviewScrollViewComponent.viewport_width = 590;
 		action_scrollviewScrollViewComponent.viewport_height = 230;
 		action_scrollviewScrollViewComponent.name = "action_scrollview";
@@ -709,7 +709,7 @@ export default class Battle extends Phaser.Scene {
 
 	}
 
-	update(){
+	update() {
 
 		//if(processTick && !this.game_manager.gameManagerComponent.gameOver){
 		//	this.game_manager.processTick();
@@ -749,7 +749,7 @@ export default class Battle extends Phaser.Scene {
 		return content;
 	}
 
-	updateActionScrollViewContent(actions){
+	updateActionScrollViewContent(actions) {
 
 	}
 
@@ -775,6 +775,15 @@ export default class Battle extends Phaser.Scene {
 		return content;
 	}
 
+	//TODO: Update to manage dynamic targets from action object
+	updateTargetScrollViewContent(scene) {
+		const content = scene.rexUI.add.sizer({
+			orientation: 1,
+			space: { item: 5 }
+		});
+		return content;
+	}
+
 	createQueueHistoryScrollViewContent(scene, x, y, width, height) {
 
 		const content = scene.rexUI.add.sizer({
@@ -782,7 +791,6 @@ export default class Battle extends Phaser.Scene {
 			space: { item: 5 }
 		});
 
-		console.log(x, y);
 
 		let items = ['Attack', 'Defend', 'Heal', 'Magic Attack', 'Multi Attack', 'Multi Magic Attack', 'Multi Heal', 'Attack 2', 'Attack 3', 'Attack 4', 'Attack 5'];
 
@@ -880,6 +888,8 @@ export default class Battle extends Phaser.Scene {
 
 		this.add.container(panel);
 
+		console.log(this.game_manager_component);
+
 		switch (name) {
 			case 'action_queue_next': {
 				panel.name = 'action_queue_next';
@@ -913,6 +923,96 @@ export default class Battle extends Phaser.Scene {
 		return panel;
 	}
 
+
+	updateScrollView(name, x, y, width, height) {
+
+		const background = this.rexUI.add.roundRectangle(0, 0, 0, 0, 6, 0xeeeeee);
+		const track = this.rexUI.add.roundRectangle(0, 0, 4, height, 2, 0x666666);
+		const thumb = this.rexUI.add.roundRectangle(0, 0, 8, 24, 6, 0x333333);
+
+		//decide content creation method
+		let contentCreateFunction = null;
+		switch (name) {
+			case 'action_queue_next': {
+				contentCreateFunction = this.createQueueNextScrollViewContent;
+				break;
+			}
+			case 'action_queue_history': {
+				contentCreateFunction = this.createQueueHistoryScrollViewContent;
+				break;
+			}
+			case 'action_scrollview': {
+				contentCreateFunction = this.createActionScrollViewContent;
+				break;
+			}
+			case 'target_scrollview': {
+				contentCreateFunction = this.updateTargetScrollViewContent;
+				break;
+			}
+			default: {
+				throw new Error('Invalid scrollview instantiation name provided! ' + name);
+				break;
+			}
+		}
+
+		const panel = this.rexUI.add.scrollablePanel({
+			width: width,
+			height: height,
+			background: background,
+			panel: {
+				child: contentCreateFunction(this, x, y, width, height),
+				mask: { mask: true, padding: 1 },
+				childOrigin0: true
+			},
+			slider: {
+				track: track,
+				thumb: thumb,
+				position: "right",
+				adaptThumbSize: true,
+				hideUnscrollableSlider: false
+			},
+			mouseWheelScroller: { focus: false, speed: 0.1 },
+			scrollDetectionMode: 1
+		});
+
+		panel.layout();
+
+		this.add.container(panel);
+
+		console.log(this.game_manager_component);
+
+		switch (name) {
+			case 'action_queue_next': {
+				panel.name = 'action_queue_next';
+				this.actionQueueNextPanel = panel;
+				break;
+			}
+			case 'action_queue_history': {
+				panel.name = 'action_queue_history';
+				this.actionQueueHistoryPanel = panel;
+				break;
+			}
+			case 'action_scrollview': {
+				panel.name = 'action_scrollview';
+				this.actionPanel = panel;
+				break;
+			}
+			case 'target_scrollview': {
+				panel.name = 'target_scrollview';
+				this.targetPanel = panel;
+				break;
+			}
+			default: {
+				throw new Error('Invalid scrollview instantiation name provided! ' + name);
+				break;
+			}
+		}
+
+		panel.setOrigin(x, y);
+		panel.setPosition(x, y);
+
+		return panel;
+	}
 	/* END-USER-CODE */
 }
 

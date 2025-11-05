@@ -38,7 +38,6 @@ export default class ScrollView extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 		this.scrollViewComponent = thisScrollViewComponent; 
-		this.scrollViewComponent.buildScrollPanel();
 		/* END-USER-CTR-CODE */
 	}
 

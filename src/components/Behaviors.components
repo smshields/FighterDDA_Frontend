@@ -550,7 +550,7 @@
                     "customDefinition": false,
                     "type": {
                         "id": "object-var",
-                        "expressionType": "Phaser.GameObjects.GameObject"
+                        "expressionType": "Phaser.GameObjects.Container"
                     }
                 }
             ]
