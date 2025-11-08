@@ -28,8 +28,27 @@ export default class GameManagerComponent extends UserComponent {
 		this.target_menu = null;
 
 		// === Internal Properties ===
+
 		this.gameState = new GameState();
 		this.gameObject.gameManagerComponent = this;
+
+		this.States = Object.freeze({
+			START: "START",
+			PREPARING_GAME_DATA: "PREPARING_GAME_DATA",
+			LOADING_ACTION: "LOADING_ACTION",
+			WAITING_FOR_ACTION_INPUT: "WAITING_FOR_ACTION_INPUT",
+			LOADING_TARGETS: "LOADING_TARGETS",
+			SELECTING_TARGET: "SELECTING_TARGET"
+		});
+
+		this.readyToAct = [];
+
+		//TODO: This naming is confusing when I am also managing a gamestate with game logic data.
+		this.currentState = this.States.PREPARING_GAME_DATA;
+		
+
+
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -41,44 +60,110 @@ export default class GameManagerComponent extends UserComponent {
 
 	/* START-USER-CODE */
 
-	start(){
-		let targetScrollview = this.target_menu.getByName('target_scrollview');
-		targetScrollview.setEnabled(true);
+	start() {
+		this.syncCharacterManagerWithGameState();
 
 	}
 
-	processTick(){
-		//get gameState from network or stub 
+	update() {
+		this.processTick();
+	}
 
-		//update character models from game state
+	//sync character manager with gamestate
+	syncCharacterManagerWithGameState() {
+		this.gameState.characters = this.character_manager.characterManagerComponent.characters;
+	}
 
-		//for character in state.characters, update
-		////check if any characters are ready to act
-		let readyToAct = [];
-		for(let character in this.gameState.characters){
-			if(readyToAct.length <= 0 && character.isReadyForPlayerAcion){
-				readyToAct.push(character);
-			}
-		}
+	prepareGameData() {
+		console.log("STATE: PREPARING GAME DATA");
 
-		//process player action
-		for(let character in readyToAct){
-			//check if player or NPC
-			if(!character.isNPC){
-				//action loop
-				if(!character.isTargeting){
-					//update character ui with arrow/character movement 
-
-					//enable action pane with character available actions
-
-					//disable targeting pane
+		this.syncCharacterManagerWithGameState();
+		if (this.currentState == this.States.PREPARING_GAME_DATA) {
+			//build readyToAct array
+			for (let character of this.gameState.characters) {
+				if (character.isReadyForPlayerAction) {
+					this.readyToAct.push(character);
 				}
-
-				//target loop
-
-				//move to next character
 			}
 		}
+		//move to next state
+
+		//Action ready to enqueue
+		if (this.readyToAct.length > 0) {
+			this.currentState = this.States.LOADING_ACTION;
+		}
+		//No actions to enqueue, actions to execute
+
+		//No actions to enqueue or execute
+	}
+
+	loadAction() {
+		console.log("STATE: LOADING ACTION");
+
+		//get the current character from ready to act
+		let character = this.readyToAct.shift();
+
+		let targetScrollview = this.target_menu.getByName('target_scrollview');
+		targetScrollview.setEnabled(false);
+
+		//TODO: Handle CPU action
+		let actions = [];
+		for (let actionKey in character.availableActions) {
+			if (character.availableActions[actionKey]) {
+				actions.push(actionKey);
+			}
+		}
+		let actionScrollView = this.action_menu.getByName('action_scrollview');
+		actionScrollView.scrollViewComponent.updateScrollPanel(actions);
+
+		//TODO: Handle building action model and saving to gamestate
+
+		this.currentState = this.States.WAITING_FOR_ACTION_INPUT;
+	}
+
+	actionSelected(actionName) {
+		//TODO: should load this in a reference ahead of time.
+
+		
+		let actionPanel = this.scene.actionPanel;
+		console.log(actionPanel);
+		this.recursiveDisable(actionPanel);
+
+		this.currentState = this.States.LOADING_TARGETS;
+		//TODO: load targets based on action, character team,
+
+		
+
+	}
+
+	recursiveDisable(gameObject){
+		console.log("REACHED DISABLE");
+		if(gameObject.children){
+			for(let child of gameObject.children){
+				child.disableInteractive();
+				this.recursiveDisable(child);
+			}
+		}
+		return;
+	}
+
+	processTick() {
+		console.log(this.currentState);
+		//Prepare Game Data for runtime
+		if (this.currentState == this.States.PREPARING_GAME_DATA) {
+			this.prepareGameData();
+		}
+
+		//If actions are ready to enqueue, set up UI
+		if (this.currentState == this.States.LOADING_ACTION) {
+			this.loadAction();
+		}
+
+		if(this.currentState = this.States.WAITING_FOR_ACTION_INPUT){
+
+		}
+
+
 	}
 
 	/* END-USER-CODE */

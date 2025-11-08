@@ -92,6 +92,8 @@ export default class CharacterManagerComponent extends UserComponent {
 		this.p2_rogue_status_bar_ui = null;
 		this.p2_priest_status_bar_ui = null;
 
+		this.characters = [];
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -182,6 +184,19 @@ export default class CharacterManagerComponent extends UserComponent {
 			this.p2_rogue_model.updateFromJson(this.scene.cache.json.get(this.p2_rogue_label + jsonString));
 			this.p2_priest_model.updateFromJson(this.scene.cache.json.get(this.p2_priest_label + jsonString));
 
+			this.characters = [
+				this.p1_warrior_model,
+				this.p1_mage_model,
+				this.p1_rogue_model,
+				this.p1_priest_model,
+				this.p2_mage_model,
+				this.p2_warrior_model,
+				this.p2_rogue_model,
+				this.p2_priest_model
+			]
+
+			console.log(this.characters);
+			
 		}
 	}
 

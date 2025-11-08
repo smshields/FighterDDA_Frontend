@@ -38,6 +38,7 @@ export default class TargetScrollView extends Phaser.GameObjects.Container {
 
 		/* START-USER-CTR-CODE */
 		this.scrollViewComponent = thisScrollViewComponent;
+		this.background = viewport;
 		/* END-USER-CTR-CODE */
 	}
 
@@ -47,19 +48,26 @@ export default class TargetScrollView extends Phaser.GameObjects.Container {
 	/* START-USER-CODE */
 
 	setEnabled(is_enabled) {
-		if(!this.panel){
+		if (!this.panel) {
 			this.panel = this.scene.targetPanel;
 		}
-		console.log(this.panel);
 		if (this.panel) {
+			console.log("REACAHED SET ENABLED " + is_enabled);
+			console.log(this.panel);
 			this.panel.setActive(!is_enabled);
+			this.panel.setVisible(!is_enabled);
 
 			//set background to grey if disabled
 			if (!is_enabled) {
-				this.panel.backgroundChildren[0].setFillStyle(0xffffff, 1);
-				this.panel.clear(true);
-			} else {
-				this.panel.backgroundChildren[0].setFillStyle(0x777777, 1);
+				console.log("REACHED DISABLE");
+				this.parentContainer.getByName('target_title').setTintFill(0x555555);
+				this.background.setFillStyle(0x555555, 1);
+				this.scrollViewComponent.updateScrollPanel(null);
+
+			} else { 
+				console.log("REACHED ENABLE")
+				this.parentContainer.getByName('target_title').setTintFill(0x000000);
+				this.background.setFillStyle(0x777777, 1);
 			}
 		}
 

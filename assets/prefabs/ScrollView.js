@@ -41,6 +41,9 @@ export default class ScrollView extends Phaser.GameObjects.Container {
 		/* END-USER-CTR-CODE */
 	}
 
+	/** @type {boolean} */
+	is_enabled = true;
+
 	/* START-USER-CODE */
 
 

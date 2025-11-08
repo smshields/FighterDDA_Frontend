@@ -8,7 +8,7 @@
 
 export default class ActionItem extends Phaser.GameObjects.Container {
 
-	constructor(scene, x, y) {
+	constructor(scene, x, y, actionName) {
 		super(scene, x ?? 0, y ?? 0);
 
 		this.name = "action";
@@ -53,11 +53,33 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 		let bounds = this.getBounds();
 		let hitZone = this.scene.add.zone(0, 0, bounds.width, bounds.height)
 			.setOrigin(0)
-  			.setInteractive({ useHandCursor: true });
+			.setInteractive({ useHandCursor: true });
 		this.add(hitZone);
 
-		hitZone.on('pointerover', () => action_name_background.fillColor = 0x777777);
-		hitZone.on('pointerout', () => action_name_background.fillColor = 0xffffff);
+		this.action_hover_arrow = action_hover_arrow;
+		this.action_arrow = action_arrow;
+		this.action_selected_arrow = selection_arrow_selected;
+		this.action_background = action_name_background;
+
+		//TODO: This is weird, because of the scope change I've got to lookup the parent within the method.
+		hitZone.on('pointerover', this.onHover);
+		hitZone.on('pointerout', this.onLeaveHover);
+		hitZone.on('pointerdown', this.onPointerDown);
+		hitZone.on('pointerup', this.onPointerUp);
+
+		this.actionName = actionName;
+		if (this.actionName) {
+			action_name.text = this.lookupReadableAction(this.actionName);
+		}
+
+		//initialize with no mouse input
+		this.action_arrow.setActive(true);
+		this.action_arrow.setVisible(true);
+		this.action_selected_arrow.setActive(false);
+		this.action_selected_arrow.setVisible(false);
+		this.action_hover_arrow.setActive(false);
+		this.action_hover_arrow.setVisible(false);
+		this.action_background.fillColor = 0xffffff;
 		/* END-USER-CTR-CODE */
 	}
 
@@ -68,8 +90,95 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 
+	start() {
 
-	addHoverListener(){
+	}
+
+	onPointerDown() {
+		this.parentContainer.action_arrow.setActive(false);
+		this.parentContainer.action_arrow.setVisible(false);
+		this.parentContainer.action_selected_arrow.setActive(true);
+		this.parentContainer.action_selected_arrow.setVisible(true);
+		this.parentContainer.action_hover_arrow.setActive(false);
+		this.parentContainer.action_hover_arrow.setVisible(false);
+		this.parentContainer.action_background.fillColor = 0x555555;
+	}
+
+	onPointerUp() {
+		this.parentContainer.action_arrow.setActive(false);
+		this.parentContainer.action_arrow.setVisible(false);
+		this.parentContainer.action_selected_arrow.setActive(true);
+		this.parentContainer.action_selected_arrow.setVisible(true);
+		this.parentContainer.action_hover_arrow.setActive(false);
+		this.parentContainer.action_hover_arrow.setVisible(false);
+		this.parentContainer.action_background.fillColor = 0x777777;
+		//Nasty navigation through parents to get action view
+
+		let game_manager = this.scene.game_manager;
+
+		this.parentContainer.disableInteractive();
+
+		console.log(this);
+
+		game_manager.actionSelected(this.actionName);
+
+	}
+
+	onHover() {
+		this.parentContainer.action_arrow.setActive(false);
+		this.parentContainer.action_arrow.setVisible(false);
+		this.parentContainer.action_selected_arrow.setActive(false);
+		this.parentContainer.action_selected_arrow.setVisible(false);
+		this.parentContainer.action_hover_arrow.setActive(true);
+		this.parentContainer.action_hover_arrow.setVisible(true);
+		this.parentContainer.action_background.fillColor = 0x777777;
+	}
+
+	onLeaveHover() {
+		this.parentContainer.action_arrow.setActive(true);
+		this.parentContainer.action_arrow.setVisible(true);
+		this.parentContainer.action_selected_arrow.setActive(false);
+		this.parentContainer.action_selected_arrow.setVisible(false);
+		this.parentContainer.action_hover_arrow.setActive(false);
+		this.parentContainer.action_hover_arrow.setVisible(false);
+		this.parentContainer.action_background.fillColor = 0xffffff;
+	}
+
+
+
+	lookupReadableAction(actionName) {
+		let readableName = "";
+		switch (actionName) {
+			case "attack":
+				readableName = "Attack";
+				break;
+			case "defend":
+				readableName = "Defend";
+				break;
+			case "magicAttack":
+				readableName = "Magic Attack";
+				break;
+			case "heal":
+				readableName = "Heal";
+				break;
+			case "multiHeal":
+				readableName = "Multi-Heal";
+				break;
+			case "multiAttack":
+				readableName = "Multi-Attack";
+				break;
+			case "multiMagicAttack":
+				readableName = "Multi-Magic Attack";
+				break;
+			default:
+				readableName = "INVALID ACTION LOADED";
+				break;
+		}
+		return readableName;
+	}
+
+
+	addHoverListener() {
 
 	}
 

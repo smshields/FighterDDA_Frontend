@@ -7,7 +7,7 @@
 
     "isDead": false,
     "isDefending": false,
-    "isReadyForPlayerAction": false,
+    "isReadyForPlayerAction": true,
     "isSelectingAction": true,
     "isTargeting": false,
     "isNPC": false,
@@ -35,10 +35,10 @@
     },
 
     "availableActions": {
-        "attack": false,
+        "attack": true,
         "multiAttack": false,
         "defend": true,
-        "magicAttack": false,
+        "magicAttack": true,
         "multiMagicAttack": false,
         "heal": true,
         "multiHeal": true

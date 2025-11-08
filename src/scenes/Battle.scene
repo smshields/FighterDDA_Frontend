@@ -1094,7 +1094,8 @@
                         "ScrollViewComponent.viewport_width",
                         "ScrollViewComponent.viewport_height",
                         "ScrollViewComponent.container",
-                        "ScrollViewComponent.name"
+                        "ScrollViewComponent.name",
+                        "visible"
                     ],
                     "label": "action_scrollview",
                     "displayName": "Action Scrollview",
@@ -1110,7 +1111,8 @@
                     "x": 5,
                     "y": 65,
                     "scaleX": 1,
-                    "scaleY": 1
+                    "scaleY": 1,
+                    "visible": true
                 }
             ]
         },

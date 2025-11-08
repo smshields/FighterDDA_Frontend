@@ -508,6 +508,7 @@ export default class Battle extends Phaser.Scene {
 		action_scrollview.name = "action_scrollview";
 		action_scrollview.scaleX = 1;
 		action_scrollview.scaleY = 1;
+		action_scrollview.visible = true;
 		action_menu.add(action_scrollview);
 
 		// character_manager
@@ -671,6 +672,7 @@ export default class Battle extends Phaser.Scene {
 		game_managerGameManagerComponent.action_menu = action_menu;
 		game_managerGameManagerComponent.target_menu = target_menu;
 
+		this.game_manager = game_managerGameManagerComponent;
 		this.p1_warrior_sprite = p1_warrior_sprite;
 		this.p2_warrior_sprite = p2_warrior_sprite;
 
@@ -683,6 +685,7 @@ export default class Battle extends Phaser.Scene {
 	p2_warrior_sprite;
 
 	/* START-USER-CODE */
+
 
 	// Write your code here
 
@@ -749,8 +752,25 @@ export default class Battle extends Phaser.Scene {
 		return content;
 	}
 
-	updateActionScrollViewContent(actions) {
+	updateActionScrollViewContent(scene, x, y, width, height, items) {
+		const content = scene.rexUI.add.sizer({
+			orientation: 1, // vertical
+			space: { item: 5 }
+		});
 
+		for (let i = 0; i < items.length; i += 1) {
+
+
+			let actionItem = new ActionItem(scene, -width / 2.075, -(25), items[i]); //HARDCODED - Half of the height of the ActionItem Prefab
+			actionItem.setSize(actionItem.width, actionItem.height);
+			const testAction = scene.add.container(0, 0, [actionItem]).setSize(actionItem.width, actionItem.height);
+
+			content.add(
+				testAction
+			);
+		}
+
+		return content;
 	}
 
 	createTargetScrollViewContent(scene, x, y, width, height) {
@@ -886,9 +906,8 @@ export default class Battle extends Phaser.Scene {
 
 		panel.layout();
 
-		this.add.container(panel);
-
-		console.log(this.game_manager_component);
+		let panelRef = this.add.container(panel);
+		panelRef.setDepth(-1);
 
 		switch (name) {
 			case 'action_queue_next': {
@@ -924,11 +943,18 @@ export default class Battle extends Phaser.Scene {
 	}
 
 
-	updateScrollView(name, x, y, width, height) {
-
-		const background = this.rexUI.add.roundRectangle(0, 0, 0, 0, 6, 0xeeeeee);
+	updateScrollView(name, x, y, width, height, items) {
+		let background = null;
+		if (!items || items.length <= 0) {
+			background = this.rexUI.add.roundRectangle(0, 0, 0, 0, 6, 0x777777);
+		} else {
+			background = this.rexUI.add.roundRectangle(0, 0, 0, 0, 6, 0xeeeeee);
+		}
 		const track = this.rexUI.add.roundRectangle(0, 0, 4, height, 2, 0x666666);
 		const thumb = this.rexUI.add.roundRectangle(0, 0, 8, 24, 6, 0x333333);
+
+
+		console.log("REACHED UPDATE SCROLLVIEW! " + this.targetPanel);
 
 		//decide content creation method
 		let contentCreateFunction = null;
@@ -942,10 +968,14 @@ export default class Battle extends Phaser.Scene {
 				break;
 			}
 			case 'action_scrollview': {
-				contentCreateFunction = this.createActionScrollViewContent;
+				console.log('REACHED ACTION UPDATE');
+				this.actionPanel.destroy();
+				contentCreateFunction = this.updateActionScrollViewContent;
 				break;
 			}
 			case 'target_scrollview': {
+				console.log('REACHED TARGET UPDATE');
+				this.targetPanel.destroy();
 				contentCreateFunction = this.updateTargetScrollViewContent;
 				break;
 			}
@@ -960,7 +990,7 @@ export default class Battle extends Phaser.Scene {
 			height: height,
 			background: background,
 			panel: {
-				child: contentCreateFunction(this, x, y, width, height),
+				child: contentCreateFunction(this, x, y, width, height, items),
 				mask: { mask: true, padding: 1 },
 				childOrigin0: true
 			},

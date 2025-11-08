@@ -60,7 +60,18 @@ export default class ScrollViewComponent extends UserComponent {
 		this.buildScrollPanel();
 	}
 
-	updateScrollPanel(actions) {
+	updateScrollPanel(items) {
+		console.log(items);
+		const worldTransform = new Phaser.GameObjects.Components.TransformMatrix();
+		this.viewport_background.getWorldTransformMatrix(worldTransform);
+
+		const bounds = this.viewport_background.getBounds();
+
+		// center in world space (independent of origin)
+		const centerX = this.viewport_x + (this.viewport_width / 2);
+		const centerY = this.viewport_y + (this.viewport_height / 2);
+
+		this.panel = this.scene.updateScrollView(this.name, centerX, centerY, this.viewport_width, this.viewport_height, items);
 
 	}
 
@@ -80,19 +91,6 @@ export default class ScrollViewComponent extends UserComponent {
 
 	}
 
-	updateScrollPanel() {
-
-		const worldTransform = new Phaser.GameObjects.Components.TransformMatrix();
-		this.viewport_background.getWorldTransformMatrix(worldTransform);
-
-		const bounds = this.viewport_background.getBounds();
-
-		// center in world space (independent of origin)
-		const centerX = this.viewport_x + (this.viewport_width / 2);
-		const centerY = this.viewport_y + (this.viewport_height / 2);
-
-		this.panel = this.scene.updateScrollView(this.name, centerX, centerY, this.viewport_width, this.viewport_height);
-	}
 
 
 	// Write your code here.
