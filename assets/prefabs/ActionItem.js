@@ -80,6 +80,9 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 		this.action_hover_arrow.setActive(false);
 		this.action_hover_arrow.setVisible(false);
 		this.action_background.fillColor = 0xffffff;
+
+		//use to disable unwanted events
+		this.isDisabled = false;
 		/* END-USER-CTR-CODE */
 	}
 
@@ -116,32 +119,39 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 
 		let game_manager = this.scene.game_manager;
 
-		this.parentContainer.disableInteractive();
+		this.scene.actionPanel.disablePanel();
+		this.isDisabled = true;
 
-		console.log(this);
+		console.log(this.scene.actionPanel);
 
 		game_manager.actionSelected(this.actionName);
 
 	}
 
 	onHover() {
-		this.parentContainer.action_arrow.setActive(false);
-		this.parentContainer.action_arrow.setVisible(false);
-		this.parentContainer.action_selected_arrow.setActive(false);
-		this.parentContainer.action_selected_arrow.setVisible(false);
-		this.parentContainer.action_hover_arrow.setActive(true);
-		this.parentContainer.action_hover_arrow.setVisible(true);
-		this.parentContainer.action_background.fillColor = 0x777777;
+		if (!this.isDisabled) {
+			this.parentContainer.action_arrow.setActive(false);
+			this.parentContainer.action_arrow.setVisible(false);
+			this.parentContainer.action_selected_arrow.setActive(false);
+			this.parentContainer.action_selected_arrow.setVisible(false);
+			this.parentContainer.action_hover_arrow.setActive(true);
+			this.parentContainer.action_hover_arrow.setVisible(true);
+			this.parentContainer.action_background.fillColor = 0x777777;
+		}
 	}
 
 	onLeaveHover() {
-		this.parentContainer.action_arrow.setActive(true);
-		this.parentContainer.action_arrow.setVisible(true);
-		this.parentContainer.action_selected_arrow.setActive(false);
-		this.parentContainer.action_selected_arrow.setVisible(false);
-		this.parentContainer.action_hover_arrow.setActive(false);
-		this.parentContainer.action_hover_arrow.setVisible(false);
-		this.parentContainer.action_background.fillColor = 0xffffff;
+		if (!this.isDisabled) {
+			this.parentContainer.action_arrow.setActive(true);
+			this.parentContainer.action_arrow.setVisible(true);
+			this.parentContainer.action_selected_arrow.setActive(false);
+			this.parentContainer.action_selected_arrow.setVisible(false);
+			this.parentContainer.action_hover_arrow.setActive(false);
+			this.parentContainer.action_hover_arrow.setVisible(false);
+			this.parentContainer.action_background.fillColor = 0xffffff;
+
+			console.log("REACHED HOVER");
+		}
 	}
 
 

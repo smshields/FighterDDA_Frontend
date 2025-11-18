@@ -923,6 +923,7 @@ export default class Battle extends Phaser.Scene {
 			case 'action_scrollview': {
 				panel.name = 'action_scrollview';
 				this.actionPanel = panel;
+				this.attachPanelDisabler(this, this.actionPanel);
 				break;
 			}
 			case 'target_scrollview': {
@@ -953,9 +954,6 @@ export default class Battle extends Phaser.Scene {
 		const track = this.rexUI.add.roundRectangle(0, 0, 4, height, 2, 0x666666);
 		const thumb = this.rexUI.add.roundRectangle(0, 0, 8, 24, 6, 0x333333);
 
-
-		console.log("REACHED UPDATE SCROLLVIEW! " + this.targetPanel);
-
 		//decide content creation method
 		let contentCreateFunction = null;
 		switch (name) {
@@ -968,13 +966,12 @@ export default class Battle extends Phaser.Scene {
 				break;
 			}
 			case 'action_scrollview': {
-				console.log('REACHED ACTION UPDATE');
 				this.actionPanel.destroy();
 				contentCreateFunction = this.updateActionScrollViewContent;
+
 				break;
 			}
 			case 'target_scrollview': {
-				console.log('REACHED TARGET UPDATE');
 				this.targetPanel.destroy();
 				contentCreateFunction = this.updateTargetScrollViewContent;
 				break;
@@ -1009,7 +1006,8 @@ export default class Battle extends Phaser.Scene {
 
 		this.add.container(panel);
 
-		console.log(this.game_manager_component);
+		panel.x = x;
+		panel.y = y;
 
 		switch (name) {
 			case 'action_queue_next': {
@@ -1025,6 +1023,7 @@ export default class Battle extends Phaser.Scene {
 			case 'action_scrollview': {
 				panel.name = 'action_scrollview';
 				this.actionPanel = panel;
+				this.attachPanelDisabler(this, this.actionPanel);
 				break;
 			}
 			case 'target_scrollview': {
@@ -1043,6 +1042,124 @@ export default class Battle extends Phaser.Scene {
 
 		return panel;
 	}
+
+	attachPanelDisabler(scene, panel) {
+		const overlayDepth = (panel.depth || 0) + 1;
+
+		const scrim = scene.add
+			.rectangle(0, 0, 1, 1, 0x000000, 0.35)
+			.setOrigin(0, 0);
+
+		const blocker = scene.add
+			.zone(0, 0, 1, 1)
+			.setOrigin(0, 0)
+			.setInteractive();
+
+		scrim.setDepth(overlayDepth);
+		blocker.setDepth(overlayDepth);
+
+		const fx = typeof panel.scrollFactorX === "number" ? panel.scrollFactorX : 0;
+		const fy = typeof panel.scrollFactorY === "number" ? panel.scrollFactorY : 0;
+		scrim.setScrollFactor(fx, fy);
+		blocker.setScrollFactor(fx, fy);
+
+		scrim.setVisible(false);
+		blocker.setVisible(false);
+
+		const swallow = (pointer, localX, localY, event) => {
+			if (event && typeof event.stopPropagation === "function") {
+				event.stopPropagation();
+			}
+		};
+
+		blocker.on("pointerover", swallow);
+		blocker.on("pointermove", swallow);
+		blocker.on("pointerdown", swallow);
+		blocker.on("pointerup", swallow);
+		blocker.on("pointerout", swallow);
+
+		const getAllChildren = () =>
+			typeof panel.getAllChildren === "function"
+				? panel.getAllChildren()
+				: panel.list || [];
+
+		const setChildrenInput = (enabled) => {
+			const nodes = getAllChildren();
+
+			for (let i = 0; i < nodes.length; i += 1) {
+				const n = nodes[i];
+				if (n && n.input) {
+					n.input.enabled = enabled;
+				}
+			}
+
+			if (panel.input) {
+				panel.input.enabled = enabled;
+			}
+
+			if (typeof panel.setTouchScrollEnable === "function") {
+				panel.setTouchScrollEnable(enabled);
+			}
+
+			if (typeof panel.setMouseWheelScrollerEnable === "function") {
+				panel.setMouseWheelScrollerEnable(enabled);
+			}
+		};
+
+		// 🔧 FIXED: use panel's own position, origin, and viewport size
+		function syncOverlayToPanel() {
+			// These should represent the viewport size after panel.layout()
+			let w = panel.width;
+			let h = panel.height;
+
+			// Fallback: if layout hasn't run for some reason
+			if (!w || !h) {
+				if (typeof panel.getInnerBounds === "function") {
+					const inner = panel.getInnerBounds();
+					w = inner.width;
+					h = inner.height;
+				}
+			}
+
+			if (!w || !h) {
+				return; // nothing meaningful we can do
+			}
+
+			const ox = typeof panel.originX === "number" ? panel.originX : 0;
+			const oy = typeof panel.originY === "number" ? panel.originY : 0;
+
+			// Top-left corner of the viewport in world coordinates
+			const x = panel.x - panel.width / 2;
+			const y = panel.y - panel.height / 2;
+
+			scrim.setPosition(x, y);
+			blocker.setPosition(x, y);
+			scrim.setSize(w, h);
+			blocker.setSize(w, h);
+
+			console.log(x, y);
+		}
+
+		panel.disablePanel = () => {
+			syncOverlayToPanel();
+			setChildrenInput(false);
+			scrim.setVisible(true);
+			blocker.setVisible(true);
+		};
+
+		panel.enablePanel = () => {
+			syncOverlayToPanel();
+			setChildrenInput(true);
+			scrim.setVisible(false);
+			blocker.setVisible(false);
+		};
+
+		panel._disableScrim = scrim;
+		panel._disableBlocker = blocker;
+	}
+
+
+
 	/* END-USER-CODE */
 }
 
