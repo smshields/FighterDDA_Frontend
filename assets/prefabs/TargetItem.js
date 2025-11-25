@@ -110,6 +110,7 @@ export default class TargetItem extends Phaser.GameObjects.Container {
 		this.isMulti = false;
 		this.multiTargetModels = [];
 		this.multiTargetModelUIs = [];
+		this.actionModel = {};
 
 		/* END-USER-CTR-CODE */
 	}
@@ -129,8 +130,8 @@ export default class TargetItem extends Phaser.GameObjects.Container {
 
 	//Contains information about the action happening, used to set up multi/single configurations
 	setActionModel(actionModel) {
-
-
+		this.actionModel = actionModel;
+		console.log(this.actionModel);
 	}
 
 	setTargetNameText() {

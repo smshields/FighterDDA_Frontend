@@ -883,12 +883,19 @@ export default class Battle extends Phaser.Scene {
 			space: { item: 5 }
 		});
 
+		//If we have a target that is multi,
+		//we should build a unique item that says "ALLIES" or "ENEMIES".
+		//Item must have unique targetItem behavior that populates UI accordingly
+		//and we should not loop through all targets, but still include them
+		//in the target item object for UI purposes
+
 		for (let i = 0; i < items.length; i += 1) {
 			let targetItem = new TargetItem(scene);
 			targetItem.x = -targetItem.width / 2;
 			targetItem.y = -targetItem.height / 2;
 
 			targetItem.setTargetModel(items[i]);
+			targetItem.setActionModel(scene.gameManager.selectedActionModel);
 			targetItem.setSize(targetItem.width, targetItem.height);
 			const targetContainer = scene.add.container(0, 0, [targetItem]).setSize(targetItem.width, targetItem.height);
 			content.add(targetContainer);
