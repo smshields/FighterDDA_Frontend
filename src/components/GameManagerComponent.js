@@ -145,7 +145,8 @@ export default class GameManagerComponent extends UserComponent {
 		let characters = this.character_manager.characterManagerComponent.characters;
 		let actor = this.selectedActionModel.actor;
 		let targetCharacters = this.selectedActionModel.getCharacterModelsFromTargets(actor, targetString, characters);
-		
+		this.selectedActionModel.targets = targetCharacters;
+
 		//build scrollview
 		let targetScrollview = this.target_menu.getByName('target_scrollview');
 		targetScrollview.scrollViewComponent.updateScrollPanel(targetCharacters);
@@ -161,10 +162,6 @@ export default class GameManagerComponent extends UserComponent {
 
 		this.selectedAction = actionName;
 		this.selectedActionModel.name = actionName;
-
-		let actionPanel = this.scene.actionPanel;
-
-		//this.scene.targetPanel.enablePanel();
 
 		this.currentState = this.States.LOADING_TARGETS;
 		//TODO: load targets based on action, character team,

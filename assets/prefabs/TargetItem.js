@@ -131,28 +131,39 @@ export default class TargetItem extends Phaser.GameObjects.Container {
 	//Contains information about the action happening, used to set up multi/single configurations
 	setActionModel(actionModel) {
 		this.actionModel = actionModel;
-		console.log(this.actionModel);
 	}
 
 	setTargetNameText() {
-		this.targetName = "P" + this.targetModel.playerNum + " " + this.targetModel.characterName;
-		if (this.targetModel.playerNum != 0 && this.targetModel.characterName != "") {
+		if (this.isMulti) {
+			if (this.isAlly) {
+				this.targetName = "ALL ALLIES";
+			} else {
+				this.targetName = "ALL ENEMIES";
+			}
 			this.target_name.text = this.targetName;
 		} else {
-			this.target_name.text = "UNDEFINED";
+			this.targetName = "P" + this.targetModel.playerNum + " " + this.targetModel.characterName;
+			if (this.targetModel.playerNum != 0 && this.targetModel.characterName != "") {
+				this.target_name.text = this.targetName;
+			} else {
+				this.target_name.text = "UNDEFINED";
+			}
 		}
 	}
 
-	setAsMultiItem(multiTargetModels) {
-		this.multiTargetModels = multiTargetModels;
+	//sets multi target array, looks up UIs for all of them
+	setMultiTargetModels(targetModels) {
+		this.multiTargetModels = targetModels;
+		for (let character of this.multiTargetModels) {
+			this.multiTargetModelUIs.push(this.scene.characterManager.lookupCharacterUIFromModel(character).characterViewComponent);
+		}
+	}
+
+	setAsMultiItem(multiTargetModels, isAlly) {
 		this.isMulti = true;
-
-		//check if it is allied or enemy
-
-		//set text to Allies or Enemies
-
-		//Update multiTargetModelUIs for UI handling
-
+		this.isAlly = isAlly;
+		this.setMultiTargetModels(multiTargetModels);
+		this.setTargetNameText();
 	}
 
 	//instantiates the item as a back arrow, returning to action selection
@@ -202,7 +213,7 @@ export default class TargetItem extends Phaser.GameObjects.Container {
 
 			if (targetItem.isMulti) {
 				//update arrows for all valid targets
-				for (let characterUI of targetItem.multiTargetModels) {
+				for (let characterUI of targetItem.multiTargetModelUIs) {
 					characterUI.enableTargetingArrow();
 				}
 			} else {
@@ -241,7 +252,7 @@ export default class TargetItem extends Phaser.GameObjects.Container {
 
 			if (targetItem.isMulti) {
 				//update arrows for all valid targets
-				for (let characterUI of targetItem.multiTargetModels) {
+				for (let characterUI of targetItem.multiTargetModelUIs) {
 					characterUI.disableTargetingArrow();
 				}
 			} else {

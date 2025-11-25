@@ -11,7 +11,7 @@ export default class ActionModel {
         this.actor = {};
 
         //targets - who is valid for targeting for action
-        this.targets = {};
+        this.targets = [];
 
         //target string - denotes how target view will be rendered
         this.targetString = "";
@@ -91,31 +91,23 @@ export default class ActionModel {
         let targetCharacterModels = [];
         let actorPlayerNum = actor.playerNum;
 
-        switch (targetString) {
-            case this.TargetStrings.SINGLE_ENEMY || this.TargetStrings.ALL_ENEMIES: {
-                for (let character of characters) {
-                    if (character.playerNum != actorPlayerNum && !character.isDead) {
-                        targetCharacterModels.push(character);
-                    }
+        if (targetString == this.TargetStrings.SINGLE_ENEMY || targetString == this.TargetStrings.ALL_ENEMIES) {
+            for (let character of characters) {
+                if (character.playerNum != actorPlayerNum && !character.isDead) {
+                    targetCharacterModels.push(character);
                 }
-                break;
             }
-            case (this.TargetStrings.SINGLE_ALLY || this.TargetStrings.ALL_ALLIES): {
-                for (let character of characters) {
-                    if (character.playerNum == actorPlayerNum && !character.isDead) {
-                        targetCharacterModels.push(character);
-                    }
+        } else if (targetString == this.TargetStrings.SINGLE_ALLY || targetString == this.TargetStrings.ALL_ALLIES) {
+            for (let character of characters) {
+                if (character.playerNum == actorPlayerNum && !character.isDead) {
+                    targetCharacterModels.push(character);
                 }
-                break;
             }
-            case this.TargetStrings.SELF: {
-                targetCharacterModels.push(actor);
-                break;
-            }
-            default: {
-                console.log("ACTION MODEL: INVALID TARGET STRING PROVIDED: " + targetString);
-                return targetCharacterModels;
-            }
+        } else if (targetString == this.TargetStrings.SELF) {
+            targetCharacterModels.push(actor);
+        } else {
+            console.log("ACTION MODEL: INVALID TARGET STRING PROVIDED: " + targetString);
+            return targetCharacterModels;
         }
 
         return targetCharacterModels;

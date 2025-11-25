@@ -889,16 +889,45 @@ export default class Battle extends Phaser.Scene {
 		//and we should not loop through all targets, but still include them
 		//in the target item object for UI purposes
 
-		for (let i = 0; i < items.length; i += 1) {
+		//check if action is multi
+		let isMulti = false;
+		let isAllies = false;
+		if (scene.gameManager.selectedAction) {
+			let actionName = scene.gameManager.selectedAction;
+			if (actionName == 'multiAttack' || actionName == 'multiMagicAttack') {
+				isMulti = true;
+			}
+
+			if (actionName == 'multiHeal') {
+				isMulti = true;
+				isAllies = true;
+			}
+		}
+
+		//if isMulti, we only add one item that targets all characters on a team.
+		//if not, we add items for each valid target.
+		if (isMulti && items.length > 0) {
 			let targetItem = new TargetItem(scene);
 			targetItem.x = -targetItem.width / 2;
 			targetItem.y = -targetItem.height / 2;
 
-			targetItem.setTargetModel(items[i]);
+			targetItem.setAsMultiItem(items, isAllies);
 			targetItem.setActionModel(scene.gameManager.selectedActionModel);
 			targetItem.setSize(targetItem.width, targetItem.height);
 			const targetContainer = scene.add.container(0, 0, [targetItem]).setSize(targetItem.width, targetItem.height);
 			content.add(targetContainer);
+		} else {
+			for (let i = 0; i < items.length; i += 1) {
+				let targetItem = new TargetItem(scene);
+				targetItem.x = -targetItem.width / 2;
+				targetItem.y = -targetItem.height / 2;
+
+				targetItem.setTargetModel(items[i]);
+				targetItem.setActionModel(scene.gameManager.selectedActionModel);
+				targetItem.setSize(targetItem.width, targetItem.height);
+				const targetContainer = scene.add.container(0, 0, [targetItem]).setSize(targetItem.width, targetItem.height);
+				content.add(targetContainer);
+			}
 		}
 
 		//if we have an empty items array, we know we just need to return a clear panel.
