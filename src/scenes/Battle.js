@@ -207,6 +207,12 @@ export default class Battle extends Phaser.Scene {
 		p1_rogue_action_arrow.name = "p1_rogue_action_arrow";
 		p1_Rogue.add(p1_rogue_action_arrow);
 
+		// p1_rogue_target_arrow
+		const p1_rogue_target_arrow = this.add.image(620, 55, "selection_arrow_selected");
+		p1_rogue_target_arrow.name = "p1_rogue_target_arrow";
+		p1_rogue_target_arrow.flipX = true;
+		p1_Rogue.add(p1_rogue_target_arrow);
+
 		// p1_Priest
 		const p1_Priest = this.add.container(-220, 230);
 		p1_Priest.name = "p1_Priest";
@@ -247,6 +253,12 @@ export default class Battle extends Phaser.Scene {
 		p1_priest_action_arrow.name = "p1_priest_action_arrow";
 		p1_Priest.add(p1_priest_action_arrow);
 
+		// p1_priest_target_arrow
+		const p1_priest_target_arrow = this.add.image(620, 55, "selection_arrow_selected");
+		p1_priest_target_arrow.name = "p1_priest_target_arrow";
+		p1_priest_target_arrow.flipX = true;
+		p1_Priest.add(p1_priest_target_arrow);
+
 		// p1_Mage
 		const p1_Mage = this.add.container(-220, 65);
 		p1_Mage.name = "p1_Mage";
@@ -281,6 +293,12 @@ export default class Battle extends Phaser.Scene {
 		const p1_mage_action_arrow = this.add.image(405, 50, "selection_arrow_selected");
 		p1_mage_action_arrow.name = "p1_mage_action_arrow";
 		p1_Mage.add(p1_mage_action_arrow);
+
+		// p1_mage_target_arrow
+		const p1_mage_target_arrow = this.add.image(620, 55, "selection_arrow_selected");
+		p1_mage_target_arrow.name = "p1_mage_target_arrow";
+		p1_mage_target_arrow.flipX = true;
+		p1_Mage.add(p1_mage_target_arrow);
 
 		// p1_warrior
 		const p1_warrior = this.add.container(-220, 405);
@@ -317,6 +335,12 @@ export default class Battle extends Phaser.Scene {
 		p1_warrior_action_arrow.name = "p1_warrior_action_arrow";
 		p1_warrior.add(p1_warrior_action_arrow);
 
+		// p1_warrior_target_arrow
+		const p1_warrior_target_arrow = this.add.image(620, 55, "selection_arrow_selected");
+		p1_warrior_target_arrow.name = "p1_warrior_target_arrow";
+		p1_warrior_target_arrow.flipX = true;
+		p1_warrior.add(p1_warrior_target_arrow);
+
 		// p2_team
 		const p2_team = this.add.container(1400, 125);
 		p2_team.name = "p2_team";
@@ -349,6 +373,11 @@ export default class Battle extends Phaser.Scene {
 		p2_rogue_defend.scaleX = 0.2788076925413643;
 		p2_rogue_defend.scaleY = 0.2788076925413643;
 		p2_rogue.add(p2_rogue_defend);
+
+		// p2_rogue_target_arrow
+		const p2_rogue_target_arrow = this.add.image(-100, 55, "selection_arrow_selected");
+		p2_rogue_target_arrow.name = "p2_rogue_target_arrow";
+		p2_rogue.add(p2_rogue_target_arrow);
 
 		// p2_priest
 		const p2_priest = this.add.container(0, 335);
@@ -384,6 +413,11 @@ export default class Battle extends Phaser.Scene {
 		p2_priest_defend.scaleY = 0.2788076925413643;
 		p2_priest.add(p2_priest_defend);
 
+		// p2_priest_target_arrow
+		const p2_priest_target_arrow = this.add.image(-100, 55, "selection_arrow_selected");
+		p2_priest_target_arrow.name = "p2_priest_target_arrow";
+		p2_priest.add(p2_priest_target_arrow);
+
 		// p2_mage
 		const p2_mage = this.add.container(0, 170);
 		p2_mage.name = "p2_mage";
@@ -413,6 +447,11 @@ export default class Battle extends Phaser.Scene {
 		p2_mage_defend.scaleY = 0.2788076925413643;
 		p2_mage.add(p2_mage_defend);
 
+		// p2_mage_target_arrow
+		const p2_mage_target_arrow = this.add.image(-100, 55, "selection_arrow_selected");
+		p2_mage_target_arrow.name = "p2_mage_target_arrow";
+		p2_mage.add(p2_mage_target_arrow);
+
 		// p2_warrior
 		const p2_warrior = this.add.container(5, 510);
 		p2_warrior.name = "p2_warrior";
@@ -441,6 +480,11 @@ export default class Battle extends Phaser.Scene {
 		p2_warrior_defend.scaleX = 0.2788076925413643;
 		p2_warrior_defend.scaleY = 0.2788076925413643;
 		p2_warrior.add(p2_warrior_defend);
+
+		// p2_warrior_target_arrow
+		const p2_warrior_target_arrow = this.add.image(-100, 55, "selection_arrow_selected");
+		p2_warrior_target_arrow.name = "p2_warrior_target_arrow";
+		p2_warrior.add(p2_warrior_target_arrow);
 
 		// notifications
 		const notifications = this.add.container(10, 10);
@@ -526,6 +570,7 @@ export default class Battle extends Phaser.Scene {
 		p1_RogueCharacterViewComponent.character_sprite = p1_rogue_sprite;
 		p1_RogueCharacterViewComponent.defending = p1_rogue_defend;
 		p1_RogueCharacterViewComponent.acting_arrow = p1_rogue_action_arrow;
+		p1_RogueCharacterViewComponent.targeting_arrow = p1_rogue_target_arrow;
 
 		// p1_rogue_sprite (components)
 		const p1_rogue_spriteObjectBounceAnimation = new ObjectBounceAnimation(p1_rogue_sprite);
@@ -538,6 +583,12 @@ export default class Battle extends Phaser.Scene {
 		p1_rogue_action_arrowObjectBounceAnimation.scaleXDelta = 0.05;
 		p1_rogue_action_arrowObjectBounceAnimation.scaleYDelta = 0;
 
+		// p1_rogue_target_arrow (components)
+		const p1_rogue_target_arrowObjectBounceAnimation = new ObjectBounceAnimation(p1_rogue_target_arrow);
+		p1_rogue_target_arrowObjectBounceAnimation.posDuration = 250;
+		p1_rogue_target_arrowObjectBounceAnimation.scaleXDelta = 0.05;
+		p1_rogue_target_arrowObjectBounceAnimation.scaleYDelta = 0;
+
 		// p1_Priest (components)
 		const p1_PriestCharacterViewComponent = new CharacterViewComponent(p1_Priest);
 		p1_PriestCharacterViewComponent.status_bar = p1_priest_status_bar;
@@ -545,6 +596,7 @@ export default class Battle extends Phaser.Scene {
 		p1_PriestCharacterViewComponent.character_sprite = p1_priest_sprite;
 		p1_PriestCharacterViewComponent.defending = p1_priest_defend;
 		p1_PriestCharacterViewComponent.acting_arrow = p1_priest_action_arrow;
+		p1_PriestCharacterViewComponent.targeting_arrow = p1_priest_target_arrow;
 
 		// p1_priest_sprite (components)
 		const p1_priest_spriteObjectBounceAnimation = new ObjectBounceAnimation(p1_priest_sprite);
@@ -557,6 +609,12 @@ export default class Battle extends Phaser.Scene {
 		p1_priest_action_arrowObjectBounceAnimation.scaleXDelta = 0.05;
 		p1_priest_action_arrowObjectBounceAnimation.scaleYDelta = 0;
 
+		// p1_priest_target_arrow (components)
+		const p1_priest_target_arrowObjectBounceAnimation = new ObjectBounceAnimation(p1_priest_target_arrow);
+		p1_priest_target_arrowObjectBounceAnimation.posDuration = 250;
+		p1_priest_target_arrowObjectBounceAnimation.scaleXDelta = 0.05;
+		p1_priest_target_arrowObjectBounceAnimation.scaleYDelta = 0;
+
 		// p1_Mage (components)
 		const p1_MageCharacterViewComponent = new CharacterViewComponent(p1_Mage);
 		p1_MageCharacterViewComponent.status_bar = p1_mage_status_bar;
@@ -564,6 +622,7 @@ export default class Battle extends Phaser.Scene {
 		p1_MageCharacterViewComponent.character_sprite = p1_mage_sprite;
 		p1_MageCharacterViewComponent.defending = p1_mage_defend;
 		p1_MageCharacterViewComponent.acting_arrow = p1_mage_action_arrow;
+		p1_MageCharacterViewComponent.targeting_arrow = p1_mage_target_arrow;
 
 		// p1_mage_sprite (components)
 		const p1_mage_spriteObjectBounceAnimation = new ObjectBounceAnimation(p1_mage_sprite);
@@ -576,6 +635,12 @@ export default class Battle extends Phaser.Scene {
 		p1_mage_action_arrowObjectBounceAnimation.scaleXDelta = 0.05;
 		p1_mage_action_arrowObjectBounceAnimation.scaleYDelta = 0;
 
+		// p1_mage_target_arrow (components)
+		const p1_mage_target_arrowObjectBounceAnimation = new ObjectBounceAnimation(p1_mage_target_arrow);
+		p1_mage_target_arrowObjectBounceAnimation.posDuration = 250;
+		p1_mage_target_arrowObjectBounceAnimation.scaleXDelta = 0.05;
+		p1_mage_target_arrowObjectBounceAnimation.scaleYDelta = 0;
+
 		// p1_warrior (components)
 		const p1_warriorCharacterViewComponent = new CharacterViewComponent(p1_warrior);
 		p1_warriorCharacterViewComponent.status_bar = p1_warrior_status_bar;
@@ -583,6 +648,7 @@ export default class Battle extends Phaser.Scene {
 		p1_warriorCharacterViewComponent.character_sprite = p1_warrior_sprite;
 		p1_warriorCharacterViewComponent.defending = p1_warrior_defend;
 		p1_warriorCharacterViewComponent.acting_arrow = p1_warrior_action_arrow;
+		p1_warriorCharacterViewComponent.targeting_arrow = p1_warrior_target_arrow;
 
 		// p1_warrior_sprite (components)
 		const p1_warrior_spriteObjectBounceAnimation = new ObjectBounceAnimation(p1_warrior_sprite);
@@ -595,12 +661,19 @@ export default class Battle extends Phaser.Scene {
 		p1_warrior_action_arrowObjectBounceAnimation.scaleXDelta = 0.05;
 		p1_warrior_action_arrowObjectBounceAnimation.scaleYDelta = 0;
 
+		// p1_warrior_target_arrow (components)
+		const p1_warrior_target_arrowObjectBounceAnimation = new ObjectBounceAnimation(p1_warrior_target_arrow);
+		p1_warrior_target_arrowObjectBounceAnimation.posDuration = 250;
+		p1_warrior_target_arrowObjectBounceAnimation.scaleXDelta = 0.05;
+		p1_warrior_target_arrowObjectBounceAnimation.scaleYDelta = 0;
+
 		// p2_rogue (components)
 		const p2_rogueCharacterViewComponent = new CharacterViewComponent(p2_rogue);
 		p2_rogueCharacterViewComponent.status_bar = p2_rogue_status_bar;
 		p2_rogueCharacterViewComponent.gravestone = p2_rogue_gravestone;
 		p2_rogueCharacterViewComponent.character_sprite = p2_rogue_sprite;
 		p2_rogueCharacterViewComponent.defending = p2_rogue_defend;
+		p2_rogueCharacterViewComponent.targeting_arrow = p2_rogue_target_arrow;
 
 		// p2_rogue_sprite (components)
 		const p2_rogue_spriteObjectBounceAnimation = new ObjectBounceAnimation(p2_rogue_sprite);
@@ -608,12 +681,19 @@ export default class Battle extends Phaser.Scene {
 		p2_rogue_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
 		p2_rogue_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
 
+		// p2_rogue_target_arrow (components)
+		const p2_rogue_target_arrowObjectBounceAnimation = new ObjectBounceAnimation(p2_rogue_target_arrow);
+		p2_rogue_target_arrowObjectBounceAnimation.posDuration = 250;
+		p2_rogue_target_arrowObjectBounceAnimation.scaleXDelta = 0.05;
+		p2_rogue_target_arrowObjectBounceAnimation.scaleYDelta = 0;
+
 		// p2_priest (components)
 		const p2_priestCharacterViewComponent = new CharacterViewComponent(p2_priest);
 		p2_priestCharacterViewComponent.status_bar = p2_priest_status_bar;
 		p2_priestCharacterViewComponent.gravestone = p2_priest_gravestone;
 		p2_priestCharacterViewComponent.character_sprite = p2_priest_sprite;
 		p2_priestCharacterViewComponent.defending = p2_priest_defend;
+		p2_priestCharacterViewComponent.targeting_arrow = p2_priest_target_arrow;
 
 		// p2_priest_sprite (components)
 		const p2_priest_spriteObjectBounceAnimation = new ObjectBounceAnimation(p2_priest_sprite);
@@ -621,12 +701,19 @@ export default class Battle extends Phaser.Scene {
 		p2_priest_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
 		p2_priest_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
 
+		// p2_priest_target_arrow (components)
+		const p2_priest_target_arrowObjectBounceAnimation = new ObjectBounceAnimation(p2_priest_target_arrow);
+		p2_priest_target_arrowObjectBounceAnimation.posDuration = 250;
+		p2_priest_target_arrowObjectBounceAnimation.scaleXDelta = 0.05;
+		p2_priest_target_arrowObjectBounceAnimation.scaleYDelta = 0;
+
 		// p2_mage (components)
 		const p2_mageCharacterViewComponent = new CharacterViewComponent(p2_mage);
 		p2_mageCharacterViewComponent.status_bar = p2_mage_status_bar;
 		p2_mageCharacterViewComponent.gravestone = p2_mage_gravestone;
 		p2_mageCharacterViewComponent.character_sprite = p2_mage_sprite;
 		p2_mageCharacterViewComponent.defending = p2_mage_defend;
+		p2_mageCharacterViewComponent.targeting_arrow = p2_mage_target_arrow;
 
 		// p2_mage_sprite (components)
 		const p2_mage_spriteObjectBounceAnimation = new ObjectBounceAnimation(p2_mage_sprite);
@@ -634,18 +721,31 @@ export default class Battle extends Phaser.Scene {
 		p2_mage_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
 		p2_mage_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
 
+		// p2_mage_target_arrow (components)
+		const p2_mage_target_arrowObjectBounceAnimation = new ObjectBounceAnimation(p2_mage_target_arrow);
+		p2_mage_target_arrowObjectBounceAnimation.posDuration = 250;
+		p2_mage_target_arrowObjectBounceAnimation.scaleXDelta = 0.05;
+		p2_mage_target_arrowObjectBounceAnimation.scaleYDelta = 0;
+
 		// p2_warrior (components)
 		const p2_warriorCharacterViewComponent = new CharacterViewComponent(p2_warrior);
 		p2_warriorCharacterViewComponent.status_bar = p2_warrior_status_bar;
 		p2_warriorCharacterViewComponent.gravestone = p2_warrior_gravestone;
 		p2_warriorCharacterViewComponent.character_sprite = p2_warrior_sprite;
 		p2_warriorCharacterViewComponent.defending = p2_warrior_defend;
+		p2_warriorCharacterViewComponent.targeting_arrow = p2_warrior_target_arrow;
 
 		// p2_warrior_sprite (components)
 		const p2_warrior_spriteObjectBounceAnimation = new ObjectBounceAnimation(p2_warrior_sprite);
 		p2_warrior_spriteObjectBounceAnimation.active = false;
 		p2_warrior_spriteObjectBounceAnimation.posEase = "Expo.easeIn";
 		p2_warrior_spriteObjectBounceAnimation.scaleEase = "Expo.easeIn";
+
+		// p2_warrior_target_arrow (components)
+		const p2_warrior_target_arrowObjectBounceAnimation = new ObjectBounceAnimation(p2_warrior_target_arrow);
+		p2_warrior_target_arrowObjectBounceAnimation.posDuration = 250;
+		p2_warrior_target_arrowObjectBounceAnimation.scaleXDelta = 0.05;
+		p2_warrior_target_arrowObjectBounceAnimation.scaleYDelta = 0;
 
 		// action_scrollview (components)
 		const action_scrollviewScrollViewComponent = ScrollViewComponent.getComponent(action_scrollview);
@@ -672,7 +772,9 @@ export default class Battle extends Phaser.Scene {
 		game_managerGameManagerComponent.action_menu = action_menu;
 		game_managerGameManagerComponent.target_menu = target_menu;
 
-		this.game_manager = game_managerGameManagerComponent;
+		this.characterManager = character_managerCharacterManagerComponent;
+		this.gameManager = game_managerGameManagerComponent;
+
 		this.p1_warrior_sprite = p1_warrior_sprite;
 		this.p2_warrior_sprite = p2_warrior_sprite;
 
@@ -730,7 +832,7 @@ export default class Battle extends Phaser.Scene {
 	//x, y are the placement of the scrollview container, and width/height are as well - so I'm pretty sure I can eventually cut these out.
 	//width used in beginning of for loop only works because container width is pretty much equal to item width, I'd prefer to use the item properties later.()
 
-	createActionScrollViewContent(scene, x, y, width, height, actions) {
+	createActionScrollViewContent(scene, width, height, actions) {
 
 		const content = scene.rexUI.add.sizer({
 			orientation: 1, // vertical
@@ -752,59 +854,75 @@ export default class Battle extends Phaser.Scene {
 		return content;
 	}
 
-	updateActionScrollViewContent(scene, x, y, width, height, items) {
+	updateActionScrollViewContent(scene, width, height, items) {
 		const content = scene.rexUI.add.sizer({
 			orientation: 1, // vertical
 			space: { item: 5 }
 		});
 
 		for (let i = 0; i < items.length; i += 1) {
-
-
-			let actionItem = new ActionItem(scene, -width / 2.075, -(25), items[i]); //HARDCODED - Half of the height of the ActionItem Prefab
+			let actionItem = new ActionItem(scene, -width / 2.075, -(25)); //HARDCODED - Half of the height of the ActionItem Prefab
+			actionItem.setActionName(items[i]);
 			actionItem.setSize(actionItem.width, actionItem.height);
-			const testAction = scene.add.container(0, 0, [actionItem]).setSize(actionItem.width, actionItem.height);
-
-			content.add(
-				testAction
-			);
+			const actionContainer = scene.add.container(0, 0, [actionItem]).setSize(actionItem.width, actionItem.height);
+			content.add(actionContainer);
 		}
 
 		return content;
 	}
 
-	createTargetScrollViewContent(scene, x, y, width, height) {
-
-		const content = scene.rexUI.add.sizer({
-			orientation: 1, // vertical
-			space: { item: 5 }
-		});
-
-		let items = ['Attack', 'Defend', 'Heal', 'Magic Attack', 'Multi Attack'];
-
-		for (let i = 0; i < items.length; i += 1) {
-			let targetItem = new TargetItem(scene, -width / 2.0, -(25)); //HARDCODED - Half of the height of the TargetItem Prefab
-			targetItem.setSize(targetItem.width, targetItem.height);
-			const testAction = scene.add.container(0, 0, [targetItem]).setSize(targetItem.width, targetItem.height);
-
-			content.add(
-				testAction
-			);
-		}
-
-		return content;
+	clearTargetScrollView() {
+		this.updateTargetScrollViewContent(this, 0, 0, []);
 	}
 
 	//TODO: Update to manage dynamic targets from action object
-	updateTargetScrollViewContent(scene) {
+	updateTargetScrollViewContent(scene, width, height, items) {
+
 		const content = scene.rexUI.add.sizer({
 			orientation: 1,
 			space: { item: 5 }
 		});
+
+		for (let i = 0; i < items.length; i += 1) {
+			let targetItem = new TargetItem(scene);
+			targetItem.x = -targetItem.width / 2;
+			targetItem.y = -targetItem.height / 2;
+
+			targetItem.setTargetModel(items[i]);
+			targetItem.setSize(targetItem.width, targetItem.height);
+			const targetContainer = scene.add.container(0, 0, [targetItem]).setSize(targetItem.width, targetItem.height);
+			content.add(targetContainer);
+		}
+
+		//if we have an empty items array, we know we just need to return a clear panel.
+		if (items.length > 0) {
+			//add back arrow
+			let backItem = new TargetItem(scene);
+			backItem.x = -backItem.width / 2;
+			backItem.y = -backItem.height / 2;
+			backItem.setAsBackItem();
+			backItem.setSize(backItem.width, backItem.height);
+			const backContainer = scene.add.container(0, 0, [backItem]).setSize(backItem.width, backItem.height);
+			content.add(backContainer);
+		}
 		return content;
 	}
 
-	createQueueHistoryScrollViewContent(scene, x, y, width, height) {
+	createTargetScrollViewContent(scene, width, height) {
+
+		const content = scene.rexUI.add.sizer({
+			orientation: 1, // vertical
+			space: { item: 5 }
+		});
+
+
+
+		return content;
+	}
+
+
+
+	createQueueHistoryScrollViewContent(scene, width, height) {
 
 		const content = scene.rexUI.add.sizer({
 			orientation: 1, // vertical
@@ -828,7 +946,7 @@ export default class Battle extends Phaser.Scene {
 	}
 
 
-	createQueueNextScrollViewContent(scene, x, y, width, height) {
+	createQueueNextScrollViewContent(scene, width, height) {
 
 		const content = scene.rexUI.add.sizer({
 			orientation: 1, // vertical
@@ -889,7 +1007,7 @@ export default class Battle extends Phaser.Scene {
 			height: height,
 			background: background,
 			panel: {
-				child: contentCreateFunction(this, x, y, width, height),
+				child: contentCreateFunction(this, width, height),
 				mask: { mask: true, padding: 1 },
 				childOrigin0: true
 			},
@@ -929,6 +1047,7 @@ export default class Battle extends Phaser.Scene {
 			case 'target_scrollview': {
 				panel.name = 'target_scrollview';
 				this.targetPanel = panel;
+				this.attachPanelDisabler(this, this.targetPanel);
 				break;
 			}
 			default: {
@@ -945,12 +1064,8 @@ export default class Battle extends Phaser.Scene {
 
 
 	updateScrollView(name, x, y, width, height, items) {
-		let background = null;
-		if (!items || items.length <= 0) {
-			background = this.rexUI.add.roundRectangle(0, 0, 0, 0, 6, 0x777777);
-		} else {
-			background = this.rexUI.add.roundRectangle(0, 0, 0, 0, 6, 0xeeeeee);
-		}
+		let background = this.rexUI.add.roundRectangle(0, 0, 0, 0, 6, 0xeeeeee);
+
 		const track = this.rexUI.add.roundRectangle(0, 0, 4, height, 2, 0x666666);
 		const thumb = this.rexUI.add.roundRectangle(0, 0, 8, 24, 6, 0x333333);
 
@@ -966,13 +1081,11 @@ export default class Battle extends Phaser.Scene {
 				break;
 			}
 			case 'action_scrollview': {
-				this.actionPanel.destroy();
 				contentCreateFunction = this.updateActionScrollViewContent;
 
 				break;
 			}
 			case 'target_scrollview': {
-				this.targetPanel.destroy();
 				contentCreateFunction = this.updateTargetScrollViewContent;
 				break;
 			}
@@ -987,7 +1100,7 @@ export default class Battle extends Phaser.Scene {
 			height: height,
 			background: background,
 			panel: {
-				child: contentCreateFunction(this, x, y, width, height, items),
+				child: contentCreateFunction(this, width, height, items),
 				mask: { mask: true, padding: 1 },
 				childOrigin0: true
 			},
@@ -1021,14 +1134,17 @@ export default class Battle extends Phaser.Scene {
 				break;
 			}
 			case 'action_scrollview': {
+				this.actionPanel.destroy();
 				panel.name = 'action_scrollview';
 				this.actionPanel = panel;
 				this.attachPanelDisabler(this, this.actionPanel);
 				break;
 			}
 			case 'target_scrollview': {
+				this.targetPanel.destroy();
 				panel.name = 'target_scrollview';
 				this.targetPanel = panel;
+				this.attachPanelDisabler(this, this.targetPanel);
 				break;
 			}
 			default: {
@@ -1106,7 +1222,7 @@ export default class Battle extends Phaser.Scene {
 			}
 		};
 
-		// 🔧 FIXED: use panel's own position, origin, and viewport size
+		// FIXED: use panel's own position, origin, and viewport size
 		function syncOverlayToPanel() {
 			// These should represent the viewport size after panel.layout()
 			let w = panel.width;
@@ -1137,10 +1253,11 @@ export default class Battle extends Phaser.Scene {
 			scrim.setSize(w, h);
 			blocker.setSize(w, h);
 
-			console.log(x, y);
 		}
 
 		panel.disablePanel = () => {
+			console.log("DISABLING PANEL");
+			console.log(panel);
 			syncOverlayToPanel();
 			setChildrenInput(false);
 			scrim.setVisible(true);
@@ -1148,6 +1265,8 @@ export default class Battle extends Phaser.Scene {
 		};
 
 		panel.enablePanel = () => {
+			console.log("ENABLING PANEL");
+			console.log(panel);
 			syncOverlayToPanel();
 			setChildrenInput(true);
 			scrim.setVisible(false);

@@ -29,7 +29,7 @@
                     "originY": 0,
                     "isFilled": true,
                     "fillColor": "#ffffff",
-                    "width": 435,
+                    "width": 425,
                     "height": 50
                 },
                 {
@@ -38,7 +38,7 @@
                     "label": "target_name",
                     "displayName": "Target Name",
                     "useGameObjectName": true,
-                    "x": 270,
+                    "x": 252,
                     "y": 25,
                     "originX": 0.5,
                     "originY": 0.5,
@@ -78,6 +78,40 @@
                     "scaleY": 0.5,
                     "originX": 0,
                     "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "f221e8b3-711a-4fbd-a718-e24eec4672cd",
+                    "label": "back_arrow",
+                    "displayName": "Back Arrow",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "selection_arrow"
+                    },
+                    "x": 13,
+                    "y": 5,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "originX": 0,
+                    "originY": 0,
+                    "flipX": true
+                },
+                {
+                    "type": "Image",
+                    "id": "e6926979-03e4-4da5-9e27-8a548f67ad27",
+                    "label": "back_hover_arrow",
+                    "displayName": "Target Hover Arrow",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "selection_arrow_pressed"
+                    },
+                    "x": 13,
+                    "y": 5,
+                    "scaleX": 0.5,
+                    "scaleY": 0.5,
+                    "originX": 0,
+                    "originY": 0,
+                    "flipX": true
                 }
             ]
         }
@@ -104,7 +138,7 @@
             "name": "width",
             "label": "Width",
             "tooltip": "",
-            "defValue": 435,
+            "defValue": 425,
             "customDefinition": false,
             "type": {
                 "id": "number"

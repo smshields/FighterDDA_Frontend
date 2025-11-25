@@ -61,11 +61,8 @@ export default class ScrollViewComponent extends UserComponent {
 	}
 
 	updateScrollPanel(items) {
-		console.log(items);
 		const worldTransform = new Phaser.GameObjects.Components.TransformMatrix();
 		this.viewport_background.getWorldTransformMatrix(worldTransform);
-
-		const bounds = this.viewport_background.getBounds();
 
 		// center in world space (independent of origin)
 		const centerX = this.viewport_x + (this.viewport_width / 2);

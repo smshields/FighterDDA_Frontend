@@ -111,7 +111,7 @@ export default class CharacterManagerComponent extends UserComponent {
 		let characterUI = null;
 		//get by team
 		if(character.playerNum == 1){
-			switch(character.name){
+			switch(character.characterName.toLowerCase()){
 				case 'warrior':{
 					characterUI = this.p1_warrior_ui;
 					break;
@@ -129,11 +129,11 @@ export default class CharacterManagerComponent extends UserComponent {
 					break;
 				}
 				default:{
-					throw new Error('Invalid character name! ' + character.name);
+					throw new Error('Invalid character name! ' + character.characterName);
 				}
 			}
 		} else {
-			switch(character.name){
+			switch(character.characterName.toLowerCase()){
 				case 'warrior':{
 					characterUI = this.p2_warrior_ui;
 					break;
@@ -151,7 +151,7 @@ export default class CharacterManagerComponent extends UserComponent {
 					break;
 				}
 				default:{
-					throw new Error('Invalid character name! ' + character.name);
+					throw new Error('Invalid character name! ' + character.characterName);
 				}
 			}
 		}
@@ -193,10 +193,7 @@ export default class CharacterManagerComponent extends UserComponent {
 				this.p2_warrior_model,
 				this.p2_rogue_model,
 				this.p2_priest_model
-			]
-
-			console.log(this.characters);
-			
+			]			
 		}
 	}
 

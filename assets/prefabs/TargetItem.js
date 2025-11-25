@@ -1,5 +1,6 @@
 
 // You can write more code here
+//NOTE: You MUST call set methods for item contents after instantiation.
 
 /* START OF COMPILED CODE */
 
@@ -14,14 +15,14 @@ export default class TargetItem extends Phaser.GameObjects.Container {
 		this.name = "target_item";
 
 		// target_name_background
-		const target_name_background = scene.add.rectangle(0, 0, 435, 50);
+		const target_name_background = scene.add.rectangle(0, 0, 425, 50);
 		target_name_background.name = "target_name_background";
 		target_name_background.setOrigin(0, 0);
 		target_name_background.isFilled = true;
 		this.add(target_name_background);
 
 		// target_name
-		const target_name = scene.add.bitmapText(270, 25, "vcr_osd_mono_bold", "Target\n");
+		const target_name = scene.add.bitmapText(252, 25, "vcr_osd_mono_bold", "Target\n");
 		target_name.name = "target_name";
 		target_name.setOrigin(0.5, 0.5);
 		target_name.text = "Target\n";
@@ -45,24 +46,225 @@ export default class TargetItem extends Phaser.GameObjects.Container {
 		target_hover_arrow.setOrigin(0, 0);
 		this.add(target_hover_arrow);
 
+		// back_arrow
+		const back_arrow = scene.add.image(13, 5, "selection_arrow");
+		back_arrow.name = "back_arrow";
+		back_arrow.scaleX = 0.5;
+		back_arrow.scaleY = 0.5;
+		back_arrow.setOrigin(0, 0);
+		back_arrow.flipX = true;
+		this.add(back_arrow);
+
+		// back_hover_arrow
+		const back_hover_arrow = scene.add.image(13, 5, "selection_arrow_pressed");
+		back_hover_arrow.name = "back_hover_arrow";
+		back_hover_arrow.scaleX = 0.5;
+		back_hover_arrow.scaleY = 0.5;
+		back_hover_arrow.setOrigin(0, 0);
+		back_hover_arrow.flipX = true;
+		this.add(back_hover_arrow);
+
 		/* START-USER-CTR-CODE */
+		this.targetModel = {};
+
 		let bounds = this.getBounds();
 		let hitZone = this.scene.add.zone(0, 0, bounds.width, bounds.height)
 			.setOrigin(0)
-  			.setInteractive({ useHandCursor: true });
+			.setInteractive({ useHandCursor: true });
 		this.add(hitZone);
 
-		hitZone.on('pointerover', () => target_name_background.fillColor = 0x777777);
-		hitZone.on('pointerout', () => target_name_background.fillColor = 0xffffff);
+		this.target_hover_arrow = target_hover_arrow;
+		this.target_arrow = target_arrow;
+		this.target_name = target_name;
+		this.target_name_background = target_name_background;
+		this.back_arrow = back_arrow;
+		this.back_hover_arrow = back_hover_arrow;
+
+		hitZone.on('pointerover', this.onHover);
+		hitZone.on('pointerout', this.onLeaveHover);
+		hitZone.on('pointerdown', this.onPointerDown);
+		hitZone.on('pointerup', this.onPointerUp);
+
+		//initialize with no mouse input
+		this.target_arrow.setActive(true);
+		this.target_arrow.setVisible(true);
+		this.target_hover_arrow.setActive(false);
+		this.target_hover_arrow.setVisible(false);
+		this.target_name_background.fillColor = 0xffffff;
+
+		//default: no back arrow
+		this.back_arrow.setActive(false);
+		this.back_arrow.setVisible(false);
+		this.back_hover_arrow.setActive(false);
+		this.back_hover_arrow.setVisible(false);
+
+		this.isBackArrow = false;
+
+		//use to disable unwanted events
+		this.isDisabled = false;
+
+		this.characterManager = this.scene.characterManager;
+		this.gameManager = this.scene.gameManager
+		this.characterUI = {};
+
+		this.isMulti = false;
+		this.multiTargetModels = [];
+		this.multiTargetModelUIs = [];
+
 		/* END-USER-CTR-CODE */
 	}
 
 	/** @type {number} */
 	height = 50;
 	/** @type {number} */
-	width = 435;
+	width = 425;
 
 	/* START-USER-CODE */
+	//Bad naming, also does some setup. Perhaps "init" later on.
+	setTargetModel(targetModel) {
+		this.targetModel = targetModel;
+		this.setTargetNameText(this.targetModel);
+		this.characterUI = this.scene.characterManager.lookupCharacterUIFromModel(this.targetModel).characterViewComponent;
+	}
+
+	//Contains information about the action happening, used to set up multi/single configurations
+	setActionModel(actionModel) {
+
+
+	}
+
+	setTargetNameText() {
+		this.targetName = "P" + this.targetModel.playerNum + " " + this.targetModel.characterName;
+		if (this.targetModel.playerNum != 0 && this.targetModel.characterName != "") {
+			this.target_name.text = this.targetName;
+		} else {
+			this.target_name.text = "UNDEFINED";
+		}
+	}
+
+	setAsMultiItem(multiTargetModels) {
+		this.multiTargetModels = multiTargetModels;
+		this.isMulti = true;
+
+		//check if it is allied or enemy
+
+		//set text to Allies or Enemies
+
+		//Update multiTargetModelUIs for UI handling
+
+	}
+
+	//instantiates the item as a back arrow, returning to action selection
+	setAsBackItem() {
+		this.isBackArrow = true;
+
+		this.target_name.text = "BACK";
+
+		//enable back arrow
+		this.back_arrow.setActive(true);
+		this.back_arrow.setVisible(true);
+
+		//disable normal arrow
+		this.target_arrow.setActive(false);
+		this.target_arrow.setVisible(false);
+		this.target_hover_arrow.setActive(false);
+		this.target_hover_arrow.setVisible(false);
+
+	}
+
+	onPointerDown() {
+		let targetItem = this.parentContainer
+		console.log("REACHED POINTER DOWN");
+
+		if (targetItem.isBackArrow) {
+			targetItem.gameManager.returnToActionSelect();
+
+		}
+	}
+
+	onPointerUp() {
+		console.log("REACHED POINTER UP");
+	}
+
+	onHover() {
+
+		//handle references to refer to the container UI
+		let targetItem = this.parentContainer;
+
+
+		if (!targetItem.isDisabled && !targetItem.isBackArrow) {
+			targetItem.target_arrow.setActive(false);
+			targetItem.target_arrow.setVisible(false);
+			targetItem.target_hover_arrow.setActive(true);
+			targetItem.target_hover_arrow.setVisible(true);
+			targetItem.target_name_background.fillColor = 0x777777;
+
+			if (targetItem.isMulti) {
+				//update arrows for all valid targets
+				for (let characterUI of targetItem.multiTargetModels) {
+					characterUI.enableTargetingArrow();
+				}
+			} else {
+				//update arrow for single valid target
+				targetItem.characterUI.enableTargetingArrow();
+			}
+
+		}
+
+		if (targetItem.isBackArrow) {
+			//disable back arrow
+			targetItem.back_arrow.setActive(false);
+			targetItem.back_arrow.setVisible(false);
+
+			//enable back hover arrow
+			targetItem.back_hover_arrow.setActive(true);
+			targetItem.back_hover_arrow.setVisible(true);
+
+			//disable normal arrow (safety, probably can remove)
+			targetItem.target_arrow.setActive(false);
+			targetItem.target_arrow.setVisible(false);
+			targetItem.target_hover_arrow.setActive(false);
+			targetItem.target_hover_arrow.setVisible(false);
+		}
+	}
+
+	onLeaveHover() {
+		let targetItem = this.parentContainer;
+
+		if (!targetItem.isDisabled && !targetItem.isBackArrow) {
+			targetItem.target_arrow.setActive(true);
+			targetItem.target_arrow.setVisible(true);
+			targetItem.target_hover_arrow.setActive(false);
+			targetItem.target_hover_arrow.setVisible(false);
+			targetItem.target_name_background.fillColor = 0xffffff;
+
+			if (targetItem.isMulti) {
+				//update arrows for all valid targets
+				for (let characterUI of targetItem.multiTargetModels) {
+					characterUI.disableTargetingArrow();
+				}
+			} else {
+				//update arrow for single valid target
+				targetItem.characterUI.disableTargetingArrow();
+			}
+		}
+
+		if (targetItem.isBackArrow) {
+			//enable back arrow
+			targetItem.back_arrow.setActive(true);
+			targetItem.back_arrow.setVisible(true);
+
+			//disable back hover arrow
+			targetItem.back_hover_arrow.setActive(false);
+			targetItem.back_hover_arrow.setVisible(false);
+
+			//disable normal arrow (safety, probably can remove)
+			targetItem.target_arrow.setActive(false);
+			targetItem.target_arrow.setVisible(false);
+			targetItem.target_hover_arrow.setActive(false);
+			targetItem.target_hover_arrow.setVisible(false);
+		}
+	}
 
 	// Write your code here.
 

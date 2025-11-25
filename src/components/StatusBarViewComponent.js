@@ -52,7 +52,6 @@ export default class StatusBarViewComponent extends UserComponent {
 	start(){
 		// === References ===
 		this.gameObject.statusBarViewComponent = this;
-		console.log("reached statusBarViewComponent start");
 	}
 
 	updateCharacterName(characterName){

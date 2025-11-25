@@ -351,6 +351,17 @@
                         "id": "object-var",
                         "expressionType": "Phaser.GameObjects.GameObject"
                     }
+                },
+                {
+                    "name": "targeting_arrow",
+                    "label": "Targeting Arrow",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
                 }
             ]
         },

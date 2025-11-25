@@ -34,6 +34,9 @@ export default class CharacterViewComponent extends UserComponent {
 		/** @type {Phaser.GameObjects.GameObject} */
 		this.acting_arrow = null;
 
+		/** @type {Phaser.GameObjects.GameObject} */
+		this.targeting_arrow = null;
+
 		// === Internal Properties ===
 
 		this.characterModel = null;
@@ -63,6 +66,7 @@ export default class CharacterViewComponent extends UserComponent {
 		this.updateActionBar();
 		this.addCharacterGlow(this.characterModel.playerNum);
 		this.updateActingArrow();
+		this.disableTargetingArrow();
 
 	}
 
@@ -87,10 +91,20 @@ export default class CharacterViewComponent extends UserComponent {
 
 	updateActingArrow() {
 		let isActing = (this.characterModel.isSelectingAction && this.acting_arrow);
-		if (this.acting_arrow) {
+ 		if (this.acting_arrow) {
 			this.acting_arrow.setActive(isActing);
 			this.acting_arrow.setVisible(isActing);
 		}
+	}
+
+	enableTargetingArrow() {
+		this.targeting_arrow.setActive(true);
+		this.targeting_arrow.setVisible(true);
+	}
+
+	disableTargetingArrow() {
+		this.targeting_arrow.setActive(false);
+		this.targeting_arrow.setVisible(false);
 	}
 
 	updateHealthBar() {

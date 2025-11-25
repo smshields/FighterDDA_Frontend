@@ -50,6 +50,8 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 		this.add(selection_arrow_selected);
 
 		/* START-USER-CTR-CODE */
+		this.actionName = "";
+
 		let bounds = this.getBounds();
 		let hitZone = this.scene.add.zone(0, 0, bounds.width, bounds.height)
 			.setOrigin(0)
@@ -60,17 +62,13 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 		this.action_arrow = action_arrow;
 		this.action_selected_arrow = selection_arrow_selected;
 		this.action_background = action_name_background;
+		this.action_name = action_name;
 
 		//TODO: This is weird, because of the scope change I've got to lookup the parent within the method.
 		hitZone.on('pointerover', this.onHover);
 		hitZone.on('pointerout', this.onLeaveHover);
 		hitZone.on('pointerdown', this.onPointerDown);
 		hitZone.on('pointerup', this.onPointerUp);
-
-		this.actionName = actionName;
-		if (this.actionName) {
-			action_name.text = this.lookupReadableAction(this.actionName);
-		}
 
 		//initialize with no mouse input
 		this.action_arrow.setActive(true);
@@ -93,8 +91,13 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 
 	/* START-USER-CODE */
 
-	start() {
-
+	setActionName(actionName) {
+		this.actionName = actionName;
+		if (this.actionName) {
+			this.action_name.text = this.lookupReadableAction(this.actionName);
+		} else {
+			this.action_name.text = "UNDEFINED";
+		}
 	}
 
 	onPointerDown() {
@@ -117,14 +120,11 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 		this.parentContainer.action_background.fillColor = 0x777777;
 		//Nasty navigation through parents to get action view
 
-		let game_manager = this.scene.game_manager;
+		let gameManager = this.scene.gameManager;
 
-		this.scene.actionPanel.disablePanel();
 		this.isDisabled = true;
 
-		console.log(this.scene.actionPanel);
-
-		game_manager.actionSelected(this.actionName);
+		gameManager.actionSelected(this.parentContainer.actionName);
 
 	}
 
@@ -150,7 +150,6 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 			this.parentContainer.action_hover_arrow.setVisible(false);
 			this.parentContainer.action_background.fillColor = 0xffffff;
 
-			console.log("REACHED HOVER");
 		}
 	}
 

@@ -5,7 +5,7 @@
     "currentActionMeter": 100,
     "maxActionMeter": 100,
     
-    "isDead": true,
+    "isDead": false,
     "isDefending": true,
     "isReadyForPlayerAction": false,
     "isSelectingAction": false,

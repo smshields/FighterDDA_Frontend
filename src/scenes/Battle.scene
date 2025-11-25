@@ -283,6 +283,7 @@
                     "CharacterViewComponent.character_sprite": "p1_rogue_sprite",
                     "CharacterViewComponent.defending": "p1_rogue_defend",
                     "CharacterViewComponent.acting_arrow": "p1_rogue_action_arrow",
+                    "CharacterViewComponent.targeting_arrow": "p1_rogue_target_arrow",
                     "x": -220,
                     "y": -105,
                     "list": [
@@ -362,6 +363,25 @@
                             },
                             "x": 410,
                             "y": 50
+                        },
+                        {
+                            "type": "Image",
+                            "id": "15ce852a-8359-4084-90ed-b55574adda9c",
+                            "label": "p1_rogue_target_arrow",
+                            "displayName": "P1 Rogue Target Arrow",
+                            "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.posDuration": 250,
+                            "ObjectBounceAnimation.scaleXDelta": 0.05,
+                            "ObjectBounceAnimation.scaleYDelta": 0,
+                            "texture": {
+                                "key": "selection_arrow_selected"
+                            },
+                            "x": 620,
+                            "y": 55,
+                            "flipX": true
                         }
                     ]
                 },
@@ -379,6 +399,7 @@
                     "CharacterViewComponent.character_sprite": "p1_priest_sprite",
                     "CharacterViewComponent.defending": "p1_priest_defend",
                     "CharacterViewComponent.acting_arrow": "p1_priest_action_arrow",
+                    "CharacterViewComponent.targeting_arrow": "p1_priest_target_arrow",
                     "x": -220,
                     "y": 230,
                     "list": [
@@ -463,6 +484,25 @@
                             },
                             "x": 405,
                             "y": 55
+                        },
+                        {
+                            "type": "Image",
+                            "id": "d0cbe52b-942a-46cf-b220-eaa93e07e3e7",
+                            "label": "p1_priest_target_arrow",
+                            "displayName": "P1 Priest Target Arrow",
+                            "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.posDuration": 250,
+                            "ObjectBounceAnimation.scaleXDelta": 0.05,
+                            "ObjectBounceAnimation.scaleYDelta": 0,
+                            "texture": {
+                                "key": "selection_arrow_selected"
+                            },
+                            "x": 620,
+                            "y": 55,
+                            "flipX": true
                         }
                     ]
                 },
@@ -480,6 +520,7 @@
                     "CharacterViewComponent.character_sprite": "p1_mage_sprite",
                     "CharacterViewComponent.defending": "p1_mage_defend",
                     "CharacterViewComponent.acting_arrow": "p1_mage_action_arrow",
+                    "CharacterViewComponent.targeting_arrow": "p1_mage_target_arrow",
                     "x": -220,
                     "y": 65,
                     "list": [
@@ -559,6 +600,25 @@
                             },
                             "x": 405,
                             "y": 50
+                        },
+                        {
+                            "type": "Image",
+                            "id": "fa7f5bd6-bfc6-47c1-a076-aa4985a9f044",
+                            "label": "p1_mage_target_arrow",
+                            "displayName": "P1 Mage Target Arrow",
+                            "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.posDuration": 250,
+                            "ObjectBounceAnimation.scaleXDelta": 0.05,
+                            "ObjectBounceAnimation.scaleYDelta": 0,
+                            "texture": {
+                                "key": "selection_arrow_selected"
+                            },
+                            "x": 620,
+                            "y": 55,
+                            "flipX": true
                         }
                     ]
                 },
@@ -576,6 +636,7 @@
                     "CharacterViewComponent.character_sprite": "p1_warrior_sprite",
                     "CharacterViewComponent.defending": "p1_warrior_defend",
                     "CharacterViewComponent.acting_arrow": "p1_warrior_action_arrow",
+                    "CharacterViewComponent.targeting_arrow": "p1_warrior_target_arrow",
                     "x": -220,
                     "y": 405,
                     "list": [
@@ -656,6 +717,25 @@
                             },
                             "x": 405,
                             "y": 55
+                        },
+                        {
+                            "type": "Image",
+                            "id": "e304d8e7-faf3-4b82-a84a-bc563be12a63",
+                            "label": "p1_warrior_target_arrow",
+                            "displayName": "P1 Warrior Target Arrow",
+                            "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.posDuration": 250,
+                            "ObjectBounceAnimation.scaleXDelta": 0.05,
+                            "ObjectBounceAnimation.scaleYDelta": 0,
+                            "texture": {
+                                "key": "selection_arrow_selected"
+                            },
+                            "x": 620,
+                            "y": 55,
+                            "flipX": true
                         }
                     ]
                 }
@@ -683,6 +763,7 @@
                     "CharacterViewComponent.gravestone": "p2_rogue_gravestone",
                     "CharacterViewComponent.character_sprite": "p2_rogue_sprite",
                     "CharacterViewComponent.defending": "p2_rogue_defend",
+                    "CharacterViewComponent.targeting_arrow": "p2_rogue_target_arrow",
                     "list": [
                         {
                             "type": "Image",
@@ -740,6 +821,24 @@
                             "y": 75,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643
+                        },
+                        {
+                            "type": "Image",
+                            "id": "20899c64-da1b-48a4-b59b-9825dc2b1f0d",
+                            "label": "p2_rogue_target_arrow",
+                            "displayName": "P2 Rogue Target Arrow",
+                            "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.posDuration": 250,
+                            "ObjectBounceAnimation.scaleXDelta": 0.05,
+                            "ObjectBounceAnimation.scaleYDelta": 0,
+                            "texture": {
+                                "key": "selection_arrow_selected"
+                            },
+                            "x": -100,
+                            "y": 55
                         }
                     ]
                 },
@@ -756,6 +855,7 @@
                     "CharacterViewComponent.gravestone": "p2_priest_gravestone",
                     "CharacterViewComponent.character_sprite": "p2_priest_sprite",
                     "CharacterViewComponent.defending": "p2_priest_defend",
+                    "CharacterViewComponent.targeting_arrow": "p2_priest_target_arrow",
                     "y": 335,
                     "list": [
                         {
@@ -820,6 +920,24 @@
                             "y": 75,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643
+                        },
+                        {
+                            "type": "Image",
+                            "id": "b6b8d490-5b6c-40e6-8439-2f03a7c96d72",
+                            "label": "p2_priest_target_arrow",
+                            "displayName": "P2 Priest Target Arrow",
+                            "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.posDuration": 250,
+                            "ObjectBounceAnimation.scaleXDelta": 0.05,
+                            "ObjectBounceAnimation.scaleYDelta": 0,
+                            "texture": {
+                                "key": "selection_arrow_selected"
+                            },
+                            "x": -100,
+                            "y": 55
                         }
                     ]
                 },
@@ -836,6 +954,7 @@
                     "CharacterViewComponent.gravestone": "p2_mage_gravestone",
                     "CharacterViewComponent.character_sprite": "p2_mage_sprite",
                     "CharacterViewComponent.defending": "p2_mage_defend",
+                    "CharacterViewComponent.targeting_arrow": "p2_mage_target_arrow",
                     "y": 170,
                     "list": [
                         {
@@ -894,6 +1013,24 @@
                             "y": 75,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643
+                        },
+                        {
+                            "type": "Image",
+                            "id": "c7fc8de5-3c9e-48f0-9494-d50fba714e93",
+                            "label": "p2_mage_target_arrow",
+                            "displayName": "P2 Mage Target Arrow",
+                            "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.posDuration": 250,
+                            "ObjectBounceAnimation.scaleXDelta": 0.05,
+                            "ObjectBounceAnimation.scaleYDelta": 0,
+                            "texture": {
+                                "key": "selection_arrow_selected"
+                            },
+                            "x": -100,
+                            "y": 55
                         }
                     ]
                 },
@@ -910,6 +1047,7 @@
                     "CharacterViewComponent.gravestone": "p2_warrior_gravestone",
                     "CharacterViewComponent.character_sprite": "p2_warrior_sprite",
                     "CharacterViewComponent.defending": "p2_warrior_defend",
+                    "CharacterViewComponent.targeting_arrow": "p2_warrior_target_arrow",
                     "x": 5,
                     "y": 510,
                     "list": [
@@ -970,6 +1108,24 @@
                             "y": 70,
                             "scaleX": 0.2788076925413643,
                             "scaleY": 0.2788076925413643
+                        },
+                        {
+                            "type": "Image",
+                            "id": "047e695d-e97b-4453-9bf4-a46b76c0c038",
+                            "label": "p2_warrior_target_arrow",
+                            "displayName": "P2 Warrior Target Arrow",
+                            "useGameObjectName": true,
+                            "components": [
+                                "ObjectBounceAnimation"
+                            ],
+                            "ObjectBounceAnimation.posDuration": 250,
+                            "ObjectBounceAnimation.scaleXDelta": 0.05,
+                            "ObjectBounceAnimation.scaleYDelta": 0,
+                            "texture": {
+                                "key": "selection_arrow_selected"
+                            },
+                            "x": -100,
+                            "y": 55
                         }
                     ]
                 }
