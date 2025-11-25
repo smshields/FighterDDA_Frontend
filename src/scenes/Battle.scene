@@ -598,7 +598,7 @@
                             "texture": {
                                 "key": "selection_arrow_selected"
                             },
-                            "x": 405,
+                            "x": 415,
                             "y": 50
                         },
                         {
@@ -1262,7 +1262,7 @@
                     "ScrollViewComponent.viewport_x": 15,
                     "ScrollViewComponent.viewport_y": 830,
                     "ScrollViewComponent.viewport_width": 590,
-                    "ScrollViewComponent.viewport_height": 230,
+                    "ScrollViewComponent.viewport_height": 240,
                     "ScrollViewComponent.name": "action_scrollview",
                     "x": 5,
                     "y": 65,
@@ -1270,6 +1270,16 @@
                     "scaleY": 1,
                     "visible": true
                 }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "4ea7bbef-49af-4ef9-b3d5-627d062b6119",
+            "label": "next_action_queue_manager",
+            "displayName": "Next Action Queue Manager",
+            "useGameObjectName": true,
+            "components": [
+                "NextActionQueueManagerComponent"
             ]
         },
         {

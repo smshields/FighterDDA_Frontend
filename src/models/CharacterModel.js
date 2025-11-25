@@ -56,9 +56,7 @@ export default class CharacterModel{
 
     updateFromJson(characterSchemaJSON){
         if (typeof characterSchemaJSON !== "object" || characterSchemaJSON == null){
-            console.log(characterSchemaJSON);
             throw new TypeError("ERROR: CharacterModel updateFromJSON expects an object.");
-            
         }
 
         for (const key of Object.keys(characterSchemaJSON)){

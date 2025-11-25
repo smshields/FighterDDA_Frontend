@@ -11,6 +11,7 @@ import ObjectBounceAnimation from "../components/ObjectBounceAnimation.js";
 import StatusBar from "../../assets/prefabs/StatusBar.js";
 import ScrollView from "../../assets/prefabs/ScrollView.js";
 import ScrollViewComponent from "../components/ScrollViewComponent.js";
+import NextActionQueueManagerComponent from "../components/NextActionQueueManagerComponent.js";
 import CharacterManagerComponent from "../components/CharacterManagerComponent.js";
 import GameManagerComponent from "../components/GameManagerComponent.js";
 /* START-USER-IMPORTS */
@@ -290,7 +291,7 @@ export default class Battle extends Phaser.Scene {
 		p1_Mage.add(p1_mage_defend);
 
 		// p1_mage_action_arrow
-		const p1_mage_action_arrow = this.add.image(405, 50, "selection_arrow_selected");
+		const p1_mage_action_arrow = this.add.image(415, 50, "selection_arrow_selected");
 		p1_mage_action_arrow.name = "p1_mage_action_arrow";
 		p1_Mage.add(p1_mage_action_arrow);
 
@@ -555,6 +556,10 @@ export default class Battle extends Phaser.Scene {
 		action_scrollview.visible = true;
 		action_menu.add(action_scrollview);
 
+		// next_action_queue_manager
+		const next_action_queue_manager = this.add.container(0, 0);
+		next_action_queue_manager.name = "next_action_queue_manager";
+
 		// character_manager
 		const character_manager = this.add.container(0, 0);
 		character_manager.name = "character_manager";
@@ -752,8 +757,11 @@ export default class Battle extends Phaser.Scene {
 		action_scrollviewScrollViewComponent.viewport_x = 15;
 		action_scrollviewScrollViewComponent.viewport_y = 830;
 		action_scrollviewScrollViewComponent.viewport_width = 590;
-		action_scrollviewScrollViewComponent.viewport_height = 230;
+		action_scrollviewScrollViewComponent.viewport_height = 240;
 		action_scrollviewScrollViewComponent.name = "action_scrollview";
+
+		// next_action_queue_manager (components)
+		new NextActionQueueManagerComponent(next_action_queue_manager);
 
 		// character_manager (components)
 		const character_managerCharacterManagerComponent = new CharacterManagerComponent(character_manager);
@@ -771,9 +779,6 @@ export default class Battle extends Phaser.Scene {
 		game_managerGameManagerComponent.character_manager = character_manager;
 		game_managerGameManagerComponent.action_menu = action_menu;
 		game_managerGameManagerComponent.target_menu = target_menu;
-
-		this.characterManager = character_managerCharacterManagerComponent;
-		this.gameManager = game_managerGameManagerComponent;
 
 		this.p1_warrior_sprite = p1_warrior_sprite;
 		this.p2_warrior_sprite = p2_warrior_sprite;
@@ -794,6 +799,7 @@ export default class Battle extends Phaser.Scene {
 	preload() {
 		this.load.start();
 
+		//character stub loading
 		this.load.json('p1_warrior_json', 'assets/data/character_json_stubs/P1Warrior.json');
 		this.load.json('p1_mage_json', 'assets/data/character_json_stubs/P1Mage.json');
 		this.load.json('p1_rogue_json', 'assets/data/character_json_stubs/P1Rogue.JSON');
@@ -803,6 +809,13 @@ export default class Battle extends Phaser.Scene {
 		this.load.json('p2_mage_json', 'assets/data/character_json_stubs/P2Mage.json');
 		this.load.json('p2_rogue_json', 'assets/data/character_json_stubs/P2Rogue.JSON');
 		this.load.json('p2_priest_json', 'assets/data/character_json_stubs/P2Priest.JSON');
+
+		//action next stub loading
+		this.load.json('action_next_1_json', 'assets/data/action_json_stubs/actionNext1.JSON');
+		this.load.json('action_next_2_json', 'assets/data/action_json_stubs/actionNext2.JSON');
+		this.load.json('action_next_3_json', 'assets/data/action_json_stubs/actionNext3.JSON');
+		this.load.json('action_next_4_json', 'assets/data/action_json_stubs/actionNext4.JSON');
+
 
 		this.load.scenePlugin({
 			key: 'rexuiplugin',
@@ -824,7 +837,9 @@ export default class Battle extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-
+		this.gameManager = this.children.getByName('game_manager').gameManagerComponent;
+		this.characterManager = this.children.getByName('character_manager').characterManagerComponent;
+		this.nextActionQueueManager = this.children.getByName('next_action_queue_manager').nextActionQueueManagerComponent;
 	}
 
 	//NOTES: "Item" prefabs must have assigned values for width/height that can be used to force sizing in usage of the scrollviews.
@@ -1292,8 +1307,6 @@ export default class Battle extends Phaser.Scene {
 		}
 
 		panel.disablePanel = () => {
-			console.log("DISABLING PANEL");
-			console.log(panel);
 			syncOverlayToPanel();
 			setChildrenInput(false);
 			scrim.setVisible(true);
@@ -1301,8 +1314,6 @@ export default class Battle extends Phaser.Scene {
 		};
 
 		panel.enablePanel = () => {
-			console.log("ENABLING PANEL");
-			console.log(panel);
 			syncOverlayToPanel();
 			setChildrenInput(true);
 			scrim.setVisible(false);

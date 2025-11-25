@@ -1,0 +1,28 @@
+{
+    "name": "",
+    "actor": {},
+    "targets": [],
+    "targetString": "",
+    "preExecuteStats": {
+        "maxHp": 0,
+        "currentHp": 0,
+        "attack": 0,
+        "magicAttack": 0,
+        "defense": 0,
+        "magicDefense": 0,
+        "speed": 0,
+        "luck": 0
+    },
+    "postExecuteStats": {
+        "maxHp": 0,
+        "currentHp": 0,
+        "attack": 0,
+        "magicAttack": 0,
+        "defense": 0,
+        "magicDefense": 0,
+        "speed": 0,
+        "luck": 0
+    },
+    "timeQueued": 0,
+    "timeExecuted": 0
+}

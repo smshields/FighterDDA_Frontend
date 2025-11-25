@@ -52,6 +52,8 @@ export default class GameManagerComponent extends UserComponent {
 		this.selectedActionModel = null;
 		this.actingCharacter = null;
 
+		this.socketInitialized = false;
+
 
 
 
@@ -139,7 +141,7 @@ export default class GameManagerComponent extends UserComponent {
 		//Enable/Disable Panels
 		this.scene.targetPanel.enablePanel();
 		this.scene.actionPanel.disablePanel();
-		
+
 		//get models of valid targets
 		let targetString = this.selectedActionModel.getValidTargetsFromAction(this.selectedAction);
 		let characters = this.character_manager.characterManagerComponent.characters;

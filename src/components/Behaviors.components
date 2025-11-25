@@ -565,6 +565,157 @@
                     }
                 }
             ]
+        },
+        {
+            "name": "NextActionQueueManagerComponent",
+            "displayName": "Next Action Queue Manager Component",
+            "objectDisplayFormat": "",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "generateGameObjectField": true,
+            "properties": []
+        },
+        {
+            "name": "NextActionQueueView",
+            "displayName": "Next Action Queue View",
+            "objectDisplayFormat": "",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "generateGameObjectField": true,
+            "properties": [
+                {
+                    "name": "warrior",
+                    "label": "Warrior",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "mage",
+                    "label": "Mage",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "priest",
+                    "label": "Priest",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "rogue",
+                    "label": "Rogue",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "attack",
+                    "label": "Attack",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "defend",
+                    "label": "Defend",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "multi_attack",
+                    "label": "Multi Attack",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "magic_attack",
+                    "label": "Magic Attack",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "multi_magic_attack",
+                    "label": "Multi Magic Attack",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "heal",
+                    "label": "Heal",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "multi_heal",
+                    "label": "Multi Heal",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                },
+                {
+                    "name": "question",
+                    "label": "Question",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                }
+            ]
         }
     ],
     "meta": {

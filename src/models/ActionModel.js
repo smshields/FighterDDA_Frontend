@@ -112,4 +112,27 @@ export default class ActionModel {
 
         return targetCharacterModels;
     }
+
+    updateFromJson(actionSchemaJSON) {
+        if (typeof actionSchemaJSON !== "object" || actionSchemaJSON == null) {
+            throw new TypeError("ERROR: ActionModel updateFromJSON expects an object.");
+        }
+
+        for (const key of Object.keys(actionSchemaJSON)) {
+            if (key in this) {
+                if (
+                    typeof actionSchemaJSON[key] === "object" &&
+                    actionSchemaJSON[key] !== null &&
+                    typeof this[key] === "object" &&
+                    !Array.isArray(actionSchemaJSON[key])
+                ) {
+                    Object.assign(this[key], actionSchemaJSON[key]);
+                } else {
+                    this[key] = actionSchemaJSON[key];
+                }
+            } else {
+                console.warn(`ignoring unknown property '${key}'`);
+            }
+        }
+    }
 }

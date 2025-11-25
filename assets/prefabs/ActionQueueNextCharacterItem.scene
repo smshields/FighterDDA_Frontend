@@ -18,6 +18,21 @@
             "label": "action_queue_next_character_item",
             "displayName": "Action Queue Next Character Item",
             "useGameObjectName": true,
+            "components": [
+                "NextActionQueueView"
+            ],
+            "NextActionQueueView.warrior": "warrior",
+            "NextActionQueueView.mage": "mage",
+            "NextActionQueueView.priest": "priest",
+            "NextActionQueueView.rogue": "rogue",
+            "NextActionQueueView.attack": "attack",
+            "NextActionQueueView.defend": "defend",
+            "NextActionQueueView.multi_attack": "multi_attack",
+            "NextActionQueueView.magic_attack": "magic_attack",
+            "NextActionQueueView.multi_magic_attack": "multi_magic_attack",
+            "NextActionQueueView.heal": "heal",
+            "NextActionQueueView.multi_heal": "multi_heal",
+            "NextActionQueueView.question": "question",
             "list": [
                 {
                     "type": "Rectangle",
@@ -35,8 +50,8 @@
                 {
                     "type": "Image",
                     "id": "021d1db5-d099-4950-8c47-9820e5bb3a34",
-                    "label": "action_queue_next_character",
-                    "displayName": "Action Queue Next Character",
+                    "label": "warrior",
+                    "displayName": "Warrior",
                     "useGameObjectName": true,
                     "texture": {
                         "key": "warrior"
@@ -47,6 +62,160 @@
                     "scaleY": 0.75,
                     "originX": 0,
                     "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "ed7eaedb-e7df-44c8-96e5-fb5af1572c24",
+                    "label": "mage",
+                    "displayName": "Mage",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "mage"
+                    },
+                    "x": 49,
+                    "y": 48,
+                    "scaleX": 0.7190564703469677,
+                    "scaleY": 0.7190564703469677
+                },
+                {
+                    "type": "Image",
+                    "id": "0d4e51d6-d4c4-49ac-a7a1-891c5292a0ee",
+                    "label": "priest",
+                    "displayName": "Priest",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "priest"
+                    },
+                    "x": 47,
+                    "y": 48,
+                    "scaleX": 0.7794386260732288,
+                    "scaleY": 0.7794386260732288
+                },
+                {
+                    "type": "Image",
+                    "id": "e97aeda2-588d-4859-a8d7-fa677a2964c5",
+                    "label": "rogue",
+                    "displayName": "Rogue",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "rogue"
+                    },
+                    "x": 51,
+                    "y": 47,
+                    "scaleX": 0.7416216051246244,
+                    "scaleY": 0.7416216051246244
+                },
+                {
+                    "type": "Image",
+                    "id": "6b910671-5292-4699-8f84-59958739b131",
+                    "label": "attack",
+                    "displayName": "Attack",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "attack_icon"
+                    },
+                    "x": 80,
+                    "y": 81,
+                    "scaleX": 0.075,
+                    "scaleY": 0.07568920531335421
+                },
+                {
+                    "type": "Image",
+                    "id": "f1857aa4-7926-4a51-8118-7dc3175c5982",
+                    "label": "defend",
+                    "displayName": "Defend",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "defend_icon"
+                    },
+                    "x": 80,
+                    "y": 81,
+                    "scaleX": 0.075,
+                    "scaleY": 0.075
+                },
+                {
+                    "type": "Image",
+                    "id": "e1146dad-ba54-434d-b6e5-ec8398dc27f4",
+                    "label": "heal",
+                    "displayName": "Heal",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "heal_icon"
+                    },
+                    "x": 80,
+                    "y": 81,
+                    "scaleX": 0.075,
+                    "scaleY": 0.075
+                },
+                {
+                    "type": "Image",
+                    "id": "c73767f7-9383-499c-93fa-ea7adc27a6ab",
+                    "label": "magic_attack",
+                    "displayName": "Magic Attack",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "mattack_icon"
+                    },
+                    "x": 80,
+                    "y": 81,
+                    "scaleX": 0.075,
+                    "scaleY": 0.075
+                },
+                {
+                    "type": "Image",
+                    "id": "8037be9e-d4ce-4213-8ff7-7e678cf29372",
+                    "label": "multi_attack",
+                    "displayName": "Multi Attack",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "multiattack_icon"
+                    },
+                    "x": 80,
+                    "y": 81,
+                    "scaleX": 0.075,
+                    "scaleY": 0.075
+                },
+                {
+                    "type": "Image",
+                    "id": "161e9264-5800-47c7-bc66-4ad51c59f510",
+                    "label": "multi_heal",
+                    "displayName": "Multi Heal",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "multiheal_icon"
+                    },
+                    "x": 80,
+                    "y": 81,
+                    "scaleX": 0.075,
+                    "scaleY": 0.075
+                },
+                {
+                    "type": "Image",
+                    "id": "f9b5f54b-aa66-4199-8c16-94819897e013",
+                    "label": "multi_magic_attack",
+                    "displayName": "Multi Magic Attack",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "multimattack_icon"
+                    },
+                    "x": 80,
+                    "y": 81,
+                    "scaleX": 0.075,
+                    "scaleY": 0.075
+                },
+                {
+                    "type": "Image",
+                    "id": "9a983057-269a-4d67-9f40-ca72ff3ce468",
+                    "label": "question",
+                    "displayName": "Question",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "question_icon"
+                    },
+                    "x": 80,
+                    "y": 81,
+                    "scaleX": 0.075,
+                    "scaleY": 0.075
                 }
             ]
         }

@@ -94,6 +94,8 @@ export default class CharacterManagerComponent extends UserComponent {
 
 		this.characters = [];
 
+		this.gameObject.characterManagerComponent = this;
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -158,22 +160,13 @@ export default class CharacterManagerComponent extends UserComponent {
 		return characterUI;
 	}
 
-	//character ui set for acting
-	setCharacterUIActionSelection(character){
-		//get characterUI
-		let characterUI = this.lookupCharacterUIFromModel(character);
-
-		//update character
-
-	}
-
 	initializeCharacterModels(){
 		//if we have data from the server, use that. If not, use stubs for testing
-		if(this.socketInitialized){
+		if(this.scene.gameManager.socketInitialized){
 			//TODO: implement socket logic, probably move this to a game manager
 		} else {
 			//use stubs in assets for testing
-			let jsonString = '_json'
+			let jsonString = '_json';
 
 			this.p1_warrior_model.updateFromJson(this.scene.cache.json.get(this.p1_warrior_label + jsonString));
 			this.p1_mage_model.updateFromJson(this.scene.cache.json.get(this.p1_mage_label + jsonString));

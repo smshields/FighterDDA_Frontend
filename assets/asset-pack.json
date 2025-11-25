@@ -62,6 +62,21 @@
                 "key": "mattack_icon"
             },
             {
+                "url": "assets/ui/multiattack_icon.png",
+                "type": "image",
+                "key": "multiattack_icon"
+            },
+            {
+                "url": "assets/ui/multiheal_icon.png",
+                "type": "image",
+                "key": "multiheal_icon"
+            },
+            {
+                "url": "assets/ui/multimattack_icon.png",
+                "type": "image",
+                "key": "multimattack_icon"
+            },
+            {
                 "url": "assets/characters/priest.png",
                 "type": "image",
                 "key": "priest"
@@ -70,6 +85,11 @@
                 "url": "assets/characters/priest_invert.png",
                 "type": "image",
                 "key": "priest_invert"
+            },
+            {
+                "url": "assets/ui/question_icon.png",
+                "type": "image",
+                "key": "question_icon"
             },
             {
                 "url": "assets/characters/rogue.png",
