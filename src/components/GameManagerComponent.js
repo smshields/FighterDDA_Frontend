@@ -93,6 +93,11 @@ export default class GameManagerComponent extends UserComponent {
 					this.readyToAct.push(character);
 				}
 			}
+
+			//build next action queue view
+			let nextActionQueueManager = this.scene.nextActionQueueManager;
+			nextActionQueueManager.updateNextActionQueue();
+			nextActionQueueManager.updateScrollPanel(nextActionQueueManager.nextActionQueue);
 		}
 		//move to next state
 
@@ -110,7 +115,7 @@ export default class GameManagerComponent extends UserComponent {
 		//TODO: Disable Target scrollview
 
 		//get the current character from ready to act
-		if(!this.actingCharacter){
+		if (!this.actingCharacter) {
 			this.actingCharacter = this.readyToAct.shift();
 		}
 
@@ -175,7 +180,7 @@ export default class GameManagerComponent extends UserComponent {
 		//TODO: MAKE SURE YOU NULL OUT this.actingCharacter
 	}
 
-	returnToActionSelect(){
+	returnToActionSelect() {
 		//this.scene.targetPanel.disablePanel();
 		this.scene.actionPanel.enablePanel();
 		let targetScrollview = this.target_menu.getByName('target_scrollview');
@@ -200,15 +205,15 @@ export default class GameManagerComponent extends UserComponent {
 			this.loadAction();
 		}
 
-		if(this.currentState == this.States.WAITING_FOR_ACTION_INPUT){
+		if (this.currentState == this.States.WAITING_FOR_ACTION_INPUT) {
 
 		}
 
-		if (this.currentState == this.States.LOADING_TARGETS){
+		if (this.currentState == this.States.LOADING_TARGETS) {
 			this.loadTarget();
 		}
 
-		if(this.currentState == this.States.WAITING_FOR_TARGET_INPUT){
+		if (this.currentState == this.States.WAITING_FOR_TARGET_INPUT) {
 
 		}
 

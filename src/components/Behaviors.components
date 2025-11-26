@@ -573,7 +573,19 @@
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.GameObjects.Image",
             "generateGameObjectField": true,
-            "properties": []
+            "properties": [
+                {
+                    "name": "next_action_queue_scroll_view",
+                    "label": "Next Action Queue Scroll View",
+                    "tooltip": "",
+                    "defValue": "",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "object-var",
+                        "expressionType": "Phaser.GameObjects.GameObject"
+                    }
+                }
+            ]
         },
         {
             "name": "NextActionQueueView",

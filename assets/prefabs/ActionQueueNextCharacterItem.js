@@ -23,11 +23,10 @@ export default class ActionQueueNextCharacterItem extends Phaser.GameObjects.Con
 		this.add(action_queue_next_character_background);
 
 		// warrior
-		const warrior = scene.add.image(8, 8, "warrior");
+		const warrior = scene.add.image(50, 48, "warrior");
 		warrior.name = "warrior";
 		warrior.scaleX = 0.75;
 		warrior.scaleY = 0.75;
-		warrior.setOrigin(0, 0);
 		this.add(warrior);
 
 		// mage
@@ -72,33 +71,33 @@ export default class ActionQueueNextCharacterItem extends Phaser.GameObjects.Con
 		heal.scaleY = 0.075;
 		this.add(heal);
 
-		// magic_attack
-		const magic_attack = scene.add.image(80, 81, "mattack_icon");
-		magic_attack.name = "magic_attack";
-		magic_attack.scaleX = 0.075;
-		magic_attack.scaleY = 0.075;
-		this.add(magic_attack);
+		// magicAttack
+		const magicAttack = scene.add.image(80, 81, "mattack_icon");
+		magicAttack.name = "magicAttack";
+		magicAttack.scaleX = 0.075;
+		magicAttack.scaleY = 0.075;
+		this.add(magicAttack);
 
-		// multi_attack
-		const multi_attack = scene.add.image(80, 81, "multiattack_icon");
-		multi_attack.name = "multi_attack";
-		multi_attack.scaleX = 0.075;
-		multi_attack.scaleY = 0.075;
-		this.add(multi_attack);
+		// multiAttack
+		const multiAttack = scene.add.image(80, 81, "multiattack_icon");
+		multiAttack.name = "multiAttack";
+		multiAttack.scaleX = 0.075;
+		multiAttack.scaleY = 0.075;
+		this.add(multiAttack);
 
-		// multi_heal
-		const multi_heal = scene.add.image(80, 81, "multiheal_icon");
-		multi_heal.name = "multi_heal";
-		multi_heal.scaleX = 0.075;
-		multi_heal.scaleY = 0.075;
-		this.add(multi_heal);
+		// multiHeal
+		const multiHeal = scene.add.image(80, 81, "multiheal_icon");
+		multiHeal.name = "multiHeal";
+		multiHeal.scaleX = 0.075;
+		multiHeal.scaleY = 0.075;
+		this.add(multiHeal);
 
-		// multi_magic_attack
-		const multi_magic_attack = scene.add.image(80, 81, "multimattack_icon");
-		multi_magic_attack.name = "multi_magic_attack";
-		multi_magic_attack.scaleX = 0.075;
-		multi_magic_attack.scaleY = 0.075;
-		this.add(multi_magic_attack);
+		// multiMagicAttack
+		const multiMagicAttack = scene.add.image(80, 81, "multimattack_icon");
+		multiMagicAttack.name = "multiMagicAttack";
+		multiMagicAttack.scaleX = 0.075;
+		multiMagicAttack.scaleY = 0.075;
+		this.add(multiMagicAttack);
 
 		// question
 		const question = scene.add.image(80, 81, "question_icon");
@@ -115,15 +114,53 @@ export default class ActionQueueNextCharacterItem extends Phaser.GameObjects.Con
 		thisNextActionQueueView.rogue = rogue;
 		thisNextActionQueueView.attack = attack;
 		thisNextActionQueueView.defend = defend;
-		thisNextActionQueueView.multi_attack = multi_attack;
-		thisNextActionQueueView.magic_attack = magic_attack;
-		thisNextActionQueueView.multi_magic_attack = multi_magic_attack;
+		thisNextActionQueueView.multi_attack = multiAttack;
+		thisNextActionQueueView.magic_attack = magicAttack;
+		thisNextActionQueueView.multi_magic_attack = multiMagicAttack;
 		thisNextActionQueueView.heal = heal;
-		thisNextActionQueueView.multi_heal = multi_heal;
+		thisNextActionQueueView.multi_heal = multiHeal;
 		thisNextActionQueueView.question = question;
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+		//character sprites
+		this.warrior = warrior;
+		this.mage = mage;
+		this.priest = priest;
+		this.rogue = rogue;
+
+		this.characterSprites = [
+			this.warrior,
+			this.mage,
+			this.priest,
+			this.rogue
+		];
+
+		//action sprites
+		this.attack = attack;
+		this.multiAttack = multiAttack;
+		this.magicAttack = magicAttack;
+		this.multiMagicAttack = multiMagicAttack;
+		this.heal = heal;
+		this.multiHeal = multiHeal;
+		this.defend = defend;
+		this.question = question;
+
+		this.actionSprites = [
+			this.attack,
+			this.multiAttack,
+			this.magicAttack,
+			this.multiMagicAttack,
+			this.heal,
+			this.multiHeal,
+			this.defend,
+			this.question
+		];
+
+		//color references 
+		//TODO: Need constants file for these
+		this.p1Color = 0x7285ff;
+		this.p2Color = 0xff7777;
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -133,6 +170,66 @@ export default class ActionQueueNextCharacterItem extends Phaser.GameObjects.Con
 	height = 100;
 
 	/* START-USER-CODE */
+
+	setCharacterSprite(characterModel) {
+		let spriteName = characterModel.characterName.toLowerCase();
+
+		for (let characterSprite of this.characterSprites) {
+			//show sprite
+			if (characterSprite.name.toLowerCase() == spriteName) {
+				characterSprite.setVisible(true);
+				characterSprite.setActive(true);
+				console.log(characterSprite.name == 'warrior');
+				console.log(characterSprite.name);
+				//add glow, direction
+				if (characterModel.playerNum == 1) {
+					//reverse direction
+					characterSprite.setFlipX(true);
+					//add P1 glow
+					characterSprite.enableFilters()
+						.filters.internal.addGlow(this.p1Color, 4, 0, 2, false, 0.1, 10)
+						.setPaddingOverride(null);
+				} else {
+					//add P2 glow
+					characterSprite.enableFilters()
+						.filters.internal.addGlow(this.p2Color, 4, 0, 2, false, 0.1, 10)
+						.setPaddingOverride(null);
+				}
+
+			} else {
+				characterSprite.setVisible(false);
+				characterSprite.setActive(false);
+			}
+		}
+	}
+
+	setActionSprite(actionModel) {
+		let spriteName = actionModel.name.toLowerCase();
+
+		for (let actionSprite of this.actionSprites) {
+			//if it's the player, show them the action they selected
+			if (actionModel.actor.playerNum == 1) {
+				if (actionSprite.name.toLowerCase() == spriteName) {
+					actionSprite.setVisible(true);
+					actionSprite.setActive(true);
+				} else {
+					actionSprite.setVisible(false);
+					actionSprite.setActive(false);
+				}
+			//if it's the computer, show a question mark
+			} else {
+				if (actionSprite.name.toLowerCase() == "question") {
+					actionSprite.setVisible(true);
+					actionSprite.setActive(true);
+				} else {
+					actionSprite.setVisible(false);
+					actionSprite.setActive(false);
+				}
+			}
+		}
+	}
+
+
 
 	// Write your code here.
 

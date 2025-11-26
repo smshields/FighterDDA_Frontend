@@ -27,11 +27,11 @@
             "NextActionQueueView.rogue": "rogue",
             "NextActionQueueView.attack": "attack",
             "NextActionQueueView.defend": "defend",
-            "NextActionQueueView.multi_attack": "multi_attack",
-            "NextActionQueueView.magic_attack": "magic_attack",
-            "NextActionQueueView.multi_magic_attack": "multi_magic_attack",
+            "NextActionQueueView.multi_attack": "multiAttack",
+            "NextActionQueueView.magic_attack": "magicAttack",
+            "NextActionQueueView.multi_magic_attack": "multiMagicAttack",
             "NextActionQueueView.heal": "heal",
-            "NextActionQueueView.multi_heal": "multi_heal",
+            "NextActionQueueView.multi_heal": "multiHeal",
             "NextActionQueueView.question": "question",
             "list": [
                 {
@@ -56,12 +56,10 @@
                     "texture": {
                         "key": "warrior"
                     },
-                    "x": 8,
-                    "y": 8,
+                    "x": 50,
+                    "y": 48,
                     "scaleX": 0.75,
-                    "scaleY": 0.75,
-                    "originX": 0,
-                    "originY": 0
+                    "scaleY": 0.75
                 },
                 {
                     "type": "Image",
@@ -150,7 +148,7 @@
                 {
                     "type": "Image",
                     "id": "c73767f7-9383-499c-93fa-ea7adc27a6ab",
-                    "label": "magic_attack",
+                    "label": "magicAttack",
                     "displayName": "Magic Attack",
                     "useGameObjectName": true,
                     "texture": {
@@ -164,7 +162,7 @@
                 {
                     "type": "Image",
                     "id": "8037be9e-d4ce-4213-8ff7-7e678cf29372",
-                    "label": "multi_attack",
+                    "label": "multiAttack",
                     "displayName": "Multi Attack",
                     "useGameObjectName": true,
                     "texture": {
@@ -178,7 +176,7 @@
                 {
                     "type": "Image",
                     "id": "161e9264-5800-47c7-bc66-4ad51c59f510",
-                    "label": "multi_heal",
+                    "label": "multiHeal",
                     "displayName": "Multi Heal",
                     "useGameObjectName": true,
                     "texture": {
@@ -192,7 +190,7 @@
                 {
                     "type": "Image",
                     "id": "f9b5f54b-aa66-4199-8c16-94819897e013",
-                    "label": "multi_magic_attack",
+                    "label": "multiMagicAttack",
                     "displayName": "Multi Magic Attack",
                     "useGameObjectName": true,
                     "texture": {

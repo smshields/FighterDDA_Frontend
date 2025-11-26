@@ -761,7 +761,8 @@ export default class Battle extends Phaser.Scene {
 		action_scrollviewScrollViewComponent.name = "action_scrollview";
 
 		// next_action_queue_manager (components)
-		new NextActionQueueManagerComponent(next_action_queue_manager);
+		const next_action_queue_managerNextActionQueueManagerComponent = new NextActionQueueManagerComponent(next_action_queue_manager);
+		next_action_queue_managerNextActionQueueManagerComponent.next_action_queue_scroll_view = action_queue_next_scrollview;
 
 		// character_manager (components)
 		const character_managerCharacterManagerComponent = new CharacterManagerComponent(character_manager);
@@ -822,51 +823,26 @@ export default class Battle extends Phaser.Scene {
 			url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/v4.0.0-alpha/dist/rexuiplugin.min.js',
 			sceneKey: 'rexUI'
 		});
-
-
-
 	}
 
 	update() {
 
-		//if(processTick && !this.game_manager.gameManagerComponent.gameOver){
-		//	this.game_manager.processTick();
-		//}
 	}
 
 	create() {
-
 		this.editorCreate();
 		this.gameManager = this.children.getByName('game_manager').gameManagerComponent;
 		this.characterManager = this.children.getByName('character_manager').characterManagerComponent;
 		this.nextActionQueueManager = this.children.getByName('next_action_queue_manager').nextActionQueueManagerComponent;
 	}
 
-	//NOTES: "Item" prefabs must have assigned values for width/height that can be used to force sizing in usage of the scrollviews.
-	//There is some hardcoding around placement - I didn't take the time to figure out procedural meethods of getting these set up but am cutting corners for time's sake.
-	//x, y are the placement of the scrollview container, and width/height are as well - so I'm pretty sure I can eventually cut these out.
-	//width used in beginning of for loop only works because container width is pretty much equal to item width, I'd prefer to use the item properties later.()
-
 	createActionScrollViewContent(scene, width, height, actions) {
 
-		const content = scene.rexUI.add.sizer({
+		return scene.rexUI.add.sizer({
 			orientation: 1, // vertical
 			space: { item: 5 }
 		});
 
-		let items = ['Attack', 'Defend', 'Heal', 'Magic Attack', 'Multi Attack', 'Multi Magic Attack', 'Multi Heal', 'Attack 2', 'Attack 3', 'Attack 4', 'Attack 5'];
-
-		for (let i = 0; i < items.length; i += 1) {
-			let actionItem = new ActionItem(scene, -width / 2.075, -(25)); //HARDCODED - Half of the height of the ActionItem Prefab
-			actionItem.setSize(actionItem.width, actionItem.height);
-			const testAction = scene.add.container(0, 0, [actionItem]).setSize(actionItem.width, actionItem.height);
-
-			content.add(
-				testAction
-			);
-		}
-
-		return content;
 	}
 
 	updateActionScrollViewContent(scene, width, height, items) {
@@ -886,10 +862,6 @@ export default class Battle extends Phaser.Scene {
 		return content;
 	}
 
-	clearTargetScrollView() {
-		this.updateTargetScrollViewContent(this, 0, 0, []);
-	}
-
 	//TODO: Update to manage dynamic targets from action object
 	updateTargetScrollViewContent(scene, width, height, items) {
 
@@ -897,12 +869,6 @@ export default class Battle extends Phaser.Scene {
 			orientation: 1,
 			space: { item: 5 }
 		});
-
-		//If we have a target that is multi,
-		//we should build a unique item that says "ALLIES" or "ENEMIES".
-		//Item must have unique targetItem behavior that populates UI accordingly
-		//and we should not loop through all targets, but still include them
-		//in the target item object for UI purposes
 
 		//check if action is multi
 		let isMulti = false;
@@ -959,19 +925,15 @@ export default class Battle extends Phaser.Scene {
 		return content;
 	}
 
+	//Init targetScrollView as empty
 	createTargetScrollViewContent(scene, width, height) {
 
-		const content = scene.rexUI.add.sizer({
+		return scene.rexUI.add.sizer({
 			orientation: 1, // vertical
 			space: { item: 5 }
 		});
 
-
-
-		return content;
 	}
-
-
 
 	createQueueHistoryScrollViewContent(scene, width, height) {
 
@@ -996,29 +958,32 @@ export default class Battle extends Phaser.Scene {
 		return content;
 	}
 
-
+	//init next scroll view as empty
 	createQueueNextScrollViewContent(scene, width, height) {
+		return scene.rexUI.add.sizer({
+			orientation: 1, // vertical
+			space: { item: 5 }
+		});
+	}
 
+	updateQueueNextScrollViewContent(scene, width, height, items) {
 		const content = scene.rexUI.add.sizer({
 			orientation: 1, // vertical
 			space: { item: 5 }
 		});
 
-		let items = ['character1', 'character2', 'character3', 'character4', 'character5', 'character6', 'character7'];
-
 		for (let i = 0; i < items.length; i += 1) {
-			let actionQueueNextCharacterItem = new ActionQueueNextCharacterItem(scene, -(width / 2.2), -(50));
-			actionQueueNextCharacterItem.setSize(actionQueueNextCharacterItem.width, actionQueueNextCharacterItem.height); //HARDCODED
-			const testAction = scene.add.container(0, 0, [actionQueueNextCharacterItem]).setSize(actionQueueNextCharacterItem.width, actionQueueNextCharacterItem.height);
+			let actionQueueNextCharacterItem = new ActionQueueNextCharacterItem(scene);
+			actionQueueNextCharacterItem.x = -actionQueueNextCharacterItem.width / 2;
+			actionQueueNextCharacterItem.y = -actionQueueNextCharacterItem.height / 2;
 
-			content.add(
-				testAction,
-				0,
-				"center",
-				{ left: 0, right: 0, top: 0, bottom: 0 },
-				false
-			);
+			actionQueueNextCharacterItem.setCharacterSprite(items[i].actor);
+			actionQueueNextCharacterItem.setActionSprite(items[i]);
+			actionQueueNextCharacterItem.setSize(actionQueueNextCharacterItem.width, actionQueueNextCharacterItem.height); //HARDCODED
+			const actionQueueNextCharacterContainer = scene.add.container(0, 0, [actionQueueNextCharacterItem]).setSize(actionQueueNextCharacterItem.width, actionQueueNextCharacterItem.height);
+			content.add(actionQueueNextCharacterContainer);
 		}
+
 		return content;
 	}
 
@@ -1124,7 +1089,7 @@ export default class Battle extends Phaser.Scene {
 		let contentCreateFunction = null;
 		switch (name) {
 			case 'action_queue_next': {
-				contentCreateFunction = this.createQueueNextScrollViewContent;
+				contentCreateFunction = this.updateQueueNextScrollViewContent;
 				break;
 			}
 			case 'action_queue_history': {
@@ -1175,8 +1140,10 @@ export default class Battle extends Phaser.Scene {
 
 		switch (name) {
 			case 'action_queue_next': {
+				this.actionQueueNextPanel.destroy();
 				panel.name = 'action_queue_next';
 				this.actionQueueNextPanel = panel;
+				//Unsure if I need a panel disabler here - perhaps when queue is empty?
 				break;
 			}
 			case 'action_queue_history': {

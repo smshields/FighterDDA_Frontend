@@ -40,7 +40,36 @@ export default class ActionQueueNextScrollView extends Phaser.GameObjects.Contai
 	}
 
 	/* START-USER-CODE */
+	//TODO: I'm using these in all scrollview components - should make a super class to avoid rewriting
 
+	updateScrollPanel(items) {
+		const worldTransform = new Phaser.GameObjects.Components.TransformMatrix();
+		this.viewport_background.getWorldTransformMatrix(worldTransform);
+
+		// center in world space (independent of origin)
+		const centerX = this.viewport_x + (this.viewport_width / 2);
+		const centerY = this.viewport_y + (this.viewport_height / 2);
+
+		this.panel = this.scene.updateScrollView(this.name, centerX, centerY, this.viewport_width, this.viewport_height, items);
+		console.log("REACHED SCROLL VIEW COMPONENT NAQ");
+		console.log(items);
+	}
+
+	//TODO: Refactor out positioning calculations
+	buildScrollPanel() {
+
+		const worldTransform = new Phaser.GameObjects.Components.TransformMatrix();
+		this.viewport_background.getWorldTransformMatrix(worldTransform);
+
+		const bounds = this.viewport_background.getBounds();
+
+		// center in world space (independent of origin)
+		const centerX = this.viewport_x + (this.viewport_width / 2);
+		const centerY = this.viewport_y + (this.viewport_height / 2);
+
+		this.panel = this.scene.createScrollView(this.name, centerX, centerY, this.viewport_width, this.viewport_height);
+
+	}
 
 	/* END-USER-CODE */
 }

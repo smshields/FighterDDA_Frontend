@@ -1280,7 +1280,8 @@
             "useGameObjectName": true,
             "components": [
                 "NextActionQueueManagerComponent"
-            ]
+            ],
+            "NextActionQueueManagerComponent.next_action_queue_scroll_view": "action_queue_next_scrollview"
         },
         {
             "type": "Container",

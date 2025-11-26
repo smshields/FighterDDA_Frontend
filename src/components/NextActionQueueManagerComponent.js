@@ -17,9 +17,15 @@ export default class NextActionQueueManagerComponent extends UserComponent {
 		gameObject["__NextActionQueueManagerComponent"] = this;
 
 		/* START-USER-CTR-CODE */
-		this.gameObject.nextActionQueueManagerComponent = this;
 
-		//Queue
+		// === Inspector Properties ===
+
+		/** @type {Phaser.GameObjects.GameObject} */
+		this.next_action_queue_scroll_view = null;
+
+		// === Internal Properties ===
+		
+		this.gameObject.nextActionQueueManagerComponent = this;
 		this.nextActionQueue = [];
 
 		/* END-USER-CTR-CODE */
@@ -33,7 +39,7 @@ export default class NextActionQueueManagerComponent extends UserComponent {
 
 	/* START-USER-CODE */
 
-	initializeNextActionQueue(){
+	updateNextActionQueue(){
 		if(this.scene.gameManager.socketInitialized){
 			//TODO: Implement socket logic
 		} else {
@@ -80,6 +86,11 @@ export default class NextActionQueueManagerComponent extends UserComponent {
 			//update internal nextActionQueue reference
 			this.nextActionQueue = nextActionQueue;
 		}
+	}
+
+	updateScrollPanel(items){
+		console.log(this.next_action_queue_scroll_view.scrollViewComponent);
+		this.next_action_queue_scroll_view.scrollViewComponent.updateScrollPanel(items);
 	}
 
 	/* END-USER-CODE */

@@ -75,34 +75,6 @@ export default class TargetScrollView extends Phaser.GameObjects.Container {
 
 	}
 
-	//TODO: Logic needs to add a rect from Battle, not here;
-
-	// setEnabled(is_enabled) {
-	// 	if (!this.panel) {
-	// 		this.panel = this.scene.targetPanel;
-	// 	}
-	// 	if (this.panel) {
-	// 		console.log("REACAHED SET ENABLED " + is_enabled);
-	// 		console.log(this.panel);
-	// 		this.panel.setActive(!is_enabled);
-	// 		this.panel.setVisible(!is_enabled);
-
-	// 		//set background to grey if disabled
-	// 		if (!is_enabled) {
-	// 			console.log("REACHED DISABLE");
-	// 			this.parentContainer.getByName('target_title').setTintFill(0x555555);
-	// 			this.background.setFillStyle(0x555555, 1);
-	// 			this.scrollViewComponent.updateScrollPanel(null);
-
-	// 		} else { 
-	// 			console.log("REACHED ENABLE")
-	// 			this.parentContainer.getByName('target_title').setTintFill(0x000000);
-	// 			this.background.setFillStyle(0x777777, 1);
-	// 		}
-	// 	}
-
-	// }
-
 	/* END-USER-CODE */
 }
 
