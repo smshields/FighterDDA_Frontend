@@ -179,8 +179,6 @@ export default class ActionQueueNextCharacterItem extends Phaser.GameObjects.Con
 			if (characterSprite.name.toLowerCase() == spriteName) {
 				characterSprite.setVisible(true);
 				characterSprite.setActive(true);
-				console.log(characterSprite.name == 'warrior');
-				console.log(characterSprite.name);
 				//add glow, direction
 				if (characterModel.playerNum == 1) {
 					//reverse direction

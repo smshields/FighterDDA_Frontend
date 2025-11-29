@@ -24,7 +24,7 @@ export default class NextActionQueueManagerComponent extends UserComponent {
 		this.next_action_queue_scroll_view = null;
 
 		// === Internal Properties ===
-		
+
 		this.gameObject.nextActionQueueManagerComponent = this;
 		this.nextActionQueue = [];
 
@@ -70,7 +70,7 @@ export default class NextActionQueueManagerComponent extends UserComponent {
 			nextActionQueue.push(nextAction3);
 			nextActionQueue.push(nextAction4);
 
-			//sort queue by action executed timestep
+			//sort queue by action executed timestep - earliest first
 			nextActionQueue.sort((a, b) => {
 				if(a.timeExecuted < b.timeExecuted){
 					return -1;
@@ -89,7 +89,6 @@ export default class NextActionQueueManagerComponent extends UserComponent {
 	}
 
 	updateScrollPanel(items){
-		console.log(this.next_action_queue_scroll_view.scrollViewComponent);
 		this.next_action_queue_scroll_view.scrollViewComponent.updateScrollPanel(items);
 	}
 

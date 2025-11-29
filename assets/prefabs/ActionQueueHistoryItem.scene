@@ -34,103 +34,121 @@
                 },
                 {
                     "type": "Image",
-                    "id": "9cbe6886-c9a8-4793-8151-430556351ca5",
-                    "label": "acting_character",
-                    "displayName": "Acting Character",
-                    "useGameObjectName": true,
-                    "texture": {
-                        "key": "warrior"
-                    },
-                    "x": 45,
-                    "y": 10,
-                    "scaleX": 0.75,
-                    "scaleY": 0.75,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Image",
-                    "id": "60458a9c-a59b-411e-9797-d4e0ae1a8e68",
-                    "label": "action_icon",
-                    "displayName": "Action Icon",
-                    "useGameObjectName": true,
-                    "texture": {
-                        "key": "attack_icon"
-                    },
-                    "x": 153,
-                    "y": 10,
-                    "scaleX": 0.17777045335026118,
-                    "scaleY": 0.17777045335026118,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Image",
-                    "id": "474b5f9a-fde0-44a4-a7d7-f5bc05777495",
-                    "label": "character_1",
-                    "displayName": "Character 1",
-                    "useGameObjectName": true,
-                    "texture": {
-                        "key": "warrior"
-                    },
-                    "x": 255,
-                    "y": 5,
-                    "scaleX": 0.6,
-                    "scaleY": 0.6,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Image",
-                    "id": "4018b33c-9118-47cc-89b6-76463ae5b5d7",
-                    "label": "character_2",
-                    "displayName": "Character 2",
-                    "useGameObjectName": true,
-                    "texture": {
-                        "key": "mage"
-                    },
-                    "x": 360,
-                    "scaleX": 0.6,
-                    "scaleY": 0.6,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Image",
-                    "id": "3b4433c2-7209-427a-a00d-1f1b8605bda9",
-                    "label": "character_3",
-                    "displayName": "Character 3",
-                    "useGameObjectName": true,
-                    "texture": {
-                        "key": "priest"
-                    },
-                    "x": 450,
-                    "y": 5,
-                    "scaleX": 0.6,
-                    "scaleY": 0.6,
-                    "originX": 0,
-                    "originY": 0
-                },
-                {
-                    "type": "Image",
-                    "id": "5e31a03d-63c5-4898-97ba-8d590cbdc5f2",
-                    "label": "character_4",
-                    "displayName": "Character 4",
+                    "id": "3f9fe089-3a61-48ce-bc9e-603c72c205b6",
+                    "label": "acting_rogue",
+                    "displayName": "Acting Rogue",
                     "useGameObjectName": true,
                     "texture": {
                         "key": "rogue"
                     },
-                    "x": 560,
+                    "x": 82,
+                    "y": 49,
+                    "scaleX": 0.7404133658820242,
+                    "scaleY": 0.7404133658820242
+                },
+                {
+                    "type": "Image",
+                    "id": "2a621452-a717-4c6b-8223-1fd1c2b4ab51",
+                    "label": "acting_mage",
+                    "displayName": "Acting Mage",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "mage"
+                    },
+                    "x": 82,
+                    "y": 48,
+                    "scaleX": 0.7426623253532969,
+                    "scaleY": 0.7426623253532969
+                },
+                {
+                    "type": "Image",
+                    "id": "c68a734d-2a5b-4ddf-9980-4bcfe6bafe6b",
+                    "label": "acting_priest",
+                    "displayName": "Acting Priest",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "priest"
+                    },
+                    "x": 82,
+                    "y": 50,
+                    "scaleX": 0.7771024619391912,
+                    "scaleY": 0.7771024619391912
+                },
+                {
+                    "type": "Image",
+                    "id": "9cbe6886-c9a8-4793-8151-430556351ca5",
+                    "label": "acting_warrior",
+                    "displayName": "Acting Warrior",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "warrior"
+                    },
+                    "x": 86,
+                    "y": 49,
+                    "scaleX": 0.7706626955341499,
+                    "scaleY": 0.7706626955341499
+                },
+                {
+                    "type": "Image",
+                    "id": "474b5f9a-fde0-44a4-a7d7-f5bc05777495",
+                    "label": "target_warrior",
+                    "displayName": "Target Warrior",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "warrior"
+                    },
+                    "x": 287,
+                    "y": 35,
                     "scaleX": 0.6,
-                    "scaleY": 0.6,
-                    "originX": 0,
-                    "originY": 0
+                    "scaleY": 0.6
+                },
+                {
+                    "type": "Image",
+                    "id": "4018b33c-9118-47cc-89b6-76463ae5b5d7",
+                    "label": "target_mage",
+                    "displayName": "Target Mage",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "mage"
+                    },
+                    "x": 388,
+                    "y": 33,
+                    "scaleX": 0.5572884243423961,
+                    "scaleY": 0.5572884243423961
+                },
+                {
+                    "type": "Image",
+                    "id": "3b4433c2-7209-427a-a00d-1f1b8605bda9",
+                    "label": "target_priest",
+                    "displayName": "Target Priest",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "priest"
+                    },
+                    "x": 485,
+                    "y": 35,
+                    "scaleX": 0.6,
+                    "scaleY": 0.6
+                },
+                {
+                    "type": "Image",
+                    "id": "5e31a03d-63c5-4898-97ba-8d590cbdc5f2",
+                    "label": "target_rogue",
+                    "displayName": "Target Rogue",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "rogue"
+                    },
+                    "x": 583,
+                    "y": 35,
+                    "scaleX": 0.5516703891877117,
+                    "scaleY": 0.5516703891877117
                 },
                 {
                     "type": "BitmapText",
                     "id": "1bc1de5a-b7e8-4874-a2fa-ca063fe40a33",
-                    "label": "character_1_damage",
-                    "displayName": "Character 1 Damageu",
+                    "label": "target_warrior_damage",
+                    "displayName": "Target Warrior Damage",
                     "useGameObjectName": true,
                     "x": 288,
                     "y": 82,
@@ -146,8 +164,8 @@
                 {
                     "type": "BitmapText",
                     "id": "69a9adce-341f-479e-99ea-6d3a4b77aed1",
-                    "label": "character_4_damage",
-                    "displayName": "Character 4 Damage",
+                    "label": "target_rogue_damage",
+                    "displayName": "Target Rogue Damage",
                     "useGameObjectName": true,
                     "x": 581,
                     "y": 81,
@@ -163,10 +181,10 @@
                 {
                     "type": "BitmapText",
                     "id": "8f209653-8155-4fc2-896b-710ca4193ed3",
-                    "label": "character_3_damage",
-                    "displayName": "Character 3 Damage",
+                    "label": "target_priest_damage",
+                    "displayName": "Target Priest Damage",
                     "useGameObjectName": true,
-                    "x": 477,
+                    "x": 483,
                     "y": 81,
                     "originX": 0.5,
                     "originY": 0.5,
@@ -180,8 +198,8 @@
                 {
                     "type": "BitmapText",
                     "id": "cd8f58f3-dd38-4242-bea4-e04c6e8517f3",
-                    "label": "character_2_damage",
-                    "displayName": "Character 2 Damage",
+                    "label": "target_mage_damage",
+                    "displayName": "Target Mage Damage",
                     "useGameObjectName": true,
                     "x": 386,
                     "y": 81,
@@ -193,6 +211,162 @@
                     "dropShadowX": 2,
                     "dropShadowY": 5,
                     "dropShadowColor": "#0a9a02ff"
+                },
+                {
+                    "type": "Image",
+                    "id": "60458a9c-a59b-411e-9797-d4e0ae1a8e68",
+                    "label": "attack",
+                    "displayName": "Attack",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "attack_icon"
+                    },
+                    "x": 153,
+                    "y": 10,
+                    "scaleX": 0.175,
+                    "scaleY": 0.175,
+                    "originX": 0,
+                    "originY": 0
+                },
+                {
+                    "type": "Image",
+                    "id": "b544d3d2-c1a4-45cb-a5cf-a49fb42e6931",
+                    "label": "defend",
+                    "displayName": "Defend",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "defend_icon"
+                    },
+                    "x": 190,
+                    "y": 46,
+                    "scaleX": 0.175,
+                    "scaleY": 0.175
+                },
+                {
+                    "type": "Image",
+                    "id": "c89ed39b-7c8d-4496-9324-bf745432cc4f",
+                    "label": "heal",
+                    "displayName": "Heal",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "heal_icon"
+                    },
+                    "x": 189,
+                    "y": 47,
+                    "scaleX": 0.175,
+                    "scaleY": 0.175
+                },
+                {
+                    "type": "Image",
+                    "id": "ae8b9cc3-c504-4e19-b65d-a9aaccb8645e",
+                    "label": "magicAttack",
+                    "displayName": "Magic Attack",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "mattack_icon"
+                    },
+                    "x": 189,
+                    "y": 47,
+                    "scaleX": 0.175,
+                    "scaleY": 0.175
+                },
+                {
+                    "type": "Image",
+                    "id": "5c76eea6-170c-4256-b374-c4d5f0d44442",
+                    "label": "multiAttack",
+                    "displayName": "Multi Attack",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "multiattack_icon"
+                    },
+                    "x": 189,
+                    "y": 47,
+                    "scaleX": 0.175,
+                    "scaleY": 0.175
+                },
+                {
+                    "type": "Image",
+                    "id": "f1b19042-d200-4e54-8a3d-18755de51786",
+                    "label": "multiHeal",
+                    "displayName": "Multi Heal",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "multiheal_icon"
+                    },
+                    "x": 189,
+                    "y": 47,
+                    "scaleX": 0.175,
+                    "scaleY": 0.175
+                },
+                {
+                    "type": "Image",
+                    "id": "86d70891-b445-45a5-bae2-b8c7d11a4c55",
+                    "label": "multiMagicAttack",
+                    "displayName": "Multi Magic Attack",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "multimattack_icon"
+                    },
+                    "x": 189,
+                    "y": 47,
+                    "scaleX": 0.175,
+                    "scaleY": 0.175
+                },
+                {
+                    "type": "Image",
+                    "id": "b500872a-e451-4182-b0b0-4b797c103567",
+                    "label": "target_warrior_died",
+                    "displayName": "Target Warrior Died",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "gravestone"
+                    },
+                    "x": 254,
+                    "y": 84,
+                    "scaleX": 0.06170053659180336,
+                    "scaleY": 0.06170053659180336
+                },
+                {
+                    "type": "Image",
+                    "id": "133aba37-3d7a-4aa8-a0f0-cca2e1dcbdc7",
+                    "label": "target_mage_died",
+                    "displayName": "Target Mage Died",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "gravestone"
+                    },
+                    "x": 353,
+                    "y": 84,
+                    "scaleX": 0.06170053659180336,
+                    "scaleY": 0.06170053659180336
+                },
+                {
+                    "type": "Image",
+                    "id": "921b14af-f240-4347-81fa-42b63990036a",
+                    "label": "target_priest_died",
+                    "displayName": "Target Priest Died",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "gravestone"
+                    },
+                    "x": 448,
+                    "y": 84,
+                    "scaleX": 0.06170053659180336,
+                    "scaleY": 0.06170053659180336
+                },
+                {
+                    "type": "Image",
+                    "id": "650c4d60-5b5a-41f8-9c35-2517459244bd",
+                    "label": "target_rogue_died",
+                    "displayName": "Target Rogue Died",
+                    "useGameObjectName": true,
+                    "texture": {
+                        "key": "gravestone"
+                    },
+                    "x": 548,
+                    "y": 84,
+                    "scaleX": 0.06170053659180336,
+                    "scaleY": 0.06170053659180336
                 }
             ]
         }

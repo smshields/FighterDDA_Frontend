@@ -21,100 +21,192 @@ export default class ActionQueueHistoryItem extends Phaser.GameObjects.Container
 		action_queue_history_item_background.fillColor = 11842740;
 		this.add(action_queue_history_item_background);
 
-		// acting_character
-		const acting_character = scene.add.image(45, 10, "warrior");
-		acting_character.name = "acting_character";
-		acting_character.scaleX = 0.75;
-		acting_character.scaleY = 0.75;
-		acting_character.setOrigin(0, 0);
-		this.add(acting_character);
+		// acting_rogue
+		const acting_rogue = scene.add.image(82, 49, "rogue");
+		acting_rogue.name = "acting_rogue";
+		acting_rogue.scaleX = 0.7404133658820242;
+		acting_rogue.scaleY = 0.7404133658820242;
+		this.add(acting_rogue);
 
-		// action_icon
-		const action_icon = scene.add.image(153, 10, "attack_icon");
-		action_icon.name = "action_icon";
-		action_icon.scaleX = 0.17777045335026118;
-		action_icon.scaleY = 0.17777045335026118;
-		action_icon.setOrigin(0, 0);
-		this.add(action_icon);
+		// acting_mage
+		const acting_mage = scene.add.image(82, 48, "mage");
+		acting_mage.name = "acting_mage";
+		acting_mage.scaleX = 0.7426623253532969;
+		acting_mage.scaleY = 0.7426623253532969;
+		this.add(acting_mage);
 
-		// character_1
-		const character_1 = scene.add.image(255, 5, "warrior");
-		character_1.name = "character_1";
-		character_1.scaleX = 0.6;
-		character_1.scaleY = 0.6;
-		character_1.setOrigin(0, 0);
-		this.add(character_1);
+		// acting_priest
+		const acting_priest = scene.add.image(82, 50, "priest");
+		acting_priest.name = "acting_priest";
+		acting_priest.scaleX = 0.7771024619391912;
+		acting_priest.scaleY = 0.7771024619391912;
+		this.add(acting_priest);
 
-		// character_2
-		const character_2 = scene.add.image(360, 0, "mage");
-		character_2.name = "character_2";
-		character_2.scaleX = 0.6;
-		character_2.scaleY = 0.6;
-		character_2.setOrigin(0, 0);
-		this.add(character_2);
+		// acting_warrior
+		const acting_warrior = scene.add.image(86, 49, "warrior");
+		acting_warrior.name = "acting_warrior";
+		acting_warrior.scaleX = 0.7706626955341499;
+		acting_warrior.scaleY = 0.7706626955341499;
+		this.add(acting_warrior);
 
-		// character_3
-		const character_3 = scene.add.image(450, 5, "priest");
-		character_3.name = "character_3";
-		character_3.scaleX = 0.6;
-		character_3.scaleY = 0.6;
-		character_3.setOrigin(0, 0);
-		this.add(character_3);
+		// target_warrior
+		const target_warrior = scene.add.image(287, 35, "warrior");
+		target_warrior.name = "target_warrior";
+		target_warrior.scaleX = 0.6;
+		target_warrior.scaleY = 0.6;
+		this.add(target_warrior);
 
-		// character_4
-		const character_4 = scene.add.image(560, 0, "rogue");
-		character_4.name = "character_4";
-		character_4.scaleX = 0.6;
-		character_4.scaleY = 0.6;
-		character_4.setOrigin(0, 0);
-		this.add(character_4);
+		// target_mage
+		const target_mage = scene.add.image(388, 33, "mage");
+		target_mage.name = "target_mage";
+		target_mage.scaleX = 0.5572884243423961;
+		target_mage.scaleY = 0.5572884243423961;
+		this.add(target_mage);
 
-		// character_1_damage
-		const character_1_damage = scene.add.bitmapText(288, 82, "vcr_osd_mono", "100");
-		character_1_damage.name = "character_1_damage";
-		character_1_damage.setOrigin(0.5, 0.5);
-		character_1_damage.text = "100";
-		character_1_damage.fontSize = -26;
-		character_1_damage.dropShadowX = 2;
-		character_1_damage.dropShadowY = 5;
-		character_1_damage.dropShadowColor = 15269888;
-		this.add(character_1_damage);
+		// target_priest
+		const target_priest = scene.add.image(485, 35, "priest");
+		target_priest.name = "target_priest";
+		target_priest.scaleX = 0.6;
+		target_priest.scaleY = 0.6;
+		this.add(target_priest);
 
-		// character_4_damage
-		const character_4_damage = scene.add.bitmapText(581, 81, "vcr_osd_mono", "100");
-		character_4_damage.name = "character_4_damage";
-		character_4_damage.setOrigin(0.5, 0.5);
-		character_4_damage.text = "100";
-		character_4_damage.fontSize = -26;
-		character_4_damage.dropShadowX = 2;
-		character_4_damage.dropShadowY = 5;
-		character_4_damage.dropShadowColor = 15269888;
-		this.add(character_4_damage);
+		// target_rogue
+		const target_rogue = scene.add.image(583, 35, "rogue");
+		target_rogue.name = "target_rogue";
+		target_rogue.scaleX = 0.5516703891877117;
+		target_rogue.scaleY = 0.5516703891877117;
+		this.add(target_rogue);
 
-		// character_3_damage
-		const character_3_damage = scene.add.bitmapText(477, 81, "vcr_osd_mono", "100");
-		character_3_damage.name = "character_3_damage";
-		character_3_damage.setOrigin(0.5, 0.5);
-		character_3_damage.text = "100";
-		character_3_damage.fontSize = -26;
-		character_3_damage.dropShadowX = 2;
-		character_3_damage.dropShadowY = 5;
-		character_3_damage.dropShadowColor = 15269888;
-		this.add(character_3_damage);
+		// target_warrior_damage
+		const target_warrior_damage = scene.add.bitmapText(288, 82, "vcr_osd_mono", "100");
+		target_warrior_damage.name = "target_warrior_damage";
+		target_warrior_damage.setOrigin(0.5, 0.5);
+		target_warrior_damage.text = "100";
+		target_warrior_damage.fontSize = -26;
+		target_warrior_damage.dropShadowX = 2;
+		target_warrior_damage.dropShadowY = 5;
+		target_warrior_damage.dropShadowColor = 15269888;
+		this.add(target_warrior_damage);
 
-		// character_2_damage
-		const character_2_damage = scene.add.bitmapText(386, 81, "vcr_osd_mono", "100");
-		character_2_damage.name = "character_2_damage";
-		character_2_damage.setOrigin(0.5, 0.5);
-		character_2_damage.text = "100";
-		character_2_damage.fontSize = -26;
-		character_2_damage.dropShadowX = 2;
-		character_2_damage.dropShadowY = 5;
-		character_2_damage.dropShadowColor = 694786;
-		this.add(character_2_damage);
+		// target_rogue_damage
+		const target_rogue_damage = scene.add.bitmapText(581, 81, "vcr_osd_mono", "100");
+		target_rogue_damage.name = "target_rogue_damage";
+		target_rogue_damage.setOrigin(0.5, 0.5);
+		target_rogue_damage.text = "100";
+		target_rogue_damage.fontSize = -26;
+		target_rogue_damage.dropShadowX = 2;
+		target_rogue_damage.dropShadowY = 5;
+		target_rogue_damage.dropShadowColor = 15269888;
+		this.add(target_rogue_damage);
+
+		// target_priest_damage
+		const target_priest_damage = scene.add.bitmapText(483, 81, "vcr_osd_mono", "100");
+		target_priest_damage.name = "target_priest_damage";
+		target_priest_damage.setOrigin(0.5, 0.5);
+		target_priest_damage.text = "100";
+		target_priest_damage.fontSize = -26;
+		target_priest_damage.dropShadowX = 2;
+		target_priest_damage.dropShadowY = 5;
+		target_priest_damage.dropShadowColor = 15269888;
+		this.add(target_priest_damage);
+
+		// target_mage_damage
+		const target_mage_damage = scene.add.bitmapText(386, 81, "vcr_osd_mono", "100");
+		target_mage_damage.name = "target_mage_damage";
+		target_mage_damage.setOrigin(0.5, 0.5);
+		target_mage_damage.text = "100";
+		target_mage_damage.fontSize = -26;
+		target_mage_damage.dropShadowX = 2;
+		target_mage_damage.dropShadowY = 5;
+		target_mage_damage.dropShadowColor = 694786;
+		this.add(target_mage_damage);
+
+		// attack
+		const attack = scene.add.image(153, 10, "attack_icon");
+		attack.name = "attack";
+		attack.scaleX = 0.175;
+		attack.scaleY = 0.175;
+		attack.setOrigin(0, 0);
+		this.add(attack);
+
+		// defend
+		const defend = scene.add.image(190, 46, "defend_icon");
+		defend.name = "defend";
+		defend.scaleX = 0.175;
+		defend.scaleY = 0.175;
+		this.add(defend);
+
+		// heal
+		const heal = scene.add.image(189, 47, "heal_icon");
+		heal.name = "heal";
+		heal.scaleX = 0.175;
+		heal.scaleY = 0.175;
+		this.add(heal);
+
+		// magicAttack
+		const magicAttack = scene.add.image(189, 47, "mattack_icon");
+		magicAttack.name = "magicAttack";
+		magicAttack.scaleX = 0.175;
+		magicAttack.scaleY = 0.175;
+		this.add(magicAttack);
+
+		// multiAttack
+		const multiAttack = scene.add.image(189, 47, "multiattack_icon");
+		multiAttack.name = "multiAttack";
+		multiAttack.scaleX = 0.175;
+		multiAttack.scaleY = 0.175;
+		this.add(multiAttack);
+
+		// multiHeal
+		const multiHeal = scene.add.image(189, 47, "multiheal_icon");
+		multiHeal.name = "multiHeal";
+		multiHeal.scaleX = 0.175;
+		multiHeal.scaleY = 0.175;
+		this.add(multiHeal);
+
+		// multiMagicAttack
+		const multiMagicAttack = scene.add.image(189, 47, "multimattack_icon");
+		multiMagicAttack.name = "multiMagicAttack";
+		multiMagicAttack.scaleX = 0.175;
+		multiMagicAttack.scaleY = 0.175;
+		this.add(multiMagicAttack);
+
+		// target_warrior_died
+		const target_warrior_died = scene.add.image(254, 84, "gravestone");
+		target_warrior_died.name = "target_warrior_died";
+		target_warrior_died.scaleX = 0.06170053659180336;
+		target_warrior_died.scaleY = 0.06170053659180336;
+		this.add(target_warrior_died);
+
+		// target_mage_died
+		const target_mage_died = scene.add.image(353, 84, "gravestone");
+		target_mage_died.name = "target_mage_died";
+		target_mage_died.scaleX = 0.06170053659180336;
+		target_mage_died.scaleY = 0.06170053659180336;
+		this.add(target_mage_died);
+
+		// target_priest_died
+		const target_priest_died = scene.add.image(448, 84, "gravestone");
+		target_priest_died.name = "target_priest_died";
+		target_priest_died.scaleX = 0.06170053659180336;
+		target_priest_died.scaleY = 0.06170053659180336;
+		this.add(target_priest_died);
+
+		// target_rogue_died
+		const target_rogue_died = scene.add.image(548, 84, "gravestone");
+		target_rogue_died.name = "target_rogue_died";
+		target_rogue_died.scaleX = 0.06170053659180336;
+		target_rogue_died.scaleY = 0.06170053659180336;
+		this.add(target_rogue_died);
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+
+		//build maps - characters to UI
+		this.warriorMap = new ActionQueueHistoryItem.HistoryItemMap('warrior', acting_warrior, target_warrior, target_warrior_died, target_warrior_damage);
+		this.mageMap = new ActionQueueHistoryItem.HistoryItemMap('mage', acting_mage, target_mage, target_mage_died, target_mage_damage);
+		this.priestMap = new ActionQueueHistoryItem.HistoryItemMap('priest', acting_priest, target_priest, target_priest_died, target_priest_damage);
+		this.rogueMap = new ActionQueueHistoryItem.HistoryItemMap('rogue', acting_rogue, target_rogue, target_rogue_died, target_rogue_damage);
+		
 		/* END-USER-CTR-CODE */
 	}
 
@@ -124,6 +216,17 @@ export default class ActionQueueHistoryItem extends Phaser.GameObjects.Container
 	height = 100;
 
 	/* START-USER-CODE */
+
+	//internal class for easier mapping of ui elements to a string reference
+	static HistoryItemMap = class {
+		constructor(characterName, actorGO, targetGO, diedGO, damageGO) {
+			this.characterName = characterName;
+			this.actor = actorGO;
+			this.target = targetGO;
+			this.died = diedGO;
+			this.damage = damageGO;
+		}
+	}
 
 	// Write your code here.
 
