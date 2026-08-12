@@ -124,12 +124,14 @@ export default class ActionItem extends Phaser.GameObjects.Container {
 
 		this.isDisabled = true;
 
+		this.scene.audioManager?.play("buttonSelect");
 		gameManager.actionSelected(this.parentContainer.actionName);
 
 	}
 
 	onHover() {
 		if (!this.isDisabled) {
+			this.scene.audioManager?.play("buttonHover");
 			this.parentContainer.action_arrow.setActive(false);
 			this.parentContainer.action_arrow.setVisible(false);
 			this.parentContainer.action_selected_arrow.setActive(false);

@@ -4,6 +4,7 @@
 /* START OF COMPILED CODE */
 
 /* START-USER-IMPORTS */
+import { hpChangeText, isHealOutcome } from "../../src/helpers/formatters.js";
 /* END-USER-IMPORTS */
 
 export default class ActionQueueHistoryItem extends Phaser.GameObjects.Container {
@@ -225,6 +226,89 @@ export default class ActionQueueHistoryItem extends Phaser.GameObjects.Container
 			this.target = targetGO;
 			this.died = diedGO;
 			this.damage = damageGO;
+		}
+	}
+
+	static TEAM_TINTS = Object.freeze({ 1: 0xaab8ff, 2: 0xffaaaa });
+	static DAMAGE_TINT = 0xff6666;
+	static HEAL_TINT = 0x7bd88f;
+	static ACTION_ICON_NAMES = Object.freeze([
+		"attack", "defend", "heal", "magicAttack", "multiAttack", "multiHeal", "multiMagicAttack",
+	]);
+
+	characterMaps() {
+		return {
+			warrior: this.warriorMap,
+			mage: this.mageMap,
+			priest: this.priestMap,
+			rogue: this.rogueMap,
+		};
+	}
+
+	setElementVisible(element, visible) {
+		element.setVisible(visible);
+		element.setActive(visible);
+	}
+
+	/**
+	 * Populate this row from one executed action off the wire
+	 * (see FighterDDA-Server adapter.executedActionToWire):
+	 *   { name, actorPlayerNum, actorName, timeExecuted,
+	 *     targetOutcomes: [{ playerNum, characterName, hpChange, defeated }] }
+	 */
+	setFromExecutedAction(executedAction) {
+		const maps = this.characterMaps();
+
+		//hide everything, then reveal what this action used
+		for (const map of Object.values(maps)) {
+			this.setElementVisible(map.actor, false);
+			this.setElementVisible(map.target, false);
+			this.setElementVisible(map.died, false);
+			this.setElementVisible(map.damage, false);
+		}
+		for (const iconName of ActionQueueHistoryItem.ACTION_ICON_NAMES) {
+			const icon = this.getByName(iconName);
+			if (icon) {
+				this.setElementVisible(icon, false);
+			}
+		}
+
+		//actor sprite, team-tinted, facing center like the battle field
+		const actorMap = maps[String(executedAction.actorName).toLowerCase()];
+		if (actorMap) {
+			this.setElementVisible(actorMap.actor, true);
+			actorMap.actor.setTint(ActionQueueHistoryItem.TEAM_TINTS[executedAction.actorPlayerNum] || 0xffffff);
+			actorMap.actor.setFlipX(executedAction.actorPlayerNum === 2);
+		}
+
+		//action icon (elements are named with the wire action names)
+		const icon = this.getByName(executedAction.name);
+		if (icon) {
+			this.setElementVisible(icon, true);
+		}
+
+		//per-target outcome: sprite, damage/heal number, gravestone
+		for (const outcome of executedAction.targetOutcomes || []) {
+			const map = maps[String(outcome.characterName).toLowerCase()];
+			if (!map) {
+				continue;
+			}
+			this.setElementVisible(map.target, true);
+			map.target.setTint(ActionQueueHistoryItem.TEAM_TINTS[outcome.playerNum] || 0xffffff);
+			map.target.setFlipX(outcome.playerNum === 2);
+
+			const text = hpChangeText(executedAction.name, outcome);
+			if (text !== "") {
+				this.setElementVisible(map.damage, true);
+				map.damage.setText(text);
+				map.damage.setTint(isHealOutcome(executedAction.name, outcome)
+					? ActionQueueHistoryItem.HEAL_TINT
+					: ActionQueueHistoryItem.DAMAGE_TINT);
+			}
+
+			if (outcome.defeated) {
+				this.setElementVisible(map.died, true);
+			}
 		}
 	}
 

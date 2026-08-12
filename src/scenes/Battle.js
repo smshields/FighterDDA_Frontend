@@ -19,6 +19,8 @@ import ActionItem from "../../assets/prefabs/ActionItem.js";
 import ActionQueueNextCharacterItem from "../../assets/prefabs/ActionQueueNextCharacterItem.js";
 import ActionQueueHistoryItem from "../../assets/prefabs/ActionQueueHistoryItem.js";
 import TargetItem from "../../assets/prefabs/TargetItem.js";
+import AudioManager from "../audio/AudioManager.js";
+import PauseMenu from "../ui/PauseMenu.js";
 /* END-USER-IMPORTS */
 
 export default class Battle extends Phaser.Scene {
@@ -826,6 +828,9 @@ export default class Battle extends Phaser.Scene {
 			url: 'lib/rexuiplugin.min.js',
 			sceneKey: 'rexUI'
 		});
+
+		//sound effects + music
+		AudioManager.preload(this);
 	}
 
 	update() {
@@ -837,6 +842,12 @@ export default class Battle extends Phaser.Scene {
 		this.gameManager = this.children.getByName('game_manager').gameManagerComponent;
 		this.characterManager = this.children.getByName('character_manager').characterManagerComponent;
 		this.nextActionQueueManager = this.children.getByName('next_action_queue_manager').nextActionQueueManagerComponent;
+
+		//audio + pause menu (ESC)
+		this.audioManager = new AudioManager(this);
+		this.audioManager.startMusic();
+		this.pauseMenu = new PauseMenu(this);
+		this.input.keyboard.on('keydown-ESC', () => this.pauseMenu.toggle());
 	}
 
 	createActionScrollViewContent(scene, width, height, actions) {
@@ -938,24 +949,29 @@ export default class Battle extends Phaser.Scene {
 
 	}
 
+	//init history scroll view as empty; rows are added as actions execute
 	createQueueHistoryScrollViewContent(scene, width, height) {
 
+		return scene.rexUI.add.sizer({
+			orientation: 1, // vertical
+			space: { item: 5 }
+		});
+
+	}
+
+	//items = executed actions off the wire, newest first (see GameManager.onTick)
+	updateQueueHistoryScrollViewContent(scene, width, height, items) {
 		const content = scene.rexUI.add.sizer({
 			orientation: 1, // vertical
 			space: { item: 5 }
 		});
 
-
-		let items = ['Attack', 'Defend', 'Heal', 'Magic Attack', 'Multi Attack', 'Multi Magic Attack', 'Multi Heal', 'Attack 2', 'Attack 3', 'Attack 4', 'Attack 5'];
-
 		for (let i = 0; i < items.length; i += 1) {
-			let actionHistoryItem = new ActionQueueHistoryItem(scene, -width / 2.025, -(50)); //HARDCODED - Half of the height of the ActionItem Prefab
+			let actionHistoryItem = new ActionQueueHistoryItem(scene, -width / 2.025, -(50)); //HARDCODED - Half of the height of the prefab
+			actionHistoryItem.setFromExecutedAction(items[i]);
 			actionHistoryItem.setSize(actionHistoryItem.width, actionHistoryItem.height);
-			const testAction = scene.add.container(0, 0, [actionHistoryItem]).setSize(actionHistoryItem.width, actionHistoryItem.height);
-
-			content.add(
-				testAction
-			);
+			const historyContainer = scene.add.container(0, 0, [actionHistoryItem]).setSize(actionHistoryItem.width, actionHistoryItem.height);
+			content.add(historyContainer);
 		}
 
 		return content;
@@ -1096,7 +1112,7 @@ export default class Battle extends Phaser.Scene {
 				break;
 			}
 			case 'action_queue_history': {
-				contentCreateFunction = this.createQueueHistoryScrollViewContent;
+				contentCreateFunction = this.updateQueueHistoryScrollViewContent;
 				break;
 			}
 			case 'action_scrollview': {
@@ -1150,6 +1166,7 @@ export default class Battle extends Phaser.Scene {
 				break;
 			}
 			case 'action_queue_history': {
+				this.destroyPanelWithOverlay(this.actionQueueHistoryPanel);
 				panel.name = 'action_queue_history';
 				this.actionQueueHistoryPanel = panel;
 				break;

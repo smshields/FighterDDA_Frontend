@@ -205,6 +205,7 @@ export default class TargetItem extends Phaser.GameObjects.Container {
 		//clear hover highlights before handing the choice to the game manager
 		targetItem.onLeaveHover.call(this);
 
+		targetItem.scene.audioManager?.play("buttonSelect");
 		let targetModel = targetItem.isMulti ? null : targetItem.targetModel;
 		targetItem.gameManager.targetSelected(targetModel, targetItem.isMulti);
 	}
@@ -214,6 +215,9 @@ export default class TargetItem extends Phaser.GameObjects.Container {
 		//handle references to refer to the container UI
 		let targetItem = this.parentContainer;
 
+		if (!targetItem.isDisabled) {
+			targetItem.scene.audioManager?.play("buttonHover");
+		}
 
 		if (!targetItem.isDisabled && !targetItem.isBackArrow) {
 			targetItem.target_arrow.setActive(false);

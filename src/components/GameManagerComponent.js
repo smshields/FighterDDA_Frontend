@@ -62,6 +62,10 @@ export default class GameManagerComponent extends UserComponent {
 		this.netController = null;
 		this.notificationText = null;
 
+		//executed actions off the wire, newest first (feeds the HISTORY panel;
+		//all rows retained per project decision)
+		this.actionHistory = [];
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -120,13 +124,21 @@ export default class GameManagerComponent extends UserComponent {
 			},
 			onGameStarted: (msg) => {
 				this.gameState.gameOver = false;
+				this.actionHistory = [];
+				this.updateActionHistoryView();
 				this.applySnapshot(msg.snapshot);
 				this.setNotification("BATTLE START!");
 			},
 			onTick: (msg) => {
 				this.applySnapshot(msg.snapshot);
+				this.ingestExecutedActions(msg.executedActions);
 			},
-			onActionRequired: (msg) => this.handleActionRequired(msg),
+			onActionRequired: (msg) => {
+				if (this.netController.playerNum === msg.playerNum) {
+					this.scene.audioManager?.play("ready");
+				}
+				this.handleActionRequired(msg);
+			},
 			onActionAccepted: (msg) => {
 				if (this.netController.playerNum === msg.playerNum) {
 					this.setNotification("ACTION QUEUED - WAITING...");
@@ -166,6 +178,45 @@ export default class GameManagerComponent extends UserComponent {
 		this.scene.nextActionQueueManager.setQueueFromWire(snapshot.nextActions);
 	}
 
+	/** Append newly executed actions (newest first), play their sounds, and
+	 *  refresh the HISTORY panel. */
+	ingestExecutedActions(executedActions) {
+		if (!executedActions || executedActions.length === 0) {
+			return;
+		}
+		for (const executedAction of executedActions) {
+			this.actionHistory.unshift(executedAction);
+			this.scene.audioManager?.playForExecutedAction(executedAction);
+		}
+		this.updateActionHistoryView();
+	}
+
+	updateActionHistoryView() {
+		if (!this.historyScrollview) {
+			this.historyScrollview = this.findByName(this.scene.children.list, 'action_queue_history_scrollview');
+		}
+		if (this.historyScrollview && this.historyScrollview.scrollViewComponent) {
+			this.historyScrollview.scrollViewComponent.updateScrollPanel(this.actionHistory);
+		}
+	}
+
+	/** Depth-first search of the display list for a named object (some editor
+	 *  containers are unnamed, so path lookups aren't reliable). */
+	findByName(objects, name) {
+		for (const object of objects) {
+			if (object.name === name) {
+				return object;
+			}
+			if (object.list) {
+				const found = this.findByName(object.list, name);
+				if (found) {
+					return found;
+				}
+			}
+		}
+		return null;
+	}
+
 	/** The server needs OUR decision: enter the action-selection flow. */
 	handleActionRequired(msg) {
 		if (this.netController.playerNum !== msg.playerNum) {
@@ -182,6 +233,7 @@ export default class GameManagerComponent extends UserComponent {
 	}
 
 	handleGameEnded(msg) {
+		this.scene.audioManager?.play("gameOver");
 		this.gameState.gameOver = true;
 		this.currentState = this.States.GAME_OVER;
 		this.scene.targetPanel.disablePanel();
