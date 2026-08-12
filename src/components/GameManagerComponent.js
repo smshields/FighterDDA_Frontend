@@ -1,6 +1,8 @@
 
 // You can write more code here
 import ActionModel from "../models/ActionModel.js";
+import SocketClient from "../net/SocketClient.js";
+import BattleNetController from "../net/BattleNetController.js";
 //TODO: I should be storing more game state into the object for cleaner logging.
 
 /* START OF COMPILED CODE */
@@ -40,7 +42,9 @@ export default class GameManagerComponent extends UserComponent {
 			LOADING_ACTION: "LOADING_ACTION",
 			WAITING_FOR_ACTION_INPUT: "WAITING_FOR_ACTION_INPUT",
 			LOADING_TARGETS: "LOADING_TARGETS",
-			WAITING_FOR_TARGET_INPUT: "WAITING_FOR_TARGET_INPUT"
+			WAITING_FOR_TARGET_INPUT: "WAITING_FOR_TARGET_INPUT",
+			WAITING_FOR_SERVER: "WAITING_FOR_SERVER",
+			GAME_OVER: "GAME_OVER"
 		});
 
 		this.readyToAct = [];
@@ -54,8 +58,9 @@ export default class GameManagerComponent extends UserComponent {
 
 		this.socketInitialized = false;
 
-
-
+		//networking (socket mode only; null in stub mode)
+		this.netController = null;
+		this.notificationText = null;
 
 		/* END-USER-CTR-CODE */
 	}
@@ -69,8 +74,141 @@ export default class GameManagerComponent extends UserComponent {
 	/* START-USER-CODE */
 
 	start() {
+		this.initNetworking();
 		this.syncCharacterManagerWithGameState();
 
+	}
+
+	/**
+	 * Socket mode is opt-in via URL params so the stub demo keeps working:
+	 *   ?net=1            connect to ws(s)://<page host>/ws (served by FighterDDA-Server)
+	 *   ?server=ws://...  connect to an explicit server URL
+	 *   &room=CODE        join an existing room (experimenter flow) instead of
+	 *                     creating a casual room and auto-starting.
+	 */
+	initNetworking() {
+		const params = new URLSearchParams(window.location.search);
+		const explicitServer = params.get("server");
+		if (!explicitServer && !params.get("net")) {
+			return; //stub mode — existing local demo behavior
+		}
+
+		const protocol = window.location.protocol === "https:" ? "wss" : "ws";
+		const url = explicitServer || (protocol + "://" + window.location.host + "/ws");
+		const roomCode = params.get("room");
+
+		this.socketInitialized = true;
+		this.currentState = this.States.WAITING_FOR_SERVER;
+		this.setNotification("CONNECTING...");
+
+		const socket = new SocketClient(url);
+		this.netController = new BattleNetController(socket, {
+			onSession: (msg) => {
+				this.setNotification("ROOM " + msg.code.toUpperCase() + " - STARTING...");
+				//Casual room MVP: start immediately. Experimenter rooms are
+				//joined via ?room= and started from the experimenter view.
+				this.netController.startGame();
+			},
+			onJoined: (msg) => {
+				this.setNotification("JOINED ROOM " + msg.code.toUpperCase() + " - WAITING FOR START...");
+			},
+			onGameStarted: (msg) => {
+				this.gameState.gameOver = false;
+				this.applySnapshot(msg.snapshot);
+				this.setNotification("BATTLE START!");
+			},
+			onTick: (msg) => {
+				this.applySnapshot(msg.snapshot);
+			},
+			onActionRequired: (msg) => this.handleActionRequired(msg),
+			onActionAccepted: (msg) => {
+				if (this.netController.playerNum === msg.playerNum) {
+					this.setNotification("ACTION QUEUED - WAITING...");
+					this.currentState = this.States.WAITING_FOR_SERVER;
+				}
+			},
+			onActionRejected: (msg) => {
+				this.setNotification("INVALID ACTION: " + msg.error);
+				//The server still holds the prompt open; re-enter the selection
+				//flow from it (actingCharacter was cleared optimistically).
+				if (this.netController.pendingPrompt) {
+					this.handleActionRequired(this.netController.pendingPrompt);
+				}
+			},
+			onGameEnded: (msg) => this.handleGameEnded(msg),
+			onSessionEnded: () => this.setNotification("SESSION ENDED"),
+			onError: (msg) => this.setNotification("ERROR: " + msg.error),
+		});
+
+		socket.connect()
+			.then(() => {
+				if (roomCode) {
+					this.netController.joinPlayer(roomCode);
+				} else {
+					this.netController.registerPlayer();
+				}
+			})
+			.catch(() => this.setNotification("CONNECTION FAILED: " + url));
+	}
+
+	/** Ingest a server snapshot: characters + pending action queue. */
+	applySnapshot(snapshot) {
+		if (!snapshot) {
+			return;
+		}
+		this.character_manager.characterManagerComponent.applySnapshot(snapshot.characters);
+		this.scene.nextActionQueueManager.setQueueFromWire(snapshot.nextActions);
+	}
+
+	/** The server needs OUR decision: enter the action-selection flow. */
+	handleActionRequired(msg) {
+		if (this.netController.playerNum !== msg.playerNum) {
+			this.setNotification("WAITING FOR OPPONENT...");
+			return;
+		}
+
+		this.applySnapshot(msg.snapshot);
+
+		const characterManager = this.character_manager.characterManagerComponent;
+		this.actingCharacter = characterManager.lookupModel(msg.actor.playerNum, msg.actor.characterName);
+		this.setNotification("SELECT ACTION FOR " + msg.actor.characterName.toUpperCase());
+		this.currentState = this.States.LOADING_ACTION;
+	}
+
+	handleGameEnded(msg) {
+		this.gameState.gameOver = true;
+		this.currentState = this.States.GAME_OVER;
+		this.scene.targetPanel.disablePanel();
+		this.scene.actionPanel.disablePanel();
+
+		if (msg.draw) {
+			this.setNotification("DRAW!");
+		} else if (this.netController.playerNum === null) {
+			this.setNotification("PLAYER " + msg.loserPlayerNum + " DEFEATED!");
+		} else if (msg.loserPlayerNum === this.netController.playerNum) {
+			this.setNotification("DEFEAT...");
+		} else {
+			this.setNotification("VICTORY!");
+		}
+	}
+
+	/** Set the top notification banner text (lazy lookup: the bitmap text is
+	 *  nested inside an unnamed container from editorCreate). */
+	setNotification(text) {
+		if (!this.notificationText) {
+			for (const child of this.scene.children.list) {
+				if (child.list) {
+					const found = child.list.find((o) => o.name === "notification");
+					if (found) {
+						this.notificationText = found;
+						break;
+					}
+				}
+			}
+		}
+		if (this.notificationText) {
+			this.notificationText.text = text;
+		}
 	}
 
 	update() {
@@ -176,8 +314,48 @@ export default class GameManagerComponent extends UserComponent {
 
 	}
 
-	targetSelected(targetModel) {
-		//TODO: MAKE SURE YOU NULL OUT this.actingCharacter
+	/**
+	 * Terminal step of the selection flow: the player confirmed a target for
+	 * this.selectedAction. Single-target actions pass the chosen CharacterModel;
+	 * multi-target items pass (null, true) — the server computes the full
+	 * living set, clients never pick subsets.
+	 */
+	targetSelected(targetModel, isMulti = false) {
+		if (this.currentState !== this.States.WAITING_FOR_TARGET_INPUT) {
+			return;
+		}
+
+		const characterManager = this.character_manager.characterManagerComponent;
+
+		if (this.socketInitialized) {
+			const targetName = isMulti ? undefined : targetModel.characterName;
+			const result = this.netController.chooseAction(this.selectedAction, targetName);
+			if (!result.ok) {
+				this.setNotification("INVALID: " + result.error);
+				return;
+			}
+			this.setNotification("WAITING...");
+			this.currentState = this.States.WAITING_FOR_SERVER;
+		} else {
+			//stub mode: log the decision and loop back to the demo prompt
+			console.log("DECISION: " + this.selectedAction + " -> " +
+				(isMulti ? "ALL" : targetModel.characterName));
+			this.currentState = this.States.PREPARING_GAME_DATA;
+		}
+
+		//reset selection state and UI
+		characterManager.disableAllTargetingArrows();
+		this.scene.targetPanel.disablePanel();
+		this.scene.actionPanel.disablePanel();
+
+		let targetScrollview = this.target_menu.getByName('target_scrollview');
+		targetScrollview.scrollViewComponent.updateScrollPanel([]);
+		let actionScrollView = this.action_menu.getByName('action_scrollview');
+		actionScrollView.scrollViewComponent.updateScrollPanel([]);
+
+		this.actingCharacter = null;
+		this.selectedAction = "NONE";
+		this.selectedActionModel = null;
 	}
 
 	returnToActionSelect() {

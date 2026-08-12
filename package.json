@@ -1,4 +1,8 @@
 {
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
   "dependencies": {
     "phaser": "^4.0.0-rc.5",
     "phaser-ui-tools": "^2.0.0-beta"

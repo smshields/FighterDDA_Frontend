@@ -195,7 +195,18 @@ export default class TargetItem extends Phaser.GameObjects.Container {
 	}
 
 	onPointerUp() {
-		console.log("REACHED POINTER UP");
+		//`this` is the hit zone; the container carries the state.
+		let targetItem = this.parentContainer;
+
+		if (targetItem.isDisabled || targetItem.isBackArrow) {
+			return;
+		}
+
+		//clear hover highlights before handing the choice to the game manager
+		targetItem.onLeaveHover.call(this);
+
+		let targetModel = targetItem.isMulti ? null : targetItem.targetModel;
+		targetItem.gameManager.targetSelected(targetModel, targetItem.isMulti);
 	}
 
 	onHover() {

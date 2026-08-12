@@ -163,7 +163,30 @@ export default class CharacterManagerComponent extends UserComponent {
 	initializeCharacterModels(){
 		//if we have data from the server, use that. If not, use stubs for testing
 		if(this.scene.gameManager.socketInitialized){
-			//TODO: implement socket logic, probably move this to a game manager
+			//Socket mode: models start empty and are filled by the first server
+			//snapshot (game-started/tick → applySnapshot). Pre-seed identity so
+			//UI lookups and name labels work before the first snapshot lands.
+			const seeds = [
+				[this.p1_warrior_model, 1, "Warrior"], [this.p1_mage_model, 1, "Mage"],
+				[this.p1_priest_model, 1, "Priest"], [this.p1_rogue_model, 1, "Rogue"],
+				[this.p2_warrior_model, 2, "Warrior"], [this.p2_mage_model, 2, "Mage"],
+				[this.p2_priest_model, 2, "Priest"], [this.p2_rogue_model, 2, "Rogue"],
+			];
+			for (const [model, playerNum, characterName] of seeds) {
+				model.playerNum = playerNum;
+				model.characterName = characterName;
+			}
+
+			this.characters = [
+				this.p1_warrior_model,
+				this.p1_mage_model,
+				this.p1_rogue_model,
+				this.p1_priest_model,
+				this.p2_mage_model,
+				this.p2_warrior_model,
+				this.p2_rogue_model,
+				this.p2_priest_model
+			]
 		} else {
 			//use stubs in assets for testing
 			let jsonString = '_json';
@@ -250,14 +273,53 @@ export default class CharacterManagerComponent extends UserComponent {
 
 	}
 
-	//Update character model
-	updateCharacterModel(){}
+	//Find the local CharacterModel for a wire character (playerNum + name)
+	lookupModel(playerNum, characterName){
+		const label = "p" + playerNum + "_" + characterName.toLowerCase();
+		const mapItem = this.characterUIModelMap.find((item) => item.id === label);
+		return mapItem ? mapItem.model : null;
+	}
 
-	//Update character view based on model
-	updateCharacterView(){}
+	//Update one character model from a server wire character
+	updateCharacterModel(wireCharacter){
+		const model = this.lookupModel(wireCharacter.playerNum, wireCharacter.characterName);
+		if (model) {
+			model.updateFromJson(wireCharacter);
+		}
+		return model;
+	}
 
-	//Update character views based on models
-	updateCharacterViews(){}
+	//Update one character's view based on its model
+	updateCharacterView(mapItem){
+		const view = mapItem.ui.characterViewComponent;
+		view.updateIsDead();
+		view.updateIsDefending();
+		view.updateHealthBar();
+		view.updateActionBar();
+		view.updateActingArrow();
+	}
+
+	//Update every character view based on the models
+	updateCharacterViews(){
+		for (const mapItem of this.characterUIModelMap) {
+			this.updateCharacterView(mapItem);
+		}
+	}
+
+	//Ingest a server snapshot: update all models, then refresh all views
+	applySnapshot(wireCharacters){
+		for (const wireCharacter of wireCharacters) {
+			this.updateCharacterModel(wireCharacter);
+		}
+		this.updateCharacterViews();
+	}
+
+	//Turn off every on-field targeting arrow (after a target is confirmed)
+	disableAllTargetingArrows(){
+		for (const mapItem of this.characterUIModelMap) {
+			mapItem.ui.characterViewComponent.disableTargetingArrow();
+		}
+	}
 
 
 	/* END-USER-CODE */

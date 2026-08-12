@@ -39,9 +39,25 @@ export default class NextActionQueueManagerComponent extends UserComponent {
 
 	/* START-USER-CODE */
 
+	//Ingest the server snapshot's pending action queue (ActionSchema shapes)
+	setQueueFromWire(wireActions = []){
+		const queue = [];
+		for (const wireAction of wireActions) {
+			const actionModel = new ActionModel();
+			actionModel.updateFromJson(wireAction);
+			queue.push(actionModel);
+		}
+
+		//sort queue by execution timestep - earliest first
+		queue.sort((a, b) => a.timeExecuted - b.timeExecuted);
+
+		this.nextActionQueue = queue;
+		this.updateScrollPanel(queue);
+	}
+
 	updateNextActionQueue(){
 		if(this.scene.gameManager.socketInitialized){
-			//TODO: Implement socket logic
+			//Socket mode: the queue is fed by server snapshots via setQueueFromWire.
 		} else {
 			//use stubs in assets for testing
 			let nextActionQueue = [];
