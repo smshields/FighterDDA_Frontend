@@ -20,6 +20,9 @@ window.addEventListener('load', function () {
 	game.scene.add("Preload", Preload);
 	game.scene.add("Battle", Battle);
 	game.scene.add("Boot", Boot, true);
+
+	//debug/testing handle (used by the automated self-test driver)
+	window.game = game;
 });
 
 class Boot extends Phaser.Scene {

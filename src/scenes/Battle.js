@@ -818,9 +818,12 @@ export default class Battle extends Phaser.Scene {
 		this.load.json('action_next_4_json', 'assets/data/action_json_stubs/actionNext4.JSON');
 
 
+		//rexUI is vendored locally (lib/rexuiplugin.min.js, from phaser4-rex-plugins
+		//on npm) — the old raw.githubusercontent alpha-branch URL went 404 and a
+		//user study can't depend on a remote CDN anyway.
 		this.load.scenePlugin({
 			key: 'rexuiplugin',
-			url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/v4.0.0-alpha/dist/rexuiplugin.min.js',
+			url: 'lib/rexuiplugin.min.js',
 			sceneKey: 'rexUI'
 		});
 	}
@@ -1140,7 +1143,7 @@ export default class Battle extends Phaser.Scene {
 
 		switch (name) {
 			case 'action_queue_next': {
-				this.actionQueueNextPanel.destroy();
+				this.destroyPanelWithOverlay(this.actionQueueNextPanel);
 				panel.name = 'action_queue_next';
 				this.actionQueueNextPanel = panel;
 				//Unsure if I need a panel disabler here - perhaps when queue is empty?
@@ -1152,14 +1155,14 @@ export default class Battle extends Phaser.Scene {
 				break;
 			}
 			case 'action_scrollview': {
-				this.actionPanel.destroy();
+				this.destroyPanelWithOverlay(this.actionPanel);
 				panel.name = 'action_scrollview';
 				this.actionPanel = panel;
 				this.attachPanelDisabler(this, this.actionPanel);
 				break;
 			}
 			case 'target_scrollview': {
-				this.targetPanel.destroy();
+				this.destroyPanelWithOverlay(this.targetPanel);
 				panel.name = 'target_scrollview';
 				this.targetPanel = panel;
 				this.attachPanelDisabler(this, this.targetPanel);
@@ -1175,6 +1178,23 @@ export default class Battle extends Phaser.Scene {
 		panel.setPosition(x, y);
 
 		return panel;
+	}
+
+	/** Destroy a rexUI panel AND its disabler overlay. The scrim/blocker are
+	 *  scene-level objects, not panel children — destroying only the panel
+	 *  orphans a possibly-visible blocker that swallows all clicks over the
+	 *  menu area (a rebuilt-while-disabled panel could never be used again). */
+	destroyPanelWithOverlay(panel) {
+		if (!panel) {
+			return;
+		}
+		if (panel._disableScrim) {
+			panel._disableScrim.destroy();
+		}
+		if (panel._disableBlocker) {
+			panel._disableBlocker.destroy();
+		}
+		panel.destroy();
 	}
 
 	attachPanelDisabler(scene, panel) {

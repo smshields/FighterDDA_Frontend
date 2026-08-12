@@ -71,6 +71,10 @@ export default class StatusBarViewComponent extends UserComponent {
 	updateStatusBarBackground(isDead){
 		if(isDead){
 			this.status_bar_background.setFillStyle(0x5f5f5f);
+		} else {
+			//restore the default (alive) background — needed when a view that
+			//was initialized from stale data is refreshed by server snapshots
+			this.status_bar_background.setFillStyle(0xffffff);
 		}
 	}
 

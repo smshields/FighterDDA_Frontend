@@ -73,8 +73,14 @@ export default class GameManagerComponent extends UserComponent {
 
 	/* START-USER-CODE */
 
-	start() {
+	awake() {
+		//Networking must initialize before ANY component's start() runs —
+		//CharacterManagerComponent.start branches on socketInitialized to decide
+		//between server snapshots and the local JSON stubs.
 		this.initNetworking();
+	}
+
+	start() {
 		this.syncCharacterManagerWithGameState();
 
 	}

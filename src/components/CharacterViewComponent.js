@@ -149,6 +149,11 @@ export default class CharacterViewComponent extends UserComponent {
 			this.updateCharacterName(this.characterModel.characterName + " (DEAD)");
 			this.status_bar.statusBarViewComponent.updateStatusBarBackground(isDead);
 			this.updateIsDefending(false);
+		} else {
+			//symmetric restore: a live refresh loop (server snapshots) must be
+			//able to correct a view initialized from stale/stub data
+			this.updateCharacterName(this.characterModel.characterName);
+			this.status_bar.statusBarViewComponent.updateStatusBarBackground(isDead);
 		}
 	}
 
