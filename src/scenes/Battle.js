@@ -802,14 +802,15 @@ export default class Battle extends Phaser.Scene {
 	preload() {
 		this.load.start();
 
-		//character stub loading
-		this.load.json('p1_warrior_json', 'assets/data/character_json_stubs/P1Warrior.json');
-		this.load.json('p1_mage_json', 'assets/data/character_json_stubs/P1Mage.json');
+		//character stub loading — extensions must match disk case exactly:
+		//production serves from a case-sensitive filesystem (Linux/Caddy)
+		this.load.json('p1_warrior_json', 'assets/data/character_json_stubs/P1Warrior.JSON');
+		this.load.json('p1_mage_json', 'assets/data/character_json_stubs/P1Mage.JSON');
 		this.load.json('p1_rogue_json', 'assets/data/character_json_stubs/P1Rogue.JSON');
 		this.load.json('p1_priest_json', 'assets/data/character_json_stubs/P1Priest.JSON');
 
-		this.load.json('p2_warrior_json', 'assets/data/character_json_stubs/P2Warrior.json');
-		this.load.json('p2_mage_json', 'assets/data/character_json_stubs/P2Mage.json');
+		this.load.json('p2_warrior_json', 'assets/data/character_json_stubs/P2Warrior.JSON');
+		this.load.json('p2_mage_json', 'assets/data/character_json_stubs/P2Mage.JSON');
 		this.load.json('p2_rogue_json', 'assets/data/character_json_stubs/P2Rogue.JSON');
 		this.load.json('p2_priest_json', 'assets/data/character_json_stubs/P2Priest.JSON');
 
