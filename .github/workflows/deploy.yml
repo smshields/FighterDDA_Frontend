@@ -1,0 +1,25 @@
+# Deploys via the shields_pipeline pattern: push to main → SSH to the droplet
+# → deploy.sh fdda-frontend (static files: the pull IS the deploy — Caddy
+# serves /opt/FighterDDA_Frontend directly, no build step, no PM2 reload).
+# Requires repo secrets DEPLOY_HOST and DEPLOY_SSH_KEY (already set).
+
+name: Deploy
+
+on:
+  push:
+    branches: [main, master]
+
+env:
+  APP_NAME: fdda-frontend
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: deploy
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: /opt/shields_pipeline/scripts/deploy.sh ${{ env.APP_NAME }}
